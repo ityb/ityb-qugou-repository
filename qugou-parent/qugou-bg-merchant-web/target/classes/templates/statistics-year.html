@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/merchant/css/statistics.css" />
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+	<div class="bar-select">
+		<form class="layui-form" id="order-history-from">
+			<blockquote class="layui-elem-quote">
+				<div style="margin-left: 10%;" id="memberList">
+	               <div class="layui-form-item" style="margin:0;">
+	                  <label class="layui-form-label">年份</label>
+	                   <div class="layui-input-inline">
+	       					<select name="statisticsYear" id="statisticsYear">
+								<#if yearList??&&(yearList?size>0)>
+									<#list yearList as year>
+										<option value="${year}">${year}年</option>
+									</#list>
+									<option value="2017">2017年</option>
+								<#else>
+									<option value="">暂无年度报表</option>
+								</#if>
+							</select>
+	     				</div>
+	                  <label class="layui-form-label">导出格式</label>
+	                   <div class="layui-input-inline">
+	       					<select name="exportType" id="exportType" lay-filter="order_state">
+								<option value="1" checked="checked">Excel</option>
+								<option value="2">Pdf</option>
+							</select>
+	     				</div>
+	                    <div class="layui-form-mid layui-word-aux" style="padding:0;">
+	                       <button id="statistics" type="button" class="layui-btn" >统计</button>
+	                    </div>
+	                    <div class="layui-form-mid layui-word-aux" style="padding:0;">
+	                       <button id="export" type="button"  class="layui-btn" >导出</button>
+	                    </div>
+	               </div>
+		        </div>
+	       </blockquote>
+       </form>
+	</div>
+	<div id="container" style="height: 100%"></div>
+	<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/merchant/layui/plugins/layui/layui.js"></script>
+	<script type="text/javascript" src="/merchant/js/statistics-year.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-商品详情</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/product/zoom.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<link rel="stylesheet" href="/shop/css/product/jquery-labelauty.css">
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+
+<!-- 单选框美化 -->
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/category/style.js" ></script>
+<script type="text/javascript" src="/shop/js/slideshow/slideshow.js" ></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<#if productFlag??>
+	<div class="product-content-box">
+		<div class="product-show-box">
+			<div class="product-show">
+				<div class="product-img-box" style="margin-left: 275px;margin-top: 50px;">
+					<img src="/shop/images/tips/product-tip.png" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="other-box">
+		<div class="foot-box">
+			<#include "/common/footer.html">
+		</div>
+	</div>
+<#else>
+<div class="product-content-box">
+	<#include "/common/shop-nav.html">
+	<div class="product-show-box">
+		<div class="product-show">
+			<div class="product-img-box">
+				<center>
+					<div id="preview" class="spec-preview"> 
+						<span class="jqzoom">
+							<#if product??>
+								<#list product.pic?split(",") as picUrl>
+									<#if picUrl_index==0>
+										<img jqimg="${picUrl!}" src="${picUrl!}" />
+									</#if>
+								</#list>
+							<#else>
+								<img jqimg="/shop/images/product/b1.jpg" src="/shop/images/product/s1.jpg" id="addCart-img"/>
+							</#if>
+						</span>
+					</div>
+					<div class="spec-scroll"> <a class="prev">&lt;</a> <a class="next">&gt;</a>
+  						<div class="items">
+    						<ul>
+    							<#if product??>
+    								<#list product.pic?split(",") as picUrl>
+    									<li>
+    										<img alt="佳能" bimg="${picUrl!}" src="${picUrl!}" onmousemove="preview(this);" id="addCart-img">
+    									</li>
+    								</#list>
+    							</#if>
+    						</ul>
+  						</div>
+					</div>
+				</center>
+			</div>
+			<div class="product-detail-box">
+				<div class="product-detail-title">${product.title!}</div>
+				<div class="product-detail-point">${product.sellPoint}</div>
+				<div class="product-detail-price">
+					<div class="price-name">趣&nbsp;购&nbsp;价</div>
+					<div class="price-flag">￥</div>
+					<div class="price-number">
+						<#if product.price==product.maxPrice>
+							${product.price?string("#.00")!}
+						<#else>
+							${product.price?string("#.00")!} ~ ${product.maxPrice?string("#.00")!}
+						</#if>
+					</div>
+					<div class="lj-pj">
+						<div class="lj-pj-name">累计评价:</div>
+						<div class="lj-pj-number">0</div>
+					</div>
+				</div>
+				<div class="product-detail-address"><span>发货地：<span/>${product.productAddress!}</div>
+				<div class="product-detail-specifications">
+					<div class="specifications-name">规格：</div>
+					<div class="specifications-number">
+						<ul class="dowebok">
+							<#if productSpecificationList??>
+								<#list productSpecificationList as productSpecification>
+									<li>
+										<input type="radio" name="productSpecification" data-labelauty="${productSpecification.name!}" value="${productSpecification.id}">
+										<input type="hidden" name="productSpecification_price" value="${productSpecification.price!}"/>
+										<input type="hidden" name="productSpecification_weight" value="${productSpecification.weight!}"/>
+										<input type="hidden" name="productSpecification_stock" value="${productSpecification.stock!}"/>
+										<input type="hidden" name="productSpecification_id" value="${productSpecification.id!}"/>
+									</li>
+								</#list>
+							</#if>
+						</ul>
+					</div>
+				</div>
+				<div class="product-detail-weight">重量：<span id="product_weight">请先选择规格</span></div>
+				<div class="product-detail-number">
+					<div class="product-detail-number-name">数量：</div>
+					<div class="product-detail-number-add">
+						<input  data_step="1" data_min="1" data_max="9999999" 
+							data_digit="0" value="1" data_edit="true" id="product_buy_number"/>
+					</div>
+					<div class="product-detail-number-store">
+							<#assign stockTotal=0 />
+							<#if productSpecificationList??>
+								<#list productSpecificationList as productSpecification>
+									  <#assign stockTotal=stockTotal+productSpecification.stock/>
+								</#list>
+							</#if>
+							<span id="product_stock">（库存总量<span>${stockTotal}</span>件）</span>
+					</div>
+				</div>
+				<div class="product-detail-distribution">
+					<div class="product-detail-distribution-name">配送：</div>
+					<div class="product-detail-distribution-way">上门自提</div>
+					<div class="product-detail-distribution-way">同城配送</div>
+					<div class="product-detail-distribution-way">物流配送</div>
+				</div>
+				<div class="product-detail-cart-box">
+					<div class="product-detail-cart-add">加入购物车</div>
+				</div>
+				<div class="product-detail-prompt">温馨提示：该平台所有的商品均为线下实体店商品，保证正品</div>
+			</div>
+		</div>
+	</div>
+	<div class="product-detail-bottom-box">
+		<div class="shop-box">
+			<div class="shop-name-div">
+				<div class="shop-name-box">
+					<div class="shop-logo">
+						<img src="${shop.shopLogo!'/shop/images/slideshow/1.jpg'}"/>
+					</div>
+					<div class="shop-name">${shop.shopName!}</div>
+				</div>
+				<div class="shop-name-op">
+					<div class="shop-op">
+						<div class="shop-op-item"><img src="/shop/images/zy.png"/>进店逛逛</div>
+						<div class="shop-op-item"><img src="/shop/images/sc.png"/>收藏本店</div>
+					</div>
+				</div>
+			</div>
+			<div class="shop-search-div">
+				<div class="shop-name-box">
+					<div class="shop-name">店内搜索</div>
+					<div class="search-div">
+						<div class="shop-search-text">
+							<div class="search-name-keyword">关键字：</div>
+							<div class="search-text-input"><input type="text" id="product-detail-keyword"></div>
+							<div class="search-button">搜索</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="shop-category-div">
+				<div class="shop-name-box">
+					<div class="shop-name">店内分类</div>
+					<div class="shop-catgeory-box">
+						<#include "/common/shop-product-category.html"/>
+					</div>
+					<div class="add-bottom-line"></div>
+				</div>
+			</div>
+		</div>
+		<div class="shop-detail-box">
+			<#include "/product/desc-pj.html"/>
+		</div>
+	</div>
+</div>
+</#if>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/js/cart/jquery.fly.min.js" ></script>
+<script type="text/javascript" src="/shop/js/product/jquery.jqzoom.js"></script>
+<script type="text/javascript" src="/shop/js/product/zoom.js"></script>
+<script type="text/javascript" src="/shop/js/product/jquery-labelauty.js"></script>
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/product/product.js" ></script>
+<script src="/shop/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(':input').labelauty();
+});
+$(function() {
+    var offset = $("#icon-cart").offset();
+    $(".product-detail-cart-add").click(function(event) {
+    	var img =$("#addCart-img").attr('src');//获取当前点击图片链接
+    	var specificationId=$('input[name="productSpecification"]:checked').val();
+    	if(typeof(specificationId)=='undefined'||specificationId==''||specificationId==null){
+    		ds.dialog.alert("请先选择规格",function(){},"info.png");
+    		return;
+    	}
+    	var buyNumber=$("#product_buy_number").val();
+    	var sessionId=$.cookie("shop_session_id");
+		if (typeof(sessionId) == "undefined"||sessionId==null||sessionId=='') { //表示没有登录
+			$('.theme-popover-mask').fadeIn(100);
+			$('.theme-popover').slideDown(200);
+			$(document).bind('mousewheel', function(event, delta) { return false; });
+		}else{
+			 $.ajax({
+					async : true, //是否异步  
+					cache : false, //是否使用缓存  
+					type : 'post', //请求方式,post  
+					data : {
+						token:sessionId
+					},
+					dataType : "json", //数据传输格式  
+					url : '/sso/shop/getToken?v=' + new Date().getTime(), //请求链接  
+					success : function(data) {
+						if(data.status==1){//表示登录成功，进行跳转
+							//登录成功则进行添加购物车操作
+					    	var flyer = $('<img class="flyer-img" src="' + img + '">');//抛物体对象
+					        flyer.fly({
+					            start: {
+					                left: event.pageX, //抛物体起点横坐标
+					                top: event.pageY-$(document).scrollTop()////抛物体起点纵坐标
+					            },
+					            end: {
+					                left: offset.left+10, //抛物体终点横坐标
+					                top: 300+70//抛物体终点纵坐标
+					            },
+					            onEnd: function() {
+					                $("#tip").show().animate({width: '100px'}, 300).fadeOut(500);//成功加入购物车动画效果
+					                this.destory();//销毁抛物体
+					            }
+					        });
+					        /*
+					    	 * 进行添加到服务端
+					    	 */
+					        $.ajax({
+								async : true, //是否异步  
+								cache : false, //是否使用缓存  
+								type : 'post', //请求方式,post  
+								data : {
+									specificationId:specificationId,
+									buyNumber:buyNumber,
+									cartType:1
+								},
+								dataType : "json", //数据传输格式  
+								url : '/shop/cart/add?v=' + new Date().getTime(), //请求链接  
+								success : function(data) {
+									if(data.status==1){//表示登录成功，进行跳转
+										
+									}else{
+										
+									}
+								},
+								error : function(XMLHttpRequest, data) {
+									console.log(data.msg);
+								}
+					        });
+						}else{
+							//弹出框
+							$('.theme-popover-mask').fadeIn(100);
+							$('.theme-popover').slideDown(200);
+							$(document).bind('mousewheel', function(event, delta) { return false; });
+						}
+					},
+					error : function(XMLHttpRequest, data) {
+						console.log(data.msg);
+					}
+			});
+		}  
+    });
+});
+</script>
+</body>
+</html>

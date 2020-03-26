@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/shop/css/address/address-select.css" media="all">
+<script  type="text/javascript" src="/shop/js/address/address-select.js"></script>
+<script type="text/javascript" src="/shop/js/jquery.cookie.js" ></script>
+</head>
+<body>
+<div class="address-theme-popover">
+     <div class="address-theme-poptit">
+          <a href="javascript:;" title="关闭" class="address-close">×</a>
+          <div class="address-header-box">请选择地址</div>
+     </div>
+     <div class="address-ts-box">趣购建议您选择与您所在城市的地址</div>
+     <div class="address-title-box">地址选择</div>
+     <div class="address-main-box">
+     	<div class="address-select-item">
+     		<div class="address-name-item"><span class="bitian-box">*</span>所在区域</div>
+     		<div id="address_select">
+               <ul>
+               	<div class="address-select-box">
+               		<select class="form-control" name="province">
+               			<option>请选择省份</option>
+               		</select>
+               	</div>
+               	<div class="address-select-box">
+               		<select class="form-control" name="city">
+               			<option>请选择省城市</option>
+               		</select>
+               	</div>
+               	<div class="address-select-box">
+               		<select class="form-control" name="area">
+               			<option>请选择区域</option>
+               		</select>
+               	</div>
+               	<div class="address-select-box" >
+               		<select class="form-control"  name="town">
+               			<option>请选择街道</option>
+               		</select>
+               	</div>
+               </ul>
+          	</div>
+     	</div>
+     	<div class="address-select-item">
+     		<div class="address-name-item"><span class="bitian-box">*</span>详细地址</div>
+     		<div class="address-conten-box">
+     			<input type="text" name="customerAddress" placeholder="请输入详细地址（不包括地区信息）"  class="form-control"/ >
+     			<div class="address-tip">为了方便配送，请填写详细地址</div>
+     		</div>
+     	</div>
+     	<div class="address-select-item">
+     		<div class="address-name-item"><span class="bitian-box">*</span>收货人员</div>
+     		<div class="address-conten-box">
+     			<input type="text" name="customerName" placeholder="请输入收货人姓名"  class="form-control"/ >
+     			<div class="address-tip">请填写真实姓名</div>
+     		</div>
+     	</div>
+     	<div class="address-select-item">
+     		<div class="address-name-item"><span class="bitian-box">*</span>手机号码</div>
+     		<div class="address-conten-box">
+     			<input type="text"  name="customerPhone" class="form-control" placeholder="请输入收货人手机号码"/ >
+     			<div class="address-tip">重要，请输入11位数字的有效的电话号码</div>
+     		</div>
+     	</div>
+   		<div class="address-select-item">
+   			<div class="address-select-error"></div>
+     	</div>
+   		<div class="address-select-item">
+   			<input type="hidden" id="isError" value="0"/>
+   			<div class="address-button-box">确定</div>
+     	</div>
+     </div>
+</div>
+<div class="address-theme-popover-mask"></div>
+<script type="text/javascript" src="/shop/js/area/jquery.citys.js"></script>
+</body>
+</html>

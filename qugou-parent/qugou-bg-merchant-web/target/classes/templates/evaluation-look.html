@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+		<style type="text/css">
+			.layui-upload-img{
+				    width: 92px;
+   				 	height: 92px;
+    				margin: 10px 15px 10px 0px;
+			}
+			.pic-img-div{
+				width: 92px;
+				height: 102px;
+				margin-left:5px;
+				float: left;
+			}
+			.img-div{
+				width: 92px;
+				height: 80px;
+			}
+			.img-div img{
+				width: 100%;
+				height: 100%;
+			}
+			.desc-show{
+				width: 550px;
+			}
+			.desc-show img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+<body>
+<div style="margin: 15px;">
+	<form class="layui-form" id="delivery_form_update">
+			<div class="layui-form-item">
+			<label class="layui-form-label">用户ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="userId" readonly="readonly" value="${evaluation.userName!}"  malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">所属订单号</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value="${evaluation.orderNumber!}"  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value="${evaluation.productName!}"  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品规格</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value="${evaluation.productSpecificationName!}"  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">质量评分</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value="${evaluation.qualityFraction!}"  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">描述评分</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value="${evaluation.descFraction!}"  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">配送评分</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value="${evaluation.deliveryFraction!}"  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">评论内容</label>
+				<div class="layui-input-block">
+					<textarea placeholder="请输入内容" readonly="readonly" class="layui-textarea" name="deliveryInfo" id="deliveryInfo" >${evaluation.evaluationContent!}</textarea>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">评论图片</label>
+			<div class="layui-input-block">
+				<#if evaluation.evaluationPic??>
+					<#list evaluation.evaluationPic?split(",") as pic>
+						<div class="pic-img-div">
+							<div class="img-div">
+								<img  src="${pic!}">
+							</div>
+						</div>
+					</#list>
+				<#else>
+					暂无评价图片
+				</#if>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">评论时间</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value='${(evaluation.evaluationTime?string("yyyy-MM-dd HH:mm:ss"))!}'  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">商家回复</label>
+				<div class="layui-input-block">
+					<textarea placeholder="暂无" readonly="readonly" class="layui-textarea" name="deliveryInfo" id="deliveryInfo" >${evaluation.evaluationReplyContent!}</textarea>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">回复时间</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value='${(evaluation.evaluationReplyTime?string("yyyy-MM-dd HH:mm:ss"))!}'  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<button lay-filter="edit" lay-submit style="display: none;"></button>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript"></script>
+</body>
+</html>

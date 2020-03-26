@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>玩转spring boot——websocket</title>
+<script src="//cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
+<script src="https://cdn.bootcss.com/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+    	/*在页面加载的时候触发websocket*/
+    	 var socket = new SockJS('/my-websocket');
+    	 var stompClient = Stomp.over(socket);
+         stompClient.connect({}, function(frame) {
+             // 注册发送消息(对应服务端第一种方式)
+             stompClient.subscribe('/topic/send', function(msg) {
+            	 $("#web-demo").html(JSON.parse(msg.body));
+             });
+             // 注册推送时间回调（对应服务端第二种方式）
+             stompClient.subscribe('/topic/callback', function(msg) {
+            	 $("#web-demo").html('当前服务器时间：'+msg.body);
+             });
+         });
+    });
+</script>
+</head>
+<body ng-app="app" ng-controller="MainController">
+	<div id="web-demo">测试</div>
+</body>
+</html>

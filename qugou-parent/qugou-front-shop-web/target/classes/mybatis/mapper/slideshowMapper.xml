@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.mapper.SlideshowMapper">
+	<select id="querySlideshow" parameterType="com.ityb.qugou.po.manager.Slideshow"
+		resultType="com.ityb.qugou.po.manager.Slideshow">
+		SELECT
+			ID AS id,
+			PIC_URL AS picUrl,
+			LINK_URL AS linkUrl
+		FROM
+			T_P_SLIDESHOW
+		WHERE
+			ISVALID = 1
+		ORDER BY
+			SORT_NUM ASC
+		LIMIT 6	
+	</select>
+</mapper>

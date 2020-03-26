@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.mapper.BrowseHistoryMapper">
+	<insert id="insertBrowseHistory" parameterType="com.ityb.qugou.po.product.BrowseHistory">
+		INSERT INTO T_P_BROWSE_HISTORY(ID
+			<if test="shopCategoryName!=null and shopCategoryName!=''">
+				,SHOP_CATEGORY_NAME
+			</if>
+			<if test="productId!=null and productId!=''">
+				,PRODUCT_ID
+			</if>
+			<if test="browseCount!=null and browseCount!=0">
+				,BROWSE_COUNT
+			</if>
+			<if test="ctime!=null">
+				,CTIME
+			</if>
+			<if test="creater!=null and creater!=''">
+				,CREATER
+			</if>
+			,ISVALID
+		)VALUES(
+			#{id}
+			<if test="shopCategoryName!=null and shopCategoryName!=''">
+				,#{shopCategoryName}
+			</if>
+			<if test="productId!=null and productId!=''">
+				,#{productId}
+			</if>
+			<if test="browseCount!=null and browseCount!=0">
+				,#{browseCount}
+			</if>
+			<if test="ctime!=null">
+				,#{ctime}
+			</if>
+			<if test="creater!=null and creater!=''">
+				,#{creater}
+			</if>
+			,#{isvalid}
+		)
+	</insert>
+	<select id="getBrowseHistory" parameterType="com.ityb.qugou.po.product.BrowseHistory"
+		resultType="com.ityb.qugou.po.product.BrowseHistory">
+		SELECT
+			ID AS id,
+			PRODUCT_ID AS productId,
+			SHOP_CATEGORY_NAME AS shopCategoryName,
+			BROWSE_COUNT AS browseCount
+		FROM
+			T_P_BROWSE_HISTORY
+		<where>
+			ISVALID=1
+			<if test="productId!=null and productId!=''">
+				AND  PRODUCT_ID=#{productId}
+			</if>
+			<if test="creater!=null and creater!=''">
+				AND CREATER=#{creater}
+			</if>
+			<if test="ctime!=null">
+				AND DATE(ctime)=DATE(#{ctime})
+			</if>
+		</where>
+	</select>
+	<update id="updateBrowseHistory" parameterType="com.ityb.qugou.po.product.BrowseHistory">
+		UPDATE T_P_BROWSE_HISTORY
+		<set>
+			<if test="browseCount!=null and browseCount!=0">
+				BROWSE_COUNT=#{browseCount},
+			</if>
+			<if test="mtime!=null">
+				MTIME=#{mtime},
+			</if>
+		</set>
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+		</where>
+	</update>
+	<select id="queryBrowseHistoryByDto" parameterType="com.ityb.qugou.dto.browseHistory.BrowseHistoryDto"
+		resultType="com.ityb.qugou.vo.browseHistory.BrowseHistoryVo">
+		SELECT
+			BH.BROWSE_COUNT AS browseCount,
+			PD.PIC_URL AS productPic,
+			PD.SELL_POINT AS sellPoint,
+			PD.TITLE AS productTitle,
+			BH.CTIME AS browseTime,
+			BH.SHOP_CATEGORY_NAME AS shopCategoryName,
+			PD.PRODUCT_ID AS productId
+		FROM
+			T_P_BROWSE_HISTORY BH
+		LEFT JOIN T_P_PRODUCT_DETAIL PD ON BH.PRODUCT_ID = PD.PRODUCT_ID
+		WHERE
+			BH.ISVALID = 1
+		AND PD.ISVALID = 1
+		<if test="creater!=null and creater!=''">
+			AND BH.CREATER =#{creater}
+		</if>
+		ORDER BY BH.CTIME DESC
+		<if test="pageStart!=null and pageSize!=null">
+			LIMIT #{pageStart},#{pageSize}
+		</if>
+	</select>
+	
+	<select id="countBrowseHistoryByDto" parameterType="com.ityb.qugou.dto.browseHistory.BrowseHistoryDto"
+		resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			T_P_BROWSE_HISTORY BH
+		LEFT JOIN T_P_PRODUCT_DETAIL PD ON BH.PRODUCT_ID = PD.PRODUCT_ID
+		WHERE
+			BH.ISVALID = 1
+		AND PD.ISVALID = 1
+		<if test="creater!=null and creater!=''">
+			AND BH.CREATER =#{creater}
+		</if>
+	</select>
+	<select id="queryBrowseHistoryByEntity" parameterType="com.ityb.qugou.po.product.BrowseHistory"
+		resultType="com.ityb.qugou.po.product.BrowseHistory">
+		SELECT
+			SHOP_CATEGORY_NAME AS shopCategoryName,
+			COUNT(BROWSE_COUNT) AS browseCount,
+			CREATER AS creater
+		FROM
+			T_P_BROWSE_HISTORY
+		WHERE
+			ISVALID = 1
+		<if test="creater!=null and creater!=''">
+			AND CREATER=#{creater}
+		</if>
+		GROUP BY
+			SHOP_CATEGORY_NAME,
+			CREATER
+		ORDER BY
+			CTIME DESC,
+			COUNT(BROWSE_COUNT) DESC
+		LIMIT 5
+	</select>
+</mapper>

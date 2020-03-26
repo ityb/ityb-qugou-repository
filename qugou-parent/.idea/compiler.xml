@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="qugou-all-api" />
+        <module name="qugou-all-common" />
+        <module name="qugou-all-job" />
+        <module name="qugou-all-sso" />
+        <module name="qugou-bg-manager-web" />
+        <module name="qugou-bg-merchant-web" />
+        <module name="qugou-front-shop-web" />
+        <module name="qugou-server-cart" />
+        <module name="qugou-server-evaluation" />
+        <module name="qugou-server-order" />
+        <module name="qugou-server-product" />
+        <module name="qugou-server-search" />
+        <module name="qugou-system-config" />
+        <module name="qugou-system-eureka" />
+        <module name="qugou-system-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="qugou-all-api" target="1.8" />
+      <module name="qugou-all-common" target="1.8" />
+      <module name="qugou-all-job" target="1.8" />
+      <module name="qugou-all-sso" target="1.8" />
+      <module name="qugou-bg-manager-web" target="1.8" />
+      <module name="qugou-bg-merchant-web" target="1.8" />
+      <module name="qugou-front-shop-web" target="1.6" />
+      <module name="qugou-parent" target="1.6" />
+      <module name="qugou-server-cart" target="1.6" />
+      <module name="qugou-server-evaluation" target="1.6" />
+      <module name="qugou-server-order" target="1.6" />
+      <module name="qugou-server-product" target="1.6" />
+      <module name="qugou-server-search" target="1.6" />
+      <module name="qugou-system-config" target="1.6" />
+      <module name="qugou-system-eureka" target="1.6" />
+      <module name="qugou-system-zuul" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

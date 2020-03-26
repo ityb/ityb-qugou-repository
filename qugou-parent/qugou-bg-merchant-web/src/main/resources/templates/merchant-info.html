@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+		<style type="text/css">
+			.layui-upload-img{
+				    width: 160px;
+   				 	height: 120px;
+    				margin: 10px 15px 0px 0px;
+			}
+			.pic-img-div{
+				width: 160px;
+				height: 120px;
+				margin-left:5px;
+				float: left;
+			}
+			.img-div{
+				width: 160px;
+				height: 120px;
+			}
+			.img-div img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+<body>
+<div style="margin: 15px;">
+	<form class="layui-form" id="product_form" onsubmit="return false">
+		<div class="layui-form-item">
+			<label class="layui-form-label">商店名称</label>
+			<div class="layui-input-block">
+				<input type="text" readonly="readonly"  name="shopName"  lay-verify="required" value="${shop.shopName!}" maxlength="120"  placeholder="请输入商品名称" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商店地址</label>
+			<div class="layui-input-block">
+				<input type="text" readonly="readonly" name="shopAddress"  lay-verify="required" value="${shop.shopAddress!}" maxlength="120"  placeholder="请输入商品名称" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商店logo</label>
+			<div class="layui-input-block">
+				<div class="pic-img-div">
+					<div class="img-div">
+						<input type="hidden" value="${shop.shopLogo!}" id="shopLogo"/>
+						<img  src="${shop.shopLogo!}" id="pic_show">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label"></label>
+			<div class="layui-input-block">
+				<#if shop.shopLogo??>
+					<button class="layui-btn" lay-submit="" lay-filter="product_submit" id="shop_logo_upload">修改logo</button>
+				<#else>
+					<button class="layui-btn" lay-submit="" lay-filter="product_submit" id="shop_logo_upload">上传logo</button>
+				</#if>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">配送起步价</label>
+			<div class="layui-input-block">
+				<input type="number" min="0" name="startPrice" id="startPrice" value="${(shop.startPrice?string('#.00'))!}"  lay-verify="required" placeholder="请输入配送起步价" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">商店描述</label>
+				<div class="layui-input-block">
+					<textarea class="layui-textarea layui-hide" name="shop_desc" lay-verify="shop_desc" id="shop_desc">${shop.shopDesc!}</textarea>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<input type="hidden" value="${shop.id!}" id="shopId"/>
+				<button class="layui-btn" lay-submit="" lay-filter="shop_submit" id="shop_submit">立即修改</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript" src="/merchant/layui/plugins/layui/layui.all.js"></script>
+<script type="text/javascript" src="/merchant/js/merchant-info.js"></script>
+</body>
+</html>

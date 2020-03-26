@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.mapper.DirectSupermarketMapper">
+	<select id="queryDirectSupermarket" parameterType="com.ityb.qugou.po.manager.DirectSupermarket"
+		resultType="com.ityb.qugou.vo.manager.DirectSupermarketVo">
+		SELECT
+			DS.ID As directSupermarketId,
+			SS.ID AS shopId,
+			SS.SHOP_NAME AS shopName,
+			SS.SHOP_LOGO AS shopLogo
+		FROM
+			T_P_DIRECT_SUPERMARKET DS
+		LEFT JOIN T_SYS_SHOP SS ON DS.SHOP_ID = SS.ID
+		WHERE
+			SS.ISVALID = 1
+		AND DS.ISVALID = 1
+		<if test="city!=null and city!=''">
+			AND DS.CITY=#{city}
+		</if>
+		ORDER BY DS.CTIME
+		LIMIT 5
+	</select>
+</mapper>

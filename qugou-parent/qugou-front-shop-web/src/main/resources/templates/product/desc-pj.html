@@ -1,0 +1,63 @@
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product-desc-pj.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/star.css" />
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/product/laypage/laypage.js"></script>
+<div class="desc-pj-nav-box">
+	<div class="nav-item-desc">商品描述</div>
+	<div class="nav-item-pj">商品评价</div>
+</div>
+<#if productDesc??>
+<!-- 商品表示box -->
+	<div class="desc-show-box">${productDesc.productDesc!}</div>
+<#else>
+	<div class="desc-show-box">暂无描述</div>
+</#if>
+<!-- 评价box -->
+<#if evaluationFraction??>
+<div class="pj-show-box">
+	<div class="pj-fraction-show">
+		<div class="pj-total-box">
+			<div class="pj-total-show">
+				<div class="pj-total-fraction-show">${evaluationFraction.complexFraction!}分</div>
+				<div class="pj-total-name-show">综合评分</div>
+			</div>
+		</div>
+		<div class="fraction-show-box">
+			 <ul class="show_number clearfix">
+       			<li>
+       				<div class="fraction-name-show">商品质量评分</div>
+        			<div class="atar_Show">
+          				<p tip="${evaluationFraction.qualityFraction!}"></p>
+        			</div>
+        			<span></span>
+      		 	</li>
+       			<li>
+       				<div class="fraction-name-show">商品描述评分</div>
+       				 <div class="atar_Show">
+          				 <p tip="${evaluationFraction.descFraction!}"></p>
+        			 </div>
+       				 <span></span>
+       			</li>
+       			<li>
+       				<div class="fraction-name-show">订单配送评分</div>
+        			<div class="atar_Show">
+          				<p tip="${evaluationFraction.deliveryFraction!}"></p>
+        			</div>
+        			<span></span>
+       			</li>
+   		 </ul>
+		</div>
+	</div>
+	<input type="hidden" value="${product.productId!}" id="product-detail-product-id"/>
+	<div class="pl-detail-show-box">
+		<div id="pl_detail_list"></div>
+		<div class="pl-page-box">
+			<div id="pl_detail_page"></div>
+		</div>
+	</div>
+</div>
+<#else>
+	<div class="pj-show-box">暂无评价</div>
+</#if>
+<script type="text/javascript" src="/shop/js/product/product-desc-pj.js"></script>

@@ -1,0 +1,494 @@
+2018-05-20 00:04:07.496 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:09:07.549 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:14:07.567 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:19:07.585 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:24:07.603 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:25:37.305 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 00:25:37.311 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 00:25:37.323 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 00:25:49.194 [http-nio-8003-exec-3] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==>  Preparing: SELECT CUSTOMER_NAME AS customerName, CUSTOMER_PHONE AS customerPhone, TYPE AS type, ADDRESS AS address, PROVINCE AS province, CITY AS city, TOWN AS town, AREA AS area FROM T_P_DELIVERY_ADDRESS WHERE ISVALID = 1 AND CREATER=? AND (CITY=? OR PROVINCE=?) 
+2018-05-20 00:25:49.198 [http-nio-8003-exec-3] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String), 哈尔滨市(String), 哈尔滨市(String)
+2018-05-20 00:25:49.201 [http-nio-8003-exec-3] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -<==      Total: 1
+2018-05-20 00:27:53.767 [http-nio-8003-exec-8] DEBUG c.i.q.m.S.querySearchKeyword -==>  Preparing: SELECT ID AS ID, NAME AS NAME FROM T_P_SEARCH_KEYWORD WHERE ISVALID = 1 ORDER BY SORT_NUM ASC 
+2018-05-20 00:27:53.769 [http-nio-8003-exec-8] DEBUG c.i.q.m.S.querySearchKeyword -==> Parameters: 
+2018-05-20 00:27:53.773 [http-nio-8003-exec-8] DEBUG c.i.q.m.S.querySearchKeyword -<==      Total: 10
+2018-05-20 00:27:55.025 [http-nio-8003-exec-8] DEBUG c.i.q.m.S.querySlideshow -==>  Preparing: SELECT ID AS id, PIC_URL AS picUrl, LINK_URL AS linkUrl FROM T_P_SLIDESHOW WHERE ISVALID = 1 ORDER BY SORT_NUM ASC LIMIT 6 
+2018-05-20 00:27:55.026 [http-nio-8003-exec-8] DEBUG c.i.q.m.S.querySlideshow -==> Parameters: 
+2018-05-20 00:27:55.039 [http-nio-8003-exec-8] DEBUG c.i.q.m.S.querySlideshow -<==      Total: 6
+2018-05-20 00:27:55.051 [http-nio-8003-exec-8] DEBUG c.i.q.m.P.queryProductCategroy -==>  Preparing: SELECT ID AS id, NAME AS name, PARENT_ID AS parentId FROM T_P_SYS_PRODUCT_CATEGORY WHERE ISVALID = 1 AND TYPE=? 
+2018-05-20 00:27:55.053 [http-nio-8003-exec-8] DEBUG c.i.q.m.P.queryProductCategroy -==> Parameters: 1(Integer)
+2018-05-20 00:27:55.099 [http-nio-8003-exec-8] DEBUG c.i.q.m.P.queryProductCategroy -<==      Total: 157
+2018-05-20 00:27:55.129 [http-nio-8003-exec-8] DEBUG c.i.q.m.NoticeMapper.queryNotice -==>  Preparing: SELECT ID AS id, CONTENT AS content, LINK_URL AS linkUrl, IS_INDEX_SHOW AS isIndexShow FROM T_P_NOTICE WHERE ISVALID = 1 ORDER BY IS_INDEX_SHOW DESC LIMIT 5 
+2018-05-20 00:27:55.130 [http-nio-8003-exec-8] DEBUG c.i.q.m.NoticeMapper.queryNotice -==> Parameters: 
+2018-05-20 00:27:55.140 [http-nio-8003-exec-8] DEBUG c.i.q.m.NoticeMapper.queryNotice -<==      Total: 5
+2018-05-20 00:27:55.157 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 00:27:55.159 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 00:27:55.161 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 00:27:55.192 [http-nio-8003-exec-8] DEBUG c.i.q.m.D.queryDirectSupermarket -==>  Preparing: SELECT DS.ID As directSupermarketId, SS.ID AS shopId, SS.SHOP_NAME AS shopName, SS.SHOP_LOGO AS shopLogo FROM T_P_DIRECT_SUPERMARKET DS LEFT JOIN T_SYS_SHOP SS ON DS.SHOP_ID = SS.ID WHERE SS.ISVALID = 1 AND DS.ISVALID = 1 AND DS.CITY=? ORDER BY DS.CTIME LIMIT 5 
+2018-05-20 00:27:55.193 [http-nio-8003-exec-8] DEBUG c.i.q.m.D.queryDirectSupermarket -==> Parameters: 哈尔滨市(String)
+2018-05-20 00:27:55.199 [http-nio-8003-exec-8] DEBUG c.i.q.m.D.queryDirectSupermarket -<==      Total: 5
+2018-05-20 00:27:55.210 [http-nio-8003-exec-8] DEBUG c.i.q.m.D.queryDiscountArea -==>  Preparing: SELECT ID AS id, SHOW_PIC AS showPic, NAME AS name, LINK_URL AS linkUrl, PARENT_ID AS parentId, SORT_NUM AS sortNum FROM T_P_DISCOUNT_AREA WHERE ISVALID=1 ORDER BY SORT_NUM 
+2018-05-20 00:27:55.211 [http-nio-8003-exec-8] DEBUG c.i.q.m.D.queryDiscountArea -==> Parameters: 
+2018-05-20 00:27:55.226 [http-nio-8003-exec-8] DEBUG c.i.q.m.D.queryDiscountArea -<==      Total: 16
+2018-05-20 00:28:08.392 [http-nio-8003-exec-6] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==>  Preparing: SELECT CUSTOMER_NAME AS customerName, CUSTOMER_PHONE AS customerPhone, TYPE AS type, ADDRESS AS address, PROVINCE AS province, CITY AS city, TOWN AS town, AREA AS area FROM T_P_DELIVERY_ADDRESS WHERE ISVALID = 1 AND CREATER=? AND (CITY=? OR PROVINCE=?) 
+2018-05-20 00:28:08.399 [http-nio-8003-exec-6] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String), 哈尔滨市(String), 哈尔滨市(String)
+2018-05-20 00:28:08.402 [http-nio-8003-exec-6] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -<==      Total: 1
+2018-05-20 00:29:07.621 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:34:07.640 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:35:58.084 [http-nio-8003-exec-6] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==>  Preparing: SELECT CUSTOMER_NAME AS customerName, CUSTOMER_PHONE AS customerPhone, TYPE AS type, ADDRESS AS address, PROVINCE AS province, CITY AS city, TOWN AS town, AREA AS area FROM T_P_DELIVERY_ADDRESS WHERE ISVALID = 1 AND CREATER=? AND (CITY=? OR PROVINCE=?) 
+2018-05-20 00:35:58.100 [http-nio-8003-exec-6] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String), 哈尔滨市(String), 哈尔滨市(String)
+2018-05-20 00:35:58.103 [http-nio-8003-exec-6] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -<==      Total: 1
+2018-05-20 00:39:07.659 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:44:07.678 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:48:21.459 [http-nio-8003-exec-7] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 00:48:21.463 [http-nio-8003-exec-7] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 00:48:21.466 [http-nio-8003-exec-7] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 00:48:36.436 [http-nio-8003-exec-9] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==>  Preparing: SELECT CUSTOMER_NAME AS customerName, CUSTOMER_PHONE AS customerPhone, TYPE AS type, ADDRESS AS address, PROVINCE AS province, CITY AS city, TOWN AS town, AREA AS area FROM T_P_DELIVERY_ADDRESS WHERE ISVALID = 1 AND CREATER=? AND (CITY=? OR PROVINCE=?) 
+2018-05-20 00:48:36.438 [http-nio-8003-exec-9] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String), 哈尔滨市(String), 哈尔滨市(String)
+2018-05-20 00:48:36.442 [http-nio-8003-exec-9] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -<==      Total: 1
+2018-05-20 00:49:07.697 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:54:07.716 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:59:07.734 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:04:07.753 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:09:07.780 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:14:07.814 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:19:07.840 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:20:22.492 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySearchKeyword -==>  Preparing: SELECT ID AS ID, NAME AS NAME FROM T_P_SEARCH_KEYWORD WHERE ISVALID = 1 ORDER BY SORT_NUM ASC 
+2018-05-20 01:20:22.493 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySearchKeyword -==> Parameters: 
+2018-05-20 01:20:22.496 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySearchKeyword -<==      Total: 10
+2018-05-20 01:20:52.235 [http-nio-8003-exec-2] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==>  Preparing: SELECT CUSTOMER_NAME AS customerName, CUSTOMER_PHONE AS customerPhone, TYPE AS type, ADDRESS AS address, PROVINCE AS province, CITY AS city, TOWN AS town, AREA AS area FROM T_P_DELIVERY_ADDRESS WHERE ISVALID = 1 AND CREATER=? AND (CITY=? OR PROVINCE=?) 
+2018-05-20 01:20:52.237 [http-nio-8003-exec-2] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String), 哈尔滨市(String), 哈尔滨市(String)
+2018-05-20 01:20:52.240 [http-nio-8003-exec-2] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -<==      Total: 1
+2018-05-20 01:24:07.886 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:30:24.860 [main] INFO  com.ityb.qugou.ShopApplication -No active profile set, falling back to default profiles: default
+2018-05-20 07:31:57.675 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2018-05-20 07:31:57.683 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-05-20 07:32:02.763 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2018-05-20 07:33:52.363 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-20 07:33:52.365 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-20 07:33:52.439 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-20 07:33:52.446 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-20 07:34:01.489 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1
+2018-05-20 07:34:04.698 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2018-05-20 07:34:04.699 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2018-05-20 07:34:06.957 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2018-05-20 07:34:06.958 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2018-05-20 07:34:11.231 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:34:12.505 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false
+2018-05-20 07:34:12.511 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null
+2018-05-20 07:34:12.512 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false
+2018-05-20 07:34:12.513 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false
+2018-05-20 07:34:12.514 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true
+2018-05-20 07:34:12.515 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true
+2018-05-20 07:34:12.517 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server
+2018-05-20 07:34:14.385 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200
+2018-05-20 07:34:14.459 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30
+2018-05-20 07:34:14.476 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-20 07:34:14.500 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1526772854499 with initial instances count: 1
+2018-05-20 07:34:14.973 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1526772854973, current=UP, previous=STARTING]
+2018-05-20 07:34:15.458 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_SHOP-SERVICE/PC-20160510GKPU:shop-service:8003: registering service...
+2018-05-20 07:34:15.620 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_SHOP-SERVICE/PC-20160510GKPU:shop-service:8003 - registration status: 204
+2018-05-20 07:34:17.232 [main] INFO  com.ityb.qugou.ShopApplication -Started ShopApplication in 276.015 seconds (JVM running for 287.002)
+2018-05-20 07:39:12.828 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:44:12.997 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:46:49.220 [http-nio-8003-exec-1] INFO  o.a.tomcat.util.http.parser.Cookie -A cookie header was received [1526226581,1526342682,1526746222] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-05-20 07:46:49.300 [http-nio-8003-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-20 07:46:52.314 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySearchKeyword -==>  Preparing: SELECT ID AS ID, NAME AS NAME FROM T_P_SEARCH_KEYWORD WHERE ISVALID = 1 ORDER BY SORT_NUM ASC 
+2018-05-20 07:46:52.422 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySearchKeyword -==> Parameters: 
+2018-05-20 07:46:52.546 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySearchKeyword -<==      Total: 10
+2018-05-20 07:46:54.011 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySlideshow -==>  Preparing: SELECT ID AS id, PIC_URL AS picUrl, LINK_URL AS linkUrl FROM T_P_SLIDESHOW WHERE ISVALID = 1 ORDER BY SORT_NUM ASC LIMIT 6 
+2018-05-20 07:46:54.013 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySlideshow -==> Parameters: 
+2018-05-20 07:46:54.042 [http-nio-8003-exec-1] DEBUG c.i.q.m.S.querySlideshow -<==      Total: 6
+2018-05-20 07:46:54.324 [http-nio-8003-exec-1] DEBUG c.i.q.m.P.queryProductCategroy -==>  Preparing: SELECT ID AS id, NAME AS name, PARENT_ID AS parentId FROM T_P_SYS_PRODUCT_CATEGORY WHERE ISVALID = 1 AND TYPE=? 
+2018-05-20 07:46:54.330 [http-nio-8003-exec-1] DEBUG c.i.q.m.P.queryProductCategroy -==> Parameters: 1(Integer)
+2018-05-20 07:46:54.437 [http-nio-8003-exec-1] DEBUG c.i.q.m.P.queryProductCategroy -<==      Total: 157
+2018-05-20 07:46:54.654 [http-nio-8003-exec-1] DEBUG c.i.q.m.NoticeMapper.queryNotice -==>  Preparing: SELECT ID AS id, CONTENT AS content, LINK_URL AS linkUrl, IS_INDEX_SHOW AS isIndexShow FROM T_P_NOTICE WHERE ISVALID = 1 ORDER BY IS_INDEX_SHOW DESC LIMIT 5 
+2018-05-20 07:46:54.656 [http-nio-8003-exec-1] DEBUG c.i.q.m.NoticeMapper.queryNotice -==> Parameters: 
+2018-05-20 07:46:54.709 [http-nio-8003-exec-1] DEBUG c.i.q.m.NoticeMapper.queryNotice -<==      Total: 5
+2018-05-20 07:46:55.186 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDirectSupermarket -==>  Preparing: SELECT DS.ID As directSupermarketId, SS.ID AS shopId, SS.SHOP_NAME AS shopName, SS.SHOP_LOGO AS shopLogo FROM T_P_DIRECT_SUPERMARKET DS LEFT JOIN T_SYS_SHOP SS ON DS.SHOP_ID = SS.ID WHERE SS.ISVALID = 1 AND DS.ISVALID = 1 AND DS.CITY=? ORDER BY DS.CTIME LIMIT 5 
+2018-05-20 07:46:55.189 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDirectSupermarket -==> Parameters: 哈尔滨市(String)
+2018-05-20 07:46:55.243 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDirectSupermarket -<==      Total: 5
+2018-05-20 07:46:55.302 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDiscountArea -==>  Preparing: SELECT ID AS id, SHOW_PIC AS showPic, NAME AS name, LINK_URL AS linkUrl, PARENT_ID AS parentId, SORT_NUM AS sortNum FROM T_P_DISCOUNT_AREA WHERE ISVALID=1 ORDER BY SORT_NUM 
+2018-05-20 07:46:55.304 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDiscountArea -==> Parameters: 
+2018-05-20 07:46:55.355 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDiscountArea -<==      Total: 16
+2018-05-20 07:47:20.930 [http-nio-8003-exec-9] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==>  Preparing: SELECT S.ID AS shopId, (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) AS distance, S.SHOP_NAME AS shopName, S.START_PRICE AS startPrice, S.SHOP_LOGO as shopLogo, (SELECT ROUND((AVG(E.DELIVERY_FRACTION)+AVG(E.DESC_FRACTION)+AVG(E.QUALITY_FRACTION))/3,1) FROM T_P_EVALUATION E LEFT JOIN T_P_ORDER O ON O.ID=E.ORDER_ID WHERE S.USER_ID=O.MERCHANT_ID AND E.ISVALID = 1 AND O.ISVALID = 1 ) AS shopFraction FROM T_SYS_SHOP S WHERE S.ISVALID = 1 AND (SQRT( (S.X - ?) * (S.X - ?) + (S.Y - ?) * (S.Y - ?)) / 1000 ) <=? AND S.SHOP_ADDRESS LIKE CONCAT(?,'%') LIMIT ?,? 
+2018-05-20 07:47:20.938 [http-nio-8003-exec-9] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String), 0(Integer), 50(Integer)
+2018-05-20 07:47:20.994 [http-nio-8003-exec-9] DEBUG c.i.q.m.ShopMapper.queryShopByDto -<==      Total: 6
+2018-05-20 07:47:21.004 [http-nio-8003-exec-9] DEBUG c.i.q.m.ShopMapper.countShopByDto -==>  Preparing: SELECT COUNT(*) FROM T_SYS_SHOP WHERE ISVALID = 1 AND (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) <=? AND SHOP_ADDRESS LIKE CONCAT(?,'%') 
+2018-05-20 07:47:21.008 [http-nio-8003-exec-9] DEBUG c.i.q.m.ShopMapper.countShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String)
+2018-05-20 07:47:21.021 [http-nio-8003-exec-9] DEBUG c.i.q.m.ShopMapper.countShopByDto -<==      Total: 1
+2018-05-20 07:47:23.775 [http-nio-8003-exec-2] DEBUG c.i.qugou.mapper.ShopMapper.getShop -==>  Preparing: SELECT ID AS ID, SHOP_ADDRESS AS shopAddress, SHOP_LOGO AS shopLogo, SHOP_NAME AS shopName, USER_ID AS userId, SHOP_PHONE AS shopPhone, START_PRICE AS startPrice FROM T_SYS_SHOP WHERE ISVALID = 1 AND ID=? 
+2018-05-20 07:47:23.779 [http-nio-8003-exec-2] DEBUG c.i.qugou.mapper.ShopMapper.getShop -==> Parameters: c0cde1e5e0ad4b338776ab75e088c10e(String)
+2018-05-20 07:47:23.784 [http-nio-8003-exec-2] DEBUG c.i.qugou.mapper.ShopMapper.getShop -<==      Total: 1
+2018-05-20 07:47:23.787 [http-nio-8003-exec-2] DEBUG c.i.q.m.P.queryProductCategroy -==>  Preparing: SELECT ID AS id, NAME AS name, PARENT_ID AS parentId FROM T_P_SYS_PRODUCT_CATEGORY WHERE ISVALID = 1 AND TYPE=? AND CREATER=? 
+2018-05-20 07:47:23.791 [http-nio-8003-exec-2] DEBUG c.i.q.m.P.queryProductCategroy -==> Parameters: 2(Integer), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 07:47:23.801 [http-nio-8003-exec-2] DEBUG c.i.q.m.P.queryProductCategroy -<==      Total: 2
+2018-05-20 07:47:25.999 [http-nio-8003-exec-2] INFO  c.n.config.ChainedDynamicProperty -Flipping property: search-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:47:26.142 [http-nio-8003-exec-2] INFO  c.n.u.c.ShutdownEnabledTimer -Shutdown hook installed for: NFLoadBalancer-PingTimer-search-service
+2018-05-20 07:47:26.295 [http-nio-8003-exec-2] INFO  c.n.loadbalancer.BaseLoadBalancer -Client: search-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=search-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2018-05-20 07:47:26.347 [http-nio-8003-exec-2] INFO  c.n.l.DynamicServerListLoadBalancer -Using serverListUpdater PollingServerListUpdater
+2018-05-20 07:47:26.483 [http-nio-8003-exec-2] INFO  c.n.config.ChainedDynamicProperty -Flipping property: search-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:47:26.494 [http-nio-8003-exec-2] INFO  c.n.l.DynamicServerListLoadBalancer -DynamicServerListLoadBalancer for client search-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=search-service,current list of Servers=[PC-20160510GKPU:8006],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:PC-20160510GKPU:8006;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@6150073
+2018-05-20 07:47:27.367 [PollingServerListUpdater-0] INFO  c.n.config.ChainedDynamicProperty -Flipping property: search-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:47:32.768 [http-nio-8003-exec-1] ERROR c.ityb.qugou.base.utils.AddressUtils -ipToAddress... ip错误
+2018-05-20 07:47:39.684 [http-nio-8003-exec-6] DEBUG c.i.qugou.mapper.ShopMapper.getShop -==>  Preparing: SELECT ID AS ID, SHOP_ADDRESS AS shopAddress, SHOP_LOGO AS shopLogo, SHOP_NAME AS shopName, USER_ID AS userId, SHOP_PHONE AS shopPhone, START_PRICE AS startPrice FROM T_SYS_SHOP WHERE ISVALID = 1 AND ID=? 
+2018-05-20 07:47:39.686 [http-nio-8003-exec-6] DEBUG c.i.qugou.mapper.ShopMapper.getShop -==> Parameters: c0cde1e5e0ad4b338776ab75e088c10e(String)
+2018-05-20 07:47:39.690 [http-nio-8003-exec-6] DEBUG c.i.qugou.mapper.ShopMapper.getShop -<==      Total: 1
+2018-05-20 07:47:39.693 [http-nio-8003-exec-6] DEBUG c.i.q.m.P.queryProductCategroy -==>  Preparing: SELECT ID AS id, NAME AS name, PARENT_ID AS parentId FROM T_P_SYS_PRODUCT_CATEGORY WHERE ISVALID = 1 AND TYPE=? AND CREATER=? 
+2018-05-20 07:47:39.697 [http-nio-8003-exec-6] DEBUG c.i.q.m.P.queryProductCategroy -==> Parameters: 2(Integer), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 07:47:39.704 [http-nio-8003-exec-6] DEBUG c.i.q.m.P.queryProductCategroy -<==      Total: 2
+2018-05-20 07:48:01.379 [http-nio-8003-exec-3] INFO  c.n.config.ChainedDynamicProperty -Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:48:01.397 [http-nio-8003-exec-3] INFO  c.n.u.c.ShutdownEnabledTimer -Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2018-05-20 07:48:01.401 [http-nio-8003-exec-3] INFO  c.n.loadbalancer.BaseLoadBalancer -Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2018-05-20 07:48:01.408 [http-nio-8003-exec-3] INFO  c.n.l.DynamicServerListLoadBalancer -Using serverListUpdater PollingServerListUpdater
+2018-05-20 07:48:01.416 [http-nio-8003-exec-3] INFO  c.n.config.ChainedDynamicProperty -Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:48:01.468 [http-nio-8003-exec-3] INFO  c.n.l.DynamicServerListLoadBalancer -DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[PC-20160510GKPU:8007],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:PC-20160510GKPU:8007;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@39cb706e
+2018-05-20 07:48:02.412 [PollingServerListUpdater-0] INFO  c.n.config.ChainedDynamicProperty -Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:48:17.812 [http-nio-8003-exec-9] INFO  c.n.config.ChainedDynamicProperty -Flipping property: cart-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:48:17.823 [http-nio-8003-exec-9] INFO  c.n.u.c.ShutdownEnabledTimer -Shutdown hook installed for: NFLoadBalancer-PingTimer-cart-service
+2018-05-20 07:48:17.829 [http-nio-8003-exec-9] INFO  c.n.loadbalancer.BaseLoadBalancer -Client: cart-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=cart-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2018-05-20 07:48:17.839 [http-nio-8003-exec-9] INFO  c.n.l.DynamicServerListLoadBalancer -Using serverListUpdater PollingServerListUpdater
+2018-05-20 07:48:17.846 [http-nio-8003-exec-9] INFO  c.n.config.ChainedDynamicProperty -Flipping property: cart-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:48:17.850 [http-nio-8003-exec-9] INFO  c.n.l.DynamicServerListLoadBalancer -DynamicServerListLoadBalancer for client cart-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=cart-service,current list of Servers=[PC-20160510GKPU:8008],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:PC-20160510GKPU:8008;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@5d8283cd
+2018-05-20 07:48:18.849 [PollingServerListUpdater-1] INFO  c.n.config.ChainedDynamicProperty -Flipping property: cart-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:48:26.405 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.queryProductCollectionByDto -==>  Preparing: SELECT C.ID AS id, C.ctime AS collectionTime, PS.WEIGHT AS weight, PS.PRICE AS price, PS.NAME AS productSpecificationName, PS. ID AS productSpecificationId, PD.TITLE AS productTitle, PD.SELL_POINT AS sellPoint, PD.PRODUCT_ID AS productId, PD.PIC_URL AS productPic FROM T_P_COLLECTION C LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON C.COLLECTION_ID = PS.ID AND C.TYPE = 1 LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID WHERE C.ISVALID=1 AND PS.ISVALID=1 AND PD.ISVALID=1 AND C.CREATER=? 
+2018-05-20 07:48:26.408 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.queryProductCollectionByDto -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 07:48:26.438 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.queryProductCollectionByDto -<==      Total: 1
+2018-05-20 07:48:28.695 [http-nio-8003-exec-1] DEBUG c.i.q.m.B.queryBrowseHistoryByDto -==>  Preparing: SELECT BH.BROWSE_COUNT AS browseCount, PD.PIC_URL AS productPic, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, BH.CTIME AS browseTime, BH.SHOP_CATEGORY_NAME AS shopCategoryName, PD.PRODUCT_ID AS productId FROM T_P_BROWSE_HISTORY BH LEFT JOIN T_P_PRODUCT_DETAIL PD ON BH.PRODUCT_ID = PD.PRODUCT_ID WHERE BH.ISVALID = 1 AND PD.ISVALID = 1 AND BH.CREATER =? ORDER BY BH.CTIME DESC 
+2018-05-20 07:48:28.697 [http-nio-8003-exec-1] DEBUG c.i.q.m.B.queryBrowseHistoryByDto -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 07:48:28.730 [http-nio-8003-exec-1] DEBUG c.i.q.m.B.queryBrowseHistoryByDto -<==      Total: 13
+2018-05-20 07:48:28.733 [http-nio-8003-exec-1] DEBUG c.i.q.m.B.countBrowseHistoryByDto -==>  Preparing: SELECT COUNT(*) FROM T_P_BROWSE_HISTORY BH LEFT JOIN T_P_PRODUCT_DETAIL PD ON BH.PRODUCT_ID = PD.PRODUCT_ID WHERE BH.ISVALID = 1 AND PD.ISVALID = 1 AND BH.CREATER =? 
+2018-05-20 07:48:28.735 [http-nio-8003-exec-1] DEBUG c.i.q.m.B.countBrowseHistoryByDto -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 07:48:28.739 [http-nio-8003-exec-1] DEBUG c.i.q.m.B.countBrowseHistoryByDto -<==      Total: 1
+2018-05-20 07:48:44.332 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 07:48:44.336 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 07:48:44.385 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 07:48:49.953 [http-nio-8003-exec-7] INFO  c.n.config.ChainedDynamicProperty -Flipping property: evaluation-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:48:49.962 [http-nio-8003-exec-7] INFO  c.n.u.c.ShutdownEnabledTimer -Shutdown hook installed for: NFLoadBalancer-PingTimer-evaluation-service
+2018-05-20 07:48:49.965 [http-nio-8003-exec-7] INFO  c.n.loadbalancer.BaseLoadBalancer -Client: evaluation-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=evaluation-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2018-05-20 07:48:49.971 [http-nio-8003-exec-7] INFO  c.n.l.DynamicServerListLoadBalancer -Using serverListUpdater PollingServerListUpdater
+2018-05-20 07:48:49.979 [http-nio-8003-exec-7] INFO  c.n.config.ChainedDynamicProperty -Flipping property: evaluation-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:48:49.984 [http-nio-8003-exec-7] INFO  c.n.l.DynamicServerListLoadBalancer -DynamicServerListLoadBalancer for client evaluation-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=evaluation-service,current list of Servers=[PC-20160510GKPU:8009],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:PC-20160510GKPU:8009;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@1b87434a
+2018-05-20 07:48:50.980 [PollingServerListUpdater-0] INFO  c.n.config.ChainedDynamicProperty -Flipping property: evaluation-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:49:13.015 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:49:50.148 [http-nio-8003-exec-7] INFO  c.n.config.ChainedDynamicProperty -Flipping property: product-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:49:50.158 [http-nio-8003-exec-7] INFO  c.n.u.c.ShutdownEnabledTimer -Shutdown hook installed for: NFLoadBalancer-PingTimer-product-service
+2018-05-20 07:49:50.165 [http-nio-8003-exec-7] INFO  c.n.loadbalancer.BaseLoadBalancer -Client: product-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=product-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2018-05-20 07:49:50.170 [http-nio-8003-exec-7] INFO  c.n.l.DynamicServerListLoadBalancer -Using serverListUpdater PollingServerListUpdater
+2018-05-20 07:49:50.177 [http-nio-8003-exec-7] INFO  c.n.config.ChainedDynamicProperty -Flipping property: product-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:49:50.183 [http-nio-8003-exec-7] INFO  c.n.l.DynamicServerListLoadBalancer -DynamicServerListLoadBalancer for client product-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=product-service,current list of Servers=[PC-20160510GKPU:8004],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:PC-20160510GKPU:8004;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@3d6d6044
+2018-05-20 07:49:52.130 [PollingServerListUpdater-0] INFO  c.n.config.ChainedDynamicProperty -Flipping property: product-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2018-05-20 07:49:59.409 [http-nio-8003-exec-6] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 07:49:59.411 [http-nio-8003-exec-6] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 07:49:59.421 [http-nio-8003-exec-6] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 07:50:19.980 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==>  Preparing: SELECT CUSTOMER_NAME AS customerName, CUSTOMER_PHONE AS customerPhone, TYPE AS type, ADDRESS AS address, PROVINCE AS province, CITY AS city, TOWN AS town, AREA AS area FROM T_P_DELIVERY_ADDRESS WHERE ISVALID = 1 AND CREATER=? AND (CITY=? OR PROVINCE=?) 
+2018-05-20 07:50:19.982 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String), 哈尔滨市(String), 哈尔滨市(String)
+2018-05-20 07:50:20.024 [http-nio-8003-exec-1] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -<==      Total: 1
+2018-05-20 07:51:06.204 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 07:51:06.207 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 07:51:06.210 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 07:53:29.717 [http-nio-8003-exec-3] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==>  Preparing: SELECT CUSTOMER_NAME AS customerName, CUSTOMER_PHONE AS customerPhone, TYPE AS type, ADDRESS AS address, PROVINCE AS province, CITY AS city, TOWN AS town, AREA AS area FROM T_P_DELIVERY_ADDRESS WHERE ISVALID = 1 AND CREATER=? AND (CITY=? OR PROVINCE=?) 
+2018-05-20 07:53:29.727 [http-nio-8003-exec-3] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String), 哈尔滨市(String), 哈尔滨市(String)
+2018-05-20 07:53:29.734 [http-nio-8003-exec-3] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -<==      Total: 1
+2018-05-20 07:53:38.467 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 07:53:38.470 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 07:53:38.474 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 07:54:13.033 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:59:13.048 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:02:55.353 [http-nio-8003-exec-6] ERROR c.i.qugou.base.aop.RedisCacheAspect -org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+2018-05-20 08:02:59.391 [http-nio-8003-exec-8] ERROR c.i.qugou.base.aop.RedisCacheAspect -org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+2018-05-20 08:03:08.338 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:03:08.341 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:03:08.345 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:03:11.199 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:03:11.201 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:03:11.206 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:03:13.358 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:03:13.360 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:03:13.366 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:03:54.433 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:03:54.436 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:03:54.438 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:03:56.922 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:03:56.936 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:03:56.946 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:04:01.686 [http-nio-8003-exec-5] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==>  Preparing: SELECT S.ID AS shopId, (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) AS distance, S.SHOP_NAME AS shopName, S.START_PRICE AS startPrice, S.SHOP_LOGO as shopLogo, (SELECT ROUND((AVG(E.DELIVERY_FRACTION)+AVG(E.DESC_FRACTION)+AVG(E.QUALITY_FRACTION))/3,1) FROM T_P_EVALUATION E LEFT JOIN T_P_ORDER O ON O.ID=E.ORDER_ID WHERE S.USER_ID=O.MERCHANT_ID AND E.ISVALID = 1 AND O.ISVALID = 1 ) AS shopFraction FROM T_SYS_SHOP S WHERE S.ISVALID = 1 AND (SQRT( (S.X - ?) * (S.X - ?) + (S.Y - ?) * (S.Y - ?)) / 1000 ) <=? AND S.SHOP_ADDRESS LIKE CONCAT(?,'%') LIMIT ?,? 
+2018-05-20 08:04:01.693 [http-nio-8003-exec-5] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String), 0(Integer), 50(Integer)
+2018-05-20 08:04:01.711 [http-nio-8003-exec-5] DEBUG c.i.q.m.ShopMapper.queryShopByDto -<==      Total: 6
+2018-05-20 08:04:01.713 [http-nio-8003-exec-5] DEBUG c.i.q.m.ShopMapper.countShopByDto -==>  Preparing: SELECT COUNT(*) FROM T_SYS_SHOP WHERE ISVALID = 1 AND (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) <=? AND SHOP_ADDRESS LIKE CONCAT(?,'%') 
+2018-05-20 08:04:01.730 [http-nio-8003-exec-5] DEBUG c.i.q.m.ShopMapper.countShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String)
+2018-05-20 08:04:01.732 [http-nio-8003-exec-5] DEBUG c.i.q.m.ShopMapper.countShopByDto -<==      Total: 1
+2018-05-20 08:04:13.063 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:09:13.076 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:14:13.091 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:19:13.105 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:24:13.119 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:29:13.135 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:32:42.063 [http-nio-8003-exec-10] DEBUG c.i.q.m.S.querySearchKeyword -==>  Preparing: SELECT ID AS ID, NAME AS NAME FROM T_P_SEARCH_KEYWORD WHERE ISVALID = 1 ORDER BY SORT_NUM ASC 
+2018-05-20 08:32:42.065 [http-nio-8003-exec-10] DEBUG c.i.q.m.S.querySearchKeyword -==> Parameters: 
+2018-05-20 08:32:42.093 [http-nio-8003-exec-10] DEBUG c.i.q.m.S.querySearchKeyword -<==      Total: 10
+2018-05-20 08:32:43.345 [http-nio-8003-exec-10] DEBUG c.i.q.m.S.querySlideshow -==>  Preparing: SELECT ID AS id, PIC_URL AS picUrl, LINK_URL AS linkUrl FROM T_P_SLIDESHOW WHERE ISVALID = 1 ORDER BY SORT_NUM ASC LIMIT 6 
+2018-05-20 08:32:43.347 [http-nio-8003-exec-10] DEBUG c.i.q.m.S.querySlideshow -==> Parameters: 
+2018-05-20 08:32:43.352 [http-nio-8003-exec-10] DEBUG c.i.q.m.S.querySlideshow -<==      Total: 6
+2018-05-20 08:32:43.366 [http-nio-8003-exec-10] DEBUG c.i.q.m.P.queryProductCategroy -==>  Preparing: SELECT ID AS id, NAME AS name, PARENT_ID AS parentId FROM T_P_SYS_PRODUCT_CATEGORY WHERE ISVALID = 1 AND TYPE=? 
+2018-05-20 08:32:43.367 [http-nio-8003-exec-10] DEBUG c.i.q.m.P.queryProductCategroy -==> Parameters: 1(Integer)
+2018-05-20 08:32:43.416 [http-nio-8003-exec-10] DEBUG c.i.q.m.P.queryProductCategroy -<==      Total: 157
+2018-05-20 08:32:43.462 [http-nio-8003-exec-10] DEBUG c.i.q.m.NoticeMapper.queryNotice -==>  Preparing: SELECT ID AS id, CONTENT AS content, LINK_URL AS linkUrl, IS_INDEX_SHOW AS isIndexShow FROM T_P_NOTICE WHERE ISVALID = 1 ORDER BY IS_INDEX_SHOW DESC LIMIT 5 
+2018-05-20 08:32:43.463 [http-nio-8003-exec-10] DEBUG c.i.q.m.NoticeMapper.queryNotice -==> Parameters: 
+2018-05-20 08:32:43.467 [http-nio-8003-exec-10] DEBUG c.i.q.m.NoticeMapper.queryNotice -<==      Total: 5
+2018-05-20 08:32:43.477 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:32:43.479 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:32:43.481 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:32:43.489 [http-nio-8003-exec-10] DEBUG c.i.q.m.D.queryDirectSupermarket -==>  Preparing: SELECT DS.ID As directSupermarketId, SS.ID AS shopId, SS.SHOP_NAME AS shopName, SS.SHOP_LOGO AS shopLogo FROM T_P_DIRECT_SUPERMARKET DS LEFT JOIN T_SYS_SHOP SS ON DS.SHOP_ID = SS.ID WHERE SS.ISVALID = 1 AND DS.ISVALID = 1 AND DS.CITY=? ORDER BY DS.CTIME LIMIT 5 
+2018-05-20 08:32:43.490 [http-nio-8003-exec-10] DEBUG c.i.q.m.D.queryDirectSupermarket -==> Parameters: 哈尔滨市(String)
+2018-05-20 08:32:43.496 [http-nio-8003-exec-10] DEBUG c.i.q.m.D.queryDirectSupermarket -<==      Total: 5
+2018-05-20 08:32:43.503 [http-nio-8003-exec-10] DEBUG c.i.q.m.D.queryDiscountArea -==>  Preparing: SELECT ID AS id, SHOW_PIC AS showPic, NAME AS name, LINK_URL AS linkUrl, PARENT_ID AS parentId, SORT_NUM AS sortNum FROM T_P_DISCOUNT_AREA WHERE ISVALID=1 ORDER BY SORT_NUM 
+2018-05-20 08:32:43.504 [http-nio-8003-exec-10] DEBUG c.i.q.m.D.queryDiscountArea -==> Parameters: 
+2018-05-20 08:32:43.516 [http-nio-8003-exec-10] DEBUG c.i.q.m.D.queryDiscountArea -<==      Total: 16
+2018-05-20 08:33:19.852 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:33:19.853 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:33:19.856 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:33:20.041 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:33:20.043 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:33:20.048 [http-nio-8003-exec-1] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:33:26.495 [http-nio-8003-exec-7] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:33:26.497 [http-nio-8003-exec-7] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:33:26.499 [http-nio-8003-exec-7] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:33:29.289 [http-nio-8003-exec-6] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -==>  Preparing: SELECT SHOP_CATEGORY_NAME AS shopCategoryName, COUNT(BROWSE_COUNT) AS browseCount, CREATER AS creater FROM T_P_BROWSE_HISTORY WHERE ISVALID = 1 AND CREATER=? GROUP BY SHOP_CATEGORY_NAME, CREATER ORDER BY CTIME DESC, COUNT(BROWSE_COUNT) DESC LIMIT 5 
+2018-05-20 08:33:29.291 [http-nio-8003-exec-6] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:33:29.297 [http-nio-8003-exec-6] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -<==      Total: 1
+2018-05-20 08:33:39.486 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:33:39.489 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:33:39.493 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:34:13.149 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:35:54.265 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:35:54.266 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:35:54.274 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:35:56.388 [http-nio-8003-exec-1] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==>  Preparing: SELECT S.ID AS shopId, (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) AS distance, S.SHOP_NAME AS shopName, S.START_PRICE AS startPrice, S.SHOP_LOGO as shopLogo, (SELECT ROUND((AVG(E.DELIVERY_FRACTION)+AVG(E.DESC_FRACTION)+AVG(E.QUALITY_FRACTION))/3,1) FROM T_P_EVALUATION E LEFT JOIN T_P_ORDER O ON O.ID=E.ORDER_ID WHERE S.USER_ID=O.MERCHANT_ID AND E.ISVALID = 1 AND O.ISVALID = 1 ) AS shopFraction FROM T_SYS_SHOP S WHERE S.ISVALID = 1 AND (SQRT( (S.X - ?) * (S.X - ?) + (S.Y - ?) * (S.Y - ?)) / 1000 ) <=? AND S.SHOP_ADDRESS LIKE CONCAT(?,'%') LIMIT ?,? 
+2018-05-20 08:35:56.391 [http-nio-8003-exec-1] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String), 0(Integer), 50(Integer)
+2018-05-20 08:35:56.408 [http-nio-8003-exec-1] DEBUG c.i.q.m.ShopMapper.queryShopByDto -<==      Total: 6
+2018-05-20 08:35:56.415 [http-nio-8003-exec-1] DEBUG c.i.q.m.ShopMapper.countShopByDto -==>  Preparing: SELECT COUNT(*) FROM T_SYS_SHOP WHERE ISVALID = 1 AND (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) <=? AND SHOP_ADDRESS LIKE CONCAT(?,'%') 
+2018-05-20 08:35:56.417 [http-nio-8003-exec-1] DEBUG c.i.q.m.ShopMapper.countShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String)
+2018-05-20 08:35:56.421 [http-nio-8003-exec-1] DEBUG c.i.q.m.ShopMapper.countShopByDto -<==      Total: 1
+2018-05-20 08:36:00.873 [http-nio-8003-exec-5] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:36:00.874 [http-nio-8003-exec-5] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:36:00.887 [http-nio-8003-exec-5] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:37:48.153 [http-nio-8003-exec-6] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -==>  Preparing: SELECT SHOP_CATEGORY_NAME AS shopCategoryName, COUNT(BROWSE_COUNT) AS browseCount, CREATER AS creater FROM T_P_BROWSE_HISTORY WHERE ISVALID = 1 AND CREATER=? GROUP BY SHOP_CATEGORY_NAME, CREATER ORDER BY CTIME DESC, COUNT(BROWSE_COUNT) DESC LIMIT 5 
+2018-05-20 08:37:48.154 [http-nio-8003-exec-6] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:37:48.156 [http-nio-8003-exec-6] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -<==      Total: 1
+2018-05-20 08:37:50.996 [http-nio-8003-exec-2] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:37:50.998 [http-nio-8003-exec-2] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:37:51.005 [http-nio-8003-exec-2] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:38:05.819 [http-nio-8003-exec-8] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==>  Preparing: SELECT S.ID AS shopId, (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) AS distance, S.SHOP_NAME AS shopName, S.START_PRICE AS startPrice, S.SHOP_LOGO as shopLogo, (SELECT ROUND((AVG(E.DELIVERY_FRACTION)+AVG(E.DESC_FRACTION)+AVG(E.QUALITY_FRACTION))/3,1) FROM T_P_EVALUATION E LEFT JOIN T_P_ORDER O ON O.ID=E.ORDER_ID WHERE S.USER_ID=O.MERCHANT_ID AND E.ISVALID = 1 AND O.ISVALID = 1 ) AS shopFraction FROM T_SYS_SHOP S WHERE S.ISVALID = 1 AND (SQRT( (S.X - ?) * (S.X - ?) + (S.Y - ?) * (S.Y - ?)) / 1000 ) <=? AND S.SHOP_ADDRESS LIKE CONCAT(?,'%') LIMIT ?,? 
+2018-05-20 08:38:05.823 [http-nio-8003-exec-8] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String), 0(Integer), 50(Integer)
+2018-05-20 08:38:05.829 [http-nio-8003-exec-8] DEBUG c.i.q.m.ShopMapper.queryShopByDto -<==      Total: 6
+2018-05-20 08:38:05.834 [http-nio-8003-exec-8] DEBUG c.i.q.m.ShopMapper.countShopByDto -==>  Preparing: SELECT COUNT(*) FROM T_SYS_SHOP WHERE ISVALID = 1 AND (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) <=? AND SHOP_ADDRESS LIKE CONCAT(?,'%') 
+2018-05-20 08:38:05.837 [http-nio-8003-exec-8] DEBUG c.i.q.m.ShopMapper.countShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String)
+2018-05-20 08:38:05.839 [http-nio-8003-exec-8] DEBUG c.i.q.m.ShopMapper.countShopByDto -<==      Total: 1
+2018-05-20 08:38:19.463 [http-nio-8003-exec-10] DEBUG c.i.qugou.mapper.ShopMapper.getShop -==>  Preparing: SELECT ID AS ID, SHOP_ADDRESS AS shopAddress, SHOP_LOGO AS shopLogo, SHOP_NAME AS shopName, USER_ID AS userId, SHOP_PHONE AS shopPhone, START_PRICE AS startPrice FROM T_SYS_SHOP WHERE ISVALID = 1 AND ID=? 
+2018-05-20 08:38:19.466 [http-nio-8003-exec-10] DEBUG c.i.qugou.mapper.ShopMapper.getShop -==> Parameters: c0cde1e5e0ad4b338776ab75e088c10e(String)
+2018-05-20 08:38:19.469 [http-nio-8003-exec-10] DEBUG c.i.qugou.mapper.ShopMapper.getShop -<==      Total: 1
+2018-05-20 08:38:19.473 [http-nio-8003-exec-10] DEBUG c.i.q.m.P.queryProductCategroy -==>  Preparing: SELECT ID AS id, NAME AS name, PARENT_ID AS parentId FROM T_P_SYS_PRODUCT_CATEGORY WHERE ISVALID = 1 AND TYPE=? AND CREATER=? 
+2018-05-20 08:38:19.475 [http-nio-8003-exec-10] DEBUG c.i.q.m.P.queryProductCategroy -==> Parameters: 2(Integer), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 08:38:19.478 [http-nio-8003-exec-10] DEBUG c.i.q.m.P.queryProductCategroy -<==      Total: 2
+2018-05-20 08:38:26.035 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:38:26.036 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:38:26.038 [http-nio-8003-exec-3] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:39:13.162 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:39:42.313 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:39:42.314 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:39:42.316 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:41:03.529 [http-nio-8003-exec-5] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:41:03.531 [http-nio-8003-exec-5] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:41:03.534 [http-nio-8003-exec-5] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:41:18.569 [http-nio-8003-exec-7] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -==>  Preparing: SELECT SHOP_CATEGORY_NAME AS shopCategoryName, COUNT(BROWSE_COUNT) AS browseCount, CREATER AS creater FROM T_P_BROWSE_HISTORY WHERE ISVALID = 1 AND CREATER=? GROUP BY SHOP_CATEGORY_NAME, CREATER ORDER BY CTIME DESC, COUNT(BROWSE_COUNT) DESC LIMIT 5 
+2018-05-20 08:41:18.570 [http-nio-8003-exec-7] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:41:18.576 [http-nio-8003-exec-7] DEBUG c.i.q.m.B.queryBrowseHistoryByEntity -<==      Total: 1
+2018-05-20 08:41:21.381 [http-nio-8003-exec-6] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:41:21.384 [http-nio-8003-exec-6] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:41:21.386 [http-nio-8003-exec-6] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:41:23.098 [http-nio-8003-exec-2] DEBUG c.i.q.m.B.queryBrowseHistoryByDto -==>  Preparing: SELECT BH.BROWSE_COUNT AS browseCount, PD.PIC_URL AS productPic, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, BH.CTIME AS browseTime, BH.SHOP_CATEGORY_NAME AS shopCategoryName, PD.PRODUCT_ID AS productId FROM T_P_BROWSE_HISTORY BH LEFT JOIN T_P_PRODUCT_DETAIL PD ON BH.PRODUCT_ID = PD.PRODUCT_ID WHERE BH.ISVALID = 1 AND PD.ISVALID = 1 AND BH.CREATER =? ORDER BY BH.CTIME DESC 
+2018-05-20 08:41:23.100 [http-nio-8003-exec-2] DEBUG c.i.q.m.B.queryBrowseHistoryByDto -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:41:23.119 [http-nio-8003-exec-2] DEBUG c.i.q.m.B.queryBrowseHistoryByDto -<==      Total: 13
+2018-05-20 08:41:23.122 [http-nio-8003-exec-2] DEBUG c.i.q.m.B.countBrowseHistoryByDto -==>  Preparing: SELECT COUNT(*) FROM T_P_BROWSE_HISTORY BH LEFT JOIN T_P_PRODUCT_DETAIL PD ON BH.PRODUCT_ID = PD.PRODUCT_ID WHERE BH.ISVALID = 1 AND PD.ISVALID = 1 AND BH.CREATER =? 
+2018-05-20 08:41:23.124 [http-nio-8003-exec-2] DEBUG c.i.q.m.B.countBrowseHistoryByDto -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:41:23.126 [http-nio-8003-exec-2] DEBUG c.i.q.m.B.countBrowseHistoryByDto -<==      Total: 1
+2018-05-20 08:41:31.226 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:41:31.230 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:41:31.232 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:41:37.721 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:41:37.722 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:41:37.724 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:42:06.737 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:42:06.738 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:42:06.740 [http-nio-8003-exec-4] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:44:13.179 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:47:48.018 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:47:48.021 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:47:48.023 [http-nio-8003-exec-8] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:47:50.513 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:47:50.515 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:47:50.533 [http-nio-8003-exec-10] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:49:13.192 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:54:13.207 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:57:42.152 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -==>  Preparing: SELECT REAL_NAME AS realName, PHONE AS phone, EMAIL AS eamil, USER_HEAD AS userHead FROM T_SYS_CUSTOMER WHERE ISVALID = 1 AND USER_ID=? 
+2018-05-20 08:57:42.154 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String)
+2018-05-20 08:57:42.157 [http-nio-8003-exec-9] DEBUG c.i.q.m.C.getCustomerByEntity -<==      Total: 1
+2018-05-20 08:58:16.752 [http-nio-8003-exec-4] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==>  Preparing: SELECT S.ID AS shopId, (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) AS distance, S.SHOP_NAME AS shopName, S.START_PRICE AS startPrice, S.SHOP_LOGO as shopLogo, (SELECT ROUND((AVG(E.DELIVERY_FRACTION)+AVG(E.DESC_FRACTION)+AVG(E.QUALITY_FRACTION))/3,1) FROM T_P_EVALUATION E LEFT JOIN T_P_ORDER O ON O.ID=E.ORDER_ID WHERE S.USER_ID=O.MERCHANT_ID AND E.ISVALID = 1 AND O.ISVALID = 1 ) AS shopFraction FROM T_SYS_SHOP S WHERE S.ISVALID = 1 AND (SQRT( (S.X - ?) * (S.X - ?) + (S.Y - ?) * (S.Y - ?)) / 1000 ) <=? AND S.SHOP_ADDRESS LIKE CONCAT(?,'%') LIMIT ?,? 
+2018-05-20 08:58:16.761 [http-nio-8003-exec-4] DEBUG c.i.q.m.ShopMapper.queryShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String), 0(Integer), 50(Integer)
+2018-05-20 08:58:16.767 [http-nio-8003-exec-4] DEBUG c.i.q.m.ShopMapper.queryShopByDto -<==      Total: 6
+2018-05-20 08:58:16.776 [http-nio-8003-exec-4] DEBUG c.i.q.m.ShopMapper.countShopByDto -==>  Preparing: SELECT COUNT(*) FROM T_SYS_SHOP WHERE ISVALID = 1 AND (SQRT( (X - ?) * (X - ?) + (Y - ?) * (Y - ?)) / 1000 ) <=? AND SHOP_ADDRESS LIKE CONCAT(?,'%') 
+2018-05-20 08:58:16.787 [http-nio-8003-exec-4] DEBUG c.i.q.m.ShopMapper.countShopByDto -==> Parameters: 1.409962596E7(Double), 1.409962596E7(Double), 5713172.75(Double), 5713172.75(Double), 20.0(Double), 黑龙江省哈尔滨市(String)
+2018-05-20 08:58:16.791 [http-nio-8003-exec-4] DEBUG c.i.q.m.ShopMapper.countShopByDto -<==      Total: 1
+2018-05-20 08:58:23.655 [http-nio-8003-exec-1] DEBUG c.i.qugou.mapper.ShopMapper.getShop -==>  Preparing: SELECT ID AS ID, SHOP_ADDRESS AS shopAddress, SHOP_LOGO AS shopLogo, SHOP_NAME AS shopName, USER_ID AS userId, SHOP_PHONE AS shopPhone, START_PRICE AS startPrice FROM T_SYS_SHOP WHERE ISVALID = 1 AND ID=? 
+2018-05-20 08:58:23.657 [http-nio-8003-exec-1] DEBUG c.i.qugou.mapper.ShopMapper.getShop -==> Parameters: c0cde1e5e0ad4b338776ab75e088c10e(String)
+2018-05-20 08:58:23.659 [http-nio-8003-exec-1] DEBUG c.i.qugou.mapper.ShopMapper.getShop -<==      Total: 1
+2018-05-20 08:58:23.662 [http-nio-8003-exec-1] DEBUG c.i.q.m.P.queryProductCategroy -==>  Preparing: SELECT ID AS id, NAME AS name, PARENT_ID AS parentId FROM T_P_SYS_PRODUCT_CATEGORY WHERE ISVALID = 1 AND TYPE=? AND CREATER=? 
+2018-05-20 08:58:23.666 [http-nio-8003-exec-1] DEBUG c.i.q.m.P.queryProductCategroy -==> Parameters: 2(Integer), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 08:58:23.669 [http-nio-8003-exec-1] DEBUG c.i.q.m.P.queryProductCategroy -<==      Total: 2
+2018-05-20 08:58:48.816 [http-nio-8003-exec-2] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==>  Preparing: SELECT CUSTOMER_NAME AS customerName, CUSTOMER_PHONE AS customerPhone, TYPE AS type, ADDRESS AS address, PROVINCE AS province, CITY AS city, TOWN AS town, AREA AS area FROM T_P_DELIVERY_ADDRESS WHERE ISVALID = 1 AND CREATER=? AND (CITY=? OR PROVINCE=?) 
+2018-05-20 08:58:48.820 [http-nio-8003-exec-2] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -==> Parameters: 3df03888997442ad93abbcf38af00c78(String), 哈尔滨市(String), 哈尔滨市(String)
+2018-05-20 08:58:48.823 [http-nio-8003-exec-2] DEBUG c.i.q.m.D.queryDeliveryAddressByEntity -<==      Total: 1
+2018-05-20 08:59:13.220 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:01:06.064 [http-nio-8003-exec-4] DEBUG c.i.q.m.O.getOrderDeliveryInfoByEntity -==>  Preparing: SELECT ORDER_ID AS orderId, DELIVERY_NAME AS deliveryName, DELIVERY_PHONE AS deliveryPhone, DELIVERY_POSITION AS deliveryPosition, DELIVERY_INFO AS deliveryInfo FROM T_P_ORDER_DELIVERY WHERE ISVALID = 1 AND ORDER_ID=? 
+2018-05-20 09:01:06.066 [http-nio-8003-exec-4] DEBUG c.i.q.m.O.getOrderDeliveryInfoByEntity -==> Parameters: c28c8e65b6c74948aeeabf901a0b8299(String)
+2018-05-20 09:01:06.070 [http-nio-8003-exec-4] DEBUG c.i.q.m.O.getOrderDeliveryInfoByEntity -<==      Total: 1
+2018-05-20 09:04:13.262 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:09:13.278 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:14:13.294 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:19:13.308 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:24:13.321 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:29:13.334 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:34:13.347 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:39:13.360 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:44:13.373 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:49:13.388 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:54:13.401 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:59:13.419 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:04:13.432 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:09:13.448 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:14:13.466 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:19:13.481 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:24:13.494 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:29:13.509 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:34:13.522 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:39:13.538 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:44:13.556 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:49:13.571 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:54:13.585 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:59:13.599 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:04:13.615 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:09:13.630 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:14:13.642 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:19:13.656 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:24:13.677 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:29:13.695 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:34:13.708 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:39:13.721 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:44:13.735 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:49:13.750 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:54:13.766 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:59:13.779 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:04:13.792 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:09:13.807 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:14:13.823 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:19:13.836 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:24:13.850 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:29:13.866 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:34:13.881 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:39:13.894 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:44:13.906 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:49:13.920 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:54:13.936 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:59:13.949 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:04:13.962 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:09:13.975 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:14:13.988 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:19:14.003 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:24:14.017 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:29:14.031 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:34:14.044 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:39:14.058 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:44:14.071 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:49:14.084 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:54:14.099 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:59:14.113 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:04:14.128 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:09:14.143 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:14:14.156 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:19:14.170 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:24:14.185 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:29:14.199 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:34:14.212 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:39:14.227 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:44:14.242 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:49:14.255 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:54:14.268 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:59:14.282 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:04:14.295 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:09:14.343 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:14:14.357 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:19:14.370 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:24:14.386 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:29:14.400 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:34:14.414 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:39:14.427 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:44:14.442 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:49:14.455 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:54:14.468 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:59:14.485 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:04:14.500 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:09:14.515 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:14:14.530 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:19:14.543 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:24:14.559 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:29:14.573 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:34:14.587 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:39:14.600 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:44:14.613 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:49:14.626 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:54:14.639 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:59:14.652 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:04:14.666 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:09:14.679 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:14:14.692 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:19:14.709 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:24:14.722 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:29:14.738 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:34:14.754 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:39:14.767 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:44:14.786 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:49:14.799 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:54:14.812 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:59:14.827 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 18:04:14.841 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:12:16.647 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:17:18.365 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:22:18.382 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:27:18.397 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:32:18.418 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:37:18.431 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:42:18.445 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:47:18.463 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:52:18.482 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:57:18.497 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:02:18.510 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:07:18.528 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:12:18.543 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:17:18.563 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:22:18.579 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:27:18.602 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:32:18.615 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:37:18.628 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:42:18.642 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:47:18.655 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration

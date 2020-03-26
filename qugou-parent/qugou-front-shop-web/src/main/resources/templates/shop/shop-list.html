@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-商店列表</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/shop/shop-list.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+<link rel="stylesheet" href="/shop/css/product/jquery-labelauty.css">
+<!-- 单选框美化 -->
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<link rel="stylesheet" type="text/css" href="/shop/css/product/star.css" />
+<!-- 分页插件 -->
+<link rel="stylesheet" href="/shop/css/page/kkpager.css" />
+<!-- 分页插件 -->
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+<script type="text/javascript" src="/shop/js/page/kkpager.min.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<div class="merchant-list-main-box">
+	<input type="hidden" value="${totalRecord!}" id="total_record"/>
+	<#if shopList??&&(shopList?size>0)>
+		<#list shopList as shop>
+			<div class="merchant-show-box">
+				<div class="merchant-logo-box">
+					<a href="/shop/store/detail?id=${shop.shopId!}"><img src="${shop.shopLogo!}" alt="" /></a>
+				</div>
+				<div class="merchant-line-box merchant-name title-font">
+					<a href="/shop/store/detail?id=${shop.shopId!}">${shop.shopName!}</a>
+				</div>
+				<div class="merchant-line-box">
+					<div class="show_number clearfix">
+        				<div class="atar_Show start-show">
+          					<p tip="${shop.shopFraction!}"></p>
+        				</div>
+        				<div class="fs-show">${shop.shopFraction!0}分</div>
+        			</div>
+				</div>
+				<div class="merchant-line-box merchant-start">
+					<span>起步价：￥${shop.startPrice!}</span>
+					<span>配送：30分钟</span>
+				</div> 
+			</div>
+		</#list>
+	<#else>
+		<div class="merchant-line-box">您的周边没有商铺</div>
+	</#if>
+</div>
+<#if shopList??&&(shopList?size>0)>
+	<div class="merchant-list-page-box">
+		<div class="page-box">
+			<div class="page-show-box">
+				<div id="kkpager"></div>
+			</div>
+		</div>
+	</div>
+</#if>
+<div class="foot-box">
+	<#include "/common/footer.html">	
+</div>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/css/number/spinner/jquery.spinner.js"></script>
+<script type="text/javascript" src="/shop/js/product/jquery-labelauty.js"></script>
+<script type="text/javascript" src="/shop/js/shop/shop-list.js"></script>
+</body>
+</html>

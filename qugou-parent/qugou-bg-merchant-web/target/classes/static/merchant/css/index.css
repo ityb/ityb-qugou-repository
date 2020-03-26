@@ -1,0 +1,24 @@
+.index-title{
+	width: 50%;
+	height: 50px;
+	margin-left: 25%;
+	font-size: 25px;
+	font-weight: bold;
+	font-style: normal;
+	text-align: center;
+	line-height: 50px;
+}
+.index-img{
+	width: 50%;
+	height: 300px;
+	margin-left: 25%;
+	float: left;
+}
+.index-img img{
+	width: 100%;
+	height: 100%;
+}
+.index-img-new{
+	height: 500px;
+	margin-left: 20%;
+}

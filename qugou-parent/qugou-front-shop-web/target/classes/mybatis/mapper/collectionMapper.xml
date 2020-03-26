@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.mapper.CollectionMapper">
+	<insert id="insertCollection" parameterType="com.ityb.qugou.po.collection.Collection">
+		INSERT INTO T_P_COLLECTION(ID
+			<if test="collectionId!=null and collectionId!=''">
+				,COLLECTION_ID
+			</if>
+			<if test="type!=null and type!=0">
+				,TYPE
+			</if>
+			<if test="ctime!=null">
+				,CTIME
+			</if>
+			<if test="creater!=null and creater!=''">
+				,CREATER
+			</if>
+			,ISVALID
+		)VALUES(
+			#{id}
+				<if test="collectionId!=null and collectionId!=''">
+				,#{collectionId}
+			</if>
+				<if test="type!=null and type!=0">
+				,#{type}
+			</if>
+			<if test="ctime!=null">
+				,#{ctime}
+			</if>
+			<if test="creater!=null and creater!=''">
+				,#{creater}
+			</if>
+			,#{isvalid}
+		)
+	</insert>
+	<select id="getCollection" parameterType="com.ityb.qugou.po.collection.Collection"
+		resultType="com.ityb.qugou.po.collection.Collection">
+		SELECT
+			ID AS id,
+			COLLECTION_ID AS collectionId,
+			TYPE AS type
+		FROM
+			T_P_COLLECTION
+		<where>
+			ISVALID=1
+			<if test="collectionId!=null and collectionId!=''">
+				AND  COLLECTION_ID=#{collectionId}
+			</if>
+			<if test="type!=null and type!=0">
+				AND TYPE=#{type}
+			</if>
+			<if test="creater!=null and creater!=''">
+				AND CREATER=#{creater}
+			</if>
+		</where>
+	</select>
+	<update id="updateCollection" parameterType="com.ityb.qugou.po.collection.Collection">
+		UPDATE T_P_COLLECTION
+		<set>
+			<if test="ctime!=null">
+				CTIME=#{ctime},
+			</if>
+		</set>
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+		</where>
+	</update>
+	<select id="queryProductCollectionByDto" parameterType="com.ityb.qugou.dto.collection.CollectionDto"
+		resultType="com.ityb.qugou.vo.collection.CollectionProductVo">
+		SELECT
+			C.ID AS id,
+			C.ctime AS collectionTime,
+			PS.WEIGHT AS weight,
+			PS.PRICE AS price,
+			PS.NAME AS productSpecificationName,
+			PS. ID AS productSpecificationId,
+			PD.TITLE AS productTitle,
+			PD.SELL_POINT AS sellPoint,
+			PD.PRODUCT_ID AS productId,
+			PD.PIC_URL AS productPic
+		FROM
+			T_P_COLLECTION C
+		LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON C.COLLECTION_ID = PS.ID
+		AND C.TYPE = 1
+		LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID	
+		<where>
+			 C.ISVALID=1 AND PS.ISVALID=1 AND PD.ISVALID=1
+			 <if test="creater!=null and creater!=''">
+			 	AND C.CREATER=#{creater}
+			 </if>
+		</where>
+	</select>
+	<update id="delete" parameterType="com.ityb.qugou.po.collection.Collection">
+		UPDATE 
+			T_P_COLLECTION
+		<set>
+			DTIME=NOW(),
+			ISVALID=0
+		</set>
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+		</where>
+	</update>
+</mapper>

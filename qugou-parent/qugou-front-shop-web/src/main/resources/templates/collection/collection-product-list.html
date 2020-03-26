@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-收藏的商品</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/collection/collection-product-list.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+<link rel="stylesheet" href="/shop/css/product/jquery-labelauty.css">
+<!-- 单选框美化 -->
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<!-- 分页插件 -->
+<link rel="stylesheet" href="/shop/css/page/kkpager.css" />
+<!-- 分页插件 -->
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+<script type="text/javascript" src="/shop/js/page/kkpager.min.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<div class="collection-product-list-main-box">
+	<div class="collection-product-line-box">
+		<div class="nav-item-box collection-product-state" id="collection_product">收藏的商品</div>
+		<div class="nav-item-box " id="collection_shop">收藏的店铺</div>
+	</div>
+	<div class="collection-product-show-main-box">
+		<div class="collection-product-finish-nav-box">
+			<div class="collection-product-nav-product">商品详情</div>
+			<div class="collection-product-nav-time">收藏时间</div>
+			<div class="collection-product-nav-cz">操作</div>
+		</div>
+		<input type="hidden" value="${totalRecord!}" id="total_record"/>
+		<!-- 商品循环开始 -->
+		<#if collectionProductList??&&(collectionProductList?size>0)>
+			<#list collectionProductList as collectionProduct>
+				<div class="collection-product-item-box">
+					<div class="collection-product-item-img">
+						<#if collectionProduct.productPic??>
+							<#list collectionProduct.productPic?split(",") as productPic>
+								<#if productPic_index==0>
+									<a href="/shop/product/detail?id=${collectionProduct.productId!}"><img src="${productPic!}" alt="" /></a>
+								</#if>
+							</#list>
+						<#else>
+							<a href="/shop/product/detail?id=${collectionProduct.productId!}"><img src="/qugou-image/f674af96.jpg" alt="" /></a>
+						</#if>
+					</div>
+					<div class="collection-product-content-box">
+						<div class="collection-product-content-item"><a href="/shop/product/detail?id=${collectionProduct.productId!}">${collectionProduct.productTitle!}</a></div>
+						<div class="collection-product-content-item color-bg">${collectionProduct.sellPoint!}</div>
+						<div class="collection-product-content-item">
+							<div class="specification-item">规格：${collectionProduct.productSpecificationName!}</div>
+							<div class="specification-item">单价：￥${(collectionProduct.price?string("#.00"))!}</div>
+							<div class="specification-item">净重：${(collectionProduct.weight?string("#.00"))!}kg</div>
+						</div>
+					</div>
+					<div class="collection-product-time-box">${(collectionProduct.collectionTime?string("yyyy-MM-dd HH:mm:hh"))!}</div>
+					<div class="collection-product-cz-box">
+						<div class="collection-product-find-button" title="${collectionProduct.id!}">取消收藏</div>
+					</div>
+					<!-- 循环结束 -->
+					</div>
+				</#list>
+			</#if>
+		</div>
+</div>
+<#if collectionProductList??&&(collectionProductList?size>0)>
+	<div class="collection-product-page-box">
+		<div class="page-box">
+			<div class="page-show-box">
+				<div id="kkpager"></div>
+			</div>
+		</div>
+	</div>
+</#if>
+<div class="foot-box">
+	<#include "/common/footer.html">	
+</div>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/css/number/spinner/jquery.spinner.js"></script>
+<script type="text/javascript" src="/shop/js/product/jquery-labelauty.js"></script>
+<script type="text/javascript" src="/shop/js/collection/collection-product-list.js"></script>
+</body>
+</html>

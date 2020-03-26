@@ -1,0 +1,132 @@
+<div style="margin: 15px;">
+	<form class="layui-form" id="product_specification_form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品编号</label>
+			<div class="layui-input-block">
+				<input type="text" name="productNumber"  lay-verify="required" maxlength="12"  placeholder="请输入商品编号" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="productName"  lay-verify="required" maxlength="12"  placeholder="请输入商品名称" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品规格</label>
+			<div id="product_specification_add">
+				<div class="layui-input-block">
+					<input type="text" name="productSpecificationName" maxlength="10" lay-verify='required' placeholder="规格名称"  autocomplete="off" class="layui-input" style="width: 120px;float: left;">
+					<input type="number" name="price"  lay-verify="required"  lay-verify="positive_number" placeholder="商品单价（元）" lay-verify='number' min="0.01" autocomplete="off" class="layui-input layui-form-danger"" style="width: 120px;float: left;margin-left: 5px;">
+					<input type="number" name="weight"  lay-verify="required" lay-verify="positive_number" placeholder="商品净重（kg）"lay-verify='number' min="0.01" autocomplete="off" class="layui-input layui-form-danger" style="width: 120px;float: left;margin-left: 5px;">
+					<input type="number" name="stock"  lay-verify="required"  lay-verify="positive_number" placeholder="库存量（件）" min="1"  lay-verify='number' autocomplete="off" class="layui-input layui-form-danger"  style="width: 120px;float: left;margin-left: 5px;">
+					<button id="specification_add"     type="button" class="layui-btn" style="float: left;margin-left: 5px;">添加</button>
+				</div>
+			</div>
+		</div>
+		<button lay-filter="edit" lay-submit style="display: none;"></button>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript">
+	$("#specification_add").click(function(){
+		if($("#product_specification_add .layui-input-block").length>=8){
+			layer.msg("商品规格最多只能添加8个");
+			return ;
+		}
+		var html="<div class='layui-input-block' style='margin-top: 10px;'>";
+		html+="<input type='text' lay-verify='required' maxlength='10' name='productSpecificationName' placeholder='规格名称' autocomplete='off' class='layui-input' style='width: 120px;float: left;'>";
+		html+="<input type='number' lay-verify='required' lay-verify='positive_number' min='0.01' name='price' placeholder='商品单价（元）' lay-verify='number' autocomplete='off' class='layui-input' style='width: 120px;float: left;margin-left: 5px;'>";
+		html+="<input type='number' lay-verify='required' lay-verify='positive_number' min='0.01' name='weight' placeholder='商品净重（kg）' lay-verify='number' autocomplete='off' class='layui-input' style='width: 120px;float: left;margin-left: 5px;'>";
+		html+="<input type='number' lay-verify='required' lay-verify='positive_number' min='1' name='stock' placeholder='库存量（件）' lay-verify='number' autocomplete='off' class='layui-input' style='width: 120px;float: left;margin-left: 5px;'>";
+		html+="<button id='specification_delete'  type='button' class='layui-btn' style='float: left;margin-left: 5px;'>删除</button>";
+		html+="</div>";
+		$("#product_specification_form #product_specification_add").append(html);
+	});
+	$(document ).on( "click", "#product_specification_form #specification_delete", function() {
+		$(this).parent().remove();
+	});
+	//失去焦点
+	$("#product_specification_form input[name=productName]").blur(function(){ 
+		if($(this).val()==null||$(this).val()==''){
+			return ;
+		}
+		$.ajax({
+			async : true, //是否异步  
+			cache : false, //是否使用缓存  
+			type : 'post', //请求方式,post  
+			data : {
+				name : $(this).val()
+			},
+			dataType : "json", //数据传输格式  
+			url : '/merchant/product/getProduct?v=' + new Date().getTime(), //请求链接  
+			success : function(data) {
+				if(data.status ==1&&data.data!=null) {
+					parent.layer.msg('该商品名称重复', {icon: 5,time:2000});
+					$("#product_specification_form input[name=productName]").val("").focus();
+				}
+			},
+			error : function(XMLHttpRequest, data) {
+				console.log(data.msg);
+			}
+		});
+	});
+	//失去焦点
+	$("input[name=productNumber").blur(function(){
+		if($(this).val()==null||$(this).val()==''){
+			return ;
+		}
+		$.ajax({
+			async : true, //是否异步  
+			cache : false, //是否使用缓存  
+			type : 'post', //请求方式,post  
+			data : {
+				number : $(this).val()
+			},
+			dataType : "json", //数据传输格式  
+			url : '/merchant/product/getProduct?v=' + new Date().getTime(), //请求链接  
+			success : function(data) {
+				if (data.status ==1&&data.data!=null ) {
+					parent.layer.msg('该商品名编号重复', {icon: 5,time:2000});
+					$("#product_specification_form input[name=productNumber]").val("").focus();
+				}
+			},
+			error : function(XMLHttpRequest, data) {
+				console.log(data.msg);
+			}
+		});
+	});
+	$(document ).on( "blur", "#product_specification_form input[name=productSpecificationName]", function() {
+		var specificationArray=$("#product_specification_form input[name=productSpecificationName]");
+		if(specificationArray.length==1){
+			return;
+		}
+		var currentSpecification=$(this);
+		var currentSpecificationValue=currentSpecification.val();
+		$.each(specificationArray,function(index,value){
+			if(currentSpecificationValue!=null&&currentSpecificationValue!=''&&currentSpecificationValue==$(value).val()){
+				parent.layer.msg('该商品下的商品编号不能重复', {icon: 5,time:2000});
+				currentSpecification.val("").focus();
+				break;
+			}
+		});
+	}); 
+	$(document ).on( "blur", "#product_specification_form input[name=price]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('价格不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+	$(document ).on( "blur", "#product_specification_form input[name=weight]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('净重不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+	$(document ).on( "blur", "#product_specification_form input[name=stock]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('库存量不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+</script>

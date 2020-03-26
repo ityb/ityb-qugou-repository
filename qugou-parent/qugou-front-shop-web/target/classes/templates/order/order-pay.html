@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-订单支付</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/order/order-pay.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+<link rel="stylesheet" href="/shop/css/product/jquery-labelauty.css">
+<!-- 单选框美化 -->
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<!-- 分页插件 -->
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<div class="pay-main-box">
+	<input type="hidden" value="${orderNumbers!}" id="orderNumbers"/>
+	<div class="pay-way-box">
+		<div class="pay-line-box">
+			<span class="pay-way-title">请选择支付方式</span>
+		</div>
+		<div class="pay-line-box box-height">
+			<div class="pay-way-item">
+				<div class="pay-select">
+					<input type="radio" checked="checked" id="yibao"/>
+				</div>
+				<div class="pay-img">
+					<img src="/shop/images/bank_img/yibao.jpg" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pay-bank-box">
+		<div class="pay-line-box">
+			<span class="pay-way-title">请选择银行</span>
+		</div>
+		<div class="pay-line-box">
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" value="BOC-NET-B2C" id="BOC-NET-B2C"  checked="checked" />
+		 		<label for="BOC-NET-B2C">中国银行 </label>
+		 		<label for="BOC-NET-B2C"><img src="/shop/images/bank_img/bc.bmp" /></label>
+			</div>
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" id="ICBC-NET-B2C" value="ICBC-NET-B2C"/>
+				<label for="ICBC-NET-B2C">工商银行</label>
+				<label for="ICBC-NET-B2C"><img src="/shop/images/bank_img/icbc.bmp" /></label>
+			</div>
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" value="ABC-NET-B2C" id="ABC-NET-B2C" />
+				<label for="ABC-NET-B2C">农业银行 </label>
+				<label for="ABC-NET-B2C"><img src="/shop/images/bank_img/abc.bmp" /></label>
+			</div>
+		</div>
+		<div class="pay-line-box">
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" value="BOCO-NET-B2C" id="BOCO-NET-B2C" />
+				<label for="BOCO-NET-B2C">交通银行</label>
+				<label for="BOCO-NET-B2C"><img src="/shop/images/bank_img/bcc.bmp" /></label>
+			</div>
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" value="PINGANBANK-NET" id="PINGANBANK-NET" />
+				<label for="PINGANBANK-NET">平安银行</label> 
+				<label for="PINGANBANK-NET"><img src="/shop/images/bank_img/pingan.bmp" /></label>
+			</div>
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" value="CCB-NET-B2C" id="CCB-NET-B2C" />
+				<label for="CCB-NET-B2C">建设银行</label> 
+				<label for="CCB-NET-B2C"><img src="/shop/images/bank_img/ccb.bmp" /></label>
+			</div>
+		</div>		
+		<div class="pay-line-box">
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" value="CEB-NET-B2C" id="CEB-NET-B2C" />
+				<label for="CEB-NET-B2C">光大银行</label>
+				<label for="CEB-NET-B2C"><img src="/shop/images/bank_img/guangda.bmp" /></label>
+			</div>
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" value="CMBCHINA-NET-B2C" id="CMBCHINA-NET-B2C" />
+				<label for="CMBCHINA-NET-B2C">招商银行</label>
+				<label for="CMBCHINA-NET-B2C"><img src="/shop/images/bank_img/cmb.bmp" /></label>
+			</div>
+			<div class="pay-item-box">
+				<input type="radio" name="payBankCode" value="ECITIC-NET-B2C" id="ECITIC-NET-B2C" />
+				<label for="ECITIC-NET-B2C">中信银行</label> 
+				<label for="ECITIC-NET-B2C"><img src="/shop/images/bank_img/zx.bmp" /></label>
+			</div>
+		</div>	
+	</div>
+	<div class="pay-button-box">
+		<div class="pay-button">立即支付</div>
+	</div>	
+</div>
+<div class="foot-box">
+	<#include "/common/footer.html">	
+</div>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/js/order/order-pay.js"></script>
+</body>
+</html>

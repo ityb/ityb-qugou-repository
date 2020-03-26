@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/application.properties=UTF-8
+encoding//src/main/resources/bootstrap.properties=UTF-8
+encoding//src/main/resources/static/merchant/layui/css/global.css=UTF-8
+encoding//src/main/resources/templates/product-add.html=UTF-8
+encoding//src/main/resources/templates/stcok-specification-add.html=UTF-8
+encoding//src/main/resources/templates/stcok-specification-update.html=UTF-8
+encoding//src/main/resources/templates/stock-productSpecification-add.html=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+	</head>
+<body>
+<div style="margin: 15px;">
+	<form class="layui-form" id="delivery_form_update">
+			<div class="layui-form-item">
+			<label class="layui-form-label">配送人</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryName" readonly="readonly" value="${orderDelivery.deliveryName!}"  id="deliveryName" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">配送人电话</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryPhone"  readonly="readonly" value="${orderDelivery.deliveryPhone!}"  id="deliveryPhone" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<#if orderDelivery.deliveryInfo??&&(orderDelivery.deliveryInfo!='')>
+			<div class="layui-form-item">
+				<div class="layui-form-item layui-form-text">
+					<label class="layui-form-label">自提信息</label>
+					<div class="layui-input-block">
+						<textarea placeholder="请输入内容" readonly="readonly" class="layui-textarea" name="deliveryInfo" id="deliveryInfo" >${orderDelivery.deliveryInfo!}</textarea>
+					</div>
+				</div>
+			</div>
+		</#if>
+		<button lay-filter="edit" lay-submit style="display: none;"></button>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript"></script>
+</body>
+</html>

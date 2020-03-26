@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-all-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-all-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-all-job" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-all-sso" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-bg-manager-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-bg-merchant-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-front-shop-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-server-cart" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-server-evaluation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-server-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-server-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-server-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-system-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-system-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qugou-system-zuul" charset="UTF-8" />
+  </component>
+</project>

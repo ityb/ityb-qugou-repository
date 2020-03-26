@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+	</head>
+<body>
+<div style="margin: 15px;">
+	<form class="layui-form" id="order_form_update">
+		<div class="layui-form-item">
+			<label class="layui-form-label">订单号</label>
+			<div class="layui-input-block">
+				<input type="text" readonly="readonly" name="orderNumber"  lay-verify="required" value="${orderDetail.orderNumber!}"   autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">客户ID</label>
+			<div class="layui-input-block">
+				<input type="text" readonly="readonly" name="userName"  lay-verify="userName" value="${orderDetail.userName!}" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">收货人</label>
+			<div class="layui-input-block">
+				<input type="text" name="customerName"  lay-verify="customerName" value="${orderDetail.customerName!}"  autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">客户电话</label>
+			<div class="layui-input-block">
+				<input type="text" name="customerPhone"  lay-verify="required" lay-verify="phone" value="${orderDetail.customerPhone!}"  autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品列表</label>
+				<div class="layui-input-block">
+					<table class="layui-table">
+     					<thead>
+       						<tr>
+       							<th>商品编号</th>
+       							<th>商品名称</th>
+        						<th>单价（元）</th>
+        						<th>购买数量（件）</th>
+        						<th>小计（元）</th>
+      						</tr>
+      					</thead>
+      				<tbody>
+      					<#if orderDetail.orderItemVoList??>
+      						<#list orderDetail.orderItemVoList as orderItem>
+      							<tr>
+      								<td>${orderItem.productNumber!}</td>
+      								<td>${orderItem.productName!}</td>
+      								<td>${orderItem.price?string("#.00")!}</td>
+      								<td>${orderItem.buyNum!}</td>
+      								<td>${orderItem.subtotal!}</td>
+      							</tr>
+      						</#list>
+      					</#if>
+      					<tr>
+      						<td>合计</td>
+      						<td colspan="4">￥${orderDetail.orderTotal?string("#.00")!}</td>
+      					</tr>
+      				</tbody>
+    			</table>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">订单类型</label>
+			<div class="layui-input-block">
+				<input type="text" name="tradeWay" readonly="readonly" value="${orderDetail.tradeWay!}" id="title" lay-verify="required"  autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">交易流水号</label>
+			<div class="layui-input-block">
+				<input type="text" name="serialNumber" readonly="readonly" value="${orderDetail.serialNumber!}" id="title" lay-verify="required" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">订单状态</label>
+			<div class="layui-input-block">
+				<input type="text" name="orderStateName" readonly="readonly" value="${orderDetail.orderStateName!}" id="sellPoint" lay-verify="required"  autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">配送方式</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryWay" readonly="readonly" value="${orderDetail.deliveryWay!}" id="sellPoint" lay-verify="required"  autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">收货地址</label>
+			<div class="layui-input-block">
+				<input type="text" name="deliveryAddress"  value="${orderDetail.deliveryAddress!}" id="deliveryAddress" malay-verify="required"  maxlength="256" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">下单时间</label>
+			<div class="layui-input-block">
+				<input type="text" name="addDate" readonly="readonly" value="${orderDetail.addDate?string('yyyy-MM-dd hh:mm:ss')!}" id="sellPoint" lay-verify="required"  autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">订单备注</label>
+				<div class="layui-input-block">
+					<textarea placeholder="请输入内容" class="layui-textarea" readonly="readonly">${orderDetail.orderRemark!"无"}</textarea>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">商家备注</label>
+				<div class="layui-input-block">
+					<textarea placeholder="请输入内容" id="merchantRemark" class="layui-textarea">${orderDetail.merchantRemark!"无"}</textarea>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" value="${orderDetail.orderId}" id="orderId">
+		<button lay-filter="edit" lay-submit style="display: none;"></button>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript"></script>
+</body>
+</html>

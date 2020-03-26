@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-购物车</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+
+<!-- 单选框美化 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/cart/cart-list.css" />
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<!-- 分页插件 -->
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<div class="cart-main-box">
+	<div class="cart-bar-box">
+		<#if cart.cartType??&&(cart.cartType==1)>
+			<div class="cart-now-box">今日购物车</div>
+			<div class="cart-fg-box"></div>
+			<div class="cart-history-box">历史购物车</div>
+		<#elseif cart.cartType??&&(cart.cartType==2)>
+			<div class="cart-now-box-1">今日购物车</div>
+			<div class="cart-fg-box"></div>
+			<div class="cart-history-box-1">历史购物车</div>
+		<#else>
+			<div class="cart-now-box">今日购物车</div>
+			<div class="cart-fg-box"></div>
+			<div class="cart-history-box">历史购物车</div>
+		</#if>
+		<input type="hidden" id="cart_type" value="${cart.cartType!}"/>
+		<div class="cart-product-number-box">共
+			<span>
+				<#if cartList??>
+					${((cartList?size)!0)}
+				</#if>
+			</span>
+			个宝贝
+	   </div>
+	</div>
+	<div class="cart-select-box">
+		<div class="cart-item-box">
+			<input type="checkbox" class="select-all" id="select-all-1"/>
+			<span><label for="select-all-1">全选</label></span>
+		</div>
+		<div class="cart-item-box-product">商品</div>
+		<div class="cart-item-box-specification">规格</div>
+		<div class="cart-item-box-price">单价</div>
+		<div class="cart-item-box-number">数量</div>
+		<div class="cart-item-box-sub">小计</div>
+		<div class="cart-item-box-operating">操作</div>
+	</div>
+	<div class="cart-main-show-box">
+		<!-- 购物车列表 -->
+		<div class="cart-list-show-box">
+			<!-- 循环 -->
+			<#if cartList??&&(cartList?size>0)>
+				<#list cartList as cartVo>
+					<div class="cart-show-box">
+						<div class="shop-name-box">
+							<div class="shop-name"><span><a href="/shop/store/detail?id=${cartVo.shopId!}">${cartVo.shopName!}</a></span></div>
+							<input type="hidden"  name="shopId" value="${cartVo.shopId}"/>
+							<div class="shop-name"><span class="cart-add-time">添加时间：${cartVo.addTime?string("yyyy-MM-dd HH:ss:mm")}</span></div>
+						</div>
+						<div class="cart-product-box">
+							<div class="product-checked">
+								<input type="checkbox" class="checkbox-single" value="${cartVo.cartId!}"/>
+							</div>
+							<div class="product-pic-box">
+								<#if cartVo.productPicUrl??>
+									<#list cartVo.productPicUrl?split(",") as pic>
+										<#if pic_index==0>
+											<a href="/shop/product/detail?id=${cartVo.productId!}"><img src="${pic}" alt="" /></a>
+										</#if>
+									</#list>
+								<#else>
+									<a href="/shop/product/detail?id=${cartVo.productId!}"><img src="/shop/images/slideshow/1.jpg" alt="" /></a>
+								</#if>
+							</div>
+							<div class="product-content-box">
+								<div class="product-title"><a href="/shop/product/detail?id=${cartVo.productId!}">${cartVo.productTitle}</a></div>
+								<div class="product-sellpoint">${cartVo.sellPoint!}</div>
+								<div class="product-remark">不支持7天无理由退货</div>
+								<div class="product-remark">
+									<#if (cartVo.stock>0)>
+										有货
+									<#else>
+										无货
+									</#if>
+								</div>
+							</div>
+							<div class="cart-specification-content-box">
+								<div class="cart-product-specification-box">${cartVo.productSpecificationName!}</div>
+								<div class="cart-product-specification-box">${cartVo.weight!}<span>kg</span></div>
+								<div class="cart-product-specification-box">库存<span class="stock-span">${cartVo.stock!}</span>件</div>
+							</div>
+							<div class="cart-product-price-box">¥<span class="price-span">${(cartVo.price?string("#.00"))!}</span></div>
+							<div class="cart-product-buy-number-box">
+								<input class="buy-number-input" style="width: 90px;height: 60px;" data_step="1" data_min="1" data_max="${cartVo.stock!}" 
+									data_digit="0" value="${cartVo.buyNumber!}" data_edit="true" id="${cartVo.productSpecificationId!}" data-old-value="${cartVo.buyNumber!}"/>
+								<!-- <input type="text" class="spinner" /> -->
+							</div>
+							<div class="cart-sub-total-box">¥<span class="price-font-sub">${((cartVo.price*cartVo.buyNumber)?string("#.00"))!}</span></div>
+							<div class="cart-operating-content-box">
+								<div class="cart-operating-delete-box"><a href="javascript:;" class="cart-product-delete" name="${cartVo.cartId!}">删除</a></div>
+								<div class="cart-operating-delete-box"><a href="javascript:;" name="${cartVo.productSpecificationId!}" class="cart-add-collection">加入到我的收藏</a></div>
+							</div>
+						</div>
+					</div>
+				</#list>
+			<#else>
+				<div class="cart-empty-box">购物车里空空荡荡~~</div>
+			</#if>
+			<!-- 循环结束 -->
+		</div>
+		<div class="cart-total-box">
+			<div class="cart-total-select">
+				<input type="checkbox" value="" class="select-all" id="select-all-2"/>
+				<span><label for="select-all-2">全选</label></span>
+			</div>
+			<div class="cart-total-text-box"><a href="javascript:;" class="cart-delete-select">删除选中的商品</a></div>
+			<div class="cart-total-text-box"><a href="javascript:;" class="cart-add-collection-select">添加到我的收藏</a></div>
+			<!-- 添加结算 -->
+			<div class="cart-total-js">
+				<div class="cart-total-text-box"><span class="cart-total-font1">已选择&nbsp;<span class="cart-total-font2" id="product-number">0</span>&nbsp;种商品</span></div>
+				<div class="cart-total-text-box"><span class="cart-total-font1">总价&nbsp;&nbsp;<span class="cart-total-font3">¥<span id="product-total">0.00</span></span></span></div>
+				<div class="js-button-box">去结算</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="page-box">
+	<div class="page-show-box">
+		<div id="kkpager"></div>
+	</div>
+</div> -->
+<div class="foot-box">
+	<#include "/common/footer.html">	
+</div>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/css/number/spinner/jquery.spinner.js"></script>
+<script type="text/javascript" src="/shop/js/cart/cart-list.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.spinner').spinner();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.order.mapper.OrderMapper">
+	<!-- 根据dto查询订单列表，带分页 -->
+	<select id="queryOrder" parameterType="com.ityb.qugou.dto.order.OrderDto" 
+		resultType="com.ityb.qugou.vo.order.OrderVo">
+		SELECT
+			O.ID AS orderId,
+			O.NUMBER AS orderNumber,
+			U.USER_NAME AS userName,
+			O.TOTAL AS orderTotal,
+			(SELECT SUM(OI.BUY_NUM) FROM T_P_ORDER_ITEM OI WHERE OI.ISVALID = 1 AND OI.ORDER_ID = O.ID) AS productCount,
+			(CASE WHEN O.TRADE_WAY=1 THEN '货到付款' WHEN O.TRADE_WAY=2 THEN '在线支付' ELSE '其他' END ) AS tradeWay,
+ 			(CASE WHEN O.SERIAL_NUMBER IS NULL THEN '无' ELSE  O.SERIAL_NUMBER  END) AS serialNumber,
+ 			O.CUSTOMER_NAME AS customerName,
+ 			O.DELIVERY_ADDRESS AS deliveryAddress,
+ 			O.CUSTOMER_PHONE AS CUSTOMERPHONE,
+			(
+				CASE
+				WHEN O.STATE =- 1 THEN
+					'未付款'
+				WHEN O.STATE = 1 THEN
+					'已付款'
+				WHEN O.STATE = 2 THEN
+					'已接单'
+				WHEN O.STATE = 3 THEN
+					'正在派送'
+				WHEN O.STATE = 4 THEN
+					'已签收'
+				WHEN O.STATE = 5 THEN
+					'待评论'
+				WHEN O.STATE = 6 THEN
+					'已完成'
+				WHEN O.STATE = 7 THEN
+					'申请退款'
+				ELSE
+					'其他'
+				END
+			) AS orderStateName,
+			(
+				CASE
+				WHEN O.DELIVERY_WAY = 1 THEN
+					'上门自提'
+				WHEN O.DELIVERY_WAY = 2 THEN
+					'同城配送'
+				ELSE
+					'其他'
+				END
+			) AS deliveryWay,
+			O.CTIME AS addDate
+		FROM
+			T_P_ORDER O
+		LEFT JOIN T_SYS_USER U ON O.CREATER = U.ID
+		<where>
+			O.ISVALID=1
+			AND U.ISVALID=1
+			<if test="userName!=null and userName!=''">
+				AND U.USER_NAME LIKE CONCAT('%',CONCAT(#{userName},'%'))
+			</if>
+			<if test="orderNumber!=null and orderNumber!=''">
+				AND O.NUMBER LIKE CONCAT(#{orderNumber},'%')
+			</if>
+			<if test="state!=null">
+				<choose>
+					<!-- 如果是未发货订单，则需要考虑未付款，支付方式为货到付款 -->
+					<when test="state==1">
+						AND (O.STATE=1 OR (O.STATE=-1 AND O.TRADE_WAY=1))
+					</when>
+					<otherwise>
+						AND O.STATE=#{state}
+					</otherwise>
+				</choose>
+			</if>
+			<if test="tradeWay!=null">
+				AND O.TRADE_WAY=#{tradeWay}
+			</if>
+			<if test="deliveryWay!=null">
+				AND O.DELIVERY_WAY=#{deliveryWay}
+			</if>
+			<if test="addDate!=null">
+				AND DATE(O.CTIME)=DATE(#{addDate})
+			</if>
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+			<if test="orderId!=null and orderId!=null">
+				AND O.ID=#{orderId}
+			</if>
+			<if test="customerPhone!=null and customerPhone!=''">
+				AND O.CUSTOMER_PHONE=#{customerPhone}
+			</if>
+			ORDER BY O.CTIME DESC
+			<if test="pageSize!=null and pageSize!=0 and pageStart!=null and pageStart!=0">
+				LIMIT #{pageStart},#{pageSize}
+			</if> 
+		</where>
+	</select>
+	
+	<!-- 根据dto查询订单列表数量-->
+	<select id="countOrder" parameterType="com.ityb.qugou.dto.order.OrderDto" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			T_P_ORDER O
+		LEFT JOIN T_SYS_USER U ON O.CREATER = U.ID
+		<where>
+			O.ISVALID=1
+			AND U.ISVALID=1
+			<if test="userName!=null and userName!=''">
+				AND U.USER_NAME LIKE CONCAT('%',CONCAT(#{userName},'%'))
+			</if>
+			<if test="orderNumber!=null and orderNumber!=''">
+				AND O.NUMBER LIKE CONCAT(#{orderNumber},'%')
+			</if>
+			<if test="state!=null">
+				<choose>
+					<!-- 如果是未发货订单，则需要考虑未付款，支付方式为货到付款 -->
+					<when test="state==1">
+						AND (O.STATE=1 OR (O.STATE=-1 AND O.TRADE_WAY=1))
+					</when>
+					<otherwise>
+						AND O.STATE=#{state}
+					</otherwise>
+				</choose>
+			</if>
+			<if test="tradeWay!=null">
+				AND O.TRADE_WAY=#{tradeWay}
+			</if>
+			<if test="deliveryWay!=null">
+				AND O.DELIVERY_WAY=#{deliveryWay}
+			</if>
+			<if test="addDate!=null">
+				AND DATE(O.CTIME)=DATE(#{addDate})
+			</if>
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+			<if test="orderId!=null and orderId!=null">
+				AND O.ID=#{orderId}
+			</if>
+			<if test="customerPhone!=null and customerPhone!=null">
+				AND O.CUSTOMER_PHONE=#{customerPhone}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 根据订单ID得到对应的订单项 -->
+	<select id="queryOrderItem" parameterType="com.ityb.qugou.po.order.OrderItem"
+		resultType="com.ityb.qugou.vo.order.OrderItemVo">
+		SELECT
+			OI.ORDER_ID AS orderId,
+			P.NUMBER AS productNumber,
+			P. NAME AS productName,
+			PS. NAME AS productSpecificatioNname,
+			PS.PRICE AS price,
+			OI.BUY_NUM AS buyNum,
+			OI.SUBTOTAL AS subtotal
+		FROM
+			T_P_ORDER_ITEM OI
+		LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PS.ID = OI.PRODUCT_SPECIFICATION_ID
+		LEFT JOIN T_P_PRODUCT P ON P.ID = PS.PRODUCT_ID
+		WHERE
+			OI.ISVALID = 1
+		AND P.ISVALID = 1
+		AND PS.ISVALID = 1
+		<if test="orderId!=null and orderId!=''">
+			AND OI.ORDER_ID = #{orderId}
+		</if>
+	</select>
+	
+	<!-- 得到一个订单的详细信息 -->
+	<select id="getOrder" parameterType="com.ityb.qugou.po.order.Order" 
+		resultType="com.ityb.qugou.vo.order.OrderVo">
+		SELECT
+			O.ID AS orderId,
+			O.NUMBER AS orderNumber,
+			U.USER_NAME AS userName,
+			O.TOTAL AS orderTotal,
+			(
+				CASE
+				WHEN O.TRADE_WAY = 1 THEN
+					'货到付款'
+				WHEN O.TRADE_WAY = 2 THEN
+					'在线支付'
+				ELSE
+					'其他'
+				END
+			) AS tradeWay,
+			(
+				CASE
+				WHEN O.DELIVERY_WAY = 1 THEN
+					'上门自提'
+				WHEN O.DELIVERY_WAY = 2 THEN
+					'同城配送'
+				ELSE
+					'其他'
+				END
+			) AS deliveryWay,
+			O.SERIAL_NUMBER AS serialNumber,
+			O.CTIME AS addDate,
+			O.CUSTOMER_PHONE AS customerPhone,
+			O.CUSTOMER_NAME AS customerName,
+			(
+				CASE
+				WHEN O.STATE =- 1 THEN
+					'未付款'
+				WHEN O.STATE = 1 THEN
+					'已付款'
+				WHEN O.STATE = 2 THEN
+					'已接单'
+				WHEN O.STATE = 3 THEN
+					'正在派送'
+				WHEN O.STATE = 4 THEN
+					'已签收'
+				WHEN O.STATE = 5 THEN
+					'待评论'
+				WHEN O.STATE = 6 THEN
+					'已完成'
+				WHEN O.STATE = 7 THEN
+					'申请退款'
+				ELSE
+					'其他'
+				END
+			) AS orderStateName,
+		   O.DELIVERY_ADDRESS AS deliveryAddress,
+		   O.ORDER_REMARK AS orderRemark,
+		   O.MERCHANT_REMARK AS merchantRemark
+		FROM
+			T_P_ORDER O
+		LEFT JOIN T_SYS_USER U ON O.CREATER = U.ID
+		<where>
+			O.ISVALID = 1
+			AND U.ISVALID = 1
+			<if test="id!=null and id!=''">
+				AND O.ID=#{id}
+			</if>
+		</where>
+	</select>
+	<!-- 更新一条订单记录 -->
+	<update id="updateOrder" parameterType="com.ityb.qugou.po.order.Order">
+		UPDATE T_P_ORDER
+		<set>
+			<if test="customerPhone!=null and customerPhone!=''">
+				CUSTOMER_PHONE=#{customerPhone},
+			</if>
+			<if test="mechantRemark!=null and mechantRemark!=''">
+				MERCHANT_REMARK=#{mechantRemark},
+			</if>
+			<if test="deliveryAddress!=null and deliveryAddress!=''">
+				DELIVERY_ADDRESS=#{deliveryAddress},
+			</if>
+			<if test="customerName!=null and customerName!=''">
+				CUSTOMER_NAME=#{customerName},
+			</if>
+			<if test="updater!=null and updater!=''">
+				UPDATER=#{updater},
+			</if>
+			<if test="mtime!=null">
+				MTIME=#{mtime},
+			</if>
+			<if test="state!=null">
+				STATE=#{state},
+			</if>
+		</set>
+		<where>
+			ISVALID = 1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+		</where>
+	</update>
+	<update id="updateProductBatch">
+		UPDATE T_P_ORDER
+		<set>
+			<if test="order.customerPhone!=null and order.customerPhone!=''">
+				CUSTOMER_PHONE=#{order.customerPhone},
+			</if>
+			<if test="order.mechantRemark!=null and order.mechantRemark!=''">
+				MERCHANT_REMARK=#{mechantRemark},
+			</if>
+			<if test="order.deliveryAddress!=null and order.deliveryAddress!=''">
+				DELIVERY_ADDRESS=#{deliveryAddress},
+			</if>
+			<if test="order.updater!=null and order.updater!=''">
+				UPDATER=#{order.updater},
+			</if>
+			<if test="order.mtime!=null">
+				MTIME=#{order.mtime},
+			</if>
+			<if test="order.state!=null">
+				STATE=#{order.state},
+			</if>
+		</set>
+		<where>
+			ISVALID = 1
+			<if test="orderIdList!=null and orderIdList.size()>0">
+				AND ID IN
+				<foreach collection="orderIdList" item="item" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</update>
+	
+	<!-- 添加一个订单信息 -->
+	<insert id="insertOrder" parameterType="com.ityb.qugou.po.order.Order">
+		INSERT INTO T_P_ORDER(ID
+			<if test="number!=null and number!=''">
+				,NUMBER
+			</if>
+			<if test="merchantId!=null and merchantId!=''">
+				,MERCHANT_ID
+			</if>
+			<if test="total!=null and total!=0">
+				,TOTAL
+			</if>
+			<if test="state!=null and state!=0">
+				,STATE
+			</if>
+			<if test="tradeWay!=null and tradeWay!=0">
+				,TRADE_WAY
+			</if>
+			<if test="customerPhone!=null and customerPhone!=''">
+				,CUSTOMER_PHONE
+			</if>
+			<if test="deliveryAddress!=null and deliveryAddress!=''">
+				,DELIVERY_ADDRESS
+			</if>
+			<if test="deliveryWay!=null and deliveryWay!=0">
+				,DELIVERY_WAY
+			</if>
+			<if test="customerName!=null and customerName!=''">
+				,CUSTOMER_NAME
+			</if>
+			<if test="creater!=null and creater!=''">
+				,CREATER
+			</if>
+			<if test="ctime!=null">
+				,CTIME
+			</if>
+				,ISVALID
+			)VALUES(
+				#{id}
+				<if test="number!=null and number!=''">
+					,#{number}
+				</if>
+				<if test="merchantId!=null and merchantId!=''">
+					,#{merchantId}
+				</if>
+				<if test="total!=null and total!=0">
+					,#{total}
+				</if>
+				<if test="state!=null and state!=0">
+					,#{state}
+				</if>
+				<if test="tradeWay!=null and tradeWay!=0">
+					,#{tradeWay}
+				</if>
+				<if test="customerPhone!=null and customerPhone!=''">
+					,#{customerPhone}
+				</if>
+				<if test="deliveryAddress!=null and deliveryAddress!=''">
+					,#{deliveryAddress}
+				</if>
+				<if test="deliveryWay!=null and deliveryWay!=0">
+					,#{deliveryWay}
+				</if>
+				<if test="customerName!=null and customerName!=''">
+					,#{customerName}
+				</if>
+				<if test="creater!=null and creater!=''">
+					,#{creater}
+				</if>
+				<if test="ctime!=null">
+					,#{ctime}
+				</if>
+					,#{isvalid}				
+				)
+	</insert>
+	<select id="queryOrderByNumberList" parameterType="java.util.List" 
+			resultType="com.ityb.qugou.po.order.Order">
+			SELECT
+				ID AS id,
+				NUMBER AS number,
+				TOTAL AS total,
+				MERCHANT_ID AS merchantId,
+				CUSTOMER_NAME AS customerName,
+				CUSTOMER_PHONE AS customerPhone,
+				STATE AS state,
+				SERIAL_NUMBER AS serialNumber,
+				TRADE_WAY AS tradeWay,
+				DELIVERY_WAY AS deliveryWay,
+				ORDER_REMARK AS orderRemark,
+				MERCHANT_REMARK AS merchantRemark
+			FROM
+				T_P_ORDER
+			<where>
+				ISVALID=1
+				<if test="orderNumberList!=null and orderNumberList.size()>0">
+					AND NUMBER IN
+					<foreach collection="orderNumberList" item="item" close=")" open="(" separator=",">
+						#{item}
+					</foreach>
+				</if>
+			</where>
+	</select>
+	
+	<update id="updateOrderByOrderNumber">
+		UPDATE T_P_ORDER
+		<set>
+			<if test="order.customerPhone!=null and order.customerPhone!=''">
+				CUSTOMER_PHONE=#{order.customerPhone},
+			</if>
+			<if test="order.mechantRemark!=null and order.mechantRemark!=''">
+				MERCHANT_REMARK=#{order.mechantRemark},
+			</if>
+			<if test="order.deliveryAddress!=null and order.deliveryAddress!=''">
+				DELIVERY_ADDRESS=#{order.deliveryAddress},
+			</if>
+			<if test="order.updater!=null and order.updater!=''">
+				UPDATER=#{order.updater},
+			</if>
+			<if test="order.serialNumber!=null and order.serialNumber!=''">
+				SERIAL_NUMBER=#{order.serialNumber},
+			</if>
+			<if test="order.mtime!=null">
+				MTIME=#{order.mtime},
+			</if>
+			<if test="order.state!=null">
+				STATE=#{order.state},
+			</if>
+		</set>
+		<where>
+			ISVALID=1
+			<if test="orderNumberList!=null and orderNumberList.size()>0">
+				AND NUMBER IN
+				<foreach collection="orderNumberList" item="item" close=")" open="(" separator=",">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</update>
+	
+	<select id="queryOrderByDto" parameterType="com.ityb.qugou.dto.order.OrderDto"
+		resultType="com.ityb.qugou.bo.order.OrderBean">
+			SELECT
+				O.ID AS id,
+				O.NUMBER AS number,
+				O.MERCHANT_ID AS merchantId,
+				O.TOTAL AS TOTAL,
+				O.CUSTOMER_NAME AS customerName,
+				O.DELIVERY_WAY AS deliveryWay,
+				O.STATE AS state,
+				O.TRADE_WAY AS tradeWay,
+				O.CTIME AS addTime,
+				S.SHOP_NAME AS shopName,
+				S.ID AS shopId
+			FROM
+				T_P_ORDER O
+			LEFT JOIN T_SYS_SHOP S ON O.MERCHANT_ID = S.USER_ID
+			<where>
+				O.ISVALID=1 AND S.ISVALID=1
+				<if test="userId!=null and userId!=''">
+					AND O.CREATER=#{userId}
+				</if> 
+				<if test="state!=null and state!=2">
+					AND O.STATE=#{state}
+				</if>
+				<if test="state!=null and state==2">
+					AND O.STATE &gt;=2 AND O.STATE &lt;5
+				</if>
+			</where>
+			ORDER BY O.CTIME DESC
+			<if test="pageStart!=null and pageSize!=null">
+				LIMIT #{pageStart},#{pageSize}
+			</if>
+	</select>
+	<select id="countOrderByDto" parameterType="com.ityb.qugou.dto.order.OrderDto" resultType="int">
+			SELECT
+				COUNT(*)
+			FROM
+				T_P_ORDER O
+			LEFT JOIN T_SYS_SHOP S ON O.MERCHANT_ID = S.USER_ID
+			<where>
+				O.ISVALID=1 AND S.ISVALID=1
+				<if test="userId!=null and userId!=''">
+					AND O.CREATER=#{userId}
+				</if> 
+				<if test="state!=null and state!=2 and state!=-2">
+					AND O.STATE=#{state}
+				</if>
+				<if test="state!=null and state==2">
+					AND O.STATE &gt;=2 AND O.STATE &lt;5
+				</if>
+				<if test="state!=null and state==-2">
+					AND O.STATE &gt;=-4 AND O.STATE &lt;-2
+				</if>
+			</where>
+	</select>
+	<update id="deleteByEntity" parameterType="com.ityb.qugou.po.order.Order">
+		UPDATE 
+			T_P_ORDER
+		<set>
+			ISVALID=0,
+			DTIME=now()
+		</set> 	
+		<where>
+			ISVALID=1
+			<if test="number!=null and number!=''">
+				AND NUMBER=#{number}
+			</if>
+		</where>
+	</update>
+	<select id="getOrderByEntity" parameterType="com.ityb.qugou.po.order.Order"
+		resultType="com.ityb.qugou.po.order.Order">
+		SELECT 
+			ID AS id,
+			NUMBER AS number,
+			MERCHANT_ID AS merchantId
+		FROM	
+			T_P_ORDER
+		<where>
+			ISVALID=1
+			<if test="number!=null and number!=''">
+				AND NUMBER=#{number}
+			</if>
+		</where>
+	</select>
+	
+	<select id="getTodayTrade" parameterType="com.ityb.qugou.po.order.Order"
+		resultType="com.ityb.qugou.vo.order.OrderStatisticsVo">
+		SELECT
+				(SELECT
+					COUNT(1)
+				FROM
+					T_P_ORDER
+				WHERE
+					1=1
+					<if test="merchantId!=null and merchantId!=''">
+						AND MERCHANT_ID=#{merchantId}
+					</if>
+					<if test="state!=null and state!=0">
+						AND STATE=#{state}
+					</if>
+					<if test="ctime!=null">
+						AND DATE(CTIME)=DATE(#{ctime})
+					</if>
+			)AS orderCount,
+			IFNULL(SUM(OI.SUBTOTAL),0) AS tradeMoney,
+			IFNULL(SUM(OI.BUY_NUM),0) AS tradeCount
+		FROM
+			T_P_ORDER O
+		LEFT JOIN T_P_ORDER_ITEM OI ON O.ID = OI.ORDER_ID
+		<where>
+			1=1
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+			<if test="state!=null and state!=0">
+				AND O.STATE=#{state}
+			</if>
+			<if test="ctime!=null">
+				AND DATE(O.CTIME)=DATE(#{ctime})
+			</if>
+		</where>
+	</select>
+</mapper>

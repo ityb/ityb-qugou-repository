@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新订单管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+	</head>
+	<body>
+		<div class="admin-main">
+			<form class="layui-form" id="product_form">
+			<blockquote class="layui-elem-quote">
+			<div style="margin-left: 0%;">
+                <div class="layui-form-item" style="margin:0;">
+                    <label class="layui-form-label">订单号</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="orderNumber" id="orderNumber" placeholder="请输入订单号" autocomplete="off" class="layui-input">
+                    </div>
+                    <label class="layui-form-label">客户ID</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="userName" id="userName" placeholder="请输入客户名称" autocomplete="off" class="layui-input">
+                    </div>
+					<label class="layui-form-label">交易方式</label>
+                    <div class="layui-input-inline">
+       					<select name="tradeWay" id="tradeWay" lay-filter="order_tradeWay">
+							<option value="">请选择交易方式</option>
+							<option value="1">货到付款</option>
+							<option value="2">在线支付</option>
+						</select>
+     				</div>
+                    <label class="layui-form-label">下单时间</label>
+                    <div class="layui-input-inline">
+       					<input type="text" name="addDate" id="addDate" placeholder="请选择下单时间" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+     				</div>
+               		<div class="layui-form-mid layui-word-aux" style="padding:0;">
+                      	<button id="search" type="button" class="layui-btn" >查询</button>
+                	</div>
+                </div>
+            </div>
+        	</blockquote>
+			<blockquote class="layui-elem-quote">
+				<!-- <a href="/merchant/product/add" class="layui-btn layui-btn-small" id="add">
+					<i class="layui-icon">&#xe608;</i> 添加商品信息
+				</a> -->
+				<a href="#" class="layui-btn layui-btn-small" id="accept_order">
+					<i class="layui-icon">&#xe62f;</i> 批量接单
+				</a>
+				<a href="#" class="layui-btn layui-btn-small" id="refuse_order">
+					<i class="layui-icon">&#xe601;</i> 批量拒单
+				</a>
+			</blockquote>
+			</form>
+			<fieldset class="layui-elem-field">
+				<legend>新订单列表</legend>
+				<div class="layui-field-box layui-form">
+					<table class="layui-table admin-table">
+						<thead>
+							<tr>
+								<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>
+								<th>订单号</th>
+								<th>客户ID</th>
+								<th>订单金额（元）</th>
+								<th>商品数量（件）</th>
+								<th>交易方式</th>
+								<th>交易流水号</th>
+								<th>下单时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="content"></tbody>
+					</table>
+				</div>
+				<div class="admin-table-page">
+				<div id="paged" class="page">
+				</div>
+			</div>
+			</fieldset>
+		</div>
+		<!--模板-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<td><input type="checkbox" lay-skin="primary"></td>
+				<td>{{ item.orderNumber }}</td>
+				<td>{{ item.userName }}</td>
+				<td>{{ item.orderTotal }}</td>
+				<td>{{ item.productCount }}</td>
+				<td>{{ item.tradeWay }}</td>
+				<td>{{ item.serialNumber }}</td>
+				<td>{{ item.addDate }}</td>
+				<td>
+					<a href="javascript:;" data-name="{{ item.orderId }}" data-opt="look" class="layui-btn layui-btn-normal layui-btn-mini">订单详细</a>
+					<a href="javascript:;" data-name="{{ item.orderId }}" data-opt="edit" class="layui-btn layui-btn-mini">编辑</a>
+					<a href="javascript:;" data-name="{{ item.orderId }}" data-id="1" data-opt="accept" class="layui-btn layui-btn-danger layui-btn-mini">接单</a>
+					<a href="javascript:;" data-name="{{ item.orderId }}" data-id="1" data-opt="refuse" class="layui-btn layui-btn-danger layui-btn-mini">拒单</a>
+				</td>
+			</tr>
+			{{# });}}
+		</script>
+		<script type="text/javascript" src="/merchant/layui/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="/merchant/js/order-new-list.js"></script>
+		<script type="text/javascript">
+		</script>
+	</body>
+</html>

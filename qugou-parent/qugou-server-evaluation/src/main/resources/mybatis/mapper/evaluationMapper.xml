@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.evaluation.mapper.EvaluationMapper">
+	<insert id="insertEvaluation" parameterType="com.ityb.qugou.po.evaluation.Evaluation">
+		INSERT INTO T_P_EVALUATION(ID
+			<if test="orderId!=null and orderId!=''">
+				,ORDER_ID
+			</if>
+			<if test="productSpecificationId!=null and productSpecificationId!=''">
+				,PRODUCT_SPECIFICATION_ID
+			</if>
+			<if test="evaluationContent!=null and evaluationContent!=''">
+				,EVALUATION_CONTENT
+			</if>
+			<if test="evaluationPic!=null and evaluationPic!=''">
+				,EVALUATION_PIC
+			</if>
+			<if test="qualityFraction!=null and qualityFraction!=0">
+				,QUALITY_FRACTION
+			</if>
+			<if test="descFraction!=null and descFraction!=0">
+				,DESC_FRACTION
+			</if>
+			<if test="deliveryFraction!=null and deliveryFraction!=0">
+				,DELIVERY_FRACTION
+			</if>
+			<if test="creater!=null and creater!=''">
+				,CREATER
+			</if>
+			<if test="ctime!=null">
+				,CTIME
+			</if>
+				,ISVALID
+			)VALUES(
+				#{id}
+				<if test="orderId!=null and orderId!=''">
+					,#{orderId}
+				</if>
+				<if test="productSpecificationId!=null and productSpecificationId!=''">
+					,#{productSpecificationId}
+				</if>
+				<if test="evaluationContent!=null and evaluationContent!=''">
+					,#{evaluationContent}
+				</if>
+				<if test="evaluationPic!=null and evaluationPic!=''">
+					,#{evaluationPic}
+				</if>
+				<if test="qualityFraction!=null and qualityFraction!=0">
+					,#{qualityFraction}
+				</if>
+				<if test="descFraction!=null and descFraction!=0">
+					,#{descFraction}
+				</if>
+				<if test="deliveryFraction!=null and deliveryFraction!=0">
+					,#{deliveryFraction}
+				</if>
+				<if test="creater!=null and creater!=''">
+					,#{creater}
+				</if>
+				<if test="ctime!=null">
+					,#{ctime}
+				</if>
+					,#{isvalid}				
+				)
+	</insert>
+	
+	<select id="queryEvaluationByDto" parameterType="com.ityb.qugou.dto.evaluation.EvaluationDto"
+		resultType="com.ityb.qugou.vo.evaluation.EvaluationVo">
+		SELECT
+			E.ID AS evaluationId,
+			E.CTIME AS evaluationTime,
+			E.DELIVERY_FRACTION AS deliveryFraction,
+			E.DESC_FRACTION AS descFraction,
+			E.EVALUATION_CONTENT AS evaluationContent,
+			E.EVALUATION_PIC AS evaluationPic,
+			E.EVALUATION_REPLY_CONTENT AS evaluationReplyContent,
+			E.EVALUATION_REPLY_TIME AS evaluationReplyTime,
+			E.QUALITY_FRACTION AS qualityFraction,
+			E.PRODUCT_SPECIFICATION_ID AS productSpecificationId,
+			PS.WEIGHT AS weight,
+			PS.PRICE AS price,
+			PS. NAME AS productSpecificationName,
+			PD.TITLE AS productTitle,
+			PD.SELL_POINT AS sellPoint,
+			PD.PRODUCT_ID AS productId,
+			PD.PIC_URL AS productPic,
+			U.USER_NAME AS userName,
+			O.NUMBER AS orderNumber,
+			P.NAME AS productName,
+			E.TYPE AS evaluationType
+		FROM
+			T_P_EVALUATION E
+		LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PS.ID = E.PRODUCT_SPECIFICATION_ID
+		LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID
+		LEFT JOIN T_SYS_USER U ON U.ID =E.CREATER
+		LEFT JOIN T_P_ORDER O ON O.ID=E.ORDER_ID
+		LEFT JOIN T_P_PRODUCT P ON P.ID=PD.PRODUCT_ID
+		<where>
+			E.ISVALID=1 AND PS.ISVALID=1 AND PD.ISVALID=1 
+			AND U.ISVALID=1 AND O.ISVALID=1 AND P.ISVALID=1
+			<if test="creater!=null and creater!=''">
+				AND E.CREATER=#{creater}
+			</if>
+			<if test="productId!=null and productId!=''">
+				AND PD.PRODUCT_ID=#{productId}
+			</if>
+			<if test="evaluationId!=null and evaluationId!=''">
+				AND E.ID=#{evaluationId}
+			</if>
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+			<if test="userName!=null and userName!=''">
+				AND U.USER_NAME LIKE CONCAT('%',CONCAT(#{userName},'%'))
+			</if>
+			<if test="evaluationDate!=null">
+				AND DATE(E.CTIME)=DATE(#{evaluationDate})
+			</if>
+			<if test="type!=null and type!=0">
+				AND E.TYPE=#{type}
+			</if>
+			ORDER BY E.CTIME DESC,E.ORDER_ID ASC
+			<if test="pageStart!=null and pageSize!=null">
+				LIMIT #{pageStart},#{pageSize}
+			</if>
+		</where>
+	</select>
+	<select id="countEvaluationByDto" parameterType="com.ityb.qugou.dto.evaluation.EvaluationDto"
+		resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			T_P_EVALUATION E
+		LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PS.ID = E.PRODUCT_SPECIFICATION_ID
+		LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID
+		LEFT JOIN T_SYS_USER U ON U.ID =E.CREATER
+		LEFT JOIN T_P_ORDER O ON O.ID=E.ORDER_ID
+		LEFT JOIN T_P_PRODUCT P ON P.ID=PD.PRODUCT_ID
+		<where>
+			E.ISVALID=1 AND PS.ISVALID=1 AND PD.ISVALID=1 
+			AND U.ISVALID=1 AND O.ISVALID=1 AND P.ISVALID=1
+			<if test="creater!=null and creater!=''">
+				AND E.CREATER=#{creater}
+			</if>
+			<if test="productId!=null and productId!=''">
+				AND PD.PRODUCT_ID=#{productId}
+			</if>
+			<if test="evaluationId!=null and evaluationId!=''">
+				AND E.ID=#{evaluationId}
+			</if>
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+			<if test="evaluationDate!=null">
+				AND DATE(E.CTIME)=DATE(#{evaluationDate})
+			</if>
+		</where>
+	</select>
+	<select id="queryEvaluation" parameterType="com.ityb.qugou.dto.evaluation.EvaluationDto"
+		resultType="com.ityb.qugou.bo.evaluation.EvaluationBean">
+			SELECT 
+				E.EVALUATION_CONTENT AS evaluationContent,
+				E.EVALUATION_PIC AS evaluationPic,
+				E.EVALUATION_REPLY_CONTENT AS evaluationReplyContent,
+				PS.NAME AS productSpecificationName,
+				C.USER_HEAD AS evaluationUserLogo,
+				U.USER_NAME AS evaluationUser,
+				S.SHOP_NAME AS evaluationReplyer,
+				E.CTIME AS evaluationTime,
+				ROUND((E.DELIVERY_FRACTION+E.DESC_FRACTION+E.QUALITY_FRACTION)/3,1) AS fraction
+				FROM T_P_EVALUATION E
+			LEFT JOIN T_SYS_USER U ON E.CREATER=U.ID
+			LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON E.PRODUCT_SPECIFICATION_ID=PS.ID
+			LEFT JOIN T_SYS_CUSTOMER C ON E.CREATER=C.USER_ID
+			LEFT JOIN T_P_ORDER O ON E.ORDER_ID=O.ID
+			LEFT JOIN T_SYS_SHOP S ON O.MERCHANT_ID=S.USER_ID
+			<where>
+				E.ISVALID=1 AND PS.ISVALID=1 AND U.ISVALID=1 
+				AND C.ISVALID=1 AND O.ISVALID=1 AND S.ISVALID=1 
+				<if test="productId!=null and productId!=''">
+					AND PS.PRODUCT_ID=#{productId}
+				</if>
+			</where>
+	</select>
+	<select id="getEvaluationFraction" parameterType="com.ityb.qugou.dto.evaluation.EvaluationDto" 
+		resultType="com.ityb.qugou.vo.evaluation.EvaluationFractionVo">
+		SELECT
+			ROUND(AVG(E.DELIVERY_FRACTION),1) AS deliveryFraction,
+			ROUND(AVG(E.DESC_FRACTION),1) AS descFraction,
+			ROUND(AVG(E.QUALITY_FRACTION),1) AS qualityFraction,
+			ROUND((AVG(E.DELIVERY_FRACTION)+AVG(E.DESC_FRACTION)+AVG(E.QUALITY_FRACTION))/3,1) AS complexFraction
+		FROM
+			T_P_EVALUATION E
+		LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON E.PRODUCT_SPECIFICATION_ID = PS.ID
+		<where>
+			E.ISVALID=1 AND PS.ISVALID=1 
+			<if test="productId!=null and productId!=''">
+				AND PS.PRODUCT_ID=#{productId}
+			</if>
+		</where>
+	</select>
+	<update id="update" parameterType="com.ityb.qugou.po.evaluation.Evaluation">
+		UPDATE 
+			T_P_EVALUATION 
+		<set>
+			<if test="evaluationReplyContent!=null and evaluationReplyContent!=''">
+				EVALUATION_REPLY_CONTENT=#{evaluationReplyContent},
+			</if>
+			<if test="evaluationReplyTime!=null">
+				EVALUATION_REPLY_TIME=#{evaluationReplyTime},
+			</if>
+			<if test="mtime!=null">
+				MTIME=#{mtime},
+			</if>
+			<if test="type!=null and type!=0">
+				TYPE=#{type},
+			</if>
+		</set>
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+		</where>
+	</update>
+</mapper>

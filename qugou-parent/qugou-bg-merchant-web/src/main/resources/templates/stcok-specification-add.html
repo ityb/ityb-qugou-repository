@@ -1,0 +1,118 @@
+<div style="margin: 15px;">
+	<form class="layui-form" id="specification_form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品名称</label>
+			<div class="layui-input-block">
+				<select name="productName" id="productName"  lay-verify='required'  lay-filter="specification_form_productName" lay-search="">
+					<option value="">请选择商品</option>
+					<#if productList??>
+						<#list productList as product>
+							<option value="${product.id!}">${product.name!}</option>
+						</#list>
+					</#if>
+				</select>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品规格</label>
+			<div class="layui-input-block">
+				<input type="text" name="productSpecificationName" maxlength="10" lay-verify='required' placeholder="请输入商品规格"  autocomplete="off" class="layui-input" >
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品单价</label>
+			<div class="layui-input-block">
+				<input type="number" name="price"  lay-verify="required"  lay-verify="positive_number" placeholder="请输入商品单价（元）" lay-verify='number' min="0.01" autocomplete="off" class="layui-input layui-form-danger">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品净重</label>
+			<div class="layui-input-block">
+				<input type="number" name="weight"  lay-verify="required" lay-verify="positive_number" placeholder="请输入商品净重（kg）"lay-verify='number' min="0.01" autocomplete="off" class="layui-input layui-form-danger">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品库存</label>
+			<div class="layui-input-block">
+				<input type="number" name="stock"  lay-verify="required"  lay-verify="positive_number" placeholder="请输入商品库存量（件）" min="1"  lay-verify='number' autocomplete="off" class="layui-input layui-form-danger">
+			</div>
+		</div>
+		<button lay-filter="edit" lay-submit style="display: none;"></button>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript">
+	//判断是否已经达到了最大的商品规格
+	layui.use("form", function () {
+   		 var form = layui.form();
+		form.on('select(specification_form_productName)', function(data){
+			$.ajax({
+				async : true, //是否异步  
+				cache : false, //是否使用缓存  
+				type : 'post', //请求方式,post  
+				data : {
+					id : $("#specification_form #productName").val()
+				},
+				dataType : "json", //数据传输格式  
+				url : '/merchant/stock/countSpecification?v=' + new Date().getTime(), //请求链接  
+				success : function(data) {
+					if (data.status ==1&&data.data>=8) {
+						parent.layer.msg('该商品下规格已达到最大数量', {icon: 5,time:2000});
+						$("#specification_form #productName").val("").focus();
+					}
+				},
+				error : function(XMLHttpRequest, data) {
+					console.log(data.msg);
+				}
+			});
+		});
+	});
+	$("#specification_form input[name=productSpecificationName]").blur(function(){
+		var productId=$("#specification_form #productName").val();
+		if(productId==null||productId==''){
+			return;
+		}
+		var productSpecificationName=$("#specification_form input[name=productSpecificationName]").val();
+		if(productSpecificationName==null||productSpecificationName==''){
+			return;
+		}
+		$.ajax({
+			async : true, //是否异步  
+			cache : false, //是否使用缓存  
+			type : 'post', //请求方式,post  
+			data : {
+				productId : $("#specification_form #productName").val(),
+				name:$("#specification_form input[name=productSpecificationName]").val()
+			},
+			dataType : "json", //数据传输格式  
+			url : '/merchant/stock/getProductSpecification?v=' + new Date().getTime(), //请求链接  
+			success : function(data) {
+				if (data.status ==1&&data.data!=null) {
+					parent.layer.msg('该商品下规格已经存在', {icon: 5,time:2000});
+					$("#specification_form input[name=productSpecificationName]").val("").focus();
+				}
+			},
+			error : function(XMLHttpRequest, data) {
+				console.log(data.msg);
+			}
+		});
+	});
+	$(document ).on( "blur", "#specification_form input[name=price]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('价格不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+	$(document ).on( "blur", "#specification_form input[name=weight]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('净重不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+	$(document ).on( "blur", "#specification_form input[name=stock]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('库存量不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+</script>

@@ -1,0 +1,442 @@
+.cart-main-box{
+	width: 1170px;
+	height: auto;
+	/* background-color: silver; */
+	margin-left:200px; 
+	margin-top: 70px;
+}
+.foot-box{
+	margin-top:10px;
+	background-color: white;
+}
+.cart-bar-box{
+	width: 100%;
+	height: 38px;
+	/* background-color: #F7F7FD; */
+}
+.cart-now-box{
+	width: auto;
+	height: 38px;
+	line-height: 38px;
+	text-align: left;
+	float: left;
+	font-family: Microsoft YaHei;
+	font-size: 12pt;
+	font-weight: bold;
+	cursor: pointer;
+	color: #FF0036;
+	border-bottom: 1px solid #FF0036;
+}
+.cart-now-box-1{
+	width: auto;
+	height: 38px;
+	line-height: 38px;
+	text-align: left;
+	float: left;
+	font-family: Microsoft YaHei;
+	font-size: 12pt;
+	font-weight: bold;
+	cursor: pointer;
+}
+.cart-history-box{
+	width: auto;
+	height: 38px;
+	line-height: 38px;
+	text-align: left;
+	float: left;
+	font-family: "Microsoft YaHei";
+	font-size: 12pt;
+	font-weight: bold;
+	cursor: pointer;
+}
+.cart-history-box-1{
+	width: auto;
+	height: 38px;
+	line-height: 38px;
+	text-align: left;
+	float: left;
+	font-family: "Microsoft YaHei";
+	font-size: 12pt;
+	font-weight: bold;
+	cursor: pointer;
+	color: #FF0036;
+	border-bottom: 1px solid #FF0036;
+}
+.cart-fg-box{
+	width:20px;
+	height: 25px;
+	margin-top:7px;
+	float: left;
+}
+.cart-main-show-box{
+	margin-top:5px;
+	width: 100%;
+	height: auto;
+}
+.cart-list-show-box{
+	width: 100%;
+	height: auto;
+	float: left;
+}
+.cart-product-number-box{
+	width: auto;
+	height: 38px;
+	line-height: 38px;
+	text-align: left;
+	float: right;
+	font-family: Microsoft YaHei;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 5px;
+}
+.cart-select-box{
+	width: 100%;
+	height: 38px;
+	background-color: #F7F7FD;
+}
+.cart-item-box{
+	margin-left:10px;
+	width: 100px;
+	height: 38px;
+	/* background-color: silver; */
+	text-align: left;
+	line-height: 38px;
+	float: left;
+}
+.cart-item-box input{
+	position:relative;
+	top:3px;
+	width: 15px;
+	height: 15px;
+}
+.cart-show-box{
+	margin-top:10px;
+	width: 100%;
+	height: 160px;
+	border-bottom: 1px solid silver;
+	/* border-top: 1px solid silver; */
+	/* background-color: silver; */
+}
+.cart-empty-box{
+	margin-top:10px;
+	width: 100%;
+	height: 32px;
+	text-align:center;
+	line-height: 32px;
+	color: silver;
+}
+.shop-name-box{
+	width: 100%;
+	height: 20px;
+	border-bottom-style:solid;
+	border-bottom-width:thin;
+	border-bottom-color: rgba(150, 150, 100, 0.2);
+	/* background-color: green; */
+}
+.shop-name{
+	width: auto;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 30px;
+	text-align: left;
+	font-family: Microsoft YaHei;
+	font-size: 14px;
+	font-weight: bold;
+	/* background-color: red; */
+}
+.cart-add-time{
+	font-size: 12px;
+	font-weight: normal;
+	color: silver;
+	/* background-color: red; */
+}
+.cart-item-box-product{
+	margin-left:25px;
+	width: 100px;
+	height: 38px;
+	/* background-color: silver; */
+	text-align: left;
+	line-height: 38px;
+	float: left;
+}
+.cart-item-box-specification{
+	margin-left:322px;
+	width: 100px;
+	height: 38px;
+	/* background-color: silver; */
+	text-align: left;
+	line-height: 38px;
+	float: left;
+}
+.cart-item-box-price{
+	margin-left:37px;
+	width: 100px;
+	height: 38px;
+	/* background-color: silver; */
+	text-align: left;
+	line-height: 38px;
+	float: left;
+}
+.cart-item-box-number{
+	margin-left:15px;
+	width: 90px;
+	height: 38px;
+	/* background-color: silver; */
+	text-align: left;
+	line-height: 38px;
+	float: left;
+}
+.cart-item-box-sub{
+	margin-left:30px;
+	width: 100px;
+	height: 38px;
+	/* background-color: silver; */
+	text-align: left;
+	line-height: 38px;
+	float: left;
+}
+.cart-item-box-operating{
+	margin-left:27px;
+	width: 100px;
+	height: 38px;
+	/* background-color: silver; */
+	text-align: left;
+	line-height: 38px;
+	float: left;
+}
+.shop-name span{
+	cursor: pointer;
+}
+.cart-product-box{
+	width: 100%;
+	height: 140px;
+	/* background-color: gray; */
+}
+.product-checked{
+	width: 20px;
+	height: 100%;
+	/* background-color: red; */
+	margin-left: 10px;
+	text-align: center;
+	float: left;
+}
+.product-checked input{
+	position:relative;
+	top:60px;
+	width: 15px;
+	height: 15px;
+}
+.product-pic-box{
+	width: 100px;
+	height: 90px;
+	/* background-color: red; */
+	float: left;
+	margin-top: 22px;
+}
+.product-pic-box img{
+	width: 100%;
+	height: 100%;
+}
+.product-content-box{
+	margin-left:5px;
+	width: 400px;
+	height: 90px;
+	float: left;
+	margin-top: 22px;
+	/* background-color: silver; */
+}
+.product-title{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: left;
+	/* background-color: green; */
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+}
+.cart-show-box a:HOVER{
+	color: #FF0036;
+	text-decoration: underline;
+}
+.cart-show-box a:link{
+	text-decoration: none;
+}
+.cart-show-box a {
+	 color: black;
+	font-weight: normal;
+}
+.product-sellpoint{
+	width: 100%;
+	height: 20px;
+	color: #FF0036;
+	line-height: 20px;
+	text-align: left;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+	font-size: 12px;
+}
+.product-remark{
+	width: 100%;
+	height: 20px;
+	color: #aaa;
+	line-height: 20px;
+	text-align: left;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+}
+.cart-specification-content-box{
+	margin-left:20px;
+	width: 120px;
+	height: 90px;
+	float: left;
+	margin-top: 22px;
+	/* background-color: silver; */
+	line-height: 20px;
+	text-align: left;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+}
+.cart-product-specification-box{
+	width: 100%;
+	height: 20px;
+	float: left;
+	line-height: 20px;
+	text-align: left;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+	color: black;
+	/* background-color: silver; */
+}
+.cart-product-price-box{
+	margin-left:20px;
+	width: 90px;
+	height: 20px;
+	float: left;
+	margin-top: 22px;
+	/* background-color: silver; */
+	line-height: 20px;
+	text-align: left;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+}
+.cart-sub-total-box{
+	margin-left:50px;
+	width: 110px;
+	height: 20px;
+	float: left;
+	margin-top: 22px;
+	/* background-color: silver; */
+	line-height: 20px;
+	text-align: left;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+}
+.cart-product-buy-number-box{
+	margin-left:20px;
+	width: 75px;
+	height: 25px;
+	float: left;
+	margin-top: 22px;
+	/* background-color: silver; */
+	line-height: 20px;
+	text-align: left;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+}
+.cart-operating-content-box{
+	margin-left:20px;
+	width: 100px;
+	height: 90px;
+	float: left;
+	margin-top: 22px;
+	/* background-color: silver; */
+	line-height: 20px;
+	text-align: left;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+}
+.cart-operating-delete-box{
+	width: 100%;
+	height: 20px;
+	float: left;
+	line-height: 20px;
+	text-align: left;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+	color: black;
+	/* background-color: silver; */
+}
+.cart-total-box{
+	/* margin-top:2px; */
+	width: 100%;
+	height: 70px;
+	background-color: #F7F7FD;
+	float: left;
+}
+.cart-total-select{
+	margin-top:20px;
+	margin-left:12px;
+	width: 50px;
+	height: 20px;
+	float: left;
+	/* background-color: red; */
+}
+.cart-total-select input{
+	position:relative;
+	top:3px;
+	width: 16px;
+	height: 16px;
+}
+.cart-total-text-box{
+	margin-top:25px;
+	margin-left:12px;
+	width: auto;
+	height: 20px;
+	line-height: 20px;
+	text-align: left;
+	/* background-color: red; */
+	margin-right: 2px;
+	float: left;
+}
+.cart-total-box a:HOVER{
+	color: #FF0036;
+	text-decoration: underline;
+}
+.cart-total-box a:link{
+	text-decoration: none;
+}
+.cart-total-box a {
+	 color: black;
+	font-weight: normal;
+}
+.cart-total-js{
+	width: auto;
+	height: 100%;
+	float: right;
+	/* background-color: red; */
+}
+.js-button-box{
+	margin-left:10px;
+	width: 100px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	background-color: #009688;
+	color: white;
+	font-family: "Microsoft YaHei",SimSun,verdana;
+	font-size: 18px;
+	font-weight:bold;
+	float: left;
+	cursor: pointer;
+}
+.cart-total-font1{
+	color: #999;
+}
+.cart-total-font2{
+	color: #FF0036;
+	font-weight: bold;
+}
+.cart-total-font3{
+	font-size:16px;
+	color: #FF0036;
+	font-weight: bold;
+}

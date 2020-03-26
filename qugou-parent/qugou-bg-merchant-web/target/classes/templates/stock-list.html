@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>库存管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+	</head>
+	<body>
+		<div class="admin-main">
+			<blockquote class="layui-elem-quote">
+			<div style="margin-left: 10%;">
+                <div class="layui-form-item" style="margin:0;">
+                    <label class="layui-form-label">商品编号</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="number" id="number" placeholder="请输入商品编号" autocomplete="off" class="layui-input">
+                    </div>
+                    <label class="layui-form-label">商品名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="name" id="name" placeholder="请输入商品名称" autocomplete="off" class="layui-input">
+                    </div>
+                    <label class="layui-form-label">添加时间</label>
+                    <div class="layui-input-inline">
+       					<input type="text" name="addDate" id="addDate" placeholder="请输入添加时间" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+     				</div>
+                    <div class="layui-form-mid layui-word-aux" style="padding:0;">
+                        <button id="search"  class="layui-btn" >查询</button>
+                    </div>
+                </div>
+            </div>
+        </blockquote>
+			<blockquote class="layui-elem-quote">
+				<a href="javascript:;" class="layui-btn layui-btn-small" id="add">
+					<i class="layui-icon">&#xe608;</i> 添加商品库存信息
+				</a>
+				<a href="#" class="layui-btn layui-btn-small" id="add_specification">
+					<i class="layui-icon">&#xe608;</i> 添加商品规格信息
+				</a>
+				<a href="#" class="layui-btn layui-btn-small" id="export_ps_info">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i> 导出信息
+				</a>
+				<a href="#" class="layui-btn layui-btn-small" id="export_ps_all">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i> 导出全部信息
+				</a>
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>商品列表</legend>
+				<div class="layui-field-box layui-form">
+					<table class="layui-table admin-table">
+						<thead>
+							<tr>
+								<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>
+								<th>商品编号</th>
+								<th>商品名称</th>
+								<th>商品规格</th>
+								<th>商品单价（元）</th>
+								<th>净重（kg）</th>
+								<th>库存量（件）</th>
+								<th>添加时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="content"></tbody>
+					</table>
+				</div>
+				<div class="admin-table-page">
+				<div id="paged" class="page">
+				</div>
+			</div>
+			</fieldset>
+		</div>
+		<!--模板-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<td><input type="checkbox" lay-skin="primary"></td>
+				<td>{{ item.productNumber }}</td>
+				<td>{{ item.productName }}</td>
+				<td>{{ item.productSpecificationName }}</td>
+				<td>{{ item.price }}</td>
+				<td>{{ item.weight }}</td>
+				<td>{{ item.stock }}</td>
+				<td>{{ item.productAddDate }}</td>
+				<td>
+					<a href="javascript:;" data-name="{{ item.productSpecificationId }}" data-opt="edit" class="layui-btn layui-btn-mini">编辑</a>
+					<a href="javascript:;" data-name="{{ item.productSpecificationId }}" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+				</td>
+			</tr>
+			{{# }); }}
+		</script>
+		<script type="text/javascript" src="/merchant/layui/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="/merchant/js/stock.js"></script>
+	</body>
+</html>

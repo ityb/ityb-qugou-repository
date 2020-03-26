@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.search.mapper.ProductMapper">
+	<select id="queryProductForSearch" parameterType="com.ityb.qugou.dto.search.ProductSearchDto"
+		resultType="com.ityb.qugou.bo.search.ProductSearchBean">
+		SELECT
+			P.ID AS productId,
+			P.NAME AS productName,
+			P.NUMBER AS productNumber,
+ 			(SELECT MIN(PS.PRICE) FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=P.ID) AS minPrice,
+ 			(SELECT MAX(PS.PRICE) FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=P.ID) AS maxPrice,
+  			(SELECT PS.ID FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=P.ID ORDER BY PS.PRICE LIMIT 1) AS specificationId,
+  			PDETAIL.TITLE AS title,
+  			PDETAIL.CTIME AS addTime,
+			PDETAIL.SELL_POINT AS sellPoint,
+			PDETAIL.PIC_URL AS picUrl,
+			PSPCM.NAME AS merchantCategoryName,
+  			PSPCS.NAME AS shopCategoryName,
+  			SHOP.SHOP_ADDRESS AS productAddress,
+  			SHOP.SHOP_NAME AS shopName,
+  			SHOP.ID AS shopId,
+  			SHOP.X AS x,
+  			SHOP.Y AS y
+		FROM
+			T_P_PRODUCT_DETAIL PDETAIL
+		LEFT JOIN T_P_PRODUCT P ON P.ID = PDETAIL.PRODUCT_ID
+		LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCM ON PDETAIL.MERCHANT_CATEGORY_ID=PSPCM.ID
+		LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCS ON PDETAIL.SHOP_CATEGORY_ID=PSPCS.ID
+		LEFT JOIN T_SYS_SHOP SHOP ON SHOP.USER_ID=P.CREATER
+		<where>
+			P.ISVALID=1 
+			AND P.STATE=1
+			AND PDETAIL.ISVALID=1 
+			AND PSPCM.ISVALID=1 
+			AND PSPCS.ISVALID=1
+			AND SHOP.ISVALID=1
+			<if test="productId!=null and productId!=''">
+				AND P.ID=#{productId}
+			</if>
+			<if test="productIdList!=null and productIdList.size()>0">
+				AND P.ID IN
+				<foreach collection="productIdList"  item="item" open="(" close=")" separator=",">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</select>
+</mapper>

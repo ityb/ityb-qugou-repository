@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-订单列表</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" href="/shop/css/product/jquery-labelauty.css">
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/order/order-list.css" />
+<!-- 单选框美化 -->
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<!-- 分页插件 -->
+<link rel="stylesheet" href="/shop/css/page/kkpager.css" />
+<!-- 分页插件 -->
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/page/kkpager.min.js" ></script>
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<div class="order-list-main-box">
+	<div class="order-line-box">
+		<input type="hidden" value="${orderDto.state!}" id="order_state"/>
+		<#if orderDto.state??>
+			<div class="nav-item-box"><input type="hidden" value="0"/>全部订单</div>
+			<div class="nav-item-box <#if orderDto.state==-1>order-state</#if>"><input type="hidden" value="-1"/>待付款</div>
+			<div class="nav-item-box <#if orderDto.state==1>order-state</#if>"><input type="hidden" value="1"/>已付款</div>
+			<div class="nav-item-box <#if (orderDto.state>=2)&&(orderDto.state<5)>order-state</#if>"><input type="hidden" value="2"/>已接单</div>
+			<div class="nav-item-box <#if orderDto.state==5>order-state</#if>"><input type="hidden" value="5"/>待评价</div>
+			<div class="nav-item-box <#if orderDto.state==6>order-state</#if>"><input type="hidden" value="6"/>已完成</div>
+			<div class="nav-item-box <#if (orderDto.state>=-4)&&(orderDto.state<=-2)>order-state</#if>"><input type="hidden" value="-2"/>已取消</div>
+		<#else>
+			<div class="nav-item-box order-state"><input type="hidden" value="0"/>全部订单</div>
+			<div class="nav-item-box"><input type="hidden" value="-1"/>待付款</div>
+			<div class="nav-item-box"><input type="hidden" value="1"/>已付款</div>
+			<div class="nav-item-box"><input type="hidden" value="2"/>已接单</div>
+			<div class="nav-item-box"><input type="hidden" value="5"/>待评价</div>
+			<div class="nav-item-box"><input type="hidden" value="6"/>已完成</div>
+			<div class="nav-item-box"><input type="hidden" value="-2"/>已取消</div>
+		</#if>
+	</div>
+	<div class="order-line-box order-nav-box">
+		<div class="order-nav-detail">订单详情</div>
+		<div class="ordrr-nav-other-user">收货人</div>
+		<div class="ordrr-nav-other">金额</div>
+		<div class="ordrr-nav-other">订单状态</div>
+		<div class="ordrr-nav-other">操作</div>
+	</div>
+	<div class="order-show-main-box">
+		<input type="hidden" id="total_record" value="${totalRecord!}"/>
+		<#if orderList??&&(orderList?size>0)>
+			<!-- 订单项循环 -->
+			<#list orderList as orderShowVo>
+				<div class="order-item-box">
+					<div class="order-item-nav">
+						<div class="order-item-nav-box">${orderShowVo.orderBean.addTime?string("yyyy-MM-dd HH:mm:ss")}</div>
+						<div class="order-item-nav-number-box">订单号： <a href="javacript:;">${orderShowVo.orderBean.number!}</a></div>
+						<div class="order-item-nav-box">商家：<a href="/shop/store/detail?id=${orderShowVo.orderBean.shopId!}">${orderShowVo.orderBean.shopName!}</a></div>
+					</div>
+					<div class="order-product-left-box">
+						<#if orderShowVo.orderItemBeanList??&&(orderShowVo.orderItemBeanList?size>0)>
+							<!-- 订单商品循环 -->
+							<#list orderShowVo.orderItemBeanList as orderItemBean>
+								<#if (orderItemBean_index+1)==(orderShowVo.orderItemBeanList?size)>
+									<div class="order-product-box qx-unline">
+								<#else>
+									<div class="order-product-box">
+								</#if>
+									<div class="order-product-img-box">
+										<#if orderItemBean.productPic??>
+											<#list orderItemBean.productPic?split(",") as pic>
+												<#if pic_index==0>
+													<a href="/shop/product/detail?id=${orderItemBean.productId!}"><img src="${pic!}" alt="" /></a>
+												</#if>
+											</#list>
+										<#else>
+											<a href="/shop/product/detail?id=${orderItemBean.productId}"><img src="/qugou-image/f674af96.jpg" alt="" /></a>
+										</#if>
+									</div>
+									<div class="order-product-content-box">
+										<div class="order-product-title"><a href="/shop/product/detail?id=${orderItemBean.productId!}">${orderItemBean.productTitle!}</a></div>
+										<div class="order-product-sellpoint">${orderItemBean.sellPoint!}</div>
+										<div class="order-product-specification">
+											<div class="specification-item">规格：${orderItemBean.productSpecificationName!}</div>
+											<div class="specification-item">单价：￥${(orderItemBean.price?string("#.00"))!}</div>
+											<div class="specification-item">净重：${(orderItemBean.weight?string("#.00"))!}kg</div>
+										</div>
+									</div>
+									<div class="order-product-buy-number-box">x${orderItemBean.buyNumber!0}</div>
+								</div>
+							</#list>
+							<!-- 订单商品循环结束 -->
+						</#if>
+					</div>
+					<div class="order-cz-right-box">
+						<div class="cz-item-box">
+							<div class="cz-show-item">
+								<div>${orderShowVo.orderBean.customerName!}</div>
+								<div><a href="javacript:;">
+									<#if orderShowVo.orderBean.deliveryWay==1>
+										上门自提
+									<#elseif orderShowVo.orderBean.deliveryWay==2>
+										同城配送
+									<#else>
+										其他
+									</#if>
+								</a></div>
+							</div>
+						</div>
+						<div class="cz-item-box">
+							<div class="cz-show-item">
+								<div>¥${(orderShowVo.orderBean.total?string("#.00"))!}</div>
+								<div>
+									<#if orderShowVo.orderBean.tradeWay==1>
+										货到付款
+									<#elseif orderShowVo.orderBean.tradeWay==2>
+										在线支付
+									<#else>
+										其他
+									</#if>
+								</div>
+							</div>
+						</div>
+						<div class="cz-item-box">
+							<div class="cz-show-item">
+								<div>
+									<#if orderShowVo.orderBean.state==-4>
+										已退款
+									<#elseif orderShowVo.orderBean.state==-3>
+										已取消
+									<#elseif orderShowVo.orderBean.state==-3>
+										已拒单
+									<#elseif orderShowVo.orderBean.state==-1>
+										未付款
+									<#elseif orderShowVo.orderBean.state==1>
+										已付款
+									<#elseif orderShowVo.orderBean.state==2>
+										已接单
+									<#elseif orderShowVo.orderBean.state==3>
+										正在配送
+									<#elseif orderShowVo.orderBean.state==4>
+										已签收
+									<#elseif orderShowVo.orderBean.state==5>
+										待评价
+									<#elseif orderShowVo.orderBean.state==6>
+										已完成
+									<#elseif orderShowVo.orderBean.state==7>
+										等待商家退款
+									</#if>
+								</div>
+								<div><a href="javacript:;">订单详情</a></div>
+							</div>
+						</div>
+						<div class="cz-item-box qx-right-line">
+							<div class="cz-show-item">
+								<#if orderShowVo.orderBean.state==-4>
+									商家已退款
+								<#elseif orderShowVo.orderBean.state==-3>
+									系统已取消
+								<#elseif orderShowVo.orderBean.state==-2>
+									商家拒绝接单
+								<#elseif orderShowVo.orderBean.state==-1>
+									<a href="/shop/order/pay?orderNumbers=${orderShowVo.orderBean.number!}">
+										<div class="order-cz-button">立即付款</div>
+									</a>
+								<#elseif orderShowVo.orderBean.state==1>
+									<div>
+										等待商家接单
+									</div>
+									<a href="javacript:;" class="refund" title="${orderShowVo.orderBean.number!}">
+										<div class="order-cz-button">申请退款</div>
+									</a>
+								<#elseif orderShowVo.orderBean.state==2>
+									<div>
+										等待商家发货
+									</div>
+									<a href="javacript:;" class="refund" title="${orderShowVo.orderBean.number!}">
+										<div class="order-cz-button">申请退款</div>
+									</a>
+								<#elseif orderShowVo.orderBean.state==3>
+									<a href="javacript:;" class="delivery-info" delivery-way="${orderShowVo.orderBean.deliveryWay!}"  order-id="${orderShowVo.orderBean.id!}" title="${orderShowVo.orderBean.number!}">
+										<div class="order-cz-button">查看物流</div>
+									</a>
+								<#elseif orderShowVo.orderBean.state==4>
+									<a href="javacript:;" class="finish" title="${orderShowVo.orderBean.number!}">
+										<div class="order-cz-button">确认收货</div>
+									</a>
+								<#elseif orderShowVo.orderBean.state==5>
+									<a href="/shop/evaluation/notEvaluation/list?orderId=${orderShowVo.orderBean.id!}">
+										<div class="order-cz-button">立即评价</div>
+									</a>
+								<#elseif orderShowVo.orderBean.state==6>
+									<a href="javacript:;" class="delete-order" title="${orderShowVo.orderBean.number!}">
+										<div class="order-cz-button">删除订单</div>
+									</a>
+								<#elseif orderShowVo.orderBean.state==7>
+									请等待商家退款
+								</#if>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 订单循环结束 -->
+			</#list>
+		</#if>
+	</div>
+</div>
+<div class="order-page-box">
+	<div class="page-box">
+		<div class="page-show-box">
+			<div id="kkpager"></div>
+		</div>
+	</div>
+</div>
+<div class="foot-box">
+	<#include "/common/footer.html">	
+</div>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/order/delivery-info.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/css/number/spinner/jquery.spinner.js"></script>
+<script type="text/javascript" src="/shop/js/product/jquery-labelauty.js"></script>
+<script type="text/javascript" src="/shop/js/order/order-list.js"></script>
+</body>
+</html>

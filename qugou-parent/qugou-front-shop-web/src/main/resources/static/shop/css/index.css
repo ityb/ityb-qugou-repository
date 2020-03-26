@@ -1,0 +1,956 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.header {
+	width: 100%;
+	height: 100px;
+	/* background-color: red; */
+}
+
+.header-top {
+	width: 100%;
+	height: 38px;572
+	background-color: #f5f5f5;
+	z-index: 200px;
+	min-width: 1190px;
+}
+.address-icon{
+	width: 25px;
+	line-height:38px;
+	float: left;
+	cursor: pointer;
+}
+.address-icon img{
+	width: 100%;
+	height: 100%;
+}
+
+.top-address-msg {
+	/* margin-top: 8px */;
+	text-align:center;
+	line-height:38px;
+	width: 100px;
+	height: 100%;
+	margin-left: 12%;
+	/* font: 12pt/24px "Microsoft Yahei"; */
+	font-weight: bold;
+	float: left;
+}
+
+.top-address {
+	width: auto;
+	line-height:38px;
+	float: left;
+	cursor:pointer;
+	/* background-color: red; */
+	float: left;
+	/* font: 12pt/24px "Microsoft Yahei"; */
+	font-weight: bold;
+}
+.top-login{
+	width: auto;
+	line-height:38px;
+	float: left;
+/* 	background-color: red; */
+	/* font: 12pt/24px "Microsoft Yahei"; */
+	font-weight: bold;
+	margin-left: 15px;
+}
+
+.top-login a {
+	 color: black;
+	font-weight: #009688;
+}
+
+.top-login a:hover {
+	color: #FF0036;
+}
+
+.top-login a:link {
+	text-decoration: none;
+}
+
+.right-header-nav{
+	width: auto;
+	height: 38px;
+	margin-right:20px;
+	/* background-color: red; */
+	float: right;
+}
+.single-header-nav{
+	width: 110px;
+	height: 38px;
+	line-height: 38px;
+	float: left;
+	/* background-color: red; */
+}
+.header-nav-name{
+	width: 100px;
+	height: 38px;
+	line-height: 38px;
+	/* background-color: red; */
+}
+
+.header-nav-name a {
+	 color: black;
+	font-weight: bold;
+}
+
+.header-nav-name a:hover {
+	color: #FF0036;
+}
+
+.header-nav-name a:link {
+	text-decoration: none;
+}
+
+.header-bottom {
+	width: 100%;
+	height: 120px;
+	/* background-color: blue; */
+	float: left;
+}
+
+.left-logo {
+	width: 200px;
+	height: 100%;
+	margin-left: 12%;
+	float: left;
+	/* background-color: red; */
+}
+.left-logo-img-box{
+	width: 200px;
+	height: 80px;
+	margin-top: 32px;
+	
+	/* background-color: black; */
+}
+.left-logo-img-box img{
+	width: 400px;
+	height: 100%;
+}
+
+.center-search {
+	width: 50%;
+	height: 100%;
+	margin-left: 100px;
+	/* 	background-color: gray; */
+	float: left;
+}
+
+.search-top {
+	width: 100%;
+	height: 40%;
+	/* background-color: silver; */
+	margin-top: 6%;
+}
+
+.search-top-left {
+	width: 55%;
+	height: 92%;
+	/* background-color: red; */
+	float: left;
+	/* width: 420px; */
+	padding: 0 0 0 28px;
+	border: 2px solid #009688;
+	border-right: none;
+	position: relative;
+}
+
+.search-top-right {
+	width: 15%;
+	height: 92%;
+	background-color: #009688;
+	cursor: pointer;
+	float: left;
+}
+
+.search-top-right span {
+	position: relative;
+	left: 32%;
+	top: 14%;
+	font-style: normal;
+	color: white;
+	font-weight: bold;
+	font-size: 22px;
+	font-family: sans-serif;
+}
+
+.search-icon {
+	display: block;
+	position: absolute;
+	top: 8px;
+	left: 0px;
+	width: 25px;
+	height: 70%;
+	line-height: 40px;
+	line-height: 42px\0;
+	text-align: right;
+	font-size: 14px;
+	color: #ccc;
+	/* background-color: red; */
+	background-image: url("../images/search.png");
+}
+
+.search-keyword-box {
+	border: 0px;
+}
+
+.search-keyword {
+	width: 100%;
+	padding: 9px 10px 9px 0;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 0;
+	border: none;
+	background: #FFF;
+	color: #BBB;
+	font-size: 12px;
+	font-family: 'MicroSoft YaHei';
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	outline: none;
+	/* background-color: red; */
+}
+
+.search-hot {
+	float: left;
+	width: 100%;
+	height: 18px;
+	margin-top: 5px;
+	overflow: hidden;
+	_float: none;
+	_position: relative;
+	font-size: 0;
+}
+
+.search-hot a {
+	float: left;
+	margin-right: 14px;
+	white-space: nowrap;
+	font-size: 12px;
+	text-decoration: none;
+	/* font: 12px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB"; */
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #BBB;
+}
+
+.search-hot a:hover {
+	color: #FF0036;
+}
+.search-hot a:link {
+	text-decoration: none;
+}
+
+.nav-box {
+	width: 100%;
+	height: 40px;
+	/* background-color: #009688; */
+	margin-top: 90px;
+}
+
+.category-box {
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: auto;
+	background-color: #f5f5f5;
+}
+
+.category-left-box{
+	position: absolute;
+	width: 190px;
+	height: 500px;
+	left:0px;
+	/* background-image: url("../images/cate-left.png"); */
+}
+.category-left-box img{
+	width: 100%;
+	height: 102%;
+}
+.category-right-box{
+	position: absolute;
+	width: 190px;
+	height: 500px;
+	left:86.6%;
+/* 	background-color: red; */
+}
+.category-right-box img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.sildeshow-box {
+	position: absolute;
+	width: 795px;
+	height: 500px;
+	/* background-color: silver; */
+	/* left: 24.5%; */
+	left: 25.3%;
+	top: -1px;
+}
+
+.category-name-box {
+	width: 24.5%;
+	height: 100%;
+	float: left;
+	/* 	background-color: red; */
+}
+
+.category-name-show {
+	width: 200px;
+	height: 100%;
+	/* 	background-color: red; */
+	float: right;
+}
+
+.category-name-show div {
+	/* width:170xp; */
+	margin-left: 5px;
+	margin-top: 10px;
+	font-size: 12pt;
+	font-family: 'MicroSoft YaHei';
+	font-weight: bold;
+	/*  color: white; */
+	color: #009688;
+	float: left;
+}
+
+.category-name-show img {
+	margin-top: 5px;
+	width: 30px;
+	height: 80%;
+	float: left;
+}
+
+.nav-category {
+	width: 10%;
+	height: 100%;
+	/* background-color: red; */
+	float: left;
+}
+
+.nav-category div {
+	text-align: center;
+	margin-top: 10px;
+	font-size: 12pt;
+	font-family: 'MicroSoft YaHei';
+	font-weight: bold;
+	/*  color: white; */
+}
+
+.nav-category a {
+	/*  color: white; */
+	color: #009688;
+}
+
+.nav-category a:hover {
+	color: #FF0036;
+}
+
+.nav-category a:link {
+	text-decoration: none;
+}
+
+.o2o-login-box {
+	width: 12.5%;
+	height: 100%;
+	/* background-color: red; */
+	float: left;
+}
+
+.o2o-login-box img {
+	margin-left: 10px;
+	margin-top: 5px;
+	width: 50px;
+	height: 80%;
+	float: left;
+}
+
+.o2o-login-box div {
+	/* width:170xp; */
+	margin-left: 5px;
+	margin-top: 10px;
+	font-size: 12pt;
+	font-family: 'MicroSoft YaHei';
+	font-weight: bold;
+	/*  color: white; */
+	color: #009688;
+	float: left;
+}
+
+.new-box {
+	position: absolute;
+	width: 202px;
+	height: 500px;
+	/* background-color: #009688; */
+	left: 74.3%;
+	top: 0%;
+	background-color: white;
+}
+
+.new-login-top {
+	width: 100%;
+	height: 35%;
+	/* background-color: gray; */
+	border-bottom-color: rgba(150, 150, 100, 0.3);
+	border-bottom-style: solid;
+	border-bottom-width: thin;
+}
+
+.login-top-box {
+	width: 100%;
+	height: 40%;
+	/* text-align: center; */
+	/* background-color: red; */
+}
+
+.login-top-box-img {
+	width: 70px;
+	height: 100%;
+	border-radius: 50%;
+	/* background-color: silver; */
+	margin: 0 auto;
+	/* margin-left: 20%; */
+}
+
+.login-top-box-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.hi-box {
+	width: 100%;
+	height: 25px;
+	margin-top: 2px;
+	/* background-color: red; */
+	text-align: center;
+	font: 12px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	overflow: hidden;
+}
+
+.login-bottom-handle {
+	width: 100%;
+	height: 40px;
+	/* background-color:black; */
+	float: left;
+}
+
+.login-bottom-login-button {
+	width: 70px;
+	height: 25px;
+	background-color: #009688;
+	margin-left: 20px;
+	text-align: center;
+	color: white;
+	font: 12px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	font-weight: bold;
+	float: left;
+	cursor: pointer;
+}
+
+.login-bottom-regist-button {
+	width: 70px;
+	height: 23px;
+	border-style: solid;
+	border-color: #009688;
+	border-width: thin;
+	margin-left: 20px;
+	text-align: center;
+	color: #009688;
+	font: 12px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	font-weight: bold;
+	float: left;
+	cursor: pointer;
+}
+
+.notice-box {
+	margin-top: 10px;
+	width: 100%;
+	height: 30px;
+	/* background-color: red; */
+	float: left;
+	border-top-color: rgba(150, 150, 100, 0.3);
+	border-top-style: solid;
+	border-top-width: thin;
+}
+
+.notice-box-img {
+	margin-top: 3px;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	float: left;
+	/* background-color: red; */
+}
+
+.notice-box-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.notice-box-name {
+	margin-top: 3px;
+	width: 100px;
+	height: 100%;
+	font: 15px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	font-weight: bold;
+	color: #009688;
+	float: left;
+}
+
+.notice-show-box {
+	width: 100%;
+	height: 22%;
+	/* 	background-color: red; */
+}
+
+.notice-message-show {
+	margin-left: 10px;
+	width: 95%;
+	height: 20px;
+	/* background-color: gray; */
+	font: 12px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	font-weight: bold;
+	color: #009688;
+	overflow: hidden;
+}
+
+.notice-message-show a {
+	color: #009688;
+}
+
+.notice-message-show a:hover {
+	color: #FF0036;
+}
+
+.notice-message-show  a:link {
+	text-decoration: none;
+}
+
+.direct-supmarket-ident {
+	border-top-color: rgba(150, 150, 100, 0.3);
+	border-top-style: solid;
+	border-top-width: thin;
+	width: 100%;
+	height: 30px;
+	border-bottom-color: rgba(150, 150, 100, 0.3);
+	border-bottom-style: solid;
+	border-bottom-width: thin;
+	/* background-color: red; */
+}
+
+.direct-supmarket-box {
+	width: 100%;
+	height: 36.5%;
+	float: left;
+	/* background-color: red; */
+}
+
+.supmarket-show-box {
+	margin-top: 2px;
+	width: 100%;
+	height: 34px;
+	/* background-color: red; */
+}
+
+.supmarket-logo-box {
+	width: 35px;
+	height: 35px;
+	margin-left: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+	/* background-color:red; */
+	float: left;
+}
+
+.supmarket-logo-box img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.supmarket-name-box {
+	width: 150px;
+	margin-left: 5px;
+	height: 100%;
+	/* background-color: red; */
+	float: left;
+	font: 15px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	font-weight: bold;
+	color: #009688;
+	overflow: hidden;
+	line-height: 35px; /*设置line-height与父级元素的height相等*/
+	text-align: left; /*设置文本水平居中*/
+}
+
+.supmarket-name-box a {
+	color: #009688;
+	font-size: 14px;
+}
+
+.supmarket-name-box a:hover {
+	color: #FF0036;
+}
+
+.supmarket-name-box a:link {
+	text-decoration: none;
+}
+
+.crazy-buy-box {
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: auto;
+	background-color: #f5f5f5;
+	float: left;
+}
+
+.crazy-buy-nav {
+	border-bottom-color: #009688;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	width: 1190px;
+	height: 30px;
+	margin-top: 10px;
+	/* background-color: #009688; */
+	margin-left: 190px;
+}
+
+.crazy-buy-nav div {
+	font: 15px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	font-weight: bold;
+	color: #009688;
+	line-height: 30px;
+}
+
+.crazy-product-show-box {
+	width: 1190px;
+	margin-left: 190px;
+	height: auto;
+	background-color: white;
+	float: left;
+}
+
+.crazy-product {
+	width: 235px;
+	height: 250px;
+	/* background-color: gray; */
+	margin-top: 2px;
+	margin-left: 3px;
+	float: left;
+}
+
+.product-image-box {
+	width: 100%;
+	height: 180px;
+	float: left;
+	/* background-color: silver; */
+	float: left;
+}
+
+.product-name-box {
+	width: 100%;
+	height: 35px;
+	/* background-color: black; */
+	float: left;
+	margin: 5px auto 3px;
+	color: #474747;
+	font: 12px/18px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	overflow: hidden;
+	word-break: break-all;
+}
+
+.product-name-box a {
+	color: #009688;
+}
+
+.product-name-box a:hover {
+	color: #FF0036;
+}
+
+.product-name-box a:link {
+	text-decoration: none;
+}
+
+.product-price-box {
+	width: 100%;
+	height: 24px;
+	/* background-color: red; */
+	float: left;
+	margin: 2px auto 3px;
+	/* color: #474747; */
+	font: 12px/18px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	overflow: hidden;
+	word-break: break-all;
+}
+.product-real-price{
+	width: auto;
+	height: 24px;
+	/* background-color: black; */
+	font: 16px/18px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	color: #FF0036;
+	line-height:24px;
+	float: left;
+	font-weight: bold;
+}
+.product-discount-price{
+	margin-left:10px;
+	width: auto;
+	height: 24px;
+	/* background-color: black; */
+	font: 12px/18px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	color: silver;
+	 text-decoration:line-through;
+	line-height:24px;
+	float: left;
+	/* font-weight: bold; */
+}
+.dis-sale-area-box{
+	width: 1190px;
+	height: auto;
+	margin-top: 0px;
+	background-color: white;
+	margin-left: 190px;
+	float: left;
+}
+.dis-sale-box{
+	margin-left:3px;
+	width: 592px;
+	height: 527px;
+	/* background-color: silver; */
+	margin-top: 10px;
+	float: left;
+}
+.left-sale-name{
+	width: 197px;
+	height: 350px;
+	float: left;
+	/* background-color: red; */
+}
+.left-sale-name img{
+	width: 100%;
+	height: 100%;
+}
+.sale-product-area{
+	margin-left:3.3px;
+	margin-top:3px;
+	width: 194px;
+	height: 173px;
+	border-right-color: rgba(150, 150, 100, 0.1);
+	border-right-style: solid;
+	border-right-width: thin;
+	border-bottom-color: rgba(150, 150, 100, 0.1);
+	border-bottom-style: solid;
+	border-bottom-width: thin;
+	/* background-color: gray; */
+	float: left;
+}
+.sale-product-name{
+	margin-top:10px;
+	width: 194px;
+	height: 30px;
+	text-align:center; /*水平居中*/
+	line-height: 30px; /*行距设为与div高度一致*/
+	/* background-color:red; */
+	float:left;
+	font: 16px/24px "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+}
+.sale-product-name a {
+	color: #009688;
+}
+
+.sale-product-name a:hover {
+	color: #FF0036;
+}
+
+.sale-product-name a:link {
+	text-decoration: none;
+}
+.sale-product-img{
+	width: 194px;
+	height: 130px;
+	/* background-color: black; */
+	float: left;
+}
+.sale-product-img img{
+	width: 99%;
+	height: 100%;
+}
+.end{
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 50px;
+	background-color: #f5f5f5;
+	float: left;
+	background-image: url("../images/end.png");
+}
+.foot-box{
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 500px;
+	background-color: #f5f5f5;
+	float: left;
+	border-top-color: rgba(150, 150, 100, 0.15);
+	border-top-style: solid;
+	border-top-width: thin;
+}
+.footer-sm{
+	width: 1190px;
+	height: 50px;
+	margin-top: 30px;
+/* 	background-color: white; */
+	margin-left: 190px;
+	float: left;
+}
+.sm-img-box{
+	width: 238px;
+	height: 100%;
+	/* background-color: white; */
+	float: left;
+}
+.sm-img-box img{
+	width: 50px;
+	height: 100%;
+	float: left;
+}
+.sm-img-box div{
+	margin-left:10px;
+	margin-top:10px;
+	width: 150px;
+	height: 30px;
+	float:left;
+	/* background-color:red; */
+	line-height: 30px;
+	font: 22px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	font-weight: bold;
+}
+.footer-des{
+	width: 1185px;
+	height: 250px;
+	margin-top: 30px;
+	/* background-color: white; */
+	margin-left: 196px;
+	float: left;
+}
+.footer-des-msg{
+	width: 237px;
+	height: 100%;
+/* 	background-color: red; */
+	float: left;
+}
+.foot-des-msg-header{
+	width: 100%;
+	height: 35px;
+/* 	text-align: center; */
+	line-height: 35px;
+	font: 12pt/24px "Microsoft Yahei";
+	font-weight: bold;
+}
+.foot-des-msg-show{
+	width: 100%;
+	height: 35px;
+/* 	text-align: center; */
+	line-height: 35px;
+	font: 10pt/24px /* "Microsoft Yahei" */;
+	font-weight: bold;
+}
+.foot-des-msg-show a {
+	color: black;
+}
+
+.foot-des-msg-show  a:hover {
+	color: #FF0036;
+}
+
+.foot-des-msg-show  a:link {
+	text-decoration: none;
+}
+.username_show{
+	margin-top:2px;
+	width: 100%;
+	height: 18px;
+	font-weight:bold;
+	line-height: 18px;
+	text-align: center;
+}
+.userhead_show{
+	margin-top:2px;
+	width: 100%;
+	height: 18px;
+	font-weight:bold;
+	line-height: 20px;
+	text-align: center;
+}
+.loginout-bottom-button {
+	width: 70px;
+	height: 25px;
+	background-color: #009688;
+	margin-left: 70px;
+	text-align: center;
+	color: white;
+	font: 12px/24px "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB";
+	font-weight: bold;
+	float: left;
+	cursor: pointer;
+}
+.search-category-product{
+	position:absolute;
+	left:490px;
+	top:63px;
+	width: 52px;
+	height: 22px;
+	background-color: #009688;
+	line-height: 22px;
+	text-align: center;
+	cursor: pointer;
+	margin-right:2px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	border-top-right-radius: 6px;
+    border-top-left-radius: 6px
+}
+.search-category-shop{
+	position:absolute;
+	left:543px;
+	top:63px;
+	width: 52px;
+	height: 22px;
+	background-color: #009688;
+	line-height: 22px;
+	text-align: center;
+	cursor: pointer;
+	margin-right:2px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	border-top-right-radius: 6px;
+    border-top-left-radius: 6px
+}
+.search-category-item{
+	position:relative;
+	width: 52px;
+	height: 22px;
+	background-color: #009688;
+	line-height: 22px;
+	text-align: center;
+	cursor: pointer;
+	margin-right:2px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	border-top-right-radius: 6px;
+    border-top-left-radius: 6px
+}
+.clear-bg{
+	background-color: white;
+	color: #009688;
+}

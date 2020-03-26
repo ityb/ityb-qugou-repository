@@ -1,0 +1,105 @@
+2018-05-20 00:00:00.018 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:00:00.109 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192345(String)
+2018-05-20 00:00:00.122 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:00:00
+2018-05-20 00:01:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:01:00.020 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192346(String)
+2018-05-20 00:01:00.023 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:01:00
+2018-05-20 00:02:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:02:00.019 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192347(String)
+2018-05-20 00:02:00.023 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:02:00
+2018-05-20 00:03:00.007 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:03:00.019 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192348(String)
+2018-05-20 00:03:00.061 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:03:00
+2018-05-20 00:03:04.437 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:04:00.005 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:04:00.013 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192349(String)
+2018-05-20 00:04:00.019 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:04:00
+2018-05-20 00:05:00.007 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:05:00.017 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192350(String)
+2018-05-20 00:05:00.021 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:05:00
+2018-05-20 00:06:00.007 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:06:00.023 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192351(String)
+2018-05-20 00:06:00.026 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:06:00
+2018-05-20 00:07:00.007 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:07:00.025 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192352(String)
+2018-05-20 00:07:00.028 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:07:00
+2018-05-20 00:08:00.005 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:08:00.012 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192353(String)
+2018-05-20 00:08:00.015 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:08:00
+2018-05-20 00:08:04.457 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:09:00.008 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:09:00.017 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192354(String)
+2018-05-20 00:09:00.020 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:09:00
+2018-05-20 00:10:00.005 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:10:00.015 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192355(String)
+2018-05-20 00:10:00.019 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:10:00
+2018-05-20 00:11:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:11:00.022 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192356(String)
+2018-05-20 00:11:00.025 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:11:00
+2018-05-20 00:12:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:12:00.013 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192357(String)
+2018-05-20 00:12:00.016 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:12:00
+2018-05-20 00:13:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:13:00.016 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192358(String)
+2018-05-20 00:13:00.018 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:13:00
+2018-05-20 00:13:04.475 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:14:00.007 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:14:00.019 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805192359(String)
+2018-05-20 00:14:00.023 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:14:00
+2018-05-20 00:15:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:15:00.022 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200000(String)
+2018-05-20 00:15:00.025 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:15:00
+2018-05-20 00:16:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:16:00.014 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200001(String)
+2018-05-20 00:16:00.017 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:16:00
+2018-05-20 00:17:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:17:00.013 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200002(String)
+2018-05-20 00:17:00.020 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:17:00
+2018-05-20 00:18:00.015 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:18:00.022 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200003(String)
+2018-05-20 00:18:00.026 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:18:00
+2018-05-20 00:18:04.494 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:19:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:19:00.014 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200004(String)
+2018-05-20 00:19:00.019 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:19:00
+2018-05-20 00:20:00.005 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:20:00.012 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200005(String)
+2018-05-20 00:20:00.014 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:20:00
+2018-05-20 00:21:00.007 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:21:00.058 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200006(String)
+2018-05-20 00:21:00.063 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:21:00
+2018-05-20 00:22:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:22:00.013 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200007(String)
+2018-05-20 00:22:00.015 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:22:00
+2018-05-20 00:23:00.005 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:23:00.011 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200008(String)
+2018-05-20 00:23:00.014 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:23:00
+2018-05-20 00:23:04.523 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:24:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:24:00.020 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200009(String)
+2018-05-20 00:24:00.028 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:24:00
+2018-05-20 00:25:00.005 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:25:00.015 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200010(String)
+2018-05-20 00:25:00.018 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:25:00
+2018-05-20 00:26:00.023 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:26:00.037 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200011(String)
+2018-05-20 00:26:00.043 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:26:00
+2018-05-20 00:27:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:27:00.016 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200012(String)
+2018-05-20 00:27:00.020 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:27:00
+2018-05-20 00:28:00.007 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:28:00.014 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200013(String)
+2018-05-20 00:28:00.017 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:28:00
+2018-05-20 00:28:04.541 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:29:00.005 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:29:00.018 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200014(String)
+2018-05-20 00:29:00.021 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:29:00
+2018-05-20 00:30:00.004 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:30:00.011 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200015(String)
+2018-05-20 00:30:00.014 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:30:00
+2018-05-20 00:31:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:31:00.046 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200016(String)
+2018-05-20 00:31:00.050 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:31:00
+2018-05-20 00:32:00.006 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==>  Preparing: CALL BATCH_CANCEL_ORDER(?); 
+2018-05-20 00:32:00.014 [pool-8-thread-1] DEBUG c.i.q.j.m.J.batchCancelOrderJob -==> Parameters: 1805200017(String)
+2018-05-20 00:32:00.017 [pool-8-thread-1] INFO  c.i.q.job.controller.JobConrtoller -batchCancelOrderJob....执行定时任务,将15分钟内未支付的订单取消,执行成功,执行时间为=2018-05-20 00:32:00

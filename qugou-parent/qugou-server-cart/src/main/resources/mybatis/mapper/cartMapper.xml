@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.cart.mapper.CartMapper">
+	<insert id="insertCart" parameterType="com.ityb.qugou.po.cart.Cart">
+		INSERT INTO T_P_CART(ID
+			<if test="specificationId!=null and specificationId!=''">
+				,SPECIFICATION_ID
+			</if>
+			<if test="buyNumber!=null and buyNumber!=0">
+				,BUY_NUMBER
+			</if>
+			<if test="cartType!=null and cartType!=0">
+				,CART_TYPE
+			</if>
+			<if test="ctime!=null">
+				,CTIME
+			</if>
+			<if test="creater!=null and creater!=''">
+				,CREATER
+			</if>
+			,ISVALID
+		)VALUES(
+			#{id}
+			<if test="specificationId!=null and specificationId!=''">
+				,#{specificationId}
+			</if>
+			<if test="buyNumber!=null and buyNumber!=0">
+				,#{buyNumber}
+			</if>
+			<if test="cartType!=null and cartType!=0">
+				,#{cartType}
+			</if>
+			<if test="ctime!=null">
+				,#{ctime}
+			</if>
+			<if test="creater!=null and creater!=''">
+				,#{creater}
+			</if>
+			,#{isvalid}
+		)
+	</insert>
+	<select id="queryCartByEntity" parameterType="com.ityb.qugou.po.cart.Cart" 
+		resultType="com.ityb.qugou.po.cart.Cart">
+		SELECT 
+			SPECIFICATION_ID AS specificationId,
+			BUY_NUMBER AS buyNumber,
+			CTIME AS ctime
+		FROM T_P_CART
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+			<if test="specificationId!=null and specificationId!=''">
+				AND SPECIFICATION_ID=#{specificationId}
+			</if>
+			<if test="cartType!=null and cartType!=0">
+				AND CART_TYPE=#{cartType}
+			</if>
+			<if test="creater!=null and creater!=''">
+				AND CREATER=#{creater}
+			</if>
+		</where>
+	</select>
+	<update id="updateByEntity" parameterType="com.ityb.qugou.po.cart.Cart" >
+		UPDATE 
+			T_P_CART 
+			SET 
+				BUY_NUMBER=BUY_NUMBER+#{buyNumber}
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+			<if test="specificationId!=null and specificationId!=''">
+				AND SPECIFICATION_ID=#{specificationId}
+			</if>
+			<if test="cartType!=null and cartType!=0">
+				AND CART_TYPE=#{cartType}
+			</if>
+			<if test="creater!=null and creater!=''">
+				AND CREATER=#{creater}
+			</if>
+		</where>
+	</update>
+	
+	<select id="queryCartByCart" parameterType="com.ityb.qugou.po.cart.Cart"
+		resultType="com.ityb.qugou.vo.cart.CartVo">
+			SELECT
+				PC.ID AS cartId,
+				PC.BUY_NUMBER AS buyNumber,
+				PC.SPECIFICATION_ID AS productSpecificationId,
+				PC.CTIME AS addTime,
+				PS.PRODUCT_ID AS productId,
+				PS. NAME AS productSpecificationName,
+				PS.WEIGHT AS weight,
+				PS.PRICE AS price,
+				PS.STOCK AS stock,
+				PD.SELL_POINT AS sellPoint,
+				PD.TITLE AS productTitle,
+				PD.PIC_URL AS productPicUrl,
+				SS.SHOP_NAME AS shopName,
+				SS.ID AS shopId,
+				SS.USER_ID AS merchantId
+			FROM
+				T_P_CART PC
+			LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID
+			LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID
+			LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID
+			WHERE
+				PC.ISVALID = 1
+			AND PD.ISVALID = 1
+			AND PS.ISVALID = 1
+	   		AND SS.ISVALID=1
+			<if test="cartType!=null and cartType!=0">
+				AND PC.CART_TYPE=#{cartType}
+			</if>
+			<if test="creater!=null and creater!=''">
+				AND PC.CREATER=#{creater}
+			</if>
+			<if test="address!=null and address!=''">
+				AND SS.SHOP_ADDRESS LIKE CONCAT(#{address},'%')
+			</if>
+			ORDER BY PC.CTIME DESC
+	</select>
+	<update id="deleteProductFromCart" parameterType="java.util.List">
+		UPDATE T_P_CART SET ISVALID=0
+		<where>
+			<if test="idList!=null and idList.size()>0">
+				ID IN
+				<foreach collection="idList" item="id" open="(" close=")" separator=",">
+					#{id}
+				</foreach>
+			</if>
+		</where>
+	</update>
+	<update id="updateCartByEntity" parameterType="com.ityb.qugou.po.cart.Cart">
+		UPDATE 
+			T_P_CART 
+			SET 
+				BUY_NUMBER=#{buyNumber}
+		<where>
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+		</where>
+	</update>
+	
+	<select id="queryCartByCartIds" parameterType="java.util.List" 
+				resultType="com.ityb.qugou.vo.cart.CartVo">
+		SELECT
+				PC.ID AS cartId,
+				PC.BUY_NUMBER AS buyNumber,
+				PC.SPECIFICATION_ID AS productSpecificationId,
+				PC.CTIME AS addTime,
+				PS.PRODUCT_ID AS productId,
+				PS.NAME AS productSpecificationName,
+				PS.WEIGHT AS weight,
+				PS.PRICE AS price,
+				PS.STOCK AS stock,
+				PD.SELL_POINT AS sellPoint,
+				PD.TITLE AS productTitle,
+				PD.PIC_URL AS productPicUrl,
+				SS.SHOP_NAME AS shopName,
+				SS.ID AS shopId,
+				SS.START_PRICE AS startPrice,
+				SS.USER_ID AS merchantId
+			FROM
+				T_P_CART PC
+			LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID
+			LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID
+			LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID
+			WHERE
+				PC.ISVALID = 1
+			AND PD.ISVALID = 1
+			AND PS.ISVALID = 1
+	   		AND SS.ISVALID=1
+	   		<if test="cartIdList!=null and cartIdList.size()>0">
+	   			AND PC.ID IN
+	   			<foreach collection="cartIdList" item="item"  open="(" separator="," close=")">
+	   				#{item}
+	   			</foreach>
+	   		</if>
+			ORDER BY SS.ID ASC,PC.CTIME DESC
+	</select>
+	<update id="deleteProductByCart" parameterType="com.ityb.qugou.po.cart.Cart">
+		UPDATE 
+			T_P_CART 
+			SET 
+				ISVALID=0
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+			<if test="cartType!=null">
+				AND CART_TYPE=#{cartType}
+			</if>
+			<if test="creater!=null and creater!=''">
+				AND CREATER=#{creater}
+			</if>
+			<if test="specificationId!=null and specificationId!=''">
+				AND SPECIFICATION_ID=#{specificationId}
+			</if>
+		</where>
+	</update>
+</mapper>

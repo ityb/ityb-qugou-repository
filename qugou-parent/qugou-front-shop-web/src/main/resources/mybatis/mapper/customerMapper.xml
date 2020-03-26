@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.mapper.CustomerMapper">
+	<select id="getCustomerByEntity" parameterType="com.ityb.qugou.po.manager.Customer"
+		resultType="com.ityb.qugou.po.manager.Customer">
+		SELECT
+			REAL_NAME AS realName,
+			PHONE AS phone,
+			EMAIL AS eamil,
+			USER_HEAD AS userHead
+		FROM
+			T_SYS_CUSTOMER
+		WHERE
+			ISVALID = 1
+		<if test="userId!=null and userId!=''">
+			AND USER_ID=#{userId}
+		</if>
+	</select>
+</mapper>

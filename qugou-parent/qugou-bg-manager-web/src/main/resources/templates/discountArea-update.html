@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/manager/h-ui/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/manager/h-ui/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/manager/h-ui/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/manager/h-ui/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/manager/h-ui/lib/upload/upload.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>添加产品分类</title>
+</head>
+<body>
+<div class="page-container">
+	<form action="/manager/discountArea/save-update" method="post" class="form form-horizontal" id="form-discountArea-update" enctype="multipart/form-data">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"></label>
+			<div class="formControls col-xs-6 col-sm-6"><h3>编辑优惠专区-节点（${discountArea.name!"根节点"}）</h3></div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">
+				<span class="c-red">*</span>
+				优惠专区名称：</label>
+			<div class="formControls col-xs-6 col-sm-6">
+				<input type="text" class="input-text" value="${discountArea.name!}" placeholder="" id="name" name="name">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">
+				<span class="c-red">*</span>
+				优惠专区链接：</label>
+			<div class="formControls col-xs-6 col-sm-6">
+				<input type="text" class="input-text" value="${discountArea.linkUrl!}" placeholder="" id="linkUrl" name="linkUrl">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">
+				<span class="c-red">*</span>
+				优惠专区图片：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<#if discountArea.showPic??>
+					<input type="hidden" id="showPic_src" name="showPic" value="${discountArea.showPic!}"/>
+					<img alt="" src="${discountArea.showPic!}" id="showPic"  width="240px" height="100px">
+				<#else>
+					<label class="form-label col-xs-4 col-sm-2">
+					<span class="c-red">*</span>优惠专区图片：</label>
+					<div class="formControls col-xs-8 col-sm-9" id="picShow"><span class="c-red">请选择图片</span></div>
+				</#if>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"></label>
+			<div class="formControls col-xs-8 col-sm-9 file-style image-box" >
+	           	<input type="file" name="file" id="upload-input" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple="multiple" />选择图片
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">
+				<span class="c-red">*</span>
+				排序号：</label>
+			<div class="formControls col-xs-6 col-sm-6">
+				<input type="text" class="input-text" value="${discountArea.sortNum!}" placeholder="" id="sortNum" name="sortNum">
+			</div>
+		</div>
+		<input type="hidden" value="${discountArea.parentId!}" name="parentId"/>
+		<input type="hidden" value="${discountArea.id!}" name="id"/>
+		<div class="row cl">
+			<div class="col-9 col-offset-2">
+				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+				<#if discountArea.parentId??&&(discountArea.parentId!='0')>
+					<input class="btn btn-primary radius" type="button" value="&nbsp;&nbsp;删除&nbsp;&nbsp;" id="delete">
+				</#if>
+			</div>
+		</div>
+	</form>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="/manager/h-ui/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="/manager/h-ui/lib/upload/upload.js"></script> 
+<script type="text/javascript" src="/manager/h-ui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="/manager/h-ui/static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="/manager/h-ui/static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/manager/h-ui/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/manager/h-ui/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/manager/h-ui/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#delete").click(function(){
+		layer.confirm('确认要删除该节点吗？',function(index){
+			$.ajax({
+				type: 'POST',
+				data:{"id":$("input[name=id]").val()},
+				url: '/manager/discountArea/delete',
+				dataType: 'json',
+				success: function(data){
+					if( data.status = 200 ){
+	                	 var index = parent.layer.getFrameIndex(window.name);
+	                	 var index = parent.layer.getFrameIndex(window.name);
+	                	  	parent.$('.btn-refresh').click();
+	                	  	parent.location.reload(); 
+	                	  	layer.msg('已删除!',{icon:1,time:1000});
+	                   }else{
+	                        alert("fail");
+	                   }
+				},
+				error:function(data) {
+					console.log(data.msg);
+				},
+			});		
+		});
+	});
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$("#form-discountArea-update").validate({
+		rules:{
+			linkUrl:{
+				required:true,
+			},
+			sortNum:{
+				required:true,
+				digits:true 
+			},
+			uploadfile:{
+				
+			}
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit({
+				 dataType:"json",
+				 success:function( data ){
+	                  if( data.status = 200 ){
+	                	  var index = parent.layer.getFrameIndex(window.name);
+	                	  parent.$('.btn-refresh').click();
+	                	  parent.location.reload(); 
+	                		layer.msg('已修改!',{icon:1,time:1000});
+	          			 // parent.layer.close(index);
+	                   }else{
+	                        alert("fail");
+	                   }
+	              }
+			});
+		}
+	});
+});
+$("#upload-input").ajaxImageUpload({
+    url: '/manager/discountArea/upload', //上传的服务器地址
+    data: {},
+    maxNum: 1, //允许上传图片数量
+    zoom: true, //允许上传图片点击放大
+    allowType: ["gif", "jpeg", "jpg", "bmp",'png'], //允许上传图片的类型
+    maxSize :10, //允许上传图片的最大尺寸，单位M
+    before: function () {
+    },
+    success:function(data){
+    	if(data.code==200){
+    		$("#showPic_src").val(data.src);
+    		$("#showPic").attr("src",data.src);
+    	}
+    },
+    error:function (e) {
+        console.log(e);
+    }
+});
+</script>
+</body>
+</html>

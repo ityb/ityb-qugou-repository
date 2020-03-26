@@ -1,0 +1,345 @@
+.check-order-main-box{
+	width: 1170px;
+	height: auto;
+	/* background-color: silver; */
+	margin-left:200px; 
+	margin-top: 70px;
+}
+.foot-box{
+	margin-top:10px;
+	background-color: white;
+}
+.top-bar-title-box{
+	margin-top:10px;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #edd491;
+    background: #fffdee;
+    padding: 0 20px;
+    line-height: 25px;
+    margin-bottom: 5px;
+    color: #999;
+    font-size: 12px;
+}
+.top-bar-title-box img{
+	margin-bottom:2px;
+	width: 22px;
+	height: 20px;
+}
+.top-bar-name-box{
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	text-align: left;
+	/* background: silver; */
+	font-size: 16px;
+}
+.check-center-show-box{
+	width: 100%;
+	height: auto;
+	border: 1px solid #f0f0f0;
+}
+.title-name-item-box{
+	font-size: 12pt;
+	font-weight:bold;
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	text-align: left;
+	padding: 0 20px;
+}
+.check-item-box{
+	margin-left:50px;
+	margin-top:10px;
+	height:auto;
+	border-bottom: 1px solid #f0f0f0;
+	width: 91%;
+	margin-bottom: 10px;
+	/* background-color: silver; */
+}
+.check-item-box input`{
+	float: left;
+}
+.check-line-box{
+	width: 100%;
+	height: 32px;
+	/* background-color: black; */
+	line-height: 32px;
+	text-align: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+}
+.check-button{
+	width: 100px;
+	height: 32px;
+	background-color: #009688;
+	cursor: pointer;
+	z-index: 5px;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	font-style: normal;
+	text-align: center;
+}
+.check-font-style-1{
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	color: silver;
+	float: left;
+}
+.check-radio-box{
+	width: auto;
+	height: 100%;
+	/* background-color: red; */
+	float: left;
+	text-align: center;
+	line-height: 100%;
+}
+.check-radio-box input{
+	position:relative;
+	top:2px;
+	width: 18px;
+	height: 18px;
+}
+ .check-address{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.check-font1{
+	font-size: 14px;
+	font-weight: bold;
+	font-style: normal;
+} 
+.check-merchant-name-box{
+	margin-left: 50px;
+}
+.bar-nav-item-box{
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	/* background-color: #fffdee; */
+	background-color: #F7F7FD;
+}
+.check-order-item-box{
+	margin-top: 2px;
+	margin-bottom: 10px;
+	border: 1px solid #f0f0f0;
+	padding: 0 20px;
+}
+.item-all-select-box{
+	width: 80px;
+	height: 32px;
+	line-height: 32px;
+	/* background-color: red; */
+}
+.item-all-select-box input {
+	width: 100%;
+	height: 32px;
+}
+.checkedbox-box{
+	width: 100px;
+	height: 32px;
+	float: left;
+}
+.nav-order-product-box{
+	width: 500px;
+	height: 32px;
+	line-height: 32px;
+	text-align: left;
+	/* background-color: red; */
+	float: left;
+}
+.nav-order-other-box{
+	width: 150px;
+	height: 32px;
+	line-height: 32px;
+	text-align: left;
+	/* background-color: green; */
+	float: left;
+	margin-left: 20px;
+}
+.check-order-item-show-box{
+	width: 100%;
+    height: 100px;
+   /*  background-color: gray; */
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.check-order-img-box{
+	width: 100px;
+	height: 100%;
+	float: left;
+	/* background-color: red; */
+}
+.check-order-img-box img{
+	width: 100%;
+	height: 100%;
+}
+.check-order-conten-box{
+	width: 400px;
+	height: 100%;
+	float: left;
+	padding:0 10px;
+	/* background-color: green; */
+}
+.order-product-title{
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Microsoft YaHei",SimSun,verdana;
+    font-size: 15px;
+}
+.order-product-sellpoint{
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Microsoft YaHei",SimSun,verdana;
+    font-size: 14px;
+    color: #FF0036;
+}
+.order-product-other{
+	margin-top:2px;
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Microsoft YaHei",SimSun,verdana;
+    font-size: 14px;
+    color: silver;
+    font-weight: bold;
+}
+.check-order-specification-box{
+	width: 150px;
+	height: 100%;
+	/* background-color: red; */
+	float: left;
+	margin-left: 20px;
+}
+.order-specification-item{
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	text-align: left;
+}
+.check-order-price-box{
+	width: 150px;
+	height: 100%;
+	/* background-color: red; */
+	float: left;
+	margin-left: 20px;
+}
+.check-order-buyNumber-box{
+	width: 150px;
+	height: 100%;
+	/* background-color: red; */
+	float: left;
+	margin-left: 20px;
+}
+.order-sub-box{
+	width: auto;
+	height: 32px;
+	line-height: 32px;
+	float: right;
+	font-weight: bold;
+}
+.order-sub-box span{
+	color: #FF0036;
+}
+.qx-line{
+	border-bottom: none;
+}
+.bottom-show-box{
+	margin-top:10px;
+	width: 100%;
+	height: 75px;
+	background-color: #F7F7FD;
+}
+.bottom-button-box{
+	margin-top:10px;
+	width: 100%;
+	height: 38px;
+/* 	background-color: red; */
+}
+.pay-money-box{
+	width: auto;
+	float: right;
+	height: 32px;
+	line-height: 32px;
+	/* background-color: red; */
+	margin-right: 20px;
+	color: #999;
+}
+.pay-money-box span{
+	color: #e4393c;
+	font-size: 18px;
+	font-weight: bold;
+}
+.pay-jisong-address-box{
+	width: auto;
+	float: right;
+	height: 32px;
+	line-height: 32px;
+	/* background-color: red; */
+	margin-right: 20px;
+	color: #999;
+}
+.pay-button-box{
+	margin-right: 20px;
+    width: 120px;
+    height: 38px;
+    line-height: 38px;
+    z-index:20px;
+    text-align: center;
+    background-color: #009688;
+    color: white;
+    font-family: "Microsoft YaHei",SimSun,verdana;
+    font-size: 18px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+.product-total-box{
+	margin-top:10px;
+	width: 100%;
+	height: 70px;
+	/* background-color: black; */
+}
+.total-item-box{
+	width: auto;
+	line-height: 32px;
+	height: 32px;
+	float: right;
+	margin-right: 20px;
+}
+
+.check-order-item-show-box a:HOVER{
+	color: #FF0036;
+	text-decoration: underline;
+}
+.check-order-item-show-box a:link{
+	text-decoration: none;
+}
+.check-order-item-show-box a {
+	 color: black;
+	font-weight: normal;
+}
+.order-disabled{
+	background-color: #F7F7FD;
+}
+.co-red{
+	color: #FF0036;
+}

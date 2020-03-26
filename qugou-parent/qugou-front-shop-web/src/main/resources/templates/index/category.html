@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<div class="containor">
+	<div class="nav_left">
+		<ul>
+			<#if shopProductCatgoryList??>
+				<#list shopProductCatgoryList as shopProductCatgoryVo>
+					<li data-id="${shopProductCatgoryVo.productCategory.id!}"> <span>${shopProductCatgoryVo.productCategory.name!}</span></li>
+				</#list>
+			</#if>
+		</ul>
+	</div>
+	<div class="nav_right">
+		<#if shopProductCatgoryList??>
+			<#list shopProductCatgoryList as shopProductCatgoryVo>
+				<div class="sub hide" data-id="${shopProductCatgoryVo.productCategory.id!}">
+				<#if shopProductCatgoryVo.categoryList??>
+					<#list shopProductCatgoryVo.categoryList as secondCategory>
+						<dl>
+							<dt><a>${secondCategory.productCategory.name!}<i> &gt;</i></a> </dt>
+							<dd>
+								<#if secondCategory.categoryList?? >
+							 		<#list secondCategory.categoryList as thirdCategory>
+										<a href="/shop/search/product?shopCategoryName=${thirdCategory.name!}">${thirdCategory.name!}</a>
+									</#list>
+								</#if>
+							</dd>
+						</dl>
+					 </#list>
+				 </#if>
+				</div>
+			</#list>
+		</#if>
+	</div>
+</div>

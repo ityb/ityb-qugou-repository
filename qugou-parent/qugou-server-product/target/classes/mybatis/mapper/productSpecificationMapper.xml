@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.product.mapper.ProductSpecificationMapper">
+	<!-- 获取商品规格列表 -->
+	<select id="queryProductSpecification"  parameterType="com.ityb.qugou.dto.product.ProductSpecificationDto" 
+		resultType="com.ityb.qugou.vo.product.ProductSpecificationVo">
+		SELECT
+			P.ID AS productId,
+			P. NAME AS productName,
+			P.NUMBER AS productNumber,
+			PS.ID AS productSpecificationId,
+			PS. NAME AS productSpecificationName,
+			PS.PRICE AS price,
+			PS.STOCK AS stock,
+			PS.WEIGHT AS weight,
+			PS.CTIME AS productAddDate
+		FROM
+			T_P_PRODUCT_SPECIFICATION PS
+		LEFT JOIN T_P_PRODUCT P ON PS.PRODUCT_ID = P.ID
+		WHERE
+			PS.ISVALID = 1
+		AND P.ISVALID = 1
+		<if test="productSpecificationId!=null and productSpecificationId!=''">
+			AND PS.ID=#{productSpecificationId}
+		</if>
+		<if test="number!=null and number!=''">
+			AND P.NUMBER LIKE CONCAT(CONCAT('%',#{number}),'%')
+		</if>
+		<if test="name!=null and name!=''">
+			AND P. NAME LIKE CONCAT(CONCAT('%',#{name}),'%')
+		</if>
+		<if test="addDate!=null">
+			AND DATE(PS.CTIME)=DATE(#{addDate})
+		</if>
+		<if test="creater!=null and creater!=''">
+			AND PS.CREATER=#{creater} AND P.CREATER=#{creater}
+		</if>
+		ORDER BY P. NAME ASC,PS.CTIME DESC
+		<if test="pageSize!=null and pageSize!=0 and pageStart!=null and pageStart!=0">
+				LIMIT #{pageStart},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取商品规格数量 -->
+	<select id="countProductSpecification"  parameterType="com.ityb.qugou.dto.product.ProductSpecificationDto" 
+		resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			T_P_PRODUCT_SPECIFICATION PS
+		LEFT JOIN T_P_PRODUCT P ON PS.PRODUCT_ID = P.ID
+		WHERE
+			PS.ISVALID = 1
+		AND P.ISVALID = 1
+		<if test="number!=null and number!=''">
+			AND P.NUMBER LIKE CONCAT(CONCAT('%',#{number}),'%')
+		</if>
+		<if test="name!=null and name!=''">
+			AND P. NAME LIKE CONCAT(CONCAT('%',#{name}),'%')
+		</if>
+		<if test="addDate!=null">
+			AND DATE(PS.CTIME)=DATE(#{addDate})
+		</if>
+		<if test="creater!=null and creater!=''">
+			AND PS.CREATER=#{creater} AND P.CREATER=#{creater}
+		</if>
+	</select>
+	<!-- 添加一条商品规格 -->
+	<insert id="insertProductSpecification" parameterType="com.ityb.qugou.po.product.ProductSpecification">
+		INSERT INTO T_P_PRODUCT_SPECIFICATION(ID
+		<if test="name!=null and name!=''">
+			,NAME
+		</if>
+		<if test="price!=null and price!=0">
+			,PRICE
+		</if>
+		<if test="stock!=null and stock!=0">
+			,STOCK
+		</if>
+		<if test="weight!=null and weight!=0">
+			,WEIGHT
+		</if>
+		<if test="productId!=null and productId!=''">
+			,PRODUCT_ID
+		</if>
+		<if test="ctime!=null">
+			,CTIME
+		</if>	
+		<if test="creater!=null and creater!=''">
+			,CREATER
+		</if>
+		) VALUES(#{id}
+		<if test="name!=null and name!=''">
+			,#{name}
+		</if>
+		<if test="price!=null and price!=0">
+			,#{price}
+		</if>
+		<if test="stock!=null and stock!=0">
+			,#{stock}
+		</if>
+		<if test="weight!=null and weight!=0">
+			,#{weight}
+		</if>
+		<if test="productId!=null and productId!=''">
+			,#{productId}
+		</if>
+		<if test="ctime!=null">
+			,#{ctime}
+		</if>	
+		<if test="creater!=null and creater!=''">
+			,#{creater}
+		</if>	
+		)
+	</insert>
+	<!-- 查询商品规格的数量 -->
+	<select id="countSpecification" parameterType="com.ityb.qugou.po.product.Product" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			T_P_PRODUCT_SPECIFICATION 
+		WHERE
+			ISVALID = 1
+		<if test="id!=null and id!=''">
+			AND PRODUCT_ID=#{id}
+		</if>
+	</select>
+	<!-- 查询商品规格列表 -->
+	<select id="querySpecification" parameterType="com.ityb.qugou.po.product.ProductSpecification" resultType="com.ityb.qugou.po.product.ProductSpecification">
+		SELECT 
+		  ID,
+		  NAME,
+		  STOCK,
+		  PRICE,
+		  WEIGHT,
+		  STOCK,
+		  CTIME,
+		  PRODUCT_ID AS PRODUCTID
+		  FROM T_P_PRODUCT_SPECIFICATION
+		  <where>
+			 ISVALID = 1
+			 <if test="productId!=null  and productId!=''">
+			 	AND PRODUCT_ID=#{productId}
+			 </if>
+			 <if test="name!=null and name!=''">
+			 	AND NAME=#{name}
+			 </if>
+			 <if test="creater!=null and creater!=''">
+			 	AND CREATER=#{creater}
+			 </if>
+			 <if test="state!=null">
+			 	AND STATE=#{state}
+			 </if>
+			 <if test="id!=null and id!=''">
+				AND ID=#{id}
+			 </if>
+		  </where>
+	</select>
+	<!-- 根据商品ids获取对应的商品信息 -->
+	<select id="queryProductByIds"  parameterType="java.util.Set" 
+			resultType="com.ityb.qugou.vo.product.ProductSpecificationVo">
+		SELECT
+			P.ID AS productId,
+			P. NAME AS productName,
+			P.NUMBER AS productNumber,
+			PS.ID AS productSpecificationId,
+			PS. NAME AS productSpecificationName,
+			PS.PRICE AS price,
+			PS.STOCK AS stock,
+			PS.WEIGHT AS weight,
+			PS.CTIME AS productAddDate
+		FROM
+			T_P_PRODUCT_SPECIFICATION PS
+		LEFT JOIN T_P_PRODUCT P ON PS.PRODUCT_ID = P.ID
+		WHERE
+			PS.ISVALID = 1
+		AND P.ISVALID = 1
+		<if test="idSet!=null and idSet.size()>0">
+			AND PS.ID IN
+			<foreach collection="idSet" item="item" separator="," open="(" close=")">
+				#{item}
+			</foreach>
+		</if>
+		ORDER BY P. NAME ASC,PS.CTIME DESC
+	</select>
+	
+	<!-- 更新一条记录 -->
+	<update id="updateSpecification" parameterType="com.ityb.qugou.po.product.ProductSpecification">
+		UPDATE T_P_PRODUCT_SPECIFICATION 
+		<set>
+			<if test="price!=null and price!=0">
+			 	PRICE=#{price},
+			</if>
+			<if test="stock!=null and stock!=0">
+				STOCK=#{stock},
+			</if>
+			<if test="weight!=null and weight!=0">
+				WEIGHT=#{weight},
+			</if>
+		</set>
+		<where>
+			<if test="id!=null and id!=''">
+				ID=#{id}
+			</if>
+		</where>
+	</update>
+	
+	<!-- 删除一条记录 -->
+	<update id="deleteSpecification" parameterType="com.ityb.qugou.po.product.ProductSpecification">
+		UPDATE T_P_PRODUCT_SPECIFICATION 
+		<set>
+			ISVALID=0,
+			<if test="dtime!=null">
+				MTIME=#{dtime},
+			</if>
+		</set>
+		<where>
+			<if test="id!=null and id!=''">
+				ID=#{id}
+			</if>
+		</where>
+	</update>
+	<!-- 查询规格信息通过商品po -->
+	<select id="querySpecificationByPoduct" parameterType="com.ityb.qugou.po.product.Product" 
+		resultType="com.ityb.qugou.bo.product.SpecificationBean">
+		SELECT 
+	 		NAME AS productSpecificationName,
+			PRICE AS price,
+	 		WEIGHT AS weight,
+	 		STOCK AS stock,
+	 		ID AS productSpecificationId
+		FROM  T_P_PRODUCT_SPECIFICATION 
+		WHERE ISVALID=1
+		<if test="id!=null and id!=''">
+			AND PRODUCT_ID=#{id}
+		</if>
+		<if test="state!=null">
+			AND STATE=#{state}
+		</if>
+	</select>
+	<!-- 批量更新商品规格状态 -->
+	<update id="batchUpdateState">
+		UPDATE T_P_PRODUCT_SPECIFICATION
+			SET STATE=#{state}
+		<where>
+			ISVALID=1
+			<if test="specificationList!=null and specificationList.size()>0">
+				AND ID IN
+				<foreach collection="specificationList" item="item" open="(" close=")" separator=",">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</update>
+	<update id="updateSpecificationStateByProduct">
+		UPDATE T_P_PRODUCT_SPECIFICATION
+			SET STATE=#{state}
+		<where>
+			ISVALID=1
+			<if test="product.id!=null and product.id!=''">
+				AND PRODUCT_ID=#{product.id}
+			</if>
+		</where>
+	</update>
+</mapper>

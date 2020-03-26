@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+	</head>
+<body>
+<div style="margin: 15px;">
+	<form class="layui-form" id="product_form" onsubmit="return false">
+		<div class="layui-form-item">
+			<table class="layui-table">
+    				<thead>
+      					<tr>
+    						<th>订单数量</th>
+     						<th>成交额（元）</th>
+     						<th>成交商品数量（件）</th>
+     						<th>统计时间</th>
+     					</tr>
+     					</thead>
+     				<tbody>
+     					<#if orderStatisticsVo??>
+  							<tr>
+  								<td>${orderStatisticsVo.orderCount!0}</td>
+  								<td>${(orderStatisticsVo.tradeMoney!0.00)?string("#.00")}</td>
+  								<td>${orderStatisticsVo.tradeCount!0}</td>
+  								<td>${orderStatisticsVo.statisticsTime?string("yyyy-MM-dd HH:ss:mm")!}</td>
+  							</tr>
+     					</#if>
+     				</tbody>
+   			</table>
+		</div>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript"></script>
+</body>
+</html>

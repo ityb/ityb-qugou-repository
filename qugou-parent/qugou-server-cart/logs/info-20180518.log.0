@@ -1,0 +1,59 @@
+2018-05-18 13:06:30.483 [main] INFO  com.ityb.qugou.CartAppliction -No active profile set, falling back to default profiles: default
+2018-05-18 13:07:35.833 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2018-05-18 13:07:35.840 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-05-18 13:07:44.038 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2018-05-18 13:08:42.286 [main] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration -Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2018-05-18 13:08:52.729 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-18 13:08:52.731 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-18 13:08:52.836 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-18 13:08:52.838 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-18 13:09:03.192 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1
+2018-05-18 13:09:04.567 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2018-05-18 13:09:04.569 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2018-05-18 13:09:05.715 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2018-05-18 13:09:05.718 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2018-05-18 13:09:13.633 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:09:51.941 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false
+2018-05-18 13:09:51.943 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null
+2018-05-18 13:09:51.945 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false
+2018-05-18 13:09:51.946 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false
+2018-05-18 13:09:51.947 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true
+2018-05-18 13:09:51.948 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true
+2018-05-18 13:09:51.949 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server
+2018-05-18 13:09:55.641 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200
+2018-05-18 13:09:55.650 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30
+2018-05-18 13:09:55.672 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-18 13:09:55.701 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1526620195699 with initial instances count: 6
+2018-05-18 13:09:58.649 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1526620198648, current=UP, previous=STARTING]
+2018-05-18 13:09:59.965 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_CART-SERVICE/PC-20160510GKPU:cart-service:8008: registering service...
+2018-05-18 13:10:05.553 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_CART-SERVICE/PC-20160510GKPU:cart-service:8008 - registration status: 204
+2018-05-18 13:10:05.620 [main] INFO  com.ityb.qugou.CartAppliction -Started CartAppliction in 264.38 seconds (JVM running for 276.889)
+2018-05-18 13:14:51.980 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:19:52.006 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:24:52.029 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:29:52.051 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:34:52.073 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:39:52.095 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:44:52.118 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:49:52.143 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:54:52.166 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 13:59:52.188 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:04:52.214 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:09:52.239 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:14:52.262 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:19:52.288 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:24:52.311 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:29:52.334 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:34:52.357 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:39:52.379 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:44:52.401 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:49:52.423 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:54:52.446 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 14:59:52.469 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 15:04:52.491 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 18:36:37.678 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 18:36:39.690 [DiscoveryClient-CacheRefreshExecutor-0] INFO  o.a.h.impl.client.DefaultHttpClient -I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://localhost:1000: The target server failed to respond
+2018-05-18 18:36:39.692 [DiscoveryClient-CacheRefreshExecutor-0] INFO  o.a.h.impl.client.DefaultHttpClient -Retrying request to {}->http://localhost:1000
+2018-05-18 18:41:37.712 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 18:46:37.735 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-18 18:51:37.757 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration

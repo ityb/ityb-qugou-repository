@@ -1,0 +1,82 @@
+.merchant-list-main-box{
+	width: 1170px;
+	height: auto;
+	/* background-color: silver; */
+	margin-left:200px; 
+	margin-top: 70px;
+}
+.foot-box{
+	margin-top:10px;
+	background-color: white;
+}
+.merchant-show-box{
+	width: 228px;
+	height: 270px;
+	float: left;
+	margin:3px 3px 3px 3px;
+/* 	background-color: green; */
+	float: left;
+}
+.merchant-logo-box{
+	width: 100%;
+	height: 180px;
+	border: 1px solid #f0f0f0;
+/* 	background-color: red; */
+}
+.merchant-logo-box img{
+	position:relative;
+	left:12px;
+	top:9px;
+	width: 90%;
+	height: 90%;
+}
+.merchant-line-box{
+	padding:0 5px;
+	width: 100%;
+	height: 28px;
+	margin-bottom: 2px;
+	line-height: 28px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	/* background-color: gray; */
+}
+.merchant-name{
+	font-size: 16px;
+}
+.merchant-list-main-box a:HOVER{
+	color: #FF0036;
+	text-decoration: underline;
+}
+.merchant-list-main-box a:link{
+	text-decoration: none;
+}
+.merchant-list-main-box a {
+	 color: black;
+	font-weight: normal;
+}
+.title-font{
+	font-size: 15px;
+}
+.start-show{
+	margin-left: -14px;
+	margin-top: -7px;
+}
+.fs-show{
+	margin-top:-8px;
+	float: left;
+}
+.merchant-start{
+	color: silver;
+}
+.merchant-start span{
+	margin-right: 10px;
+	float: left;
+}
+.merchant-list-page-box{
+	width: 1170px;
+	height: 70px;
+	margin-left:200px; 
+	margin-top: 20px;
+	float: left;
+}

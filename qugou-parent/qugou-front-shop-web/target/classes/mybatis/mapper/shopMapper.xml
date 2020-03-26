@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.mapper.ShopMapper">
+	<select id="getShop" parameterType="com.ityb.qugou.po.merchant.Shop"
+			resultType="com.ityb.qugou.po.merchant.Shop">
+			SELECT  ID AS ID,
+				SHOP_ADDRESS AS shopAddress,
+				SHOP_LOGO AS shopLogo,
+				SHOP_NAME AS shopName,
+				USER_ID AS userId,
+				SHOP_PHONE AS shopPhone,
+				START_PRICE AS startPrice
+			FROM T_SYS_SHOP 
+			<where>
+				ISVALID = 1
+				<if test="id!=null and id!=''">
+					AND ID=#{id}
+				</if>
+			</where>
+	</select>
+	<select id="queryShopByDto" parameterType="com.ityb.qugou.dto.shop.ShopDto"
+		resultType="com.ityb.qugou.vo.shop.ShopVo">
+		SELECT
+			S.ID AS shopId,
+			<if test="x!=null and x!=0 and y!=null and y!=0">
+				(SQRT(
+					(X - #{x}) * (X - #{x}) + 
+					(Y - #{y}) * (Y -  #{y})) / 1000
+				) AS  distance,
+			</if>
+			S.SHOP_NAME AS shopName,
+			S.START_PRICE AS startPrice,
+			S.SHOP_LOGO as shopLogo,
+			(SELECT
+					ROUND((AVG(E.DELIVERY_FRACTION)+AVG(E.DESC_FRACTION)+AVG(E.QUALITY_FRACTION))/3,1)
+				FROM
+					T_P_EVALUATION E
+				LEFT JOIN T_P_ORDER O ON O.ID=E.ORDER_ID
+				WHERE S.USER_ID=O.MERCHANT_ID AND E.ISVALID = 1  AND O.ISVALID = 1 
+			) AS shopFraction
+		FROM
+			T_SYS_SHOP S
+		<where>
+			S.ISVALID = 1 
+			<if test="x!=null and x!=0 and y!=null and y!=0 
+					and distance!=null and distance!=0">
+				AND (SQRT(
+						(S.X - #{x}) * (S.X - #{x}) + 
+						(S.Y - #{y}) * (S.Y -  #{y})) / 1000
+					) &lt;=#{distance}
+			</if>
+			<if test="address!=null and address!=''">
+				AND S.SHOP_ADDRESS LIKE CONCAT(#{address},'%')
+			</if>
+			<if test="shopName!=null and shopName!=''">
+				AND S.SHOP_NAME LIKE CONCAT('%',CONCAT(#{shopName},'%'))
+			</if>
+			<if test="pageStart!=null and pageSize!=null">
+				LIMIT #{pageStart},#{pageSize}
+			</if>
+		</where>	
+	</select>
+	
+	<select id="countShopByDto" parameterType="com.ityb.qugou.dto.shop.ShopDto" 
+			 resultType="int">
+			 SELECT
+				COUNT(*)
+			FROM
+				T_SYS_SHOP
+			<where>
+				ISVALID = 1 
+				<if test="x!=null and x!=0 and y!=null and y!=0 
+						and distance!=null and distance!=0">
+					AND (SQRT(
+							(X - #{x}) * (X - #{x}) + 
+							(Y - #{y}) * (Y -  #{y})) / 1000
+						) &lt;=#{distance}
+				</if>
+				<if test="address!=null and address!=''">
+					AND SHOP_ADDRESS LIKE CONCAT(#{address},'%')
+				</if>
+				<if test="shopName!=null and shopName!=''">
+					AND SHOP_NAME LIKE CONCAT('%',CONCAT(#{shopName},'%'))
+				</if>
+			</where>
+	</select>
+</mapper>

@@ -1,0 +1,64 @@
+<div style="margin: 15px;">
+	<form class="layui-form" id="specification_form_update">
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品编号</label>
+			<div class="layui-input-block">
+				<input type="text" name="productNumber" lay-verify="required" readonly="readonly" autocomplete="off" class="layui-input" value="${productSpecificationVo.productNumber!}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="productName" lay-verify="required" readonly="readonly" autocomplete="off" class="layui-input" value="${productSpecificationVo.productName!}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品规格</label>
+			<div class="layui-input-block">
+				<input type="text" name="productSpecificationName" maxlength="10" lay-verify='required' readonly="readonly" autocomplete="off" class="layui-input"  value="${productSpecificationVo.productSpecificationName!}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品单价</label>
+			<div class="layui-input-block">
+				<input type="number" name="price"  lay-verify="required"  lay-verify="positive_number" placeholder="请输入商品单价（元）" lay-verify='number' min="0.01" autocomplete="off" class="layui-input layui-form-danger" value="${productSpecificationVo.price!}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品净重</label>
+			<div class="layui-input-block">
+				<input type="number" name="weight"  lay-verify="required" lay-verify="positive_number" placeholder="请输入商品净重（kg）"lay-verify='number' min="0.01" autocomplete="off" class="layui-input layui-form-danger" value="${productSpecificationVo.weight!}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品库存</label>
+			<div class="layui-input-block">
+				<input type="number" name="stock"  lay-verify="required"  lay-verify="positive_number" placeholder="请输入商品库存量（件）" min="1"  lay-verify='number' autocomplete="off" class="layui-input layui-form-danger" value="${productSpecificationVo.stock!}">
+			</div>
+		</div>
+		<input type="hidden" name="specificationId" value="${productSpecificationVo.productSpecificationId!}">
+		<button lay-filter="edit" lay-submit style="display: none;"></button>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript">
+	//判断是否已经达到了最大的商品规格
+	$(document ).on( "blur", "#specification_form_update input[name=price]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('价格不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+	$(document ).on( "blur", "#specification_form_update input[name=weight]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('净重不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+	$(document ).on( "blur", "#specification_form_update input[name=stock]", function() {
+		if($(this).val()!=''&&$(this).val()<=0){
+			parent.layer.msg('库存量不能小于等于0', {icon: 5,time:2000});
+			$(this).val("").focus();
+		}
+	}); 
+</script>

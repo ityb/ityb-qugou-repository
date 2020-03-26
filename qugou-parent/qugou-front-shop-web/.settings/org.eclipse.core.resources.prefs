@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/application.properties=UTF-8
+encoding//src/main/resources/bootstrap.properties=UTF-8
+encoding//src/main/resources/static/shop/css/cart/cart.css=UTF-8
+encoding//src/main/resources/static/shop/css/upload/upload.css=UTF-8
+encoding//src/main/resources/templates/shop/shop-detail.html=UTF-8
+encoding/<project>=UTF-8

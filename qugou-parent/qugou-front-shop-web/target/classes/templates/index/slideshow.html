@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<div class="banner">
+	<div class="banner-btn">
+		<a href="javascript:;" class="prevBtn"><i></i></a>
+		<a href="javascript:;" class="nextBtn"><i></i></a>
+	</div>
+	<ul class="banner-img">
+		<#if slideshowList??>
+			<#list slideshowList as slideshow>
+				<li><a href="${slideshow.linkUrl!}"><img src="${slideshow.picUrl!}"></a></li>
+			</#list>
+		</#if>
+	</ul>
+	<ul class="banner-circle"></ul>
+</div>

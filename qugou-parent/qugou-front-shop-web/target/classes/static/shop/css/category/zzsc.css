@@ -1,0 +1,76 @@
+.menu_list {
+	margin: 0px auto;
+	width: 185px;
+	border: none;
+}
+.menu_list_seft{
+	margin:-22px auto;
+	width: 227px;
+	height: auto;
+	/* background-color:#525252; */
+	background-color:white;
+	/* border-left: 1px solid rgba(150, 150, 100, 0.3); */
+	border-left: 1px solid #e1e1e1;
+	/* border-right: 1px solid rgba(150, 150, 100, 0.3); */
+	border-right: 2px solid #e1e1e1;
+}
+
+.menu_head {
+	width: 228px;
+	height: 47px;
+	line-height: 47px;
+	padding-left: 38px;
+	font-size: 14px;
+	color: #525252;
+	cursor: pointer;
+	border-top: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	position: relative;
+	font-weight: bold;
+	background: #f1f1f1 url(/shop/images/shop-categroy/pro_left.png) center
+		right no-repeat;
+	margin: 0px 0 0 -23px;
+}
+
+.menu_list .current {
+	background: #f1f1f1 url(/shop/images/shop-categroy/pro_down.png) center
+		right no-repeat;
+}
+
+.menu_body {
+	width: 200px;
+	height: auto;
+	overflow: hidden;
+	line-height: 38px;
+	backguound: #fff;
+	/* border-left: 0px solid #e1e1e1;
+	border-right: 0px solid #e1e1e1; */
+}
+
+.menu_body a {
+	display: block;
+	width: 205px;
+	height: 38px;
+	line-height: 38px;
+	padding-left: 38px;
+	color:black;
+	background: #fff;
+	text-decoration: none;
+	/* border-bottom: 1px solid #e1e1e1; */
+	margin: 0 0 0 -22px;
+}
+
+.color-red{
+	color: #FF0036 ;
+}
+.menu_bod a:HOVER{
+	color: #FF0036;
+	text-decoration: underline;
+}
+.menu_bod a:link{
+	text-decoration: none;
+}
+.menu_boda {
+	 color: black;
+	font-weight: normal;
+}

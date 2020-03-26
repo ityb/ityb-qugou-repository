@@ -1,0 +1,119 @@
+.foot-box {
+	margin-top: 10px;
+	background-color: white;
+}
+.pay-main-box{
+	width: 1170px;
+	height: auto;
+	/* background-color: silver; */
+	margin-left:200px; 
+	margin-top: 70px;
+}
+.pay-line-box{
+	width: 100%;
+	height: 38px;
+	line-height: 38px;
+	margin-top:10px;
+	margin-bottom:10px;
+	float: left;
+}
+.pay-item-box{
+	margin-left: 10px;
+	margin-right: 10px;
+	line-height: 38px;
+	height: 38px;
+	width: 260px;
+/* 	background-color: gray; */
+	float: left;
+}
+.pay-item-box input{
+	position:relative;
+	top:4px;
+	width: 18px;
+	height: 18px;
+}
+.pay-item-box label{
+	cursor:pointer;
+}
+.pay-bank-box{
+	margin-left:100px;
+	width: 900px;
+	height: 250px;
+	/* background: red; */
+	float: left;
+	border-bottom: 1px solid #f0f0f0;
+	margin-bottom: 10px;
+}
+.pay-way-box{
+	margin-left:100px;
+	width: 900px;
+	height: 200px;
+	float: left;
+	border-bottom: 1px solid #f0f0f0;
+	margin-bottom: 20px;
+}
+.pay-way-title{
+	width: auto;
+	height: 32px;
+	line-height: 32px;
+	text-align: left;
+	color: black;
+	font-size: 15px;
+	font-weight: bold;
+	font-style: normal;
+}
+.box-height{
+	height: 120px;
+	/* background-color: red; */
+}
+.pay-way-item{
+	width: 200px;
+	height: 100%;
+	/* background-color: green; */
+}
+.pay-select{
+	width: 25px;
+	height: 100%;
+	/* background-color: red; */
+	text-align: center;
+	line-height: 100%;
+	float: left;
+}
+.pay-select input{
+	width: 18px;
+	height: 18px;
+	position: relative;
+	top:45px;
+}
+.pay-img{
+	width: 170px;
+	height: 100%;
+	float: left;
+	cursor: pointer;
+}
+.pay-img img{
+	width: 100%;
+	height: 100%;
+}
+.pay-button-box{
+	margin-left:100px;
+	width: 900px;
+	height: 48px;
+/* 	background: red; */
+	float: left;
+}
+.pay-button{
+	width: 120px;
+	height: 48px;
+	background-color: #009688;
+	float: right;
+	margin-right: 92px;
+	line-height: 48px;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	z-index:100px;
+	font-weight: bold;
+	font-style: normal;
+	cursor: pointer;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ityb.qugou.base.mapper.BaseMapper">
+
+	<insert id="insert" statementType="STATEMENT" parameterType="map">
+		insert into ${tableName}(${columns})values(${values})
+	</insert>
+
+	<update id="update" statementType="STATEMENT" parameterType="map">
+		<![CDATA[
+			update ${tableName} set ${updateExpr},mtime=now() ${whereExpr}
+		]]>
+	</update>
+
+	<update id="updateById" statementType="STATEMENT" parameterType="map">
+		<![CDATA[
+			update ${tableName} set ${updateExpr},mtime=now() where id=${id}
+		]]>
+	</update>
+
+	<update id="delete" statementType="STATEMENT" parameterType="map">
+		<![CDATA[
+			update  ${tableName}  set isvalid=0,dtime=now() ${whereExpr}
+		]]>
+	</update>
+
+	<update id="deleteById" statementType="STATEMENT" parameterType="map">
+		<![CDATA[
+			update  ${tableName} set isvalid=0,dtime=now() where id=${id}
+		]]>
+	</update>
+
+	<select id="find" statementType="STATEMENT" parameterType="map"
+		resultType="map">
+		<![CDATA[
+			select ${columns} from ${tableName}  ${connectionExpr} ${whereExpr} ${groupExpr} ${orderExpr} ${pageExpr}
+		]]>
+	</select>
+
+
+	<select id="count" statementType="STATEMENT" parameterType="map"
+		resultType="java.lang.Integer">
+		<![CDATA[
+			select count(*) from ${tableName} ${whereExpr}
+		]]>
+	</select>
+
+	<select id="execSQL" statementType="STATEMENT" parameterType="java.lang.String"
+		resultType="map">
+		<![CDATA[
+			${sql}
+		]]>
+	</select>
+	<select id="execSQLCount" statementType="STATEMENT" parameterType="java.lang.String"
+		resultType="int">
+		<![CDATA[
+			${sql}
+		]]>
+	</select>
+</mapper>

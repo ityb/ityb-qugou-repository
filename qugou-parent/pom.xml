@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.qugou</groupId>
+	<artifactId>qugou-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<!-- <dependencies>
+		<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+			</dependency>
+	</dependencies> -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Dalston.SR1</version>
+				<!-- <version>Brixton.RELEASE</version> -->
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<modules>
+		<module>qugou-all-common</module>
+		<module>qugou-system-eureka</module>
+		<module>qugou-system-zuul</module>
+		<module>qugou-all-sso</module>
+		<module>qugou-server-product</module>
+		<module>qugou-server-search</module>
+		<module>qugou-server-cart</module>
+		<module>qugou-server-order</module>
+		<module>qugou-server-evaluation</module>
+		<module>qugou-all-job</module>
+		<module>qugou-all-api</module>
+		<module>qugou-bg-manager-web</module>
+		<module>qugou-bg-merchant-web</module>
+		<module>qugou-front-shop-web</module>
+		<module>qugou-server-pay</module>
+		<module>qugou-system-config</module>
+	</modules>
+</project>

@@ -1,0 +1,289 @@
+2018-02-06 22:46:25.242 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 22:48:06.807 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 22:49:28.176 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 22:53:16.029 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 22:58:26.390 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:00:05.179 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:02:06.647 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:06:08.021 [main] ERROR o.s.boot.SpringApplication -Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quartDemo': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.redis.pool.max-idle' in value "${spring.redis.pool.max-idle}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.ityb.qugou.JobAppliction.main(JobAppliction.java:15)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.redis.pool.max-idle' in value "${spring.redis.pool.max-idle}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:831)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1086)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	... 17 common frames omitted
+2018-02-06 23:08:35.424 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:10:00.242 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:13:55.734 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:16:25.836 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:19:04.909 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:22:10.223 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:25:16.730 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:25:56.281 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+
+2018-02-06 23:26:43.117 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mailSender in com.ityb.qugou.base.mail.impl.MailServiceImpl required a bean of type 'org.springframework.mail.javamail.JavaMailSender' that could not be found.
+	- Bean method 'mailSender' not loaded because AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.mail.javamail.JavaMailSender' in your configuration.
+

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>待评论列表</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+	</head>
+	<body>
+		<div class="admin-main">
+			<form class="layui-form" id="evaluation-notReply-form">
+			<blockquote class="layui-elem-quote">
+			<div style="margin-left: 0%;">
+                <div class="layui-form-item" style="margin:0;">
+                    <label class="layui-form-label">用户ID</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="userName" id="userName" placeholder="请输入评论用户的Id" autocomplete="off" class="layui-input">
+                    </div>
+                    <label class="layui-form-label">评论时间</label>
+                    <div class="layui-input-inline">
+       					<input type="text" name="evaluationDate" id="evaluationDate" placeholder="请选择评价时间" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+     				</div>
+               		<div class="layui-form-mid layui-word-aux" style="padding:0;">
+                      	<button id="search" type="button" class="layui-btn" >查询</button>
+                	</div>
+                </div>
+            </div>
+        	</blockquote>
+			</form>
+			<fieldset class="layui-elem-field">
+				<legend>待回复评论列表</legend>
+				<div class="layui-field-box layui-form">
+					<table class="layui-table admin-table">
+						<thead>
+							<tr>
+								<th>用户ID</th>
+								<th>所属订单号</th>
+								<th>商品名称</th>
+								<th>购买规格</th>
+								<th>商品质量评分</th>
+								<th>商品描述评分</th>
+								<th>订单配送评分</th>
+								<th>评价内容</th>
+								<th>评价时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="content"></tbody>
+					</table>
+				</div>
+				<div class="admin-table-page">
+				<div id="paged" class="page">
+				</div>
+			</div>
+			</fieldset>
+		</div>
+		<!--模板-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<td>{{ item.userName }}</td>
+				<td>{{ item.orderNumber }}</td>
+				<td>{{ item.productName }}</td>
+				<td>{{ item.productSpecificationName }}</td>
+				<td>{{ item.qualityFraction}}</td>
+				<td>{{ item.descFraction }}</td>
+				<td>{{ item.deliveryFraction}}</td>
+				<td>{{ item.evaluationContent}}</td>
+				<td>{{ item.evaluationTime}}</td>
+				<td>
+					<a href="javascript:;" data-name="{{ item.evaluationId }}" data-opt="evaluationLook" class="layui-btn layui-btn-normal layui-btn-mini">评论详细</a>
+					<a href="javascript:;" data-name="{{ item.evaluationId }}" data-opt="reply" class="layui-btn layui-btn-mini">回复</a>
+				</td>
+			</tr>
+			{{# });}}
+		</script>
+		<script type="text/javascript" src="/merchant/layui/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="/merchant/js/evaluation-notReply-list.js"></script>
+		<script type="text/javascript">
+		</script>
+	</body>
+</html>

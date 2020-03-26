@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.mapper.OrderDeliveryMapper">
+	<select id="getOrderDeliveryInfoByEntity" parameterType="com.ityb.qugou.po.order.OrderDelivery"
+		resultType="com.ityb.qugou.po.order.OrderDelivery">
+		SELECT
+			ORDER_ID AS orderId,
+			DELIVERY_NAME AS deliveryName,
+			DELIVERY_PHONE AS deliveryPhone,
+			DELIVERY_POSITION AS deliveryPosition,
+			DELIVERY_INFO AS deliveryInfo
+		FROM
+			T_P_ORDER_DELIVERY
+		WHERE
+			ISVALID = 1
+		<if test="orderId!=null and orderId!=''">
+			AND ORDER_ID=#{orderId}
+		</if>
+	</select>
+</mapper>

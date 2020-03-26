@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-订单核对</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/order/order-check.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+<link rel="stylesheet" href="/shop/css/product/jquery-labelauty.css">
+<!-- 单选框美化 -->
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<!-- 分页插件 -->
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<div class="check-order-main-box">
+	<div class="top-bar-title-box"><img src="/shop/images/ts.png" alt="" />温馨提示：订单中存在不支持7天无理由退换商品，请确认相关商品信息后提交订单。</div>
+	<div class="top-bar-name-box">填写并核对订单信息</div>
+	<input type="hidden" value="${user.id!}" id="check-user-id"/>
+	<div class="check-center-show-box">
+		<div class="title-name-item-box">收货人信息</div>
+		<div class="check-item-box" id="address-show-box">
+			<div class="check-line-box"><div class="check-button">添加临时地址</div></div>
+			<#if addressList??&&(addressList?size>0)>
+				<#list addressList as address>
+					<div class="check-line-box">
+						<#if address.type==1>
+							<div class="check-radio-box"><input type="radio" name="address" checked="checked"/></div>
+						<#else>
+							<div class="check-radio-box"><input type="radio" name="address"/></div>
+						</#if>
+						<div class="check-font-style-1">
+							<span class="check-address">${address.province!}${address.city!}${address.area!}${address.town!}${address.address!}</span>
+							<span class="check-phone">${address.customerPhone!}</span>
+							<span class="check-user">${address.customerName!}</span>
+						</div>
+					</div>
+				</#list>
+			</#if>
+		</div>
+		<div class="title-name-item-box">支付方式</div>
+		<div class="check-item-box">
+			<ul class="dowebok">
+				<li>
+					<input type="radio" name="tradeWay" data-labelauty="货到付款" value="1">
+				</li>
+				<li>
+					<input type="radio" name="tradeWay" data-labelauty="在线支付（推荐）" checked="checked" value="2">
+				</li>
+			</ul>
+		</div>
+		<div class="title-name-item-box">配送方式</div>
+		<div class="check-item-box">
+			<ul class="dowebok">
+				<li>
+					<input type="radio" name="deliveryWay" data-labelauty="上门自提"  value="1">
+				</li>
+				<li>
+					<input type="radio" name="deliveryWay" data-labelauty="同城配送（推荐）" checked="checked" value="2">
+				</li>
+			</ul>
+		</div>
+		<div class="title-name-item-box">送货清单</div>
+		<div class="check-item-box qx-line">
+			<!-- 循环开始 -->
+				<#if cartOrderCheckShowVo??>
+					<#if cartOrderCheckShowVo.cartOrderCheckVoList??&&(cartOrderCheckShowVo.cartOrderCheckVoList?size>0)>
+					<#list cartOrderCheckShowVo.cartOrderCheckVoList as cartOrderCheckVo>
+						<#if cartOrderCheckVo.cartOrderType==1>
+							<div class="check-order-item-box">
+						<#else>
+							<div class="check-order-item-box order-disabled">
+						</#if>
+						<div class="check-line-box">
+							<span class="checkedbox-box">
+								<input type="checkbox" name="orderItem" data-labelauty="订单项 ${cartOrderCheckVo_index+1}" 
+									<#if cartOrderCheckVo.cartOrderType==1>
+										checked="checked"
+									<#else>
+										disabled=flase
+									</#if>>
+								</input>
+							</span>
+							<span class="check-merchant-name-box"><input type="hidden" value="${cartOrderCheckVo.merchantId!}"/>商家：</span>
+							<span>${cartOrderCheckVo.shopName!}</span>
+							<span class="check-merchant-name-box">起步价：</span>
+							<span>￥${(cartOrderCheckVo.startPrice?string("#.00"))!}</span>
+							<#if cartOrderCheckVo.cartOrderType!=1>
+								<span class="check-merchant-name-box co-red">订单低于起步价，订单项无效</span>
+							</#if>
+						</div>
+						<div class="check-line-box">
+							<div class="bar-nav-item-box">
+								<div class="nav-order-product-box">商品</div>
+								<div class="nav-order-other-box">商品</div>
+								<div class="nav-order-other-box">单价</div>
+								<div class="nav-order-other-box">购买数量</div>
+							</div>
+						</div>
+						<!-- 商品循环 -->
+						<#if cartOrderCheckVo.orderProductVoList??&&(cartOrderCheckVo.orderProductVoList?size>0)>
+							<#list cartOrderCheckVo.orderProductVoList as cartOrderProductVo>
+								<div class="check-order-item-show-box">
+									<div class="check-order-img-box">
+										<#if cartOrderProductVo.productPicUrl??>
+											<#list cartOrderProductVo.productPicUrl?split(",") as pic>
+												<#if pic_index==0>
+													<a href="/shop/product/detail?id=${cartOrderProductVo.productId!}"><img src="${pic!}"/></a>
+												</#if>
+											</#list>
+										<#else>
+											<a href="/shop/product/detail?id=${cartOrderProductVo.productId!}"><img src="/shop/images/slideshow/1.jpg"/></a>
+										</#if>
+									</div>
+									<div class="check-order-conten-box">
+										<div class="order-product-title"><a href="/shop/product/detail?id=${cartOrderProductVo.productId!}">${cartOrderProductVo.productTitle!}</a></div>
+										<div class="order-product-sellpoint">${cartOrderProductVo.sellPoint!}</div>
+										<div class="order-product-other">不支持7天无理由退货</div>
+										<div class="order-product-other">
+											<#if (cartOrderProductVo.stock>=cartOrderProductVo.buyNumber)>
+												有货
+											<#else>
+												<span class="co-red">缺货</span>
+											</#if>
+										</div>
+									</div>
+									<div class="check-order-specification-box">
+										<input type="hidden" value="${cartOrderProductVo.productSpecificationId!}" class="order-specification-item-id"/>
+										<div class="order-specification-item">${cartOrderProductVo.productSpecificationName!}</div>
+										<div class="order-specification-item">净重${cartOrderProductVo.weight!}kg</div>
+										<div class="order-specification-item">库存量${cartOrderProductVo.stock!}件</div>
+									</div>
+									<div class="check-order-price-box">
+										<div class="order-specification-item">￥<span class="order-item-price">${(cartOrderProductVo.price?string("#.00"))!}</span></div>
+									</div>
+									<div class="check-order-buyNumber-box">
+										<div class="order-specification-item">x<span class="order-item-buy-number">${cartOrderProductVo.buyNumber!}</span></div>
+									</div>
+								</div>
+								</#list>
+								<div class="check-line-box">
+									<div class="order-sub-box">订单小计：<span>￥<span class="sub-total">${(cartOrderCheckVo.subTotal?string("#.00"))!}</span></span></div>
+								</div>
+								<!-- 商品循环结束 -->
+							</#if>
+						</div>
+						<!-- 循环结束 -->
+					</#list>
+				</#if>
+			</#if>
+		</div>
+	</div>
+	<div class="product-total-box">
+		<div class="check-line-box">
+			<div class="total-item-box">商品总数量：${cartOrderCheckShowVo.totalNumber!0}件</div>
+		</div>
+		<div class="check-line-box">
+			<div class="total-item-box">商品总净重：${(cartOrderCheckShowVo.totalWeight?string("#.00"))!0.00}kg</div>
+		</div>
+	</div>
+	<div class="bottom-show-box">
+		<div class="check-line-box">
+			<div class="pay-money-box">应付总额：<span>￥${(cartOrderCheckShowVo.totalMoney?string("#.00"))!0.00}</span></div>
+		</div>
+		<div class="check-line-box">
+			<div class="pay-jisong-address-box">寄送至：
+				<#if addressList??&&(addressList?size>0)>
+					<#list addressList as address>
+						<#if address.type==1>
+							<span class="pay-address">
+								${address.province!}${address.city!}${address.area!}${address.town!}${address.address!}
+ 							</span>	
+ 							<span class="check-phone"> 收货人：<span class="pay-phone">${address.customerPhone!}</span></span> 
+ 							<span class="check-user pay-user">${address.customerName!}</span>
+						<#else>
+							<span class="pay-address">
+								请先选择地址
+							</span>	
+							<span class="check-phone"> 收货人：<span class="pay-phone">暂无</span></span> 
+							<span class="check-user pay-user">暂无</span>
+						</#if>
+					</#list>
+				<#else>
+					<span class="pay-address">
+						请先选择地址
+					</span>	
+					<span class="check-phone"> 收货人：<span class="pay-phone">暂无</span></span> 
+					<span class="check-user pay-user">暂无</span>
+				</#if>
+		   </div>
+	</div>
+	<div class="bottom-button-box">
+		<div class="pay-button-box">提交订单</div>
+	</div>
+</div>
+<div class="foot-box">
+	<#include "/common/footer.html">	
+</div>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/common/address-select.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/css/number/spinner/jquery.spinner.js"></script>
+<script type="text/javascript" src="/shop/js/product/jquery-labelauty.js"></script>
+<script type="text/javascript" src="/shop/js/order/check-order.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.dowebok input[name=tradeWay]').labelauty();
+	$('.dowebok input[name=deliveryWay]').labelauty();
+	$('.checkedbox-box input[name=orderItem]').labelauty();
+});
+</script>
+</body>
+</html>

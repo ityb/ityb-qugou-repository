@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <link rel="stylesheet" type="text/css" href="/shop/css/cart/cart.css" />
+    </head>
+    <body>
+        <div class="cart-sidebar">
+            <div class="cart">
+            	<div class="cart-show">
+                	<a href="javascript:;"><i id="icon-cart"></i></a>
+                	<span id="cart-text-box"><a href="javascript:;">购物车</a></span>
+            	</div>
+            </div>
+        </div>
+        <div id="tip">成功加入购物车</div>
+        <script type="text/javascript" src="/shop/js/cart/jquery.js"></script>
+        <script src="/shop/js/cart/jquery.fly.min.js"></script>
+        <script src="/shop/js/jquery.cookie.js"></script>
+    </body>
+</html>
+<script type="text/javascript">
+	$(".cart-show").click(function(){
+		var sessionId=$.cookie("shop_session_id");
+		if (typeof(sessionId) == "undefined"||sessionId==null||sessionId=='') { //表示没有登录
+			$('.theme-popover-mask').fadeIn(100);
+			$('.theme-popover').slideDown(200);
+			$(document).bind('mousewheel', function(event, delta) { return false; });
+		}else{
+			 $.ajax({
+					async : true, //是否异步  
+					cache : false, //是否使用缓存  
+					type : 'post', //请求方式,post  
+					data : {
+						token:sessionId
+					},
+					dataType : "json", //数据传输格式  
+					url : '/sso/shop/getToken?v=' + new Date().getTime(), //请求链接  
+					success : function(data) {
+						if(data.status==1){//表示登录成功，进行跳转
+							window.location.href="/shop/cart"; 
+						}else{
+							//弹出框
+							$('.theme-popover-mask').fadeIn(100);
+							$('.theme-popover').slideDown(200);
+							$(document).bind('mousewheel', function(event, delta) { return false; });
+						}
+					},
+					error : function(XMLHttpRequest, data) {
+						console.log(data.msg);
+					}
+			});
+		}  
+	});
+</script>
+

@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/java/com/ityb/qugou/base/controller/BaseController.java=UTF-8
+encoding//src/main/java/com/ityb/qugou/base/mapper/BaseMapper.java=UTF-8
+encoding//src/main/java/com/ityb/qugou/base/utils/HttpClientUtils.java=UTF-8
+encoding//src/main/java/com/ityb/qugou/base/utils/JsonResult.java=UTF-8
+encoding//src/main/java/com/ityb/qugou/base/utils/MessageSendUtils.java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/application.properties=UTF-8
+encoding/<project>=UTF-8

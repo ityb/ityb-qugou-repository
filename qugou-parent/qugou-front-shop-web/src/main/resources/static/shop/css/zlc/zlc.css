@@ -1,0 +1,147 @@
+/*遮拦层*/
+.demo {
+	padding: 2em 0;
+}
+
+.box {
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.box:before {
+	content: "";
+	width: 0;
+	height: 100%;
+	background: #000;
+	padding: 14px 18px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	opacity: 0;
+	transition: all 500ms cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+}
+
+.box:hover:before {
+	width: 100%;
+	left: 0;
+	opacity: 0.5;
+}
+
+.box img {
+	width: 100%;
+	height: 180px;
+}
+
+.box .box-content {
+	width: 100%;
+	height:180px;
+	padding: 14px 18px;
+	color: #fff;
+	position: absolute;
+ 	top: 0%; 
+	left: 0;
+	/* background-color: red; */
+}
+
+.box .title {
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 30px;
+	text-transform: uppercase;
+	margin: 0;
+	opacity: 0;
+	transition: all 0.5s ease 0s;
+}
+
+.box .post {
+	font-size: 15px;
+	text-transform: capitalize;
+	opacity: 0;
+	transition: all 0.5s ease 0s;
+}
+
+.box:hover .title, .box:hover .post {
+	opacity: 1;
+	transition-delay: 0.1s;
+}
+
+.box .add-sub-show,.add-cart-box {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	margin-top: 15px;
+}
+.add-sub-show {
+	position:relative;
+	left:35px;
+	display: block;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	opacity: 0;
+	float: left;
+/* 	background-color: red; */
+}
+.add-sub-show input{
+	width: 123px;
+	color: black;
+	height:30px;/*设置高度*/
+	line-height:30px;
+	outline:medium;
+	font: 15px/24px "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+	font-weight: bold;
+	vertical-align:middle;/*表单控件上下居中对齐*/
+}
+
+.add-cart-box{
+	position:relative;
+	left:35px;
+	display: block;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	opacity: 0;
+	float: left;
+	border-color: rgba(150,150,100,0.3);
+	border-style: solid;
+	border-width: thin;
+	cursor: pointer;
+	/* background-color: red; */
+}
+.cart-img-box{
+	width: 30px;
+	height: 100%;
+	float: left;
+	
+}
+.cart-img-box img{
+	width: 100%;
+	height: 100%;
+}
+.cart-name-box{
+	margin-top:2px;
+	width: 85px;
+	height: 30px;
+	line-height: 30px;
+	font: 15px/24px "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+	font-weight: bold;
+	float: left;
+}
+
+.box:hover .add-sub-show{
+	opacity: 1;
+	transform: translateY(0px);
+	transition-delay: 0.5s;
+}
+.box:hover .add-cart-box{
+	opacity: 1;
+	transform: translateY(0px);
+	transition-delay: 0.5s;
+}
+
+@media only screen and (max-width:990px) {
+	.box {
+		margin-bottom: 30px;
+	}
+}

@@ -1,0 +1,254 @@
+/*
+  商品描述与商品评价列表
+*/
+.desc-pj-nav-box{
+	width: 100%;
+	height: 38px;
+	/* background-color:red;  */
+    background-color: #f7f7f7;
+    border: 1px solid #eee;
+    border-bottom: 1px solid #009688;
+    display: inline-block;
+    display: block;
+	
+	
+}
+.nav-item-desc{
+	width: 105px;
+	height:100%;
+	background-color: #009688;
+    color: #fff;
+    cursor: pointer;
+    line-height: 38px;
+    float:left;
+    text-align: center;
+}
+.nav-item-pj{
+	width: 105px;
+	height:100%;
+	/* background-color: #009688; */
+    color: black;
+    cursor: pointer;
+    line-height: 38px;
+    float:left;
+    text-align: center;
+    display: inline-block;
+    font-family: "microsoft yahei";
+}
+.desc-show-box{
+	width: 100%;
+	/* height: 500px; */
+	height: auto;
+	/* background-color: red; */
+	float: left;
+	/* border-right: 1px solid #ddd; */
+}
+.pj-show-box{
+	width: 100%;
+	height: auto;
+	/* background-color: silver; */
+	float: left;
+	display:none;
+	/* border-right: 1px solid #ddd; */
+}
+.pj-fraction-show{
+	width: 100%;
+	height: 140px;
+	/* background-color: red; */
+	border-bottom: 1px solid #ddd;
+	float: left;
+}
+.pj-total-box{
+	width: 22.9%;
+	height: 140px;
+	float: left;
+/* 	background-color: green; */
+}
+.fraction-show-box{
+	width: 77%;
+	height: 140px;
+	/* background-color: silver; */
+	float: left;
+}
+.pj-total-show{
+	margin-top:20px;
+	width: 100%;
+	height: 100px;
+	/* background-color: red; */
+}
+.pj-total-fraction-show{
+	width: 100%;
+	height: 80px;
+	/* background-color: blue; */
+	text-align: center;
+	line-height: 80px;
+	color: #FF0036;
+	font-size: 50px;
+	font-family: "microsoft yahei";
+	font-weight: bold;
+}
+.pj-total-fraction-show span{
+	height: 80px;
+	line-height:80px;
+	text-align:center;
+	color: #FF0036;
+	font-size: 20px;
+	font-family: "microsoft yahei";
+	font-weight: bold;
+}
+.pj-total-name-show{
+	width: 100%;
+	height: 20px;
+	height: 20px;
+	line-height:20px;
+	text-align:center;
+	font-family: "microsoft yahei";
+	/* background-color: red; */
+}
+.pl-detail-show-box{
+	margin-top:10px;
+	width: 100%;
+	height: auto;
+/* 	background-color: silver; */
+	float: left;
+}
+.pl-detail-show{
+	width: 100%;
+	border-bottom: 1px solid #e2e2e2;
+	/* background-color: red; */
+	float: left;
+}
+.first-line-show{
+	width: 100%;
+	height: 30px;
+	/* background-color: red; */
+	float: left;
+}
+.pl-head-show{
+	width: 175px;
+	/* background-color: black; */
+	height: 100%;
+	float: left;
+}
+.head-show{
+	width: 30px;
+	height: 30px;
+	margin-left: 30px;
+	margin-right: 10px;
+	float: left;
+}
+.head-show img{
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+.user-name-show{
+	width: 100px;
+	height: 100%;
+	text-align: left;
+	line-height: 30px;
+	font-family: "microsoft yahei";
+	float: left;
+}
+.pl-time-show{
+	width: auto;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	font-family: "microsoft yahei";
+	float: right;
+}
+.pl-cetent-show{
+	width: 81%;
+	height: auto;
+	/* background-color: red; */
+	float: left;
+	margin-left: 175px;
+	margin-bottom: 5px;
+}
+.pl-img-show-box{
+	margin-top:5px;
+	width: 81%;
+	height: 55px;
+	/* background-color: silver; */
+	margin-left: 175px;
+	float: left;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.pl-img-show{
+	width: 53px;
+	height: 55px;
+	border: 1px solid #e2e2e2;
+	margin-right: 10px;
+	float: left;
+}
+.pl-img-show img{
+	left:3px;
+	top:4px;
+	position:relative;
+	width: 45px;
+	height: 45px;
+}
+.pl-img-detail-show{
+	
+}
+.pl-img-detail-show-class{
+	width: 371px;
+	height: 278px;
+	margin-left:175px;
+	float:left;
+	border: 1px solid #e2e2e2;
+	margin-bottom: 5px;
+}
+.pl-img-detail-show img{
+	width: 360px;
+	height: 267px;
+	left:5px;
+	top:5px;
+	position:relative;
+}
+.pl-gg-show{
+	width: auto;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    font-family: "microsoft yahei";
+    float: left;
+    margin-right: 10px;
+}
+.pl-pf-show{
+	width: auto;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    font-family: "microsoft yahei";
+    float: left;
+    margin-right: 20px;
+}
+.pl-page-box{
+	width: 100%;
+	height: 30px;
+	/* background-color: silver; */
+	float: left;
+	margin-top: 10px;
+}
+#pl_detail_page{
+	float: right;
+}
+.relay-user-show{
+	width: 81%;
+	height: 28px;
+	color: #ff561c;
+	line-height:35px;
+	text-align:left;
+	float: left;
+	margin-left: 175px;
+}
+.relay-centent-show{
+	float: left;
+	margin-left: 175px;
+	margin-bottom: 5px;
+    color: #ff561c;
+    margin-bottom: 5px;
+}

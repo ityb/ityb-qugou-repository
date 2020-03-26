@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-评价详情</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/evaluation/evaluation-detail.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+<link rel="stylesheet" href="/shop/css/product/jquery-labelauty.css">
+<link rel="stylesheet" type="text/css" href="/shop/css/product/star.css" />
+<!-- 单选框美化 -->
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<!-- 分页插件 -->
+<link rel="stylesheet" href="/shop/css/page/kkpager.css" />
+<!-- 分页插件 -->
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+<script type="text/javascript" src="/shop/js/page/kkpager.min.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<#if evaluation??>
+<div class="evaluation-detial-main-box">
+	<div class="evaluation-detial-left-box">
+		<div class="evaluation-detail-img-box">
+			<#if evaluation.productPic??>
+				<#list evaluation.productPic?split(",") as productPic>
+					<#if productPic_index==0>
+						<a href="/shop/product/detail?id=${evaluation.productId!}"><img src="${productPic!}" alt="" /></a>
+					</#if>
+				</#list>
+			<#else>
+				<a href="/shop/product/detail?id=${evaluation.productId!}"><img src="/qugou-image/f674af96.jpg" alt="" /></a>
+			</#if>
+		</div>
+		<div class="evaluation-detail-content-box">
+			<div class="evaluation-detail-product-title">
+				<a href="/shop/product/detail?id=${evaluation.productId!}">${evaluation.productTitle!}</a>
+			</div>
+			<div class="evaluation-detail-product-sellpoint">${evaluation.sellPoint!}</div>
+			<div class="evaluation-detail-line-box">
+				<div class="evaluation-detail-specification-item">
+					规格：${evaluation.productSpecificationName!}
+				</div>
+				<div class="evaluation-detail-specification-item">
+					单价：￥${evaluation.price!}
+				</div>
+				<div class="evaluation-detail-specification-item">
+					净重：${evaluation.weight}kg
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="evaluation-detial-right-box">
+		<div class="evaluation-detail-time">${(evaluation.evaluationTime?string("yyyy-MM-dd HH:ss:mm"))!}</div>
+		<div class="evaluation-detail-fengshu">
+			<div class="evaluation-detail-line-box">
+				<div class="show_number clearfix">
+					<div class="evaluation-detail-fenshu-desc">商品质量评分：</div>
+       				<div class="atar_Show start-show">
+         				<p tip="${evaluation.deliveryFraction!0}"></p>
+       				</div>
+       				<div class="fs-show">${evaluation.deliveryFraction!0}分</div>
+        		</div>
+			</div>
+			<div class="evaluation-detail-line-box">
+				<div class="show_number clearfix">
+					<div class="evaluation-detail-fenshu-desc">商品描述评分：</div>
+       				<div class="atar_Show start-show">
+         				<p tip="${evaluation.descFraction!0}"></p>
+       				</div>
+       				<div class="fs-show">${evaluation.descFraction!0}分</div>
+        		</div>
+			</div>
+			<div class="evaluation-detail-line-box">
+				<div class="show_number clearfix">
+					<div class="evaluation-detail-fenshu-desc">订单配送评分：</div>
+       				<div class="atar_Show start-show">
+         				<p tip="${evaluation.deliveryFraction!0}"></p>
+       				</div>
+       				<div class="fs-show">${evaluation.deliveryFraction!0}分</div>
+        		</div>
+			</div>
+			<div class="evaluation-detail-line-box">
+				<div class="evaluation-content">评价内容：</div>
+			</div>
+			<div class="evaluation-content-show">
+				${evaluation.evaluationContent!"该用户没有进行评论"}
+			</div>
+			<#if evaluation.evaluationPic??>
+				<div class="evaluation-img-show-box">
+					<#list  evaluation.evaluationPic?split(",") as evaluationPic>
+						<div class="evaluation-img-show">
+							<img src="${evaluationPic!}" alt="" />
+						</div>
+					</#list>
+				</div>
+			</#if>
+			<div class="evaluation-detail-line-box">
+				<div class="evaluation-content color-red">商家回复：</div>
+			</div>
+			<div class="evaluation-content-show color-red">
+				${evaluation.evaluationReplyContent!"商家暂时没有回复您"}
+			</div>
+		</div>
+	</div>
+</div>
+</#if>
+<div class="foot-box">
+	<#include "/common/footer.html">	
+</div>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/css/number/spinner/jquery.spinner.js"></script>
+<script type="text/javascript" src="/shop/js/product/jquery-labelauty.js"></script>
+<script type="text/javascript" src="/shop/js/evaluation/evaluation-detail.js"></script>
+</body>
+</html>

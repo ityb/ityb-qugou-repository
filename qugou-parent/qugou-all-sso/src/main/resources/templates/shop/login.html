@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=5.0"
+	charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>趣购网-登录</title>
+<link href="/sso/shop/css/reset.css" rel="stylesheet">
+<link href="/sso/shop/css/login.css" rel="stylesheet">
+<link rel="stylesheet" href="/sso/shop/css/font.css" />
+<link rel="stylesheet" href="/sso/shop/css/swiper-3.3.1.min.css" />
+<link rel="stylesheet" href="/sso/shop/css/common.css" />
+<link rel="stylesheet" href="/sso/shop/css/Homepage.css" />
+<link rel="stylesheet" href="/sso/shop/css/ModularForm.css" />
+<link rel="stylesheet" href="/sso/shop/css/LoginRegister.css" />
+<script type="text/javascript" src="/sso/shop/js/Libs/jquery.min.js"></script>
+<script type="text/javascript" src="/sso/shop/js/Libs/jquery.json.js"></script>
+</head>
+<body>
+	<div class="login-top">
+		<div class="logo">
+			<a href="/shop"><img alt="" src="/sso/shop/images/logo.png"></a>
+		</div>
+	</div>
+	<div class="login-main">
+		<div class="login-form-box">
+			<div class="form-top">密码登录</div>
+			<div class="form-login">
+				<div>
+					<section class="main" id="groupForm">
+						<div class="DeInfo_Inpet DeInfo_Inpet2">
+							<div class="DeInfoInput LoginInput">
+								<label class="icon-1 floatL"></label> <label
+									style="display: none;">用户名/手机号/邮箱</label> <input type="text"
+									placeholder="用户名/手机号/电子邮箱" class="DeInfo_text" name="userName" id="userName-sso"
+									data-regtest="^1[3|4|5|7|8]\d{9}$ ">
+							</div>
+							<div class="DeInfoInput LoginInput">
+								<label class="icon-11 floatL"></label> <label
+									style="display: none;">密码</label> <input type="password" name="password" id="password-sso"
+									placeholder="密码" class="DeInfo_text" data-regtest="\d">
+							</div>
+							<div class="error-show"></div>
+						</div>
+						<!--按钮-->
+						<div class="BtnCont">
+							<button class="BigBtn" id="login-sso">立即登录</button>
+						</div>
+						<div class="loginLink">
+							<div class="loginLink_text">
+								<a href="/sso/shop/register">注册</a><span>|</span><a href="#">忘记密码</a>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/sso/shop/js/Libs/jquery.min.js"></script>
+	<script type="text/javascript" src="/sso/shop/js/login.js"></script>
+</body>
+</html>

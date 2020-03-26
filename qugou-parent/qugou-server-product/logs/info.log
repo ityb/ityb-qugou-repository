@@ -1,0 +1,372 @@
+2018-05-20 00:01:37.028 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:01:37.216 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:01:37.223 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:03:54.750 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:07:11.795 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.queryProductByProductDto -==>  Preparing: SELECT P.ID AS productId, P.NAME AS productName, (CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS state, PD.TITLE AS title, PD.SELL_POINT AS sellPoint, PD.CTIME AS addDate, PSPC.NAME AS categoryName FROM T_P_PRODUCT_DETAIL PD LEFT JOIN T_P_PRODUCT P ON P.ID = PD.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPC ON PD.MERCHANT_CATEGORY_ID = PSPC.ID WHERE P.ISVALID = 1 AND PD.ISVALID = 1 AND PSPC.ISVALID = 1 AND P.CREATER=? AND PD.CREATER=? AND PSPC.CREATER=? ORDER BY P.NAME ASC,PD.CTIME DESC 
+2018-05-20 00:07:11.801 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.queryProductByProductDto -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 00:07:11.811 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.queryProductByProductDto -<==      Total: 4
+2018-05-20 00:07:11.889 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.countProductByProductDto -==>  Preparing: SELECT COUNT(*) FROM T_P_PRODUCT_DETAIL PD LEFT JOIN T_P_PRODUCT P ON P.ID = PD.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPC ON PD.MERCHANT_CATEGORY_ID = PSPC.ID WHERE P.ISVALID = 1 AND PD.ISVALID = 1 AND PSPC.ISVALID = 1 AND P.CREATER=? AND PD.CREATER=? AND PSPC.CREATER=? 
+2018-05-20 00:07:11.891 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.countProductByProductDto -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 00:07:11.893 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.countProductByProductDto -<==      Total: 1
+2018-05-20 00:08:54.773 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:13:54.792 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:18:54.815 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:23:54.860 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:25:44.890 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:25:44.897 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:25:44.904 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:25:59.458 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:25:59.475 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:25:59.482 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:25:59.576 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 00:25:59.578 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 7699(Integer), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:25:59.589 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 00:28:00.334 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:28:00.336 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 00:28:00.349 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:28:00.921 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:28:00.923 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 12dc958098524126a630d8088b18a750(String)
+2018-05-20 00:28:00.949 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:28:18.168 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:28:18.170 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 12dc958098524126a630d8088b18a750(String)
+2018-05-20 00:28:18.176 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:28:18.226 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 00:28:18.228 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 9982(Integer), 12dc958098524126a630d8088b18a750(String)
+2018-05-20 00:28:18.232 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 00:28:18.303 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:28:18.306 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 00:28:18.312 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:28:18.412 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 00:28:18.420 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 9981(Integer), 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 00:28:18.425 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 00:28:54.882 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:33:54.901 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:35:54.044 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:35:54.049 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:35:54.055 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:36:02.156 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:36:02.159 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:36:02.163 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:36:02.193 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 00:36:02.195 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 7698(Integer), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:36:02.203 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 00:38:54.925 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:43:54.944 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:48:31.410 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:48:31.412 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:48:31.418 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:48:43.208 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 00:48:43.210 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:48:43.213 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 00:48:43.249 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 00:48:43.250 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 7697(Integer), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 00:48:43.253 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 00:48:54.965 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:53:55.007 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 00:58:55.029 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:03:55.049 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:08:55.072 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:13:55.091 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:18:55.112 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 01:20:46.996 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 01:20:46.999 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 01:20:47.006 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 01:20:47.764 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 01:20:47.782 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 01:20:47.790 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 01:21:04.765 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 01:21:04.768 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 01:21:04.770 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 01:21:04.889 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 01:21:04.891 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 9980(Integer), 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 01:21:04.928 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 01:21:05.694 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 01:21:05.696 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 01:21:05.787 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 01:21:05.912 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 01:21:05.914 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 9979(Integer), 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 01:21:05.918 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 01:21:06.196 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 01:21:06.197 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 01:21:06.208 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 01:21:06.249 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 01:21:06.251 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 7696(Integer), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 01:21:06.258 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 01:21:06.314 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 01:21:06.331 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 01:21:06.336 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 01:21:06.376 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 01:21:06.380 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 7695(Integer), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 01:21:06.383 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 01:23:55.220 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:39:35.995 [main] INFO  com.ityb.qugou.ProductAppliction -No active profile set, falling back to default profiles: default
+2018-05-20 07:39:53.638 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2018-05-20 07:39:53.652 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-05-20 07:39:56.064 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2018-05-20 07:40:16.766 [main] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration -Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2018-05-20 07:40:19.459 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-20 07:40:19.463 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-20 07:40:19.502 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-20 07:40:19.503 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-20 07:40:26.714 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1
+2018-05-20 07:40:27.682 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2018-05-20 07:40:27.684 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2018-05-20 07:40:28.376 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2018-05-20 07:40:28.378 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2018-05-20 07:40:31.067 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:40:32.341 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false
+2018-05-20 07:40:32.342 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null
+2018-05-20 07:40:32.343 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false
+2018-05-20 07:40:32.344 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false
+2018-05-20 07:40:32.345 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true
+2018-05-20 07:40:32.346 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true
+2018-05-20 07:40:32.347 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server
+2018-05-20 07:40:33.352 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200
+2018-05-20 07:40:33.366 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30
+2018-05-20 07:40:33.387 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-20 07:40:33.417 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1526773233408 with initial instances count: 7
+2018-05-20 07:40:34.308 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1526773234308, current=UP, previous=STARTING]
+2018-05-20 07:40:34.356 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_PRODUCT-SERVICE/PC-20160510GKPU:product-service:8004: registering service...
+2018-05-20 07:40:34.554 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_PRODUCT-SERVICE/PC-20160510GKPU:product-service:8004 - registration status: 204
+2018-05-20 07:40:35.310 [main] INFO  com.ityb.qugou.ProductAppliction -Started ProductAppliction in 71.935 seconds (JVM running for 74.788)
+2018-05-20 07:45:32.369 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:49:50.903 [http-nio-8004-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-20 07:49:55.134 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 07:49:55.311 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 5829fcdcf32f4147bce75c0616db4650(String)
+2018-05-20 07:49:55.422 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 07:50:11.213 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 07:50:11.224 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 07:50:11.237 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 07:50:32.387 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 07:50:33.306 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 07:50:33.309 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 07:50:33.324 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 07:50:33.547 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 07:50:33.549 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 7694(Integer), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 07:50:33.565 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 07:51:51.046 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.queryProductSpecification -==>  Preparing: SELECT P.ID AS productId, P. NAME AS productName, P.NUMBER AS productNumber, PS.ID AS productSpecificationId, PS. NAME AS productSpecificationName, PS.PRICE AS price, PS.STOCK AS stock, PS.WEIGHT AS weight, PS.CTIME AS productAddDate FROM T_P_PRODUCT_SPECIFICATION PS LEFT JOIN T_P_PRODUCT P ON PS.PRODUCT_ID = P.ID WHERE PS.ISVALID = 1 AND P.ISVALID = 1 AND PS.CREATER=? AND P.CREATER=? ORDER BY P. NAME ASC,PS.CTIME DESC 
+2018-05-20 07:51:51.050 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.queryProductSpecification -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 07:51:51.072 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.queryProductSpecification -<==      Total: 8
+2018-05-20 07:51:51.263 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.countProductSpecification -==>  Preparing: SELECT COUNT(*) FROM T_P_PRODUCT_SPECIFICATION PS LEFT JOIN T_P_PRODUCT P ON PS.PRODUCT_ID = P.ID WHERE PS.ISVALID = 1 AND P.ISVALID = 1 AND PS.CREATER=? AND P.CREATER=? 
+2018-05-20 07:51:51.265 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.countProductSpecification -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 07:51:51.277 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.countProductSpecification -<==      Total: 1
+2018-05-20 07:51:53.849 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.queryProductSpecification -==>  Preparing: SELECT P.ID AS productId, P. NAME AS productName, P.NUMBER AS productNumber, PS.ID AS productSpecificationId, PS. NAME AS productSpecificationName, PS.PRICE AS price, PS.STOCK AS stock, PS.WEIGHT AS weight, PS.CTIME AS productAddDate FROM T_P_PRODUCT_SPECIFICATION PS LEFT JOIN T_P_PRODUCT P ON PS.PRODUCT_ID = P.ID WHERE PS.ISVALID = 1 AND P.ISVALID = 1 AND PS.CREATER=? AND P.CREATER=? ORDER BY P. NAME ASC,PS.CTIME DESC 
+2018-05-20 07:51:53.852 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.queryProductSpecification -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 07:51:53.872 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.queryProductSpecification -<==      Total: 8
+2018-05-20 07:52:00.815 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.queryProductByProductDto -==>  Preparing: SELECT P.ID AS productId, P.NAME AS productName, (CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS state, PD.TITLE AS title, PD.SELL_POINT AS sellPoint, PD.CTIME AS addDate, PSPC.NAME AS categoryName FROM T_P_PRODUCT_DETAIL PD LEFT JOIN T_P_PRODUCT P ON P.ID = PD.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPC ON PD.MERCHANT_CATEGORY_ID = PSPC.ID WHERE P.ISVALID = 1 AND PD.ISVALID = 1 AND PSPC.ISVALID = 1 AND P.CREATER=? AND PD.CREATER=? AND PSPC.CREATER=? ORDER BY P.NAME ASC,PD.CTIME DESC 
+2018-05-20 07:52:00.819 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.queryProductByProductDto -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 07:52:00.834 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.queryProductByProductDto -<==      Total: 4
+2018-05-20 07:52:00.909 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.countProductByProductDto -==>  Preparing: SELECT COUNT(*) FROM T_P_PRODUCT_DETAIL PD LEFT JOIN T_P_PRODUCT P ON P.ID = PD.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPC ON PD.MERCHANT_CATEGORY_ID = PSPC.ID WHERE P.ISVALID = 1 AND PD.ISVALID = 1 AND PSPC.ISVALID = 1 AND P.CREATER=? AND PD.CREATER=? AND PSPC.CREATER=? 
+2018-05-20 07:52:00.920 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.countProductByProductDto -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 07:52:00.931 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.countProductByProductDto -<==      Total: 1
+2018-05-20 07:52:03.347 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.getProductDetailDesc -==>  Preparing: SELECT P.ID AS productId, P.NAME AS productName, P.NUMBER AS productNumber, (CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS productState, PDETAIL.TITLE AS title, PDETAIL.SELL_POINT AS sellpoint, PDETAIL.PIC_URL AS picurl, PSPCM.NAME AS merchantCategoryName, PSPCS.NAME AS shopCategoryName, PDESC.PRODUCT_DESC AS productDesc FROM T_P_PRODUCT P LEFT JOIN T_P_PRODUCT_DETAIL PDETAIL ON P.ID = PDETAIL.PRODUCT_ID LEFT JOIN T_P_PRODUCT_DESC PDESC ON P.ID = PDESC.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCM ON PDETAIL.MERCHANT_CATEGORY_ID=PSPCM.ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCS ON PDETAIL.SHOP_CATEGORY_ID=PSPCS.ID WHERE P.ISVALID=1 AND PDETAIL.ISVALID=1 AND PDESC.ISVALID=1 AND PSPCM.ISVALID=1 AND PSPCS.ISVALID=1 AND P.ID=? 
+2018-05-20 07:52:04.525 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.getProductDetailDesc -==> Parameters: fced271c70c24764803acc08594bf56c(String)
+2018-05-20 07:52:04.607 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.getProductDetailDesc -<==      Total: 1
+2018-05-20 07:52:04.626 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -==>  Preparing: SELECT NAME AS productSpecificationName, PRICE AS price, WEIGHT AS weight, STOCK AS stock, ID AS productSpecificationId FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID=1 AND PRODUCT_ID=? AND STATE=? 
+2018-05-20 07:52:04.631 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -==> Parameters: fced271c70c24764803acc08594bf56c(String), 1(Integer)
+2018-05-20 07:52:04.640 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -<==      Total: 1
+2018-05-20 07:52:05.915 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.getProductDetailDesc -==>  Preparing: SELECT P.ID AS productId, P.NAME AS productName, P.NUMBER AS productNumber, (CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS productState, PDETAIL.TITLE AS title, PDETAIL.SELL_POINT AS sellpoint, PDETAIL.PIC_URL AS picurl, PSPCM.NAME AS merchantCategoryName, PSPCS.NAME AS shopCategoryName, PDESC.PRODUCT_DESC AS productDesc FROM T_P_PRODUCT P LEFT JOIN T_P_PRODUCT_DETAIL PDETAIL ON P.ID = PDETAIL.PRODUCT_ID LEFT JOIN T_P_PRODUCT_DESC PDESC ON P.ID = PDESC.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCM ON PDETAIL.MERCHANT_CATEGORY_ID=PSPCM.ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCS ON PDETAIL.SHOP_CATEGORY_ID=PSPCS.ID WHERE P.ISVALID=1 AND PDETAIL.ISVALID=1 AND PDESC.ISVALID=1 AND PSPCM.ISVALID=1 AND PSPCS.ISVALID=1 AND P.ID=? 
+2018-05-20 07:52:05.919 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.getProductDetailDesc -==> Parameters: fced271c70c24764803acc08594bf56c(String)
+2018-05-20 07:52:05.924 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.getProductDetailDesc -<==      Total: 1
+2018-05-20 07:52:05.929 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -==>  Preparing: SELECT NAME AS productSpecificationName, PRICE AS price, WEIGHT AS weight, STOCK AS stock, ID AS productSpecificationId FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID=1 AND PRODUCT_ID=? AND STATE=? 
+2018-05-20 07:52:05.931 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -==> Parameters: fced271c70c24764803acc08594bf56c(String), 1(Integer)
+2018-05-20 07:52:05.935 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -<==      Total: 1
+2018-05-20 07:52:30.275 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.getProductDetailDesc -==>  Preparing: SELECT P.ID AS productId, P.NAME AS productName, P.NUMBER AS productNumber, (CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS productState, PDETAIL.TITLE AS title, PDETAIL.SELL_POINT AS sellpoint, PDETAIL.PIC_URL AS picurl, PSPCM.NAME AS merchantCategoryName, PSPCS.NAME AS shopCategoryName, PDESC.PRODUCT_DESC AS productDesc FROM T_P_PRODUCT P LEFT JOIN T_P_PRODUCT_DETAIL PDETAIL ON P.ID = PDETAIL.PRODUCT_ID LEFT JOIN T_P_PRODUCT_DESC PDESC ON P.ID = PDESC.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCM ON PDETAIL.MERCHANT_CATEGORY_ID=PSPCM.ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCS ON PDETAIL.SHOP_CATEGORY_ID=PSPCS.ID WHERE P.ISVALID=1 AND PDETAIL.ISVALID=1 AND PDESC.ISVALID=1 AND PSPCM.ISVALID=1 AND PSPCS.ISVALID=1 AND P.ID=? 
+2018-05-20 07:52:30.279 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.getProductDetailDesc -==> Parameters: fced271c70c24764803acc08594bf56c(String)
+2018-05-20 07:52:30.283 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.getProductDetailDesc -<==      Total: 1
+2018-05-20 07:52:30.286 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -==>  Preparing: SELECT NAME AS productSpecificationName, PRICE AS price, WEIGHT AS weight, STOCK AS stock, ID AS productSpecificationId FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID=1 AND PRODUCT_ID=? AND STATE=? 
+2018-05-20 07:52:30.289 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -==> Parameters: fced271c70c24764803acc08594bf56c(String), 1(Integer)
+2018-05-20 07:52:30.292 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -<==      Total: 1
+2018-05-20 07:53:24.698 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 07:53:24.702 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 07:53:24.707 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 07:53:36.048 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 07:53:36.052 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 07:53:36.062 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 07:53:36.115 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 07:53:36.129 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 9978(Integer), 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 07:53:36.135 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 07:55:32.405 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:00:32.418 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:05:32.432 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:10:32.446 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:15:32.461 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:20:32.475 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:25:32.492 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:30:32.509 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:33:11.990 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.queryProductByProductDto -==>  Preparing: SELECT P.ID AS productId, P.NAME AS productName, (CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS state, PD.TITLE AS title, PD.SELL_POINT AS sellPoint, PD.CTIME AS addDate, PSPC.NAME AS categoryName FROM T_P_PRODUCT_DETAIL PD LEFT JOIN T_P_PRODUCT P ON P.ID = PD.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPC ON PD.MERCHANT_CATEGORY_ID = PSPC.ID WHERE P.ISVALID = 1 AND PD.ISVALID = 1 AND PSPC.ISVALID = 1 AND P.CREATER=? AND PD.CREATER=? AND PSPC.CREATER=? ORDER BY P.NAME ASC,PD.CTIME DESC 
+2018-05-20 08:33:11.993 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.queryProductByProductDto -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 08:33:12.005 [http-nio-8004-exec-2] DEBUG c.i.q.p.m.P.queryProductByProductDto -<==      Total: 4
+2018-05-20 08:33:12.056 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.countProductByProductDto -==>  Preparing: SELECT COUNT(*) FROM T_P_PRODUCT_DETAIL PD LEFT JOIN T_P_PRODUCT P ON P.ID = PD.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPC ON PD.MERCHANT_CATEGORY_ID = PSPC.ID WHERE P.ISVALID = 1 AND PD.ISVALID = 1 AND PSPC.ISVALID = 1 AND P.CREATER=? AND PD.CREATER=? AND PSPC.CREATER=? 
+2018-05-20 08:33:12.058 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.countProductByProductDto -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String), b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 08:33:12.063 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.P.countProductByProductDto -<==      Total: 1
+2018-05-20 08:33:23.195 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.queryHotProduct -==>  Preparing: SELECT PDETAIL.product_ID AS productId, PDETAIL.TITLE AS title, PDETAIL.CTIME AS addTime, PDETAIL.SELL_POINT AS sellPoint, PDETAIL.PIC_URL AS pic, (SELECT MIN(PS.PRICE) FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=PDETAIL.PRODUCT_ID) AS price, (SELECT PS.ID FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=PDETAIL.PRODUCT_ID ORDER BY PS.PRICE LIMIT 1) AS specificationId, SHOP.SHOP_ADDRESS AS productAddress, SHOP.SHOP_NAME AS shopName, SHOP.ID AS shopId FROM T_P_PRODUCT_DETAIL PDETAIL LEFT JOIN T_SYS_SHOP SHOP ON SHOP.USER_ID =PDETAIL.CREATER WHERE PDETAIL.ISVALID=1 AND SHOP.ISVALID=1 AND PDETAIL.product_ID IN ( SELECT PS.PRODUCT_ID FROM T_P_ORDER_ITEM OI LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON OI.PRODUCT_SPECIFICATION_ID = PS.ID WHERE PS.ISVALID=1 GROUP BY PS.PRODUCT_ID ORDER BY SUM(BUY_NUM) DESC ) AND SHOP.SHOP_ADDRESS LIKE CONCAT(?,'%') LIMIT ? 
+2018-05-20 08:33:23.199 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.queryHotProduct -==> Parameters: 黑龙江省哈尔滨市(String), 50(Integer)
+2018-05-20 08:33:23.258 [http-nio-8004-exec-4] DEBUG c.i.q.p.m.P.queryHotProduct -<==      Total: 4
+2018-05-20 08:33:34.163 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 08:33:34.167 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-20 08:33:34.180 [http-nio-8004-exec-6] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 08:33:36.664 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 08:33:36.666 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 08:33:36.674 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 08:34:43.371 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.getProductDetailDesc -==>  Preparing: SELECT P.ID AS productId, P.NAME AS productName, P.NUMBER AS productNumber, (CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS productState, PDETAIL.TITLE AS title, PDETAIL.SELL_POINT AS sellpoint, PDETAIL.PIC_URL AS picurl, PSPCM.NAME AS merchantCategoryName, PSPCS.NAME AS shopCategoryName, PDESC.PRODUCT_DESC AS productDesc FROM T_P_PRODUCT P LEFT JOIN T_P_PRODUCT_DETAIL PDETAIL ON P.ID = PDETAIL.PRODUCT_ID LEFT JOIN T_P_PRODUCT_DESC PDESC ON P.ID = PDESC.PRODUCT_ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCM ON PDETAIL.MERCHANT_CATEGORY_ID=PSPCM.ID LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCS ON PDETAIL.SHOP_CATEGORY_ID=PSPCS.ID WHERE P.ISVALID=1 AND PDETAIL.ISVALID=1 AND PDESC.ISVALID=1 AND PSPCM.ISVALID=1 AND PSPCS.ISVALID=1 AND P.ID=? 
+2018-05-20 08:34:43.374 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.getProductDetailDesc -==> Parameters: d8552e61c5a04b1d84bf20fa2b54cec1(String)
+2018-05-20 08:34:43.385 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.getProductDetailDesc -<==      Total: 1
+2018-05-20 08:34:43.391 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -==>  Preparing: SELECT NAME AS productSpecificationName, PRICE AS price, WEIGHT AS weight, STOCK AS stock, ID AS productSpecificationId FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID=1 AND PRODUCT_ID=? AND STATE=? 
+2018-05-20 08:34:43.394 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -==> Parameters: d8552e61c5a04b1d84bf20fa2b54cec1(String), 1(Integer)
+2018-05-20 08:34:43.401 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecificationByPoduct -<==      Total: 3
+2018-05-20 08:35:32.551 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:40:32.566 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:41:34.906 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.queryHotProduct -==>  Preparing: SELECT PDETAIL.product_ID AS productId, PDETAIL.TITLE AS title, PDETAIL.CTIME AS addTime, PDETAIL.SELL_POINT AS sellPoint, PDETAIL.PIC_URL AS pic, (SELECT MIN(PS.PRICE) FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=PDETAIL.PRODUCT_ID) AS price, (SELECT PS.ID FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=PDETAIL.PRODUCT_ID ORDER BY PS.PRICE LIMIT 1) AS specificationId, SHOP.SHOP_ADDRESS AS productAddress, SHOP.SHOP_NAME AS shopName, SHOP.ID AS shopId FROM T_P_PRODUCT_DETAIL PDETAIL LEFT JOIN T_SYS_SHOP SHOP ON SHOP.USER_ID =PDETAIL.CREATER WHERE PDETAIL.ISVALID=1 AND SHOP.ISVALID=1 AND PDETAIL.product_ID IN ( SELECT PS.PRODUCT_ID FROM T_P_ORDER_ITEM OI LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON OI.PRODUCT_SPECIFICATION_ID = PS.ID WHERE PS.ISVALID=1 GROUP BY PS.PRODUCT_ID ORDER BY SUM(BUY_NUM) DESC ) AND SHOP.SHOP_ADDRESS LIKE CONCAT(?,'%') LIMIT ? 
+2018-05-20 08:41:34.916 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.queryHotProduct -==> Parameters: 黑龙江省哈尔滨市(String), 50(Integer)
+2018-05-20 08:41:34.927 [http-nio-8004-exec-1] DEBUG c.i.q.p.m.P.queryHotProduct -<==      Total: 4
+2018-05-20 08:42:53.670 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.ProductMapper.queryProduct -==>  Preparing: SELECT ID, NAME, NUMBER, CTIME, MTIME, DTIME FROM T_P_PRODUCT WHERE ISVALID=1 AND CREATER=? ORDER BY CTIME,NAME 
+2018-05-20 08:42:53.673 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.ProductMapper.queryProduct -==> Parameters: b8a2dc2e7f544fef94fb5cfbf1ce8d3f(String)
+2018-05-20 08:42:53.684 [http-nio-8004-exec-3] DEBUG c.i.q.p.m.ProductMapper.queryProduct -<==      Total: 4
+2018-05-20 08:45:32.579 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:50:32.595 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:55:32.612 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 08:58:38.768 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 08:58:38.770 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 5829fcdcf32f4147bce75c0616db4650(String)
+2018-05-20 08:58:38.786 [http-nio-8004-exec-5] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 08:59:22.469 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 08:59:22.471 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 5829fcdcf32f4147bce75c0616db4650(String)
+2018-05-20 08:59:22.476 [http-nio-8004-exec-7] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 08:59:22.519 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 08:59:22.521 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 9956(Integer), 5829fcdcf32f4147bce75c0616db4650(String)
+2018-05-20 08:59:22.533 [http-nio-8004-exec-8] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 08:59:22.666 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecification -==>  Preparing: SELECT ID, NAME, STOCK, PRICE, WEIGHT, STOCK, CTIME, PRODUCT_ID AS PRODUCTID FROM T_P_PRODUCT_SPECIFICATION WHERE ISVALID = 1 AND ID=? 
+2018-05-20 08:59:22.669 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecification -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 08:59:22.672 [http-nio-8004-exec-9] DEBUG c.i.q.p.m.P.querySpecification -<==      Total: 1
+2018-05-20 08:59:22.722 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.updateSpecification -==>  Preparing: UPDATE T_P_PRODUCT_SPECIFICATION SET STOCK=? WHERE ID=? 
+2018-05-20 08:59:22.724 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.updateSpecification -==> Parameters: 7693(Integer), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-20 08:59:22.746 [http-nio-8004-exec-10] DEBUG c.i.q.p.m.P.updateSpecification -<==    Updates: 1
+2018-05-20 09:00:32.627 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:05:32.648 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:10:32.662 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:15:32.676 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:20:32.692 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:25:32.707 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:30:32.724 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:35:32.739 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:40:32.754 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:45:32.770 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:50:32.785 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 09:55:32.800 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:00:32.817 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:05:32.830 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:10:32.846 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:15:32.860 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:20:32.885 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:25:32.902 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:30:32.922 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:35:32.942 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:40:32.957 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:45:32.974 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:50:32.993 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 10:55:33.008 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:00:33.026 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:05:33.041 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:10:33.059 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:15:33.074 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:20:33.129 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:25:33.153 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:30:33.170 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:35:33.188 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:40:33.208 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:45:33.226 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:50:33.241 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 11:55:33.258 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:00:33.273 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:05:33.288 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:10:33.305 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:15:33.320 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:20:33.336 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:25:33.351 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:30:33.366 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:35:33.379 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:40:33.395 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:45:33.410 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:50:33.430 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 12:55:33.450 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:00:33.464 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:05:33.479 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:10:33.495 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:15:33.509 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:20:33.522 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:25:33.540 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:30:33.555 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:35:33.568 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:40:33.582 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:45:33.595 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:50:33.613 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 13:55:33.629 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:00:33.642 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:05:33.656 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:10:33.671 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:15:33.686 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:20:33.701 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:25:33.721 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:30:33.736 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:35:33.750 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:40:33.764 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:45:33.778 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:50:33.792 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 14:55:33.805 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:00:33.818 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:05:33.832 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:10:33.848 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:15:33.863 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:20:33.877 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:25:33.890 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:30:33.905 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:35:33.918 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:40:33.932 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:45:33.949 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:50:33.978 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 15:55:33.995 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:00:34.008 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:05:34.021 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:10:34.039 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:15:34.053 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:20:34.066 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:25:34.079 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:30:34.094 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:35:34.107 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:40:34.121 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:45:34.139 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:50:34.155 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 16:55:34.168 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:00:34.181 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:05:34.194 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:10:34.211 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:15:34.224 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:20:34.238 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:25:34.251 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:30:34.264 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:35:34.282 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:40:34.295 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:45:34.308 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:50:34.321 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 17:55:34.335 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 18:00:34.354 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:12:19.704 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:17:19.742 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:22:19.756 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:27:19.776 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:32:19.798 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:37:19.811 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:42:19.830 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:47:19.844 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:52:19.857 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 19:57:19.872 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:02:19.890 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:07:19.905 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:12:19.920 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:17:19.940 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:22:19.955 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:27:19.993 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:32:20.006 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:37:20.019 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:42:20.034 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-20 20:47:20.047 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration

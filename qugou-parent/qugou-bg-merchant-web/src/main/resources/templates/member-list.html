@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>库存管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+	</head>
+	<body>
+		<div class="admin-main">
+			<blockquote class="layui-elem-quote">
+			<div style="margin-left: 10%;" id="memberList">
+                <div class="layui-form-item" style="margin:0;">
+                    <label class="layui-form-label">用户ID</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="userName" id="userName" placeholder="输入用户ID" autocomplete="off" class="layui-input">
+                    </div>
+                    <label class="layui-form-label">收藏时间</label>
+                    <div class="layui-input-inline">
+       					<input type="text" name="collectionDate" id="collectionDate" placeholder="请输入收藏时间" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+     				</div>
+                    <div class="layui-form-mid layui-word-aux" style="padding:0;">
+                        <button id="search"  class="layui-btn" >查询</button>
+                    </div>
+                </div>
+            </div>
+        </blockquote>
+			<blockquote class="layui-elem-quote">
+				<a href="javascript:;" class="layui-btn layui-btn-small" id="edit_batch_email">
+					<i class="layui-icon">&#xe608;</i> 编辑邮件批量发送会员
+				</a>
+				<a href="javascript:;" class="layui-btn layui-btn-small" id="edit_all_email">
+					<i class="layui-icon">&#xe608;</i> 编辑邮件发送全部会员
+				</a>
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>商品列表</legend>
+				<div class="layui-field-box layui-form">
+					<table class="layui-table admin-table">
+						<thead>
+							<tr>
+								<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>
+								<th>用户ID</th>
+								<th>收藏本店商品数量</th>
+								<th>收藏本店时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="content"></tbody>
+					</table>
+				</div>
+				<div class="admin-table-page">
+				<div id="paged" class="page">
+				</div>
+			</div>
+			</fieldset>
+		</div>
+		<!--模板-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<td><input type="checkbox" lay-skin="primary"></td>
+				<td>{{ item.userName }}</td>
+				<td>{{ item.collectionProductNumber }}</td>
+				<td>{{ item.collectionDate }}</td>
+				<td>
+					<a href="javascript:;" data-name="{{ item.email }}" data-opt="edit" class="layui-btn layui-btn-mini">编辑邮件</a>
+				</td>
+			</tr>
+			{{# }); }}
+		</script>
+		<script type="text/javascript" src="/merchant/layui/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="/merchant/js/member-list.js"></script>
+	</body>
+</html>

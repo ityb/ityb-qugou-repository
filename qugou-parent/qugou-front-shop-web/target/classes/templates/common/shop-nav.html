@@ -1,0 +1,79 @@
+<meta charset="utf-8">
+<div class="shop-nav-box">
+	<div class="nav-div">
+		<div class="nav-shop-name">
+			<span>
+				<#if product??>
+					${product.shopName!}
+					<input type="hidden" value="${product.shopId!}" id="shop-nav-shop-id">
+				<#else>
+					<#if shop??>
+						${shop.shopName!}
+						<input type="hidden" value="${shop.id!}" id="shop-nav-shop-id">
+					<#else>
+						未知商铺
+					</#if>
+				</#if>
+			</span>
+		</div>
+		<div class="nav-shop-item" id="shop-nav-all-product">全部宝贝</div>
+		<div class="nav-shop-item" id="shop-nav-hot-product">热卖爆款</div>
+		<div class="nav-shop-item" id="shop-nav-recent-product">新品上架</div>
+		<div class="nav-shop-item" id="shop-collection">收藏商铺</div>
+		<div class="nav-shop-item">关于本店</div>
+		<!-- <div class="nav-shop-item">返回首页</div> -->
+	</div>
+</div>
+<script type=text/javascript>
+	$(".nav-shop-name span").click(function(){
+		$("#shop-nav-all-product").click();
+	});
+	$("#shop-nav-all-product").click(function(){
+		var shopId=$("#shop-nav-shop-id").val();
+		if(shopId==null||shopId==''){
+			return;
+		}
+		window.location.href="/shop/store/detail?id="+shopId;
+	});
+	$("#shop-nav-hot-product").click(function(){
+		var shopId=$("#shop-nav-shop-id").val();
+		if(shopId==null||shopId==''){
+			return;
+		}
+		window.location.href="/shop/store/detail/hot?id="+shopId;
+	});
+	
+	$("#shop-nav-recent-product").click(function(){
+		var shopId=$("#shop-nav-shop-id").val();
+		if(shopId==null||shopId==''){
+			return;
+		}
+		window.location.href="/shop/store/detail/recent?id="+shopId;
+	});
+	
+	$("#shop-collection").click(function(){
+		var shopId=$("#shop-nav-shop-id").val();
+		//进行ajax提交
+		$.ajax({
+			async : true, //是否异步  
+			cache : false, //是否使用缓存  
+			type : 'post', //请求方式,post  
+			data : {
+				collectionId:shopId,
+				type:2
+			},
+			dataType : "json", //数据传输格式  
+			url : '/shop/collection/add?v=' + new Date().getTime(), //请求链接  
+			success : function(data) {
+				if(data.status==1){
+					ds.dialog.alert("收藏成功",function(){},"info.png");
+				}else{
+					ds.dialog.alert("收藏失败",function(){},"info.png");
+				}
+			},
+			error : function(XMLHttpRequest, data) {
+				console.log(data.msg);
+			}
+		});
+	});
+</script>

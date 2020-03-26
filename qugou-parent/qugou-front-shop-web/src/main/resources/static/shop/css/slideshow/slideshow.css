@@ -1,0 +1,125 @@
+/*賠検強*/
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.banner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	margin-top: 1px;
+	margin-left: -18px;
+	
+}
+
+.banner-btn {
+	display: none;
+}
+
+.banner-btn a {
+	display: block;
+	line-height: 40px;
+	position: absolute;
+	top: 220px;
+	width: 50px;
+	height: 50px;
+	background-color: #000;
+	opacity: 0.3;
+	padding-left:-2px;
+	filter: alpha(opacity = 30) color: rgb(255, 255, 255);
+	overflow: hidden;
+	z-index: 4;
+}
+
+.prevBtn {
+	left: 5px;
+}
+
+.nextBtn {
+	right: 5px;
+}
+
+.banner-img {
+	font-size: 0;
+	*word-spacing: -1px; /* IE6、7 */
+	letter-spacing: -3px;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.banner-img li {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1; /* IE6、7 */
+	vertical-align: top;
+	letter-spacing: normal;
+	word-spacing: normal;
+	font-size: 12px;
+}
+.banner-img img{
+	width: 795px;
+	height: 500px;
+}
+
+.banner i {
+	background:
+		url(http://gtms01.alicdn.com/tps/i1/T1szNBFzlmXXX8QSDI-400-340.png)
+		no-repeat;
+	width: 25px;
+	height: 24px;
+	cursor: pointer;
+	margin: 11.5px 0 0 12px;
+	display: block;
+	/* background-color: red; */
+}
+
+.banner .nextBtn i {
+	background-position: -200px -24px;
+}
+
+.banner .prevBtn i {
+	background-position: -200px 0px;
+}
+
+.banner-circle {
+	position: absolute;
+	left: 50%;
+	bottom: 15px;
+	height: 13px;
+	text-align: center;
+	font-size: 0;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.3);
+	filter: alpha(opacity : 30);
+}
+
+.banner-circle li {
+	border-radius: 10px;
+	margin: 2px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	vertical-align: middle;
+	zoom: 1;
+}
+
+.banner-circle li a {
+	display: block;
+	padding-top: 9px;
+	width: 9px;
+	height: 0;
+	border-radius: 50%;
+	background: #B7B7B7;
+	overflow: hidden;
+}
+
+.banner-circle .selected a {
+	background: #009688;
+}

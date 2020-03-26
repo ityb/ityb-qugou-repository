@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/qugou-all-api/qugou-all-api.iml" filepath="$PROJECT_DIR$/qugou-all-api/qugou-all-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-all-common/qugou-all-common.iml" filepath="$PROJECT_DIR$/qugou-all-common/qugou-all-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-all-job/qugou-all-job.iml" filepath="$PROJECT_DIR$/qugou-all-job/qugou-all-job.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-all-sso/qugou-all-sso.iml" filepath="$PROJECT_DIR$/qugou-all-sso/qugou-all-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-bg-manager-web/qugou-bg-manager-web.iml" filepath="$PROJECT_DIR$/qugou-bg-manager-web/qugou-bg-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-bg-merchant-web/qugou-bg-merchant-web.iml" filepath="$PROJECT_DIR$/qugou-bg-merchant-web/qugou-bg-merchant-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-front-shop-web/qugou-front-shop-web.iml" filepath="$PROJECT_DIR$/qugou-front-shop-web/qugou-front-shop-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-parent.iml" filepath="$PROJECT_DIR$/qugou-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-server-cart/qugou-server-cart.iml" filepath="$PROJECT_DIR$/qugou-server-cart/qugou-server-cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-server-evaluation/qugou-server-evaluation.iml" filepath="$PROJECT_DIR$/qugou-server-evaluation/qugou-server-evaluation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-server-order/qugou-server-order.iml" filepath="$PROJECT_DIR$/qugou-server-order/qugou-server-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-server-product/qugou-server-product.iml" filepath="$PROJECT_DIR$/qugou-server-product/qugou-server-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-server-search/qugou-server-search.iml" filepath="$PROJECT_DIR$/qugou-server-search/qugou-server-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-system-config/qugou-system-config.iml" filepath="$PROJECT_DIR$/qugou-system-config/qugou-system-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-system-eureka/qugou-system-eureka.iml" filepath="$PROJECT_DIR$/qugou-system-eureka/qugou-system-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qugou-system-zuul/qugou-system-zuul.iml" filepath="$PROJECT_DIR$/qugou-system-zuul/qugou-system-zuul.iml" />
+    </modules>
+  </component>
+</project>

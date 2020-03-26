@@ -1,0 +1,326 @@
+2018-02-08 10:50:18.644 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator -Fetching config from server at: http://localhost:1001/
+2018-02-08 10:50:19.976 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator -Located environment: name=product-service, profiles=[local,resources], label=master, version=null, state=null
+2018-02-08 10:50:19.979 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration -Located property source: CompositePropertySource [name='configService', propertySources=[MapPropertySource [name='classpath:/properties/product-service-local.properties']]]
+2018-02-08 10:50:20.182 [main] INFO  com.ityb.qugou.ProductAppliction -No active profile set, falling back to default profiles: default
+2018-02-08 10:50:20.255 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@267bbe1a: startup date [Thu Feb 08 10:50:20 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@5505ae1a
+2018-02-08 10:50:22.930 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-02-08 10:50:24.019 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=fe6d4236-c832-3e22-9cc8-9d6229f9f7ad
+2018-02-08 10:50:24.118 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-08 10:50:24.378 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:24.385 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$5ab040ba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:24.400 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:24.463 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:24.813 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'dataSource' of type [org.apache.tomcat.jdbc.pool.DataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:25.650 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:25.710 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:25.722 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'baseMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:25.730 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'productSpecificationMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:25.735 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'productMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:26.337 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$27dbef8a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:27.622 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$43f5f287] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 10:50:29.496 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer -Tomcat initialized with port(s): 8004 (http)
+2018-02-08 10:50:29.564 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2018-02-08 10:50:29.569 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-02-08 10:50:30.081 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2018-02-08 10:50:30.081 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 9826 ms
+2018-02-08 10:50:31.336 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-08 10:50:31.351 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-08 10:50:31.351 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-08 10:50:31.398 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-08 10:50:31.398 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-08 10:50:37.517 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@267bbe1a: startup date [Thu Feb 08 10:50:20 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@5505ae1a
+2018-02-08 10:50:37.861 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/queryProductSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.util.List<com.ityb.qugou.vo.product.ProductSpecificationVo>> com.ityb.qugou.product.controller.api.ProductController.queryProductSpecification(com.ityb.qugou.dto.ProductSpecificationDto)
+2018-02-08 10:50:37.861 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/countroductSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.lang.Integer> com.ityb.qugou.product.controller.api.ProductController.countProductSpecification(com.ityb.qugou.dto.ProductSpecificationDto)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/addProductSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.lang.Boolean> com.ityb.qugou.product.controller.api.ProductController.addProductSpecification(com.ityb.qugou.bo.product.ProductSpecificationBean)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/countSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.lang.Integer> com.ityb.qugou.product.controller.api.ProductController.countSpecification(com.ityb.qugou.po.product.Product)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/getProductSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<com.ityb.qugou.po.product.ProductSpecification> com.ityb.qugou.product.controller.api.ProductController.getProductSpecification(com.ityb.qugou.po.product.ProductSpecification)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/queryProductByIds],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.util.List<com.ityb.qugou.vo.product.ProductSpecificationVo>> com.ityb.qugou.product.controller.api.ProductController.queryProductByIds(java.lang.String)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/updateSpecification],methods=[POST || GET]}" onto com.ityb.qugou.base.message.JsonResultData<java.lang.Boolean> com.ityb.qugou.product.controller.api.ProductController.updateSpecification(com.ityb.qugou.po.product.ProductSpecification)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/deleteSpecification],methods=[POST || GET]}" onto com.ityb.qugou.base.message.JsonResultData<java.lang.Boolean> com.ityb.qugou.product.controller.api.ProductController.deleteSpecification(com.ityb.qugou.po.product.ProductSpecification)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/addSpecification],methods=[POST || GET]}" onto com.ityb.qugou.base.message.JsonResultData<java.lang.Boolean> com.ityb.qugou.product.controller.api.ProductController.addSpecification(com.ityb.qugou.po.product.ProductSpecification)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/queryProduct],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.util.List<com.ityb.qugou.po.product.Product>> com.ityb.qugou.product.controller.api.ProductController.queryProduct(com.ityb.qugou.po.product.Product)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/getProduct],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<com.ityb.qugou.po.product.Product> com.ityb.qugou.product.controller.api.ProductController.getProduct(com.ityb.qugou.po.product.Product)
+2018-02-08 10:50:37.876 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/active/mq/test]}" onto public void com.ityb.qugou.product.mq.demo.DemoController.contextLoads() throws java.lang.InterruptedException
+2018-02-08 10:50:37.892 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-08 10:50:37.892 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-08 10:50:38.235 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-08 10:50:38.235 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-08 10:50:38.500 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-08 10:50:41.074 [main] INFO  o.s.u.f.SpringTemplateLoader -SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@267bbe1a: startup date [Thu Feb 08 10:50:20 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@5505ae1a] and template loader path [classpath:/templates/]
+2018-02-08 10:50:41.074 [main] INFO  o.s.w.s.v.f.FreeMarkerConfigurer -ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2018-02-08 10:50:41.718 [main] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration -Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2018-02-08 10:50:42.943 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-02-08 10:50:42.946 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-02-08 10:50:42.968 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-02-08 10:50:42.971 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-02-08 10:50:44.239 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Registering beans for JMX exposure on startup
+2018-02-08 10:50:44.272 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-02-08 10:50:44.277 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-02-08 10:50:44.280 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-02-08 10:50:44.287 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-02-08 10:50:44.332 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-02-08 10:50:44.390 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=267bbe1a,type=ConfigurationPropertiesRebinder]
+2018-02-08 10:50:45.042 [main] INFO  o.s.c.s.DefaultLifecycleProcessor -Starting beans in phase 0
+2018-02-08 10:50:45.072 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory -Setting initial instance status as: STARTING
+2018-02-08 10:50:45.372 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1
+2018-02-08 10:50:45.867 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2018-02-08 10:50:45.867 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2018-02-08 10:50:46.264 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2018-02-08 10:50:46.267 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2018-02-08 10:50:47.254 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 10:50:47.538 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false
+2018-02-08 10:50:47.540 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null
+2018-02-08 10:50:47.540 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false
+2018-02-08 10:50:47.540 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false
+2018-02-08 10:50:47.540 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true
+2018-02-08 10:50:47.543 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true
+2018-02-08 10:50:47.545 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server
+2018-02-08 10:50:47.985 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200
+2018-02-08 10:50:47.990 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30
+2018-02-08 10:50:48.000 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-02-08 10:50:48.010 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1518058248010 with initial instances count: 4
+2018-02-08 10:50:48.240 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry -Registering application product-service with eureka with status UP
+2018-02-08 10:50:48.245 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1518058248245, current=UP, previous=STARTING]
+2018-02-08 10:50:48.253 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_PRODUCT-SERVICE/PC-20160510GKPU:product-service:8004: registering service...
+2018-02-08 10:50:48.270 [main] INFO  o.s.c.s.DefaultLifecycleProcessor -Starting beans in phase 2147483647
+2018-02-08 10:50:48.495 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_PRODUCT-SERVICE/PC-20160510GKPU:product-service:8004 - registration status: 204
+2018-02-08 10:50:49.194 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer -Tomcat started on port(s): 8004 (http)
+2018-02-08 10:50:49.197 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration -Updating port to 8004
+2018-02-08 10:50:49.207 [main] INFO  com.ityb.qugou.ProductAppliction -Started ProductAppliction in 35.965 seconds (JVM running for 37.354)
+2018-02-08 10:55:47.569 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:00:47.590 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:05:47.608 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:10:47.629 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:15:47.650 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:20:47.670 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:25:47.689 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:30:47.709 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:35:47.728 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:40:47.749 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:45:47.768 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:50:47.786 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 11:55:47.805 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:00:47.832 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:05:47.851 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:10:47.870 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:15:47.891 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:20:47.913 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:25:47.933 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:30:47.952 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:35:47.972 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:40:47.990 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:45:48.011 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:50:48.029 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 12:54:19.286 [http-nio-8004-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-02-08 12:54:19.288 [http-nio-8004-exec-1] INFO  o.s.web.servlet.DispatcherServlet -FrameworkServlet 'dispatcherServlet': initialization started
+2018-02-08 12:54:19.474 [http-nio-8004-exec-1] INFO  o.s.web.servlet.DispatcherServlet -FrameworkServlet 'dispatcherServlet': initialization completed in 185 ms
+2018-02-08 12:55:48.049 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:00:48.068 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:05:48.090 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:10:48.110 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:15:48.129 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:20:48.149 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:25:48.167 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:30:48.185 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:35:48.206 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:40:48.236 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:45:48.258 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:50:48.278 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 13:55:48.302 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:00:48.322 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:05:48.340 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:10:48.360 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:15:48.380 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:20:48.398 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:25:48.417 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:30:48.437 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:35:48.460 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:40:48.479 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:45:48.498 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:50:48.525 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 14:55:48.549 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:00:48.567 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:05:48.589 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:10:48.685 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:15:48.708 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:20:48.726 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:25:48.746 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:30:48.764 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:35:48.783 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:40:48.804 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:45:48.828 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:50:48.847 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 15:55:48.865 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:00:48.888 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:05:48.909 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:10:48.929 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:15:48.948 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:20:48.966 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:25:48.989 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:30:49.006 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:35:49.025 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:40:49.043 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:45:49.061 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:50:49.084 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 16:55:49.102 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:00:49.123 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:05:49.146 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:10:49.168 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:15:49.194 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:20:49.214 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:25:49.232 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:30:49.249 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:35:49.267 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:40:49.311 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:45:49.333 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:50:49.352 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 17:55:49.371 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:00:49.391 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:05:49.409 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:10:49.427 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:15:49.447 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:20:49.512 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:25:49.533 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:30:49.574 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:35:49.593 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:40:49.616 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:45:49.635 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:50:49.654 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 18:55:49.684 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:00:49.704 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:05:49.724 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:10:49.742 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:15:49.765 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:20:49.791 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:25:49.810 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:30:49.828 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:35:49.848 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:40:49.997 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:45:50.015 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:50:50.034 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 19:55:50.052 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:00:50.069 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:05:50.204 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:10:50.225 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:15:50.243 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:20:50.261 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:25:50.280 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:30:50.300 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:35:50.318 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:40:50.337 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:45:50.355 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:50:50.379 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 20:55:50.443 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:00:50.461 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:05:50.551 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:10:50.574 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:15:50.593 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:20:50.632 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:25:50.654 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:30:50.734 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:35:50.753 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:40:50.771 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:45:50.790 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:50:50.808 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 21:55:50.826 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:00:50.845 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:05:50.864 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:10:50.882 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:15:50.900 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:20:50.922 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:25:50.942 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:30:50.963 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:35:50.982 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:40:19.161 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator -Fetching config from server at: http://localhost:1001/
+2018-02-08 22:40:20.659 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator -Located environment: name=product-service, profiles=[local,resources], label=master, version=null, state=null
+2018-02-08 22:40:20.662 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration -Located property source: CompositePropertySource [name='configService', propertySources=[MapPropertySource [name='classpath:/properties/product-service-local.properties']]]
+2018-02-08 22:40:20.783 [main] INFO  com.ityb.qugou.ProductAppliction -No active profile set, falling back to default profiles: default
+2018-02-08 22:40:20.846 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6e6fce47: startup date [Thu Feb 08 22:40:20 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2bb3058
+2018-02-08 22:40:24.679 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-02-08 22:40:25.910 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=fe6d4236-c832-3e22-9cc8-9d6229f9f7ad
+2018-02-08 22:40:26.008 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-08 22:40:26.228 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:26.235 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ba327cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:26.250 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:26.305 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:26.650 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'dataSource' of type [org.apache.tomcat.jdbc.pool.DataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:27.468 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:27.508 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:27.518 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'baseMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:27.525 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'productSpecificationMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:27.530 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'productMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:28.080 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d8ced69b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:29.162 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f4e8d998] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-08 22:40:30.821 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer -Tomcat initialized with port(s): 8004 (http)
+2018-02-08 22:40:30.864 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2018-02-08 22:40:30.864 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-02-08 22:40:31.582 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2018-02-08 22:40:31.582 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 10736 ms
+2018-02-08 22:40:32.564 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-08 22:40:32.580 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-08 22:40:32.580 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-08 22:40:32.580 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-08 22:40:32.596 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-08 22:40:38.634 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6e6fce47: startup date [Thu Feb 08 22:40:20 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2bb3058
+2018-02-08 22:40:39.009 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/addSpecification],methods=[POST || GET]}" onto com.ityb.qugou.base.message.JsonResultData<java.lang.Boolean> com.ityb.qugou.product.controller.api.ProductController.addSpecification(com.ityb.qugou.po.product.ProductSpecification)
+2018-02-08 22:40:39.009 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/queryProduct],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.util.List<com.ityb.qugou.po.product.Product>> com.ityb.qugou.product.controller.api.ProductController.queryProduct(com.ityb.qugou.po.product.Product)
+2018-02-08 22:40:39.009 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/getProduct],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<com.ityb.qugou.po.product.Product> com.ityb.qugou.product.controller.api.ProductController.getProduct(com.ityb.qugou.po.product.Product)
+2018-02-08 22:40:39.009 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/queryProductSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.util.List<com.ityb.qugou.vo.product.ProductSpecificationVo>> com.ityb.qugou.product.controller.api.ProductController.queryProductSpecification(com.ityb.qugou.dto.ProductSpecificationDto)
+2018-02-08 22:40:39.009 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/countroductSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.lang.Integer> com.ityb.qugou.product.controller.api.ProductController.countProductSpecification(com.ityb.qugou.dto.ProductSpecificationDto)
+2018-02-08 22:40:39.009 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/addProductSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.lang.Boolean> com.ityb.qugou.product.controller.api.ProductController.addProductSpecification(com.ityb.qugou.bo.product.ProductSpecificationBean)
+2018-02-08 22:40:39.009 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/countSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.lang.Integer> com.ityb.qugou.product.controller.api.ProductController.countSpecification(com.ityb.qugou.po.product.Product)
+2018-02-08 22:40:39.009 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/getProductSpecification],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<com.ityb.qugou.po.product.ProductSpecification> com.ityb.qugou.product.controller.api.ProductController.getProductSpecification(com.ityb.qugou.po.product.ProductSpecification)
+2018-02-08 22:40:39.025 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/queryProductByIds],methods=[POST || GET]}" onto public com.ityb.qugou.base.message.JsonResultData<java.util.List<com.ityb.qugou.vo.product.ProductSpecificationVo>> com.ityb.qugou.product.controller.api.ProductController.queryProductByIds(java.lang.String)
+2018-02-08 22:40:39.025 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/updateSpecification],methods=[POST || GET]}" onto com.ityb.qugou.base.message.JsonResultData<java.lang.Boolean> com.ityb.qugou.product.controller.api.ProductController.updateSpecification(com.ityb.qugou.po.product.ProductSpecification)
+2018-02-08 22:40:39.025 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/deleteSpecification],methods=[POST || GET]}" onto com.ityb.qugou.base.message.JsonResultData<java.lang.Boolean> com.ityb.qugou.product.controller.api.ProductController.deleteSpecification(com.ityb.qugou.po.product.ProductSpecification)
+2018-02-08 22:40:39.025 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/queryProductByProductDto],methods=[POST || GET]}" onto com.ityb.qugou.base.message.JsonResultData<java.util.List<com.ityb.qugou.vo.product.ProductVo>> com.ityb.qugou.product.controller.api.ProductController.queryProductByProductDto(com.ityb.qugou.dto.ProductDto)
+2018-02-08 22:40:39.025 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/product/countProductByProductDto],methods=[POST || GET]}" onto com.ityb.qugou.base.message.JsonResultData<java.lang.Integer> com.ityb.qugou.product.controller.api.ProductController.countProductByProductDto(com.ityb.qugou.dto.ProductDto)
+2018-02-08 22:40:39.025 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/active/mq/test]}" onto public void com.ityb.qugou.product.mq.demo.DemoController.contextLoads() throws java.lang.InterruptedException
+2018-02-08 22:40:39.040 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-08 22:40:39.040 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-08 22:40:39.388 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-08 22:40:39.388 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-08 22:40:39.648 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-08 22:40:42.507 [main] INFO  o.s.u.f.SpringTemplateLoader -SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6e6fce47: startup date [Thu Feb 08 22:40:20 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2bb3058] and template loader path [classpath:/templates/]
+2018-02-08 22:40:42.509 [main] INFO  o.s.w.s.v.f.FreeMarkerConfigurer -ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2018-02-08 22:40:43.118 [main] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration -Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2018-02-08 22:40:44.413 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-02-08 22:40:44.415 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-02-08 22:40:44.436 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-02-08 22:40:44.439 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-02-08 22:40:45.711 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Registering beans for JMX exposure on startup
+2018-02-08 22:40:45.742 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'environmentManager' has been autodetected for JMX exposure
+2018-02-08 22:40:45.747 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2018-02-08 22:40:45.752 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'refreshScope' has been autodetected for JMX exposure
+2018-02-08 22:40:45.760 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2018-02-08 22:40:45.812 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2018-02-08 22:40:45.872 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=6e6fce47,type=ConfigurationPropertiesRebinder]
+2018-02-08 22:40:46.440 [main] INFO  o.s.c.s.DefaultLifecycleProcessor -Starting beans in phase 0
+2018-02-08 22:40:46.472 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory -Setting initial instance status as: STARTING
+2018-02-08 22:40:46.695 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1
+2018-02-08 22:40:47.527 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2018-02-08 22:40:47.532 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2018-02-08 22:40:48.001 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2018-02-08 22:40:48.001 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2018-02-08 22:40:49.278 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:40:49.770 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false
+2018-02-08 22:40:49.770 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null
+2018-02-08 22:40:49.770 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false
+2018-02-08 22:40:49.773 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false
+2018-02-08 22:40:49.773 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true
+2018-02-08 22:40:49.773 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true
+2018-02-08 22:40:49.773 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server
+2018-02-08 22:40:50.190 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200
+2018-02-08 22:40:50.198 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30
+2018-02-08 22:40:50.208 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-02-08 22:40:50.218 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1518100850218 with initial instances count: 5
+2018-02-08 22:40:50.465 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry -Registering application product-service with eureka with status UP
+2018-02-08 22:40:50.468 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1518100850468, current=UP, previous=STARTING]
+2018-02-08 22:40:50.474 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_PRODUCT-SERVICE/PC-20160510GKPU:product-service:8004: registering service...
+2018-02-08 22:40:50.484 [main] INFO  o.s.c.s.DefaultLifecycleProcessor -Starting beans in phase 2147483647
+2018-02-08 22:40:50.591 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_PRODUCT-SERVICE/PC-20160510GKPU:product-service:8004 - registration status: 204
+2018-02-08 22:40:51.345 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer -Tomcat started on port(s): 8004 (http)
+2018-02-08 22:40:51.348 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration -Updating port to 8004
+2018-02-08 22:40:51.373 [main] INFO  com.ityb.qugou.ProductAppliction -Started ProductAppliction in 38.661 seconds (JVM running for 40.686)
+2018-02-08 22:45:49.797 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-02-08 22:50:49.819 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration

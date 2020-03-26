@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=5.0"
+	charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>趣购网-注册</title>
+<link href="/sso/shop/css/register.css" rel="stylesheet">
+<body>
+	<div class="register-top">
+		<div class="logo">
+			<a href="/shop"><img alt="" src="/sso/shop/images/logo.png"></a>
+		</div>
+		<div class="register-title">欢迎注册</div>
+	</div>
+	<div class="register-login"><a href="/sso/shop/login">我已经注册，马上登录></a></div>
+	<div class="register-main-box">
+	<div class="register-main">
+		<!-- 代码 开始 -->
+		<form name="form1" onsubmit="retrun false" method="post" id="register_form">
+			<input type="hidden" id="flag">
+			<div class="div_f">
+				<div class="div_col" id="me">
+					<div class="div_c_l">
+						<span> 用户名</span>
+					</div>
+					<div class="div_c_r">
+						<input type="text" style="width: calc(100% - 16px);" name="userName" id="userName"
+							id="name" placeholder="6-12位的中文、字符、数字组成"> <span
+							style="float: right; margin-top: -30px; background: #fff"
+							id="tish"></span></input>
+					</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div class="div_f">
+				<div class="div_col" id="me">
+					<div class="div_c_l">
+						<span>密码</span>
+					</div>
+					<div class="div_c_r">
+						<input type="password" style="width: calc(100% - 16px);"
+							name="password" id="password" onkeydown="" value=""
+							placeholder="6~20位数字、字符任意组合"> <span
+							style="float: right; margin-top: -30px; background: #fff" id="ts"></span></input>
+					</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div class="div_f">
+				<div class="div_col" id="me">
+					<div class="div_c_l">
+						<span style="width: 70px;">确认密码</span>
+					</div>
+					<div class="div_c_r">
+						<input type="password" style="width: calc(100% - 16px);"
+							name="passagain" id="repassword" onkeydown="" value=""
+							placeholder="请再次输入密码"> <span
+							style="float: right; margin-top: -30px; background: #fff"
+							id="tishi"></span></input>
+					</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div class="div_f">
+				<div class="div_col" id="me">
+					<div class="div_c_l">
+						<span style="width: 70px;">手机号码</span>
+					</div>
+					<div class="div_c_r">
+						<input type="tel" style="width: calc(100% - 16px);" id="phone"
+							name="phone" onkeydown="" id="phone" value=""
+							placeholder="请输入手机号码"> <span
+							style="float: right; margin-top: -30px; background: #fff"
+							id="tss"></span>
+					</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+
+			<div class="div_f">
+				<div class="div_col" id="me">
+					<div class="div_c_l">
+						<span style="width: 70px;">验证码</span>
+					</div>
+					<div class="div_c_r">
+						<input
+							style="float: right; text-align: center; cursor:pointer; font-size: 11px; padding: 4px 9px; width: calc(50% - 16px); background: #009688; color: #fff;"
+							id="dynamic" value="发送验证码" type="button"
+							onclick="sendMessage(60)"> <input
+							style="width: calc(50% - 10px);" type="tel" name="verificationCode"
+							onkeydown="" id="code" placeholder="请输入验证码">
+						<span style="margin-top: -30px; background: #fff" id="tsi"></span>
+					</div>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div class="show_err"></div>
+			<input type="button" id="submit" class="btn_1" value="注册">
+			<!-- <button id="submit" class="btn_1">注册</button> -->
+		</form>
+	</div>
+	</div>
+	<script type="text/javascript" src="/sso/shop/js/Libs/jquery.min.js"></script>
+	<script type="text/javascript" src="/sso/shop/js/register.js"></script>
+</body>
+</html>

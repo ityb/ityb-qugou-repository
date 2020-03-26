@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.mapper.DeliveryAddressMapper">
+	<select id="queryDeliveryAddressByEntity" parameterType="com.ityb.qugou.po.order.DeliveryAddress"
+		resultType="com.ityb.qugou.po.order.DeliveryAddress">
+		SELECT
+			CUSTOMER_NAME AS customerName,
+			CUSTOMER_PHONE AS customerPhone,
+			TYPE AS type,
+			ADDRESS AS address,
+			PROVINCE AS province,
+			CITY AS city,
+			TOWN AS town,
+			AREA AS area
+		FROM
+			T_P_DELIVERY_ADDRESS
+		<where>
+			ISVALID = 1
+			<if test="creater!=null and creater!=''">
+				AND CREATER=#{creater}
+			</if>
+			<if test="city!=null and city!=''">
+				AND (CITY=#{city} OR PROVINCE=#{city})
+			</if>
+		</where>	
+	</select>
+</mapper>

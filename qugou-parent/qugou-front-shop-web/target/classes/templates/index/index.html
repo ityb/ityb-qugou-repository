@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>趣购网-首页</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/slideshow/slideshow.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link href="/shop/css/zlc/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/zlc.css">
+
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/category/style.js" ></script>
+<script type="text/javascript" src="/shop/js/slideshow/slideshow.js" ></script>
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/cart/cart.js" ></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<script type="text/javascript" src="/shop/js/jquery.cookie.js" ></script>
+</head>
+<body>
+	<!-- 头部信息 -->
+	<#include "/common/header.html"/>
+	<!-- 导航部分 -->
+	<div class="nav-box">
+		<div class="category-name-box">
+			<div class="category-name-show">
+				<img alt="" src="/shop/images/all_cate.png"/>
+				<div>全部商品分类</div>
+			</div>
+		</div>
+		<div class="nav-category">
+			<div><a href="/shop/search/shop">我的周边</a></div>
+		</div>
+		<div class="nav-category">
+			<div><a href="/shop/product/recommend">猜你喜欢</a></div>
+		</div>
+		<div class="nav-category">
+			<div><a href="/shop/product/hot"">热销热卖</a></div>
+		</div>
+		<div class="nav-category">
+			<div><a href="/shop/product/recent">新品上架</a></div>
+		</div>
+		<div class="nav-category">
+			<div><a href="/shop/about">关于我们</a></div>
+		</div>
+		<div class="o2o-login-box">
+			<img alt="" src="/shop/images/o2o.png">
+			<div>新零售平台</div>
+		</div>
+	</div>
+	<!-- 全部商品分类包括轮播图部门，登录部门 -->
+	<div class="category-box">
+		<!-- 左边右边边角，采取绝对位置 -->
+		<div class="category-left-box">
+			<img alt="" src="/shop/images/cate-left.png">
+		</div>
+		<div class="category-right-box">
+			<img alt="" src="/shop/images/cate-right.png">
+		</div>
+	
+		<#include "/index/category.html">
+		<div class="sildeshow-box">
+			<#include "/index/slideshow.html">
+		</div>
+		<div class="new-box">
+			<!-- 登录部分 -->
+			<div class="new-login-top">
+				<div class="login-top-box">
+					<div class="login-top-box-img">
+						<#if customer??>
+							<a href="#"><img alt="" src="${(customer.userHead)!}"></a>
+						<#else>
+							<a href="#"><img alt="" src="/shop/images/d_head.png"></a>
+						</#if>
+					</div>
+				</div>
+				<div class="hi-box">Hi,你好</div>
+				<div class="login-bottom-handle">
+					<#if user??>
+						<div class="username_show">${user.userName!}</div>
+						<div class="userhead_show"><a href="/sso/shop/loginOut"><div class="loginout-bottom-button">退出登录</div></a></div>
+					<#else>
+						<a href="/sso/shop/login"><div class="login-bottom-login-button">登录</div></a>
+						<a href="/sso/shop/register"><div class="login-bottom-regist-button">新用户注册</div></a>
+					</#if>
+				</div>
+				<div class="notice-box">
+					<div class="notice-box-img">
+						<img src="/shop/images/notice.png">
+					</div>
+					<div class="notice-box-name">公告</div>
+				</div>
+			</div>
+			<!-- 公告显示部分 -->
+			<div class="notice-show-box">
+			   <#if noticeList??>
+			   		<#list noticeList as notice>
+			   			<div class="notice-message-show">
+							<a href="${notice.linkUrl!}">${notice.content!}</a>
+						</div>
+			   		</#list>
+			   </#if>
+			</div>
+			<div class="direct-supmarket-ident">
+				<div class="notice-box-img">
+					<img src="/shop/images/cs.png">
+				</div>
+				<div class="notice-box-name">直通超市</div>
+			</div>
+			<div class="direct-supmarket-box">
+				<#if supermarketList??&&(supermarketList?size>0)>
+					<#list supermarketList as supermarket>
+						<div class="supmarket-show-box">
+							<div class="supmarket-logo-box">
+								<a href="/shop/store/detail?id=${supermarket.shopId!}">
+									<img alt="" src='${supermarket.shopLogo!"/shop/images/o2o.png"}'>
+								</a>
+							</div>
+							<div class="supmarket-name-box">
+								<a href="/shop/store/detail?id=${supermarket.shopId!}">${supermarket.shopName!}</a>
+							</div>
+						</div>
+					</#list>
+				</#if>
+			</div>
+		</div>
+	</div>
+	
+	<!--今日疯抢box-->
+	<div class="crazy-buy-box">
+		<div class="crazy-buy-nav">
+			<div>今日疯抢</div>
+		</div>
+		<div class="crazy-product-show-box">
+			<div class="crazy-product-show">
+			<#if hotProductList??&&(hotProductList?size>0)>
+				<#list hotProductList as hotProduct>
+					<!-- 单个商品信息 -->
+					<div class="crazy-product">
+							<div class="product-image-box">
+							   <div class="box">
+							   	 <#if hotProduct.pic??>
+								  	<#list hotProduct.pic?split(",") as pic>
+								  		<#if pic_index==0>
+								  			<img src="${pic!}">
+								  		</#if>
+								  	</#list>
+								  <#else>
+								  	<img src="/shop/images/slideshow/1.jpg">
+								  </#if>
+								  <div class="box-content">
+								  <h6 class="title">优惠商品</h6>
+								  	<div class="add-sub-show">
+											<input data_step="1" data_min="1" data_max="999999" 
+											data_digit="0" value="1" data_edit="true" id="${hotProduct.productId!}"/>
+									</div>
+									<div class="add-cart-box addcart" data-id="${hotProduct.specificationId!}">
+										<div class="cart-img-box">
+											<img alt="" src="/shop/images/add_cart.png">
+										</div>
+										<div class="cart-name-box">加入购物车</div>
+									</div>
+								  </div>
+								</div>
+							</div>
+							<!-- 商品名称 -->
+							<div class="product-name-box">
+								<a href="#">${hotProduct.title!}</a>
+							</div>
+							<div class="product-price-box">
+								<div class="product-real-price">￥${hotProduct.price?string("#.00")!}</div>
+								<div class="product-discount-price">￥${(hotProduct.price*1.2)?string("#.00")!}</div>
+							</div>
+						</div>
+					</#list>
+				</#if>
+			</div>
+		</div>
+	</div>
+
+	<!-- 优惠专区 -->
+	<div class="crazy-buy-box">
+		<div class="crazy-buy-nav">
+			<div>优惠专区</div>
+		</div>
+		<div class="dis-sale-area-box">
+			<!-- 单个信息循环 -->
+			<#if discountAreaList??&&(discountAreaList?size>0)>
+				<#list discountAreaList as discountArea>
+					<div class="dis-sale-box">
+						<div class="left-sale-name">
+							<a href="${discountArea.discountAreaParent.linkUrl!}">
+								<img alt="" src="${discountArea.discountAreaParent.showPic!}">
+							</a>
+						</div>
+						<#if discountArea.discountAreaChildren??&&(discountArea.discountAreaChildren?size>0)>
+							<#list discountArea.discountAreaChildren as children>
+								<div class="sale-product-area">
+									<div class="sale-product-name"><a href="${children.linkUrl!}">${children.name!}</a></div>
+									<div class="sale-product-img">
+										<a href="${children.linkUrl!}"><img alt="" src="${children.showPic!}"></a>
+									</div>
+								</div> 
+							</#list>
+						</#if>
+					</div>
+				</#list>
+			</#if>
+		</div>
+	</div>
+	<div class="end"></div>
+	<div class="foot-box">
+		<#include "/common/footer.html">	
+	</div>
+	<!--购物车固定部分  -->
+	<div><#include "/common/cart.html"></div>
+	<div><#include "/common/login-min.html"></div>
+	<div><#include "/common/area.html"></div>
+	<script type="text/javascript">
+		$(function(){
+			setTimeout(function(){
+				window.scrollTo(0,0);
+			},50);
+		});
+	</script>
+</body>
+</html>

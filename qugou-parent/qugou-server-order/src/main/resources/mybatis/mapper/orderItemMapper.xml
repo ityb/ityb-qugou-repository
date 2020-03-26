@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.order.mapper.OrderItemMapper">
+	<!-- 添加一个订单项 -->
+	<insert id="insertOrderItem" parameterType="com.ityb.qugou.po.order.OrderItem">
+		INSERT INTO T_P_ORDER_ITEM(ID
+			<if test="orderId!=null and orderId!=''">
+				,ORDER_ID
+			</if>
+			<if test="productSpecificationId!=null and productSpecificationId!=''">
+				,PRODUCT_SPECIFICATION_ID
+			</if>
+			<if test="subtotal!=null and subtotal!=0">
+				,SUBTOTAL
+			</if>
+			<if test="buyNum!=null and buyNum!=0">
+				,BUY_NUM
+			</if>
+			<if test="creater!=null and creater!=''">
+				,CREATER
+			</if>
+			<if test="ctime!=null">
+				,CTIME
+			</if>
+				,ISVALID
+		)VALUES(
+			#{id}
+			<if test="orderId!=null and orderId!=''">
+				,#{orderId}
+			</if>
+			<if test="productSpecificationId!=null and productSpecificationId!=''">
+				,#{productSpecificationId}
+			</if>
+			<if test="subtotal!=null and subtotal!=0">
+				,#{subtotal}
+			</if>
+			<if test="buyNum!=null and buyNum!=0">
+				,#{buyNum}
+			</if>
+			<if test="creater!=null and creater!=''">
+				,#{creater}
+			</if>
+			<if test="ctime!=null">
+				,#{ctime}
+			</if>
+				,#{isvalid}		
+		)
+	</insert>
+	<select id="queryOrderItemByOrderId" parameterType="string" 
+		resultType="com.ityb.qugou.bo.order.OrderItemBean">
+			SELECT
+				PD.TITLE AS productTitle,
+				PD.SELL_POINT AS sellPoint,
+				PD.PIC_URL AS productPic,
+				PD.PRODUCT_ID AS productId,
+				OI.BUY_NUM AS buyNumber,
+				PS.STOCK AS stock,
+				PS.WEIGHT AS weight,
+				PS.PRICE AS price,
+				PS.NAME AS productSpecificationName,
+				PS.ID AS productSpecificationId
+			FROM
+				T_P_ORDER_ITEM OI
+			LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PS.ID = OI.PRODUCT_SPECIFICATION_ID
+			LEFT JOIN T_P_PRODUCT_DETAIL PD ON PD.PRODUCT_ID = PS.PRODUCT_ID
+			<where>
+				OI.ISVALID=1 AND PS.ISVALID=1 AND PD.ISVALID=1
+				<if test="orderId!=null and orderId!=''">
+					AND OI.ORDER_ID=#{orderId}
+				</if>
+			</where>
+	</select>
+	<select id="queryOrderItemByEntity" parameterType="com.ityb.qugou.po.order.OrderItem" 
+		resultType="com.ityb.qugou.bo.order.OrderItemBean">
+			SELECT
+				PD.TITLE AS productTitle,
+				PD.SELL_POINT AS sellPoint,
+				PD.PIC_URL AS productPic,
+				PD.PRODUCT_ID AS productId,
+				OI.BUY_NUM AS buyNumber,
+				PS.STOCK AS stock,
+				PS.WEIGHT AS weight,
+				PS.PRICE AS price,
+				PS.NAME AS productSpecificationName,
+				PS.ID AS productSpecificationId
+			FROM
+				T_P_ORDER_ITEM OI
+			LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PS.ID = OI.PRODUCT_SPECIFICATION_ID
+			LEFT JOIN T_P_PRODUCT_DETAIL PD ON PD.PRODUCT_ID = PS.PRODUCT_ID
+			<where>
+				OI.ISVALID=1 AND PS.ISVALID=1 AND PD.ISVALID=1
+				<if test="orderId!=null and orderId!=''">
+					AND OI.ORDER_ID=#{orderId}
+				</if>
+				<if test="isEvaluation!=null and isEvaluation!=0">
+					AND OI.IS_EVALUATION=#{isEvaluation}
+				</if>
+			</where>
+	</select>
+	<select id="countOrderItemByEntity" parameterType="com.ityb.qugou.po.order.OrderItem"
+			resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			T_P_ORDER_ITEM
+		 <where>
+		 	ISVALID=1
+		 	<if test="orderId!=null and orderId!=''">
+		 		AND ORDER_ID=#{orderId}
+		 	</if>
+		 	<if test="isEvaluation!=null and isEvaluation!=0">
+		 		AND IS_EVALUATION=#{isEvaluation}
+		 	</if>
+		 </where>
+	</select>
+	<update id="updateOrdeItem" parameterType="com.ityb.qugou.po.order.OrderItem">
+		UPDATE 
+			T_P_ORDER_ITEM
+			<set>
+				<if test="isEvaluation!=null and isEvaluation!=0">
+					IS_EVALUATION=#{isEvaluation},
+				</if>
+				<if test="mtime!=null">
+					MTIME=#{mtime},
+				</if>
+			</set>
+			<where>
+				ISVALID=1
+				<if test="orderId!=null and orderId!=''">
+					AND ORDER_ID=#{orderId}
+				</if>
+				<if test="productSpecificationId!=null and productSpecificationId!=''">
+					AND PRODUCT_SPECIFICATION_ID=#{productSpecificationId}
+				</if>
+			</where>
+	</update>
+	<update id="deleteItemByEntity" parameterType="com.ityb.qugou.po.order.OrderItem">
+		UPDATE 
+			T_P_ORDER_ITEM
+		<set>
+			ISVALID=0,
+			DTIME=now()
+		</set>
+		<where>
+			ISVALID=1
+			<if test="orderId!=null and orderId=''">
+				AND ORDER_ID=#{orderId}
+			</if>
+		</where>
+	</update>
+	
+	<select id="queryYearSale" parameterType="com.ityb.qugou.dto.manager.StatisticsDto"
+		resultType="com.ityb.qugou.bo.manager.StatisticsYearBean">
+		SELECT
+			MONTH (OI.CTIME) AS month,
+			SUM(OI.BUY_NUM) AS totalNum,
+			SUM(OI.SUBTOTAL) AS totalMoney
+		FROM
+			T_P_ORDER_ITEM OI
+			LEFT JOIN T_P_ORDER O ON  OI.ORDER_ID=O.ID
+		WHERE
+			1=1
+			<if test="year!=null and year!=0">
+				AND YEAR (OI.CTIME) = #{year}
+			</if>
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+		GROUP BY
+			MONTH (OI.CTIME)
+		ORDER BY
+			MONTH (OI.CTIME) ASC 
+	</select>
+	
+	<select id="queryMonthSale" parameterType="com.ityb.qugou.dto.manager.StatisticsDto"
+		resultType="com.ityb.qugou.bo.manager.StatisticsMonthBean">
+		SELECT
+			P.NAME AS productName,
+			IFNULL(SUM(OI.SUBTOTAL), 0) AS totalMoney,
+			IFNULL(SUM(OI.BUY_NUM), 0) AS totalNum
+		FROM
+			T_P_PRODUCT P
+		LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON P.ID = PS.PRODUCT_ID
+		LEFT JOIN T_P_ORDER_ITEM OI ON OI.PRODUCT_SPECIFICATION_ID = PS.ID
+		LEFT JOIN T_P_ORDER O ON O.ID=OI.ORDER_ID
+		<where>
+			P.ISVALID=1
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+			<if test="year!=null and year!=0">
+				AND YEAR (OI.CTIME) = #{year}
+			</if>
+			<if test="month!=null and month!=0">
+				AND MONTH(OI.CTIME)=#{month}
+			</if>
+		</where>
+		GROUP BY
+			P.NAME
+		ORDER BY
+			IFNULL(SUM(OI.SUBTOTAL), 0) DESC,
+			IFNULL(SUM(OI.BUY_NUM), 0) DESC
+	</select>
+	
+	<select id="queryDaySale" parameterType="com.ityb.qugou.dto.manager.StatisticsDto"
+		resultType="com.ityb.qugou.bo.manager.StatisticsDayBean">
+		SELECT
+			P.NAME AS productName,
+			IFNULL(SUM(OI.SUBTOTAL), 0) AS totalMoney,
+			IFNULL(SUM(OI.BUY_NUM), 0) AS totalNum
+		FROM
+			T_P_PRODUCT P
+		LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON P.ID = PS.PRODUCT_ID
+		LEFT JOIN T_P_ORDER_ITEM OI ON OI.PRODUCT_SPECIFICATION_ID = PS.ID
+		LEFT JOIN T_P_ORDER O ON O.ID=OI.ORDER_ID
+		<where>
+			P.ISVALID=1
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+			<if test="day!=null">
+				AND DATE (OI.CTIME) = DATE(#{day})
+			</if>
+		</where>
+		GROUP BY
+			P.NAME
+		ORDER BY
+			IFNULL(SUM(OI.SUBTOTAL), 0) DESC,
+			IFNULL(SUM(OI.BUY_NUM), 0) DESC
+	</select>
+	
+	<select id="querySeasonSale" parameterType="com.ityb.qugou.dto.manager.StatisticsDto"
+		resultType="com.ityb.qugou.bo.manager.StatisticsSeasonBean">
+		SELECT
+			MONTH (OI.CTIME) AS month,
+			SUM(OI.BUY_NUM) AS totalNum,
+			SUM(OI.SUBTOTAL) AS totalMoney
+		FROM
+			T_P_ORDER_ITEM OI
+			LEFT JOIN T_P_ORDER O ON  OI.ORDER_ID=O.ID
+		WHERE
+			1=1
+			<if test="year!=null and year!=0">
+				AND YEAR (OI.CTIME) = #{year}
+			</if>
+			<if test="merchantId!=null and merchantId!=''">
+				AND O.MERCHANT_ID=#{merchantId}
+			</if>
+			<if test="monthList!=null and monthList.size()>0">
+				AND MONTH (OI.CTIME) IN
+				<foreach collection="monthList" item="month" separator="," open="(" close=")">
+					#{month}
+				</foreach>
+			</if>
+		GROUP BY
+			MONTH (OI.CTIME)
+		ORDER BY
+			MONTH (OI.CTIME) ASC 
+	</select>
+</mapper>

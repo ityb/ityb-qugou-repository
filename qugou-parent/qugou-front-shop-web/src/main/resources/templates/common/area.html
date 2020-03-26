@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+	<meta name="applicable-device" content="pc,mobile">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="/shop/css/area/bootstrap.min.css"/>	
+	<link rel="stylesheet" type="text/css" href="/shop/css/area/index.css"/>   
+</head>    
+<body>
+	<div class="modal fade" id="areaModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;"><div style="display:table; width:100%; height:100%;"><div style="vertical-align:middle; display:table-cell;"><div class="modal-dialog modal-sm" style="width:540px;">
+        <div class="modal-content" style="border: none;">
+            <div class="col-right">
+                <div class="modal-header">
+                    <button type="button" id="area_close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="areaModalLabel" style="font-size: 18px;">选择区域</h4>
+                </div>
+                <div class="modal-body">
+                    <section class="box-login v5-input-txt" id="box-login">
+                        <form id="area_form" action="`" method="post" autocomplete="off">
+                            <div id="area_select">
+                            <ul>
+                            	<div class="form-group">
+                            		<select class="form-control" name="province">
+                            			<option>请选择省份</option>
+                            		</select>
+                            	</div>
+                            	<div class="form-group">
+                            		<select class="form-control" name="city">
+                            			<option>请选择省城市</option>
+                            		</select>
+                            	</div>
+                            	<div class="form-group">
+                            		<select class="form-control" name="area">
+                            			<option>请选择区域</option>
+                            		</select>
+                            	</div>
+                            	<div class="form-group" >
+                            		<select class="form-control" name="town">
+                            			<option>请选择街道</option>
+                            		</select>
+                            	</div>
+                                <div class="form-group"><input class="form-control" id="detail_address" maxlength="50" name="detail_address" placeholder="为了精确定位，请填写详细地址" type="text"></div>
+                              <!--   <li class="form-group"><input class="form-control" id="id_password_l" name="password_l" placeholder="请输入密码" type="password"></li> -->
+                            </ul>
+                            </div>
+                        </form>
+                        <div class="login-box marginB10">
+                            <button id="area_btn" type="button" class="btn btn-micv5 btn-block globalLogin">确定</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript" src="/shop/js/area/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/shop/js/area/area.js"></script>
+  	<script type="text/javascript" src="/shop/js/area/jquery.citys.js"></script>
+</div>
+<body>
+</html>

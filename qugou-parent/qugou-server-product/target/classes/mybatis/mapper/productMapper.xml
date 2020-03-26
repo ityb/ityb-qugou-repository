@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityb.qugou.product.mapper.ProductMapper">
+	<!-- 添加一条产品记录 -->
+	<insert id="insertProduct" parameterType="com.ityb.qugou.po.product.Product">
+		INSERT INTO T_P_PRODUCT(ID
+		<if test="name!=null and name!=''">
+			,NAME
+		</if>
+		<if test="number!=null and number!=''">
+			,NUMBER
+		</if>
+		<if test="ctime!=null">
+			,CTIME
+		</if>	
+		<if test="creater!=null and creater!=''">
+			,CREATER
+		</if>	
+		) VALUES(#{id}
+		<if test="name!=null and name!=''">
+			,#{name}
+		</if>
+		<if test="number!=null and number!=''">
+			,#{number}
+		</if>
+		<if test="ctime!=null">
+			,#{ctime}
+		</if>	
+		<if test="creater!=null and creater!=''">
+			,#{creater}
+		</if>	
+		)
+	</insert>
+	<!-- 查询商品信息通过productPo -->
+	<select id="queryProduct" parameterType="com.ityb.qugou.po.product.Product" resultType="com.ityb.qugou.po.product.Product">
+		SELECT 
+		    ID,
+			NAME,
+			NUMBER,
+			CTIME,
+			MTIME,
+			DTIME
+		FROM
+		  T_P_PRODUCT
+	    <where>
+	    	ISVALID=1
+			<if test="id!=null and id!=''">
+				AND ID=#{id}
+			</if>
+			<if test="name!=null and name!=''">
+				AND NAME=#{name}
+			</if> 	
+			<if test="number!=null and number!=''">
+				AND NUMBER=#{number}
+			</if>
+			<if test="creater!=null and creater!=''">
+				AND CREATER=#{creater}
+			</if>
+		</where>
+		ORDER BY CTIME,NAME
+	</select>
+	
+	<!--查询商品信息通过dto -->
+	<select id="queryProductByProductDto" parameterType="com.ityb.qugou.dto.product.ProductDto" 
+			resultType="com.ityb.qugou.vo.product.ProductVo">
+		SELECT
+			P.ID AS productId,
+			P.NAME AS productName,
+			(CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS state,
+			PD.TITLE AS title,
+			PD.SELL_POINT AS sellPoint,
+			PD.CTIME AS addDate,
+			PSPC.NAME AS categoryName
+		FROM
+			T_P_PRODUCT_DETAIL PD
+		LEFT JOIN T_P_PRODUCT P ON P.ID = PD.PRODUCT_ID
+		LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPC ON PD.MERCHANT_CATEGORY_ID = PSPC.ID
+		WHERE
+			P.ISVALID = 1
+		AND PD.ISVALID = 1
+		AND PSPC.ISVALID = 1
+		<if test="state!=null">
+			AND P.STATE=#{state}
+		</if>
+		<if test="categoryId!=null and categoryId!=''">
+			AND PD.MERCHANT_CATEGORY_ID=#{categoryId}
+		</if>
+		<if test="productName!=null and productName!=''">
+			AND P. NAME LIKE CONCAT(CONCAT('%',#{productName}),'%')
+		</if>
+		<if test="addDate!=null">
+			AND DATE(PD.CTIME)=DATE(#{addDate})
+		</if>
+		<if test="creater!=null and creater!=''">
+			AND P.CREATER=#{creater} AND PD.CREATER=#{creater} AND PSPC.CREATER=#{creater}
+		</if>
+		ORDER BY P.NAME ASC,PD.CTIME DESC
+		<if test="pageSize!=null and pageSize!=0 and pageStart!=null and pageStart!=0">
+			LIMIT #{pageStart},#{pageSize}
+		</if>
+	</select>
+	
+	<!-- 计算商品数量通过dto -->
+	<select id="countProductByProductDto" parameterType="com.ityb.qugou.dto.product.ProductDto"  resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			T_P_PRODUCT_DETAIL PD
+		LEFT JOIN T_P_PRODUCT P ON P.ID = PD.PRODUCT_ID
+		LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPC ON PD.MERCHANT_CATEGORY_ID = PSPC.ID
+		WHERE
+			P.ISVALID = 1
+		AND PD.ISVALID = 1
+		AND PSPC.ISVALID = 1
+		<if test="state!=null">
+			AND P.STATE=#{state}
+		</if>
+		<if test="categoryId!=null and categoryId!=''">
+			AND PD.MERCHANT_CATEGORY_ID=#{categoryId}
+		</if>
+		<if test="productName!=null and productName!=''">
+			AND P. NAME LIKE CONCAT(CONCAT('%',#{productName}),'%')
+		</if>
+		<if test="addDate!=null">
+			AND DATE(PD.CTIME)=DATE(#{addDate})
+		</if>
+		<if test="creater!=null and creater!=''">
+			AND P.CREATER=#{creater} AND PD.CREATER=#{creater} AND PSPC.CREATER=#{creater}
+		</if>
+	</select>
+	<!-- 添加商品细节信息 -->
+	<insert id="insertProductDeatil" parameterType="com.ityb.qugou.bo.product.ProductBean">
+		INSERT INTO T_P_PRODUCT_DETAIL(
+			ID,
+		<if test="title!=null and title!=''">
+			TITLE,
+		</if>
+		<if test="sellPoint!=null and sellPoint!=''">
+			SELL_POINT,
+		</if>
+		<if test="merchantCategoryId!=null and merchantCategoryId!=''">
+			MERCHANT_CATEGORY_ID,
+		</if>
+		<if test="shopCategoryId!=null and shopCategoryId!=''">
+			SHOP_CATEGORY_ID,
+		</if>
+		<if test="picUrl!=null and picUrl!=''">
+			PIC_URL,
+		</if>
+			PRODUCT_ID,
+			CTIME,
+			CREATER
+		)VALUES(
+			#{id},
+			<if test="title!=null and title!=''">
+				#{title},
+			</if>
+			<if test="sellPoint!=null and sellPoint!=''">
+				#{sellPoint},
+			</if>
+			<if test="merchantCategoryId!=null and merchantCategoryId!=''">
+				#{merchantCategoryId},
+			</if>
+			<if test="shopCategoryId!=null and shopCategoryId!=''">
+				#{shopCategoryId},
+			</if>
+			<if test="picUrl!=null and picUrl!=''">
+				#{picUrl},
+			</if>
+			#{productId},
+			#{addDate},
+			#{creater}
+		)
+	</insert>
+	<!-- 添加商品描述 -->
+	<insert id="insertProductDesc" parameterType="com.ityb.qugou.bo.product.ProductBean">
+		INSERT INTO T_P_PRODUCT_DESC(
+		ID,
+		<if test="productDesc!=null and productDesc!=''">
+			PRODUCT_DESC,
+		</if>
+		PRODUCT_ID,
+		CTIME,
+		CREATER
+		)VALUES(
+			#{id},
+			<if test="productDesc!=null and productDesc!=''">
+				#{productDesc},
+			</if>
+			#{productId},
+			#{addDate},
+			#{creater}
+		)
+	</insert>
+	<!-- 获取商品详细 -->
+	<select id="getProductDetail" parameterType="com.ityb.qugou.po.product.ProductDetail" resultType="com.ityb.qugou.po.product.ProductDetail">
+		SELECT 
+			ID AS id,
+			SELL_POINT AS sellPoint,
+			TITLE AS title,
+			PIC_URL AS picUrl,
+			SHOP_CATEGORY_ID AS shopCategoryId,
+			MERCHANT_CATEGORY_ID AS merchantCategoryId,
+			PRODUCT_ID AS productId
+	   FROM T_P_PRODUCT_DETAIL
+	   <where>
+	   		ISVALID=1
+	   		<if test="productId!=null and productId!=''">
+	   			AND PRODUCT_ID=#{productId}
+	   		</if>
+	   </where>
+	</select>
+	<!-- 获取商品详细 -->
+	<select id="getProductDesc" parameterType="com.ityb.qugou.po.product.ProductDesc"
+			resultType="com.ityb.qugou.po.product.ProductDesc">
+		SELECT 
+			ID AS id,
+			PRODUCT_ID AS productId,
+			PRODUCT_DESC AS productDesc
+		FROM T_P_PRODUCT_DESC
+		<where>
+			ISVALID=1
+			<if test="productId!=null and productId!=''">
+				AND PRODUCT_ID=#{productId}
+			</if>
+		</where>
+	</select>
+	<!-- 更新商品细节 -->
+	<update id="updateProductDeatil" parameterType="com.ityb.qugou.bo.product.ProductBean">
+		UPDATE T_P_PRODUCT_DETAIL
+		<set>
+			<if test="title!=null and title!=''">
+				TITLE=#{title},
+			</if>
+			<if test="sellPoint!=null and sellPoint!=''">
+				SELL_POINT=#{sellPoint},
+			</if>
+			<if test="merchantCategoryId!=null and merchantCategoryId!=''">
+				MERCHANT_CATEGORY_ID=#{merchantCategoryId},
+			</if>
+			<if test="shopCategoryId!=null and shopCategoryId!=''">
+				SHOP_CATEGORY_ID=#{shopCategoryId},
+			</if>
+			<if test="picUrl!=null and picUrl!=''">
+				PIC_URL=#{picUrl},
+			</if>
+			MTIME=#{modifyDate},
+			UPDATER=#{updater}
+		</set>
+		<where>
+			ISVALID=1
+	   		<if test="productId!=null and productId!=''">
+	   			AND PRODUCT_ID=#{productId}
+	   		</if>
+		</where>
+	</update>
+	
+	<!-- 更新商品描述 -->
+	<update id="updateProductDesc" parameterType="com.ityb.qugou.bo.product.ProductBean">
+		UPDATE T_P_PRODUCT_DESC
+		<set>
+			<if test="productDesc!=null and productDesc!=''">
+				PRODUCT_DESC=#{productDesc},
+			</if>
+			MTIME=#{modifyDate},
+			UPDATER=#{updater}
+		</set>
+		<where>
+			ISVALID=1
+	   		<if test="productId!=null and productId!=''">
+	   			AND PRODUCT_ID=#{productId}
+	   		</if>
+		</where>
+	</update>
+	
+	<!-- 获取商品详细信息 -->
+	<select id="getProductDetailDesc" parameterType="com.ityb.qugou.po.product.Product"
+		resultType="com.ityb.qugou.bo.product.ProductDetailDescVo">
+		SELECT
+			P.ID AS productId,
+			P.NAME AS productName,
+			P.NUMBER AS productNumber,
+ 			(CASE WHEN P.STATE=1 THEN '已上架' WHEN P.STATE=0 THEN '未上架' ELSE '其他' END) AS productState,
+  			PDETAIL.TITLE AS title,
+			PDETAIL.SELL_POINT AS sellpoint,
+  			PDETAIL.PIC_URL AS picurl,
+			PSPCM.NAME AS merchantCategoryName,
+  			PSPCS.NAME AS shopCategoryName,
+ 	 		PDESC.PRODUCT_DESC AS productDesc
+		FROM
+			T_P_PRODUCT P
+		LEFT JOIN T_P_PRODUCT_DETAIL PDETAIL ON P.ID = PDETAIL.PRODUCT_ID
+		LEFT JOIN T_P_PRODUCT_DESC PDESC ON P.ID = PDESC.PRODUCT_ID
+		LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCM ON PDETAIL.MERCHANT_CATEGORY_ID=PSPCM.ID
+		LEFT JOIN T_P_SYS_PRODUCT_CATEGORY PSPCS ON PDETAIL.SHOP_CATEGORY_ID=PSPCS.ID
+		<where>
+			P.ISVALID=1 
+			AND PDETAIL.ISVALID=1 
+			AND PDESC.ISVALID=1 
+			AND PSPCM.ISVALID=1 
+			AND PSPCS.ISVALID=1
+			<if test="id!=null and id!=''">
+				AND P.ID=#{id}
+			</if>
+		</where>
+	</select>
+	<!-- 删除商品详细信息 -->
+	<update id="deleteProductDetail" parameterType="com.ityb.qugou.po.product.Product">
+		UPDATE T_P_PRODUCT_DETAIL
+		<set>
+			ISVALID=0
+			<if test="dtime!=null">
+				,DTIME=#{dtime}
+			</if>
+			<if test="deleter!=null and deleter!=''">
+				,DELETER=#{deleter}
+			</if>
+		</set>
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND PRODUCT_ID=#{id}
+			</if>
+		</where>
+	</update>
+	
+	<!-- 删除商品描述信息 -->
+	<update id="deleteProductDesc" parameterType="com.ityb.qugou.po.product.Product">
+		UPDATE T_P_PRODUCT_DESC
+		<set>
+			ISVALID=0
+			<if test="dtime!=null">
+				,DTIME=#{dtime}
+			</if>
+			<if test="deleter!=null and deleter!=''">
+				,DELETER=#{deleter}
+			</if>
+		</set>
+		<where>
+			ISVALID=1
+			<if test="id!=null and id!=''">
+				AND PRODUCT_ID=#{id}
+			</if>
+		</where>
+	</update>
+	<update id="updateProductState">
+		UPDATE T_P_PRODUCT
+		<set>
+			 STATE=#{state}
+		  <if test="product.mtime!=null">
+		  		,MTIME=#{product.mtime}
+		  </if>
+		  <if test="product.deleter!=null and product.deleter!=''">
+		  		,DELETER=#{product.deleter}
+		  </if>
+		</set>
+		<where>
+			ISVALID=1
+			<if test="product.id!=null and product.id!=''">
+				AND ID=#{product.id}
+			</if>
+		</where>
+	</update>
+	<update id="updateStateByProductIds">
+		UPDATE T_P_PRODUCT
+		<set>
+			 STATE=#{state}
+		</set>
+		<where>
+			ISVALID=1
+			<if test="productIdList!=null and productIdList.size()>0">
+				AND ID IN
+				<foreach collection="productIdList"  item="item" open="(" close=")" separator=",">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</update>
+	
+	<select id="queryHotProduct" parameterType="com.ityb.qugou.dto.product.ProductDto"
+		resultType="com.ityb.qugou.vo.search.ProductSearchVo">
+		SELECT
+			PDETAIL.product_ID AS productId,
+			PDETAIL.TITLE AS title,
+			PDETAIL.CTIME AS addTime,
+			PDETAIL.SELL_POINT AS sellPoint,
+			PDETAIL.PIC_URL AS pic,
+			(SELECT MIN(PS.PRICE) FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=PDETAIL.PRODUCT_ID) AS price,
+		  	(SELECT PS.ID FROM T_P_PRODUCT_SPECIFICATION PS WHERE PS.ISVALID=1 AND PS.STATE=1 AND PS.PRODUCT_ID=PDETAIL.PRODUCT_ID ORDER BY PS.PRICE LIMIT 1) AS specificationId,
+			SHOP.SHOP_ADDRESS AS productAddress,
+			SHOP.SHOP_NAME AS shopName,
+			SHOP.ID AS shopId
+		FROM T_P_PRODUCT_DETAIL PDETAIL
+		LEFT JOIN T_SYS_SHOP SHOP ON SHOP.USER_ID =PDETAIL.CREATER
+		WHERE
+			  PDETAIL.ISVALID=1
+		AND SHOP.ISVALID=1
+		AND PDETAIL.product_ID IN (
+				SELECT
+			PS.PRODUCT_ID
+			FROM
+				T_P_ORDER_ITEM OI
+			LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON OI.PRODUCT_SPECIFICATION_ID = PS.ID
+			WHERE
+				PS.ISVALID=1
+			<!-- 考虑到用户删除订单已算入销量之内 -->
+			<!-- 	OI.ISVALID=1
+			AND	PS.ISVALID=1 -->
+			<if test="addDate!=null">
+				AND DATE(OI.CTIME)=DATE(#{addDate})
+			</if>
+			GROUP BY
+				PS.PRODUCT_ID
+			ORDER BY
+				SUM(BUY_NUM) DESC
+			)
+		<if test="address!=null and address!=''">
+			AND SHOP.SHOP_ADDRESS LIKE CONCAT(#{address},'%')
+		</if>
+		<if test="shopId!=null and shopId!=''">
+			AND SHOP.ID=#{shopId}
+		</if>
+		<if test="queryCount!=null and queryCount!=0">
+			LIMIT #{queryCount}
+		</if>
+	</select>
+</mapper>

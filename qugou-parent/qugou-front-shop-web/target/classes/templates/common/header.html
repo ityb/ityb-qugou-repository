@@ -1,0 +1,131 @@
+<meta charset="utf-8">
+<div class="header">
+	<div class="header-top">
+		<div class="top-address-msg">您当前位置：</div>
+		<div class="address-icon"><img src="/shop/images/adress.png"></div>
+		<div class="top-address">[${city!"请选择您的位置"}]</div>
+		<#if user??>
+			<div class="top-login"><span>欢迎您&nbsp;</span><a href="/sso/shop/login">${user.userName!}</a></div>
+		<#else>
+			<div class="top-login"><span>亲，请&nbsp;</span><a href="/sso/shop/login">登录</a></div>
+		</#if>
+		<div class="right-header-nav">
+			<div class="single-header-nav">
+				<div class="address-icon"><a href="javascript:;" class="browse-my-nav"><img src="/shop/images/zuji.png"></a></div>
+				<div class="header-nav-name browse-my-nav"><a href="javascript:;">我的足迹</a></div>
+			</div>
+			<div class="single-header-nav">
+				<div class="address-icon"><a href="javascript:;" class="order-my-nav"><img src="/shop/images/dingdan.png"></a></div>
+				<div class="header-nav-name order-my-nav"><a href="javascript:;">我的订单</a></div>
+			</div>
+			<div class="single-header-nav">
+				<div class="address-icon"><a href="javascript:;" class="collection-my-nav"><img src="/shop/images/shoucang.png"></a></div>
+				<div class="header-nav-name"><a href="javascript:;" class="collection-my-nav">我的收藏</a></div>
+			</div>
+			<div class="single-header-nav">
+				<div class="address-icon"><a href="javascript:;" class="evaluation-my-nav"><img src="/shop/images/pj.png"></a></div>
+				<div class="header-nav-name"><a href="javascript:;" class="evaluation-my-nav">我的评价</a></div>
+			</div>
+			<div class="single-header-nav">
+				<div class="address-icon"><a href="javascript:;" class="user-register"><img src="/shop/images/zhuce.png"></a></div>
+				<div class="header-nav-name"><a href="javascript:;" class="user-register">用户注册</a></div>
+			</div>
+			<div class="single-header-nav">
+				<div class="address-icon"><a href="/sso/shop/merchant/register"><img src="/shop/images/jiameng.png"></a></div>
+				<div class="header-nav-name"><a href="/sso/shop/merchant/register">加盟趣购</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="header-bottom">
+		<div class="left-logo">
+			<div class="left-logo-img-box">
+			<a href="/shop"><img  alt="logo" src="/shop/images/logo.png"></a>
+			</div>
+		</div>
+		 <div class="search-category">
+		 </div>
+		<div class="center-search">
+			<div class="search-top">
+				<input type="hidden" id="search-category-type" value="${searchCategorytype!1}">
+				<#if searchCategorytype??>
+					<#if searchCategorytype==1>
+						<div class="search-category-product" >商品</div>
+						<div class="search-category-shop clear-bg">商铺</div>
+					<#else>
+						<div class="search-category-product clear-bg">商品</div>
+						<div class="search-category-shop" >商铺</div>
+					</#if>
+				<#else>
+					<div class="search-category-product" >商品</div>
+					<div class="search-category-shop clear-bg">商铺</div>
+				</#if>
+				<div class="search-top-left">
+					<div class="search-icon"></div>
+					<div class="search-keyword-box">
+					   <#if searchKeywordList??>
+							<#list searchKeywordList as searchKeyword>
+								<#if searchKeyword_index==0>
+									<input type="hidden" value="${searchKeyword.name}" id="df_key_word">
+									<#if searchCondition??>
+										<#if (searchCondition.keyWord)??>
+											<input class="search-keyword" placeholder="${searchKeyword.name}" value="${searchCondition.keyWord!}"/>
+										<#else>
+											<input class="search-keyword" placeholder="${searchKeyword.name}" value=""/>
+										</#if>
+									<#else>
+										<#if shopSearch??>
+											<#if shopSearch.shopName??>
+												<input class="search-keyword" placeholder="${searchKeyword.name}" value="${shopSearch.shopName!}"/>
+											<#else>
+												<input class="search-keyword" placeholder="${searchKeyword.name}" value=""/>
+											</#if>
+										<#else>
+											<input class="search-keyword" placeholder="${searchKeyword.name}" value=""/>
+										</#if>
+									</#if>
+								</#if>
+							</#list>
+						</#if>
+					</div>
+				</div>
+				<div class="search-top-right">
+					<span>搜索</span>
+				</div>
+			</div>
+			<div class="search-hot">
+				<#if searchKeywordList??>
+					<#list searchKeywordList as searchKeyword>
+						<a href="/shop/search/product?keyWord=${searchKeyword.name!}">${searchKeyword.name!}</a>
+					</#list>
+				</#if>
+			</div>
+		</div>
+	</div>
+</div>
+<script type=text/javascript>
+	//点击搜索按钮
+	$(function(){
+		document.onkeydown = function(e){ 
+		    var ev = document.all ? window.event : e;
+		    if(ev.keyCode==13) {
+		    	$(".search-top-right").click();
+		     }
+		}
+		$(".search-top-right").click(function(){
+			//首先判断需要搜索的关键字
+			var keyWord=$(".search-keyword").val();
+			var type=$("#search-category-type").val();
+			if(type==1){
+				if(keyWord==null||keyWord==''){
+					keyWord=$(".search-keyword").attr("placeholder");
+				}
+				window.location.href="/shop/search/product?keyWord="+keyWord+"&searchCategorytype="+type;
+			}else{//表示搜索的是店铺
+				if(keyWord==null||keyWord==''){
+					keyWord=$(".search-keyword").attr("placeholder");
+				}
+				window.location.href="/shop/search/shop?shopName="+keyWord+"&searchCategorytype="+type;
+			}
+		});
+	});
+</script>

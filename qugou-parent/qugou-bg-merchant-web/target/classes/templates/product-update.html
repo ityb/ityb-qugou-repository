@@ -1,0 +1,190 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品管理</title>
+		<link rel="stylesheet" href="/merchant/layui/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="/merchant/layui/css/global.css" media="all">
+		<link rel="stylesheet" href="/merchant/layui/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/merchant/layui/css/table.css" />
+		<style type="text/css">
+			.layui-upload-img{
+				    width: 92px;
+   				 	height: 92px;
+    				margin: 10px 15px 10px 0px;
+			}
+			.pic-img-div{
+				width: 92px;
+				height: 102px;
+				margin-left:5px;
+				float: left;
+			}
+			.img-div{
+				width: 92px;
+				height: 80px;
+			}
+			.img-div img{
+				width: 100%;
+				height: 100%;
+			}
+			.delete-button-div{
+				margin-top:5px;
+				width: 92px;
+				height: 12px;
+				float: left;
+				line-height: 12px;
+				text-align: center;
+			} 
+		</style>
+	</head>
+<body>
+<div style="margin: 15px;">
+	<form class="layui-form" id="product_form" onsubmit="return false">
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品名称</label>
+			<input type="hidden" value="${product.id!}" id="productId">
+			<div class="layui-input-block">
+				<input type="text" readonly="readonly" name="productName"  lay-verify="required" value="${product.name!}" maxlength="120"  placeholder="请输入商品名称" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品规格</label>
+			<div class="layui-input-block">
+				<button type="button" class="layui-btn layui-btn-normal" id="reselectSpecification">重新选择规格</button> 
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div id="product_specification_show">
+				<#if specificationList??>
+					<#list specificationList as specification>
+						<div class="layui-input-block" style="margin-top: 10px;">
+							<input type='hidden' name='productSpecificationId' value="${specification.productSpecificationId!}">
+							<input type="text" name="productSpecificationName" value="${specification.productSpecificationName!}" readonly="readonly" maxlength="10" lay-verify='required' placeholder="规格名称"  autocomplete="off" class="layui-input" style="width: 120px;float: left;">
+							<input type="text" name="price" value="${specification.price!}" readonly="readonly" maxlength="10" lay-verify='required' placeholder="商品单价（元）"  autocomplete="off" class="layui-input" style="width: 120px;float: left;margin-left: 10px;">
+							<input type="text" name="weight" value="${specification.weight!}" readonly="readonly" maxlength="10" lay-verify='required' placeholder="商品净重（kg）"  autocomplete="off" class="layui-input" style="width: 120px;float: left;margin-left: 10px;">
+							<input type="text" name="stock" value="${specification.stock!}" readonly="readonly" maxlength="10" lay-verify='required' placeholder="商品库存（件）"  autocomplete="off" class="layui-input" style="width: 120px;float: left;margin-left: 10px;">
+							<button id="specification_show_delete" type="button" class="layui-btn" style="float: left;margin-left: 5px;">移除</button>
+						</div>
+					</#list>
+				</#if>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品标题</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" value="${productDetail.title!}" id="title" lay-verify="required" maxlength="120"  placeholder="请输入商品标题" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品卖点</label>
+			<div class="layui-input-block">
+				<input type="text" name="sellPoint" value="${productDetail.sellPoint!}" id="sellPoint" lay-verify="required" maxlength="80"  placeholder="请输入商品卖点" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品分类</label>
+			<div class="layui-input-block">
+                 <div class="layui-input-inline">
+					<select name="merchantCategoryId" id="merchantCategoryId" lay-search="">
+						<option value="">请选择商店分类</option>
+							<#if merchantCategoryList??>
+								<#list merchantCategoryList as category>
+									<optgroup label="${category.name}">
+										<#if category.categoryList??>
+											<#list category.categoryList as subCategory>
+												<option value="${subCategory.id}" <#if subCategory.id==productDetail.merchantCategoryId>selected</#if>>${subCategory.name}</option>
+											</#list>
+										</#if>
+									</optgroup>
+								</#list>
+							</#if>
+						</select>
+					</div>
+					<div class="layui-input-inline">
+					<select name="shopCategoryId" id="shopCategoryId" lay-search="">
+						<option value="">请选择商城分类</option>
+							<#if shopCategoryList??>
+								<#list shopCategoryList as category>
+									<optgroup label="${category.name}">
+										<#if category.categoryList??>
+											<#list category.categoryList as subCategory>
+												<option value="${subCategory.id}" <#if subCategory.id==productDetail.shopCategoryId>selected</#if>>${subCategory.name}</option>
+											</#list>
+										</#if>
+									</optgroup>
+								</#list>
+							</#if>
+						</select>
+					</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商品图片</label>
+			<div class="layui-input-block" id="pic_show"></div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<div class="layui-upload">
+ 				 	<button type="button" class="layui-btn layui-btn-normal" id="picList">选择多文件</button> 
+ 				 	<div class="layui-upload-list">
+   					 	<table class="layui-table">
+     					 	<thead>
+       							 <tr>
+       						 		<th>图片</th>
+       						 		<th>文件名</th>
+        					 		<th>大小</th>
+        					 		<th>状态</th>
+        					 		<th>操作</th>
+      						 	</tr>
+      						</thead>
+      						<tbody id="pciShowList"></tbody>
+    					</table>
+  					</div>
+  					<input type="hidden" value="" id="productPic">
+  					<button type="button" class="layui-btn" id="picListAction">开始上传</button>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">商品描述</label>
+				<div class="layui-input-block">
+					<textarea class="layui-textarea layui-hide" name="product_desc" lay-verify="product_desc" id="product_desc">${productDesc.productDesc!}</textarea>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit="" lay-filter="product_submit" id="product_submit">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary" id="product_reset">重置</button>
+				<button type="button" id="back" class="layui-btn" style="float: right;">返回</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript" src="/merchant/js/jquery.min.js"></script>
+<script type="text/javascript" src="/merchant/layui/plugins/layui/layui.all.js"></script>
+<script type="text/javascript" src="/merchant/js/product-update.js"></script>
+<script type="text/javascript">
+$(function(){
+	//var html="<div class='layui-input-block'>";
+	var html="";
+	var pics="${productDetail.picUrl}";
+	$(pics.split(",")).each(function(index,value){
+		html+="<div class='pic-img-div'>";
+		html+="<div class='img-div'>";
+		html+="<img  src="+value+">";
+		html+="</div>";
+		html+="<div class='delete-button-div'>";
+		html+="<button class='layui-btn layui-btn-mini layui-btn-danger show-pic-delete'>删除</button>";
+		html+="</div>";
+		html+="</div>";
+	});
+	//html+="</div>";
+	$("#pic_show").html(html);
+	$(".show-pic-delete").click(function(){
+		$(this).parent().parent().remove();
+	});
+});
+</script>
+</body>
+</html>

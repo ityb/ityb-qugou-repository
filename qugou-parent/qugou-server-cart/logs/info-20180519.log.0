@@ -1,0 +1,345 @@
+2018-05-19 12:29:51.215 [main] INFO  com.ityb.qugou.CartAppliction -No active profile set, falling back to default profiles: default
+2018-05-19 12:32:48.319 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2018-05-19 12:32:48.327 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-05-19 12:32:53.976 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2018-05-19 12:33:45.422 [main] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration -Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2018-05-19 12:33:55.808 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-19 12:33:55.809 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-19 12:33:55.872 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-19 12:33:55.884 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-19 12:34:04.346 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1
+2018-05-19 12:34:06.328 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2018-05-19 12:34:06.330 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2018-05-19 12:34:07.811 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2018-05-19 12:34:07.813 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2018-05-19 12:34:11.599 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 12:34:12.595 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false
+2018-05-19 12:34:12.598 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null
+2018-05-19 12:34:12.599 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false
+2018-05-19 12:34:12.600 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false
+2018-05-19 12:34:12.601 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true
+2018-05-19 12:34:12.602 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true
+2018-05-19 12:34:12.603 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server
+2018-05-19 12:34:13.470 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200
+2018-05-19 12:34:13.480 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30
+2018-05-19 12:34:13.499 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-19 12:34:13.527 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1526704453520 with initial instances count: 8
+2018-05-19 12:34:13.995 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1526704453995, current=UP, previous=STARTING]
+2018-05-19 12:34:14.004 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_CART-SERVICE/PC-20160510GKPU:cart-service:8008: registering service...
+2018-05-19 12:34:14.732 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_CART-SERVICE/PC-20160510GKPU:cart-service:8008 - registration status: 204
+2018-05-19 12:34:15.244 [main] INFO  com.ityb.qugou.CartAppliction -Started CartAppliction in 329.114 seconds (JVM running for 342.829)
+2018-05-19 12:39:12.630 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 12:44:12.653 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 12:49:12.672 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 12:54:12.691 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 12:59:12.710 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:04:12.729 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:09:12.748 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:14:12.770 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:19:12.789 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:24:12.808 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:29:12.828 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:34:12.847 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:39:12.866 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:44:12.884 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:49:12.902 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:54:12.920 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 13:59:12.938 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:04:12.957 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:09:12.978 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:14:12.996 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:19:13.014 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:24:13.032 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:29:13.052 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:34:13.071 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:39:13.089 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:44:13.107 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:49:13.125 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:54:13.144 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 14:59:13.162 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 15:04:13.180 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 15:23:01.300 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 15:23:01.444 [DiscoveryClient-CacheRefreshExecutor-0] INFO  o.a.h.impl.client.DefaultHttpClient -I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://localhost:1000: The target server failed to respond
+2018-05-19 15:23:01.473 [DiscoveryClient-CacheRefreshExecutor-0] INFO  o.a.h.impl.client.DefaultHttpClient -Retrying request to {}->http://localhost:1000
+2018-05-19 15:23:01.934 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.n.d.s.t.d.RedirectingEurekaHttpClient -Request execution error
+com.sun.jersey.api.client.ClientHandlerException: org.apache.http.NoHttpResponseException: localhost:1000 failed to respond
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:815)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1379)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.http.NoHttpResponseException: localhost:1000 failed to respond
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:281)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:230)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 27 common frames omitted
+2018-05-19 15:23:02.934 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient -Request execution failed with message: org.apache.http.NoHttpResponseException: localhost:1000 failed to respond
+2018-05-19 15:23:06.895 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.netflix.discovery.DiscoveryClient -DiscoveryClient_CART-SERVICE/PC-20160510GKPU:cart-service:8008 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:815)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1379)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-05-19 15:59:19.352 [main] INFO  com.ityb.qugou.CartAppliction -No active profile set, falling back to default profiles: default
+2018-05-19 15:59:55.062 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2018-05-19 15:59:55.069 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-05-19 15:59:57.730 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2018-05-19 16:00:51.569 [main] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration -Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2018-05-19 16:00:57.109 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-19 16:00:57.112 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-19 16:00:57.170 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2018-05-19 16:00:57.172 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2018-05-19 16:01:02.975 [main] INFO  c.netflix.discovery.DiscoveryClient -Initializing Eureka in region us-east-1
+2018-05-19 16:01:03.757 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2018-05-19 16:01:03.758 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2018-05-19 16:01:04.405 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2018-05-19 16:01:04.406 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2018-05-19 16:01:07.250 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:01:07.945 [main] INFO  c.netflix.discovery.DiscoveryClient -Disable delta property : false
+2018-05-19 16:01:07.952 [main] INFO  c.netflix.discovery.DiscoveryClient -Single vip registry refresh property : null
+2018-05-19 16:01:07.971 [main] INFO  c.netflix.discovery.DiscoveryClient -Force full registry fetch : false
+2018-05-19 16:01:07.972 [main] INFO  c.netflix.discovery.DiscoveryClient -Application is null : false
+2018-05-19 16:01:07.974 [main] INFO  c.netflix.discovery.DiscoveryClient -Registered Applications size is zero : true
+2018-05-19 16:01:07.975 [main] INFO  c.netflix.discovery.DiscoveryClient -Application version is -1: true
+2018-05-19 16:01:07.976 [main] INFO  c.netflix.discovery.DiscoveryClient -Getting all instance registry info from the eureka server
+2018-05-19 16:01:08.889 [main] INFO  c.netflix.discovery.DiscoveryClient -The response status is 200
+2018-05-19 16:01:08.900 [main] INFO  c.netflix.discovery.DiscoveryClient -Starting heartbeat executor: renew interval is: 30
+2018-05-19 16:01:08.915 [main] INFO  c.n.discovery.InstanceInfoReplicator -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2018-05-19 16:01:08.932 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1526716868930 with initial instances count: 8
+2018-05-19 16:01:09.384 [main] INFO  c.netflix.discovery.DiscoveryClient -Saw local status change event StatusChangeEvent [timestamp=1526716869384, current=UP, previous=STARTING]
+2018-05-19 16:01:09.394 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_CART-SERVICE/PC-20160510GKPU:cart-service:8008: registering service...
+2018-05-19 16:01:09.582 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient -DiscoveryClient_CART-SERVICE/PC-20160510GKPU:cart-service:8008 - registration status: 204
+2018-05-19 16:01:09.861 [main] INFO  com.ityb.qugou.CartAppliction -Started CartAppliction in 136.599 seconds (JVM running for 141.506)
+2018-05-19 16:06:08.012 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:11:08.032 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:16:08.051 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:21:08.070 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:26:08.090 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:31:08.109 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:36:08.129 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:41:08.148 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:46:08.169 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:51:08.189 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 16:56:08.208 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:01:08.228 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:06:08.246 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:11:08.266 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:16:08.288 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:21:08.307 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:26:08.329 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:31:08.347 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:36:08.366 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:41:08.389 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:46:08.409 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:51:08.428 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 17:56:08.449 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:01:08.471 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:06:08.490 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:11:08.508 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:16:08.526 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:21:08.544 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:26:08.562 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:31:08.584 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:36:08.602 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:41:08.625 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:46:08.643 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:51:08.661 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 18:56:08.680 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:01:08.698 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:06:08.716 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:11:08.735 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:16:08.754 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:21:08.774 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:26:08.793 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:31:08.811 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:36:08.830 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:41:08.849 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:46:08.869 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:51:08.887 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 19:56:08.905 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:01:08.924 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:06:08.943 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:11:08.962 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:16:08.982 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:21:09.001 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:26:09.025 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:31:09.044 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:41:31.524 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:46:31.544 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:51:31.562 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 20:56:31.620 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:01:31.640 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:06:31.667 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:11:31.688 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:15:26.089 [http-nio-8008-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-19 21:15:30.561 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS. NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.CART_TYPE=? AND PC.CREATER=? AND SS.SHOP_ADDRESS LIKE CONCAT(?,'%') ORDER BY PC.CTIME DESC 
+2018-05-19 21:15:30.561 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.C.queryCartByEntity -==>  Preparing: SELECT SPECIFICATION_ID AS specificationId, BUY_NUMBER AS buyNumber, CTIME AS ctime FROM T_P_CART WHERE ISVALID=1 AND SPECIFICATION_ID=? AND CART_TYPE=? AND CREATER=? 
+2018-05-19 21:15:30.817 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 黑龙江省哈尔滨市(String)
+2018-05-19 21:15:30.839 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.C.queryCartByEntity -==> Parameters: 5829fcdcf32f4147bce75c0616db4650(String), 1(Integer), 3df03888997442ad93abbcf38af00c78(String)
+2018-05-19 21:15:30.973 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -<==      Total: 0
+2018-05-19 21:15:30.976 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.C.queryCartByEntity -<==      Total: 0
+2018-05-19 21:15:31.035 [http-nio-8008-exec-1] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==>  Preparing: INSERT INTO T_P_CART(ID ,SPECIFICATION_ID ,BUY_NUMBER ,CART_TYPE ,CTIME ,CREATER ,ISVALID )VALUES( ? ,? ,? ,? ,? ,? ,? ) 
+2018-05-19 21:15:31.045 [http-nio-8008-exec-1] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==> Parameters: 0c2c80c03add4a1d95b6e12507a8e184(String), 5829fcdcf32f4147bce75c0616db4650(String), 1(Integer), 1(Integer), 2018-05-19 21:15:31.02(Timestamp), 3df03888997442ad93abbcf38af00c78(String), 1(Integer)
+2018-05-19 21:15:31.052 [http-nio-8008-exec-1] DEBUG c.i.q.c.mapper.CartMapper.insertCart -<==    Updates: 1
+2018-05-19 21:15:37.416 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS. NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.CART_TYPE=? AND PC.CREATER=? AND SS.SHOP_ADDRESS LIKE CONCAT(?,'%') ORDER BY PC.CTIME DESC 
+2018-05-19 21:15:37.422 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 黑龙江省哈尔滨市(String)
+2018-05-19 21:15:37.443 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -<==      Total: 1
+2018-05-19 21:15:47.567 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByCartIds -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS.NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.START_PRICE AS startPrice, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.ID IN ( ? ) ORDER BY SS.ID ASC,PC.CTIME DESC 
+2018-05-19 21:15:47.570 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByCartIds -==> Parameters: 0c2c80c03add4a1d95b6e12507a8e184(String)
+2018-05-19 21:15:47.584 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByCartIds -<==      Total: 1
+2018-05-19 21:16:12.798 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.deleteProductByCart -==>  Preparing: UPDATE T_P_CART SET ISVALID=0 WHERE ISVALID=1 AND CART_TYPE=? AND CREATER=? AND SPECIFICATION_ID=? 
+2018-05-19 21:16:12.802 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.deleteProductByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 5829fcdcf32f4147bce75c0616db4650(String)
+2018-05-19 21:16:12.818 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.deleteProductByCart -<==    Updates: 1
+2018-05-19 21:16:21.381 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.deleteProductByCart -==>  Preparing: UPDATE T_P_CART SET ISVALID=0 WHERE ISVALID=1 AND CART_TYPE=? AND CREATER=? AND SPECIFICATION_ID=? 
+2018-05-19 21:16:21.384 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.deleteProductByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 5829fcdcf32f4147bce75c0616db4650(String)
+2018-05-19 21:16:21.389 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.deleteProductByCart -<==    Updates: 0
+2018-05-19 21:16:31.771 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:21:31.811 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:25:22.926 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.queryCartByEntity -==>  Preparing: SELECT SPECIFICATION_ID AS specificationId, BUY_NUMBER AS buyNumber, CTIME AS ctime FROM T_P_CART WHERE ISVALID=1 AND SPECIFICATION_ID=? AND CART_TYPE=? AND CREATER=? 
+2018-05-19 21:25:22.933 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.queryCartByEntity -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String), 1(Integer), 3df03888997442ad93abbcf38af00c78(String)
+2018-05-19 21:25:22.939 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.queryCartByEntity -<==      Total: 0
+2018-05-19 21:25:22.948 [http-nio-8008-exec-2] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==>  Preparing: INSERT INTO T_P_CART(ID ,SPECIFICATION_ID ,BUY_NUMBER ,CART_TYPE ,CTIME ,CREATER ,ISVALID )VALUES( ? ,? ,? ,? ,? ,? ,? ) 
+2018-05-19 21:25:22.954 [http-nio-8008-exec-2] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==> Parameters: 132a89742957450dbf1083908db2e13f(String), 1b3be4ab41e348dc91d48e5e81aaada7(String), 1(Integer), 1(Integer), 2018-05-19 21:25:22.945(Timestamp), 3df03888997442ad93abbcf38af00c78(String), 1(Integer)
+2018-05-19 21:25:22.958 [http-nio-8008-exec-2] DEBUG c.i.q.c.mapper.CartMapper.insertCart -<==    Updates: 1
+2018-05-19 21:25:24.661 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS. NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.CART_TYPE=? AND PC.CREATER=? AND SS.SHOP_ADDRESS LIKE CONCAT(?,'%') ORDER BY PC.CTIME DESC 
+2018-05-19 21:25:24.664 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 黑龙江省哈尔滨市(String)
+2018-05-19 21:25:24.675 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -<==      Total: 1
+2018-05-19 21:25:28.389 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.C.queryCartByCartIds -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS.NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.START_PRICE AS startPrice, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.ID IN ( ? ) ORDER BY SS.ID ASC,PC.CTIME DESC 
+2018-05-19 21:25:28.396 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.C.queryCartByCartIds -==> Parameters: 132a89742957450dbf1083908db2e13f(String)
+2018-05-19 21:25:28.409 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.C.queryCartByCartIds -<==      Total: 1
+2018-05-19 21:25:37.392 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.deleteProductByCart -==>  Preparing: UPDATE T_P_CART SET ISVALID=0 WHERE ISVALID=1 AND CART_TYPE=? AND CREATER=? AND SPECIFICATION_ID=? 
+2018-05-19 21:25:37.395 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.deleteProductByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-19 21:25:37.411 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.deleteProductByCart -<==    Updates: 1
+2018-05-19 21:26:31.830 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:31:31.848 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:36:31.867 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:41:31.887 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:43:57.218 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.queryCartByEntity -==>  Preparing: SELECT SPECIFICATION_ID AS specificationId, BUY_NUMBER AS buyNumber, CTIME AS ctime FROM T_P_CART WHERE ISVALID=1 AND SPECIFICATION_ID=? AND CART_TYPE=? AND CREATER=? 
+2018-05-19 21:43:57.223 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.queryCartByEntity -==> Parameters: 5829fcdcf32f4147bce75c0616db4650(String), 1(Integer), 3df03888997442ad93abbcf38af00c78(String)
+2018-05-19 21:43:57.228 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.queryCartByEntity -<==      Total: 0
+2018-05-19 21:43:57.234 [http-nio-8008-exec-7] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==>  Preparing: INSERT INTO T_P_CART(ID ,SPECIFICATION_ID ,BUY_NUMBER ,CART_TYPE ,CTIME ,CREATER ,ISVALID )VALUES( ? ,? ,? ,? ,? ,? ,? ) 
+2018-05-19 21:43:57.247 [http-nio-8008-exec-7] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==> Parameters: d2e16651201b416a8c864ab2736f37c9(String), 5829fcdcf32f4147bce75c0616db4650(String), 1(Integer), 1(Integer), 2018-05-19 21:43:57.23(Timestamp), 3df03888997442ad93abbcf38af00c78(String), 1(Integer)
+2018-05-19 21:43:57.251 [http-nio-8008-exec-7] DEBUG c.i.q.c.mapper.CartMapper.insertCart -<==    Updates: 1
+2018-05-19 21:43:58.992 [http-nio-8008-exec-8] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS. NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.CART_TYPE=? AND PC.CREATER=? AND SS.SHOP_ADDRESS LIKE CONCAT(?,'%') ORDER BY PC.CTIME DESC 
+2018-05-19 21:43:58.997 [http-nio-8008-exec-8] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 黑龙江省哈尔滨市(String)
+2018-05-19 21:43:59.005 [http-nio-8008-exec-8] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -<==      Total: 1
+2018-05-19 21:44:02.447 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.queryCartByCartIds -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS.NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.START_PRICE AS startPrice, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.ID IN ( ? ) ORDER BY SS.ID ASC,PC.CTIME DESC 
+2018-05-19 21:44:02.455 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.queryCartByCartIds -==> Parameters: d2e16651201b416a8c864ab2736f37c9(String)
+2018-05-19 21:44:02.483 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.queryCartByCartIds -<==      Total: 1
+2018-05-19 21:44:12.005 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.deleteProductByCart -==>  Preparing: UPDATE T_P_CART SET ISVALID=0 WHERE ISVALID=1 AND CART_TYPE=? AND CREATER=? AND SPECIFICATION_ID=? 
+2018-05-19 21:44:12.008 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.deleteProductByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 5829fcdcf32f4147bce75c0616db4650(String)
+2018-05-19 21:44:12.012 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.deleteProductByCart -<==    Updates: 1
+2018-05-19 21:46:31.909 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:51:31.929 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 21:56:31.948 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:01:32.020 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:06:32.049 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:11:32.069 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:16:32.091 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:21:32.122 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:26:32.141 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:31:32.167 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:36:32.195 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:41:32.214 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:46:32.236 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:51:32.256 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 22:56:32.277 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:01:32.296 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:06:32.321 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:11:32.360 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:12:57.411 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.C.queryCartByEntity -==>  Preparing: SELECT SPECIFICATION_ID AS specificationId, BUY_NUMBER AS buyNumber, CTIME AS ctime FROM T_P_CART WHERE ISVALID=1 AND SPECIFICATION_ID=? AND CART_TYPE=? AND CREATER=? 
+2018-05-19 23:12:57.427 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.C.queryCartByEntity -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String), 1(Integer), 3df03888997442ad93abbcf38af00c78(String)
+2018-05-19 23:12:57.454 [http-nio-8008-exec-3] DEBUG c.i.q.c.m.C.queryCartByEntity -<==      Total: 0
+2018-05-19 23:12:57.483 [http-nio-8008-exec-3] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==>  Preparing: INSERT INTO T_P_CART(ID ,SPECIFICATION_ID ,BUY_NUMBER ,CART_TYPE ,CTIME ,CREATER ,ISVALID )VALUES( ? ,? ,? ,? ,? ,? ,? ) 
+2018-05-19 23:12:57.497 [http-nio-8008-exec-3] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==> Parameters: 9d0f6ab381db402eaf850978c24c7b74(String), 64c5a33f2726481b8a5ed1e3551637eb(String), 1(Integer), 1(Integer), 2018-05-19 23:12:57.467(Timestamp), 3df03888997442ad93abbcf38af00c78(String), 1(Integer)
+2018-05-19 23:12:57.505 [http-nio-8008-exec-3] DEBUG c.i.q.c.mapper.CartMapper.insertCart -<==    Updates: 1
+2018-05-19 23:12:59.229 [http-nio-8008-exec-4] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS. NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.CART_TYPE=? AND PC.CREATER=? AND SS.SHOP_ADDRESS LIKE CONCAT(?,'%') ORDER BY PC.CTIME DESC 
+2018-05-19 23:12:59.236 [http-nio-8008-exec-4] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 黑龙江省哈尔滨市(String)
+2018-05-19 23:12:59.328 [http-nio-8008-exec-4] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -<==      Total: 1
+2018-05-19 23:13:03.628 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByCartIds -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS.NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.START_PRICE AS startPrice, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.ID IN ( ? ) ORDER BY SS.ID ASC,PC.CTIME DESC 
+2018-05-19 23:13:03.631 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByCartIds -==> Parameters: 9d0f6ab381db402eaf850978c24c7b74(String)
+2018-05-19 23:13:03.641 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByCartIds -<==      Total: 1
+2018-05-19 23:13:26.997 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.deleteProductByCart -==>  Preparing: UPDATE T_P_CART SET ISVALID=0 WHERE ISVALID=1 AND CART_TYPE=? AND CREATER=? AND SPECIFICATION_ID=? 
+2018-05-19 23:13:26.999 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.deleteProductByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-19 23:13:27.002 [http-nio-8008-exec-7] DEBUG c.i.q.c.m.C.deleteProductByCart -<==    Updates: 1
+2018-05-19 23:16:30.379 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.queryCartByEntity -==>  Preparing: SELECT SPECIFICATION_ID AS specificationId, BUY_NUMBER AS buyNumber, CTIME AS ctime FROM T_P_CART WHERE ISVALID=1 AND SPECIFICATION_ID=? AND CART_TYPE=? AND CREATER=? 
+2018-05-19 23:16:30.384 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.queryCartByEntity -==> Parameters: 1b3be4ab41e348dc91d48e5e81aaada7(String), 1(Integer), 3df03888997442ad93abbcf38af00c78(String)
+2018-05-19 23:16:30.388 [http-nio-8008-exec-9] DEBUG c.i.q.c.m.C.queryCartByEntity -<==      Total: 0
+2018-05-19 23:16:30.392 [http-nio-8008-exec-9] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==>  Preparing: INSERT INTO T_P_CART(ID ,SPECIFICATION_ID ,BUY_NUMBER ,CART_TYPE ,CTIME ,CREATER ,ISVALID )VALUES( ? ,? ,? ,? ,? ,? ,? ) 
+2018-05-19 23:16:30.397 [http-nio-8008-exec-9] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==> Parameters: 8df7beec9b4e464e93a367e8b9870f69(String), 1b3be4ab41e348dc91d48e5e81aaada7(String), 1(Integer), 1(Integer), 2018-05-19 23:16:30.389(Timestamp), 3df03888997442ad93abbcf38af00c78(String), 1(Integer)
+2018-05-19 23:16:30.400 [http-nio-8008-exec-9] DEBUG c.i.q.c.mapper.CartMapper.insertCart -<==    Updates: 1
+2018-05-19 23:16:31.738 [http-nio-8008-exec-10] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS. NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.CART_TYPE=? AND PC.CREATER=? AND SS.SHOP_ADDRESS LIKE CONCAT(?,'%') ORDER BY PC.CTIME DESC 
+2018-05-19 23:16:31.743 [http-nio-8008-exec-10] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 黑龙江省哈尔滨市(String)
+2018-05-19 23:16:31.758 [http-nio-8008-exec-10] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -<==      Total: 1
+2018-05-19 23:16:32.380 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:16:34.705 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.queryCartByCartIds -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS.NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.START_PRICE AS startPrice, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.ID IN ( ? ) ORDER BY SS.ID ASC,PC.CTIME DESC 
+2018-05-19 23:16:34.709 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.queryCartByCartIds -==> Parameters: 8df7beec9b4e464e93a367e8b9870f69(String)
+2018-05-19 23:16:34.732 [http-nio-8008-exec-2] DEBUG c.i.q.c.m.C.queryCartByCartIds -<==      Total: 1
+2018-05-19 23:16:41.735 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.C.deleteProductByCart -==>  Preparing: UPDATE T_P_CART SET ISVALID=0 WHERE ISVALID=1 AND CART_TYPE=? AND CREATER=? AND SPECIFICATION_ID=? 
+2018-05-19 23:16:41.737 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.C.deleteProductByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 1b3be4ab41e348dc91d48e5e81aaada7(String)
+2018-05-19 23:16:41.740 [http-nio-8008-exec-1] DEBUG c.i.q.c.m.C.deleteProductByCart -<==    Updates: 1
+2018-05-19 23:17:26.417 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByEntity -==>  Preparing: SELECT SPECIFICATION_ID AS specificationId, BUY_NUMBER AS buyNumber, CTIME AS ctime FROM T_P_CART WHERE ISVALID=1 AND SPECIFICATION_ID=? AND CART_TYPE=? AND CREATER=? 
+2018-05-19 23:17:26.422 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByEntity -==> Parameters: 64c5a33f2726481b8a5ed1e3551637eb(String), 1(Integer), 3df03888997442ad93abbcf38af00c78(String)
+2018-05-19 23:17:26.427 [http-nio-8008-exec-5] DEBUG c.i.q.c.m.C.queryCartByEntity -<==      Total: 0
+2018-05-19 23:17:26.440 [http-nio-8008-exec-5] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==>  Preparing: INSERT INTO T_P_CART(ID ,SPECIFICATION_ID ,BUY_NUMBER ,CART_TYPE ,CTIME ,CREATER ,ISVALID )VALUES( ? ,? ,? ,? ,? ,? ,? ) 
+2018-05-19 23:17:26.444 [http-nio-8008-exec-5] DEBUG c.i.q.c.mapper.CartMapper.insertCart -==> Parameters: 2fed3b41a9774d6094a14a22e2e50675(String), 64c5a33f2726481b8a5ed1e3551637eb(String), 1(Integer), 1(Integer), 2018-05-19 23:17:26.432(Timestamp), 3df03888997442ad93abbcf38af00c78(String), 1(Integer)
+2018-05-19 23:17:26.450 [http-nio-8008-exec-5] DEBUG c.i.q.c.mapper.CartMapper.insertCart -<==    Updates: 1
+2018-05-19 23:17:27.873 [http-nio-8008-exec-6] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS. NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.CART_TYPE=? AND PC.CREATER=? AND SS.SHOP_ADDRESS LIKE CONCAT(?,'%') ORDER BY PC.CTIME DESC 
+2018-05-19 23:17:27.877 [http-nio-8008-exec-6] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 黑龙江省哈尔滨市(String)
+2018-05-19 23:17:27.888 [http-nio-8008-exec-6] DEBUG c.i.q.c.m.CartMapper.queryCartByCart -<==      Total: 1
+2018-05-19 23:17:39.779 [http-nio-8008-exec-8] DEBUG c.i.q.c.m.C.queryCartByCartIds -==>  Preparing: SELECT PC.ID AS cartId, PC.BUY_NUMBER AS buyNumber, PC.SPECIFICATION_ID AS productSpecificationId, PC.CTIME AS addTime, PS.PRODUCT_ID AS productId, PS.NAME AS productSpecificationName, PS.WEIGHT AS weight, PS.PRICE AS price, PS.STOCK AS stock, PD.SELL_POINT AS sellPoint, PD.TITLE AS productTitle, PD.PIC_URL AS productPicUrl, SS.SHOP_NAME AS shopName, SS.ID AS shopId, SS.START_PRICE AS startPrice, SS.USER_ID AS merchantId FROM T_P_CART PC LEFT JOIN T_P_PRODUCT_SPECIFICATION PS ON PC.SPECIFICATION_ID = PS.ID LEFT JOIN T_P_PRODUCT_DETAIL PD ON PS.PRODUCT_ID = PD.PRODUCT_ID LEFT JOIN T_SYS_SHOP SS ON PD.CREATER=SS.USER_ID WHERE PC.ISVALID = 1 AND PD.ISVALID = 1 AND PS.ISVALID = 1 AND SS.ISVALID=1 AND PC.ID IN ( ? ) ORDER BY SS.ID ASC,PC.CTIME DESC 
+2018-05-19 23:17:39.785 [http-nio-8008-exec-8] DEBUG c.i.q.c.m.C.queryCartByCartIds -==> Parameters: 2fed3b41a9774d6094a14a22e2e50675(String)
+2018-05-19 23:17:39.797 [http-nio-8008-exec-8] DEBUG c.i.q.c.m.C.queryCartByCartIds -<==      Total: 1
+2018-05-19 23:17:46.878 [http-nio-8008-exec-10] DEBUG c.i.q.c.m.C.deleteProductByCart -==>  Preparing: UPDATE T_P_CART SET ISVALID=0 WHERE ISVALID=1 AND CART_TYPE=? AND CREATER=? AND SPECIFICATION_ID=? 
+2018-05-19 23:17:46.881 [http-nio-8008-exec-10] DEBUG c.i.q.c.m.C.deleteProductByCart -==> Parameters: 1(Integer), 3df03888997442ad93abbcf38af00c78(String), 64c5a33f2726481b8a5ed1e3551637eb(String)
+2018-05-19 23:17:46.884 [http-nio-8008-exec-10] DEBUG c.i.q.c.m.C.deleteProductByCart -<==    Updates: 1
+2018-05-19 23:21:32.401 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:26:32.420 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:31:32.477 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:36:32.515 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:41:32.537 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:46:32.556 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:51:32.575 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration
+2018-05-19 23:56:32.595 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver -Resolving eureka endpoints via configuration

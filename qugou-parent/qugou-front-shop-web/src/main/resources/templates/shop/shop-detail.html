@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>趣购网-商店详情</title>
+<link rel="stylesheet" type="text/css" href="/shop/css/zlc/bootstrap-grid.min.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/product/product.css" />
+<!-- 鼠标滑过显示遮拦层 -->
+<link rel="stylesheet" type="text/css" href="/shop/css/shop/shop-detail.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/category/style.css" />
+<link rel="stylesheet" type="text/css" href="/shop/css/dsdialog/base.css" />
+<link rel="stylesheet" href="/shop/css/product/jquery-labelauty.css">
+<!-- 单选框美化 -->
+<script type="text/javascript" src="/shop/js/jquery.min.js"></script>
+<script type="text/javascript" src="/shop/js/header.js" ></script>
+<link rel="stylesheet" type="text/css" href="/shop/css/product/star.css" />
+<!-- 分页插件 -->
+<link rel="stylesheet" href="/shop/css/page/kkpager.css" />
+<!-- 分页插件 -->
+<script type="text/javascript" src="/shop/js/num-alignment.js" ></script>
+<script type="text/javascript" src="/shop/js/dsdialog/dsdialog.js" ></script>
+<script type="text/javascript" src="/shop/js/page/kkpager.min.js" ></script>
+</head>
+<body>
+<!-- 头部信息 -->
+<#include "/common/header.html"/>
+<!--购物车固定部分  -->
+<div><#include "/common/cart.html"></div>
+<#include "/common/shop-nav.html">
+<div class="shop-detail-main-box">
+	<div class="shop-detail-left-box">
+		<div class="shop-search-div">
+			<div class="shop-name-box">
+				<div class="shop-name">店内搜索</div>
+				<div class="search-div">
+					<div class="shop-search-text">
+						<div class="search-name-keyword">关键字：</div>
+						<div class="search-text-input"><input type="text" value="${shopSearchDto.keyWord!}" id="shop_detail_keyWord"></div>
+						<div class="search-button shop-detail-search-button">搜索</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shop-category-show">
+			<input  type="hidden" value="${shopSearchDto.merchantCategoryName!}" id="shop_detail_merchant_category_name"/>
+			<div class="shop-category-title">商品分类</div>
+			<#include "/common/shop-product-category.html"/>
+		</div>
+		<div class="add-bottom-line"></div>
+		<div class="shop-info-box">
+			<div class="shop-category-title">商店信息</div>
+			<div class="shop-info-show-item"><span>电话：</span>${shop.shopPhone!"暂无"}</div>
+			<div class="shop-info-show-item"><span>地址：</span>${shop.shopAddress!"未知"}</div>
+			<div class="shop-info-show-item"><span>起步价：</span><spn class="price-red">￥${(shop.startPrice?string("#.00"))!0.00}</spn></div>
+		</div>
+	</div>
+	<div class="shop-detail-right-box">
+		<input type="hidden" value="${totalRecord!0}" id="total_record"/>
+		<!-- 商品循环 -->
+		<#if productList??&&(productList?size>0)>
+			<#list productList as product>
+				<div class="product-show-box">
+					<div class="product-img-box">
+						<#if product.pic??>
+							<#list product.pic?split(",") as pic>
+								<#if pic_index==0>
+									<a href="/shop/product/detail?id=${product.productId!}"><img src="${pic!}" alt="" /></a>
+								</#if>
+							</#list>
+						</#if>
+					</div>
+					<div class="product-price-box">￥${product.price?string("#.00")!}</div>
+					<div class="product-title-box"><a href="/shop/product/detail?id=${product.productId!}">${product.title!}</a></div>
+					<div class="product-shop-box"><a href="/shop/merchant?id=${product.shopId!}">${product.shopName!}</a></div>
+					<div class="product-number-cart-box">
+						<div class="product-number-box">
+							<input style="width: 80px;height: 20px;" data_step="1" data_min="1" data_max="9999999" 
+							data_digit="0" value="1" data_edit="true" id="${product.specificationId!}" class="product-price-min"/>
+							<input type="hidden" value="${product.specificationId!}"/>
+						</div>
+						<div class="product-cart-box">
+							<div class="product-cart-img-box">
+								<img src="/shop/images/add_cart.png" alt="" />
+							</div>
+							<div class="product-cart-font-box">加入购物车</div>
+						</div>
+					</div>
+				</div>
+			</#list>
+			<!-- 循环结束 -->
+		<#else>
+			<div class="blank-product-box">
+				<div class="blank-product-font-box">暂无商品</div>
+			</div>
+		</#if>
+		<#if isPage??>
+			<#if productList??&&(productList?size>0)>
+				<div class="page-box">
+					<div class="page-show-box">
+						<div id="kkpager"></div>
+					</div>
+				</div>
+			</#if>
+		</#if>	
+	</div>
+</div>
+<div class="foot-box">
+	<#include "/common/footer.html">	
+</div>
+<div><#include "/common/login-min.html"></div>
+<div><#include "/common/address-select.html"></div>
+<div><#include "/common/area.html"></div>
+<script type="text/javascript" src="/shop/css/number/spinner/jquery.spinner.js"></script>
+<script type="text/javascript" src="/shop/js/product/jquery-labelauty.js"></script>
+<script type="text/javascript" src="/shop/js/shop/shop-detail.js"></script>
+</body>
+</html>
